@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>ANNCSU Dashboard | ANNCSU Progress</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.33da7c34.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.14.0/bf489a1e.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.3.0/5b853975.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/fflate@0.8.2/e113a0e7.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.33da7c34.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.200f7e52.gz","lastModified":1765280888430,"size":69670945});
+registerFile("./data/anncsu_2025-10-10_missing.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_missing.pmtiles.f4dea627.gz","lastModified":1765280888430,"size":81465});
+registerFile("./data/anncsu_2025-10-10_moved.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_moved.pmtiles.d30c102c.gz","lastModified":1765280888430,"size":222489});
+registerFile("./data/anncsu_2025-10-10_new.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_new.pmtiles.55ad868c.gz","lastModified":1765280888430,"size":2086334});
+registerFile("./data/anncsu_2025-11-04_missing.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_missing.pmtiles.e3c0c32d.gz","lastModified":1765280888430,"size":2939112});
+registerFile("./data/anncsu_2025-11-04_moved.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_moved.pmtiles.913f7c77.gz","lastModified":1765280888430,"size":313592});
+registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_new.pmtiles.5f5524e5.gz","lastModified":1765280888430,"size":6859193});
+registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.5cacc980.gz","lastModified":1765280888430,"size":100751});
+registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.07c7ee88.gz","lastModified":1765280888430,"size":3783784});
+registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.64dc85b3.gz","lastModified":1765280888430,"size":33887319});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.c7727d07.json","lastModified":1765281235349,"size":489340});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765281234610,"size":477});
+
+define({id: "867f4daa", outputs: ["maplibregl","pmtiles","Plot"], body: async () => {
+const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.14.0/bf489a1e.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
+
+return {maplibregl,pmtiles,Plot};
+}});
+
+define({id: "d6b725af", inputs: ["FileAttachment"], outputs: ["tilesets","anncsu_stats","spatial_stats"], body: (FileAttachment) => {
+// Configurazione tilesets
+const tilesets = {
+  "ANNCSU 2025-09-03": {
+    file: FileAttachment("./data/anncsu_2025-09-03.pmtiles.gz"),
+    color: "#000000",
+    date: "2025-09-03",
+    type: "Base (2025-09-03)"
+  },
+  "ANNCSU 2025-10-10 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-10-10_missing.pmtiles.gz"),
+    color: "#e60026",
+    date: "2025-10-10",
+    type: "Rimossi 2025-10-10"
+  },
+  "ANNCSU 2025-10-10 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-10-10_moved.pmtiles.gz"),
+    color: "#15a34a",
+    date: "2025-10-10",
+    type: "Spostati 2025-10-10"
+  },
+  "ANNCSU 2025-10-10 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-10-10_new.pmtiles.gz"),
+    color: "#0066ff",
+    date: "2025-10-10",
+    type: "Nuovi 2025-10-10"
+  },
+  "ANNCSU 2025-11-04 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-11-04_missing.pmtiles.gz"),
+    color: "#e60026",
+    date: "2025-11-04",
+    type: "Rimossi 2025-11-04"
+  },
+  "ANNCSU 2025-11-04 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-11-04_moved.pmtiles.gz"),
+    color: "#15a34a",
+    date: "2025-11-04",
+    type: "Spostati 2025-11-04"
+  },
+  "ANNCSU 2025-11-04 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-11-04_new.pmtiles.gz"),
+    color: "#0066ff",
+    date: "2025-11-04",
+    type: "Nuovi 2025-11-04"
+  },
+  "ANNCSU 2025-12-02 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-12-02_missing.pmtiles.gz"),
+    color: "#e60026",
+    date: "2025-12-02",
+    type: "Rimossi 2025-12-02"
+  },
+  "ANNCSU 2025-12-02 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-12-02_moved.pmtiles.gz"),
+    color: "#15a34a",
+    date: "2025-12-02",
+    type: "Spostati 2025-12-02"
+  },
+  "ANNCSU 2025-12-02 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-12-02_new.pmtiles.gz"),
+    color: "#0066ff",
+    date: "2025-12-02",
+    type: "Nuovi 2025-12-02"
+  }
+};
+
+const anncsu_stats=FileAttachment("./data/anncsu_stats.json").json();
+const spatial_stats=FileAttachment("./data/anncsu_spatial_stats.json").json();
+return {tilesets,anncsu_stats,spatial_stats};
+}});
+
+define({id: "3d8586f2", outputs: ["idFromName","getLayerId","getSourceId"], body: () => {
+// Utilità
+const idFromName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const getLayerId = (name) => `pt-${idFromName(name)}`;
+const getSourceId = (name) => `src-${idFromName(name)}`;
+return {idFromName,getLayerId,getSourceId};
+}});
+
+define({id: "cd7947f4", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
+// Inizializzazione mappa
+const protocol = new pmtiles.Protocol({
+  metadata: true
+});
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+const mapContainer = display(document.createElement("div"));
+mapContainer.style.cssText = "width: 100%; height: 800px; border-radius: 8px; overflow: hidden;";
+
+const map = new maplibregl.Map({
+  container: mapContainer,
+  zoom: 5,
+  center: [12.5, 42.5],
+  pitch: 0,
+  hash: true,
+  style: {
+    version: 8,
+    sources: {
+      osm: {
+        type: "raster",
+        tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "© OpenStreetMap contributors",
+        maxzoom: 19
+      }
+    },
+    layers: [{ id: "osm", type: "raster", source: "osm" }]
+  },
+  maxZoom: 18,
+  maxPitch: 85
+});
+
+map.addControl(new maplibregl.NavigationControl({
+  visualizePitch: true,
+  showZoom: true,
+  showCompass: true
+}));
+
+const mapLoaded = new Promise((resolve) => map.once("load", resolve));
+return {protocol,mapContainer,map,mapLoaded};
+}});
+
+define({id: "5a73a660", inputs: ["mapLoaded","getSourceId","getLayerId","map","tilesets"], outputs: ["addPointLayer"], body: async (mapLoaded,getSourceId,getLayerId,map,tilesets) => {
+// Caricamento layer
+async function addPointLayer(name, config) {
+  await mapLoaded;
+  
+  const sourceId = getSourceId(name);
+  const layerId = getLayerId(name);
+  const url = `pmtiles://${await config.file.url()}`;
+
+  if (!map.getSource(sourceId)) {
+    map.addSource(sourceId, { type: "vector", url });
+  }
+
+  if (!map.getLayer(layerId)) {
+    map.addLayer({
+      id: layerId,
+      type: "circle",
+      source: sourceId,
+      "source-layer": "layer0",
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-color": config.color,
+        "circle-radius": 4,
+        "circle-stroke-width": 0,
+        "circle-opacity": 0.9
+      },
+      layout: { visibility: "none" }
+    });
+  }
+}
+
+await Promise.all(
+  Object.entries(tilesets).map(([name, config]) => addPointLayer(name, config))
+);
+return {addPointLayer};
+}});
+
+define({id: "dc444dcf", outputs: ["groups","singleLayers"], body: () => {
+// Definizione gruppi (escluso Base che è singolo)
+const groups = {
+  "Variazioni 2025-10-10": [
+    "ANNCSU 2025-10-10 Rimossi",
+    "ANNCSU 2025-10-10 Spostati",
+    "ANNCSU 2025-10-10 Nuovi"
+  ],
+  "Variazioni 2025-11-04": [
+    "ANNCSU 2025-11-04 Rimossi",
+    "ANNCSU 2025-11-04 Spostati",
+    "ANNCSU 2025-11-04 Nuovi"
+  ],
+  "Variazioni 2025-12-02": [
+    "ANNCSU 2025-12-02 Rimossi",
+    "ANNCSU 2025-12-02 Spostati",
+    "ANNCSU 2025-12-02 Nuovi"
+  ]
+};
+
+// Layer singoli senza gruppo
+const singleLayers = ["ANNCSU 2025-09-03"];
+return {groups,singleLayers};
+}});
+
+define({id: "5835507e", inputs: ["tilesets","Inputs"], outputs: ["layerCheckboxes"], body: (tilesets,Inputs) => {
+// Checkbox per ogni layer usando Inputs.toggle
+const layerCheckboxes = Object.fromEntries(
+  Object.entries(tilesets).map(([layerName, config]) => [
+    layerName,
+    Inputs.toggle({
+      label: `${config.type}`,
+      value: false
+    })
+  ])
+);
+return {layerCheckboxes};
+}});
+
+define({id: "47a364ba", inputs: ["groups","Inputs"], outputs: ["groupCheckboxes"], body: (groups,Inputs) => {
+// Checkbox singola per ogni gruppo (toggle)
+const groupCheckboxes = Object.fromEntries(
+  Object.entries(groups).map(([groupName, layerNames]) => [
+    groupName,
+    Inputs.toggle({label: groupName, value: false})
+  ])
+);
+return {groupCheckboxes};
+}});
+
+define({id: "6d886fb8", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<style>
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.layer-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--layer-color, #ccc);
+  flex-shrink: 0;
+}
+</style>`
+))
+}});
+
+define({id: "a0fa4f82", inputs: ["display","html","singleLayers","tilesets","layerCheckboxes"], body: (display,html,singleLayers,tilesets,layerCheckboxes) => {
+// Layer singolo Base
+display(html`<div class="grid grid-cols-1">
+  ${singleLayers.map(layerName => {
+    const config = tilesets[layerName];
+    return html`<div class="card">
+      <div class="layer-item" style="--layer-color: ${config.color}">
+        ${layerCheckboxes[layerName]}
+      </div>
+    </div>`;
+  })}
+</div>`);
+}});
+
+define({id: "8557e00e", inputs: ["groups","display","html","groupCheckboxes","tilesets","layerCheckboxes"], body: (groups,display,html,groupCheckboxes,tilesets,layerCheckboxes) => {
+// Gruppi con sottogruppi
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  display(html`<div class="card">
+    <h3>${groupCheckboxes[groupName]}</h3>
+    <div class="grid grid-cols-3">
+      ${layerNames.map(layerName => {
+        const config = tilesets[layerName];
+        return html`<div class="card">
+          <div class="layer-item" style="--layer-color: ${config.color}">
+            ${layerCheckboxes[layerName]}
+          </div>
+        </div>`;
+      })}
+    </div>
+  </div>`);
+});
+}});
+
+define({id: "f4a3175c", inputs: ["tilesets","layerCheckboxes","Generators","getLayerId","map"], body: (tilesets,layerCheckboxes,Generators,getLayerId,map) => {
+// Aggiorna la visibilità dei layer sulla mappa quando cambiano
+Object.entries(tilesets).forEach(([layerName, config]) => {
+  const layerToggle = layerCheckboxes[layerName];
+  const view = Generators.input(layerToggle);
+
+  (async () => {
+    for await (const isVisible of view) {
+      const layerId = getLayerId(layerName);
+      if (map.getLayer(layerId)) {
+        map.setLayoutProperty(layerId, "visibility", isVisible ? "visible" : "none");
+      }
+    }
+  })();
+});
+}});
+
+define({id: "53892fa9", inputs: ["groups","groupCheckboxes","Generators","layerCheckboxes","Event"], body: (groups,groupCheckboxes,Generators,layerCheckboxes,Event) => {
+// Sincronizzazione: gruppo controlla i layer figli
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  const groupToggle = groupCheckboxes[groupName];
+  const groupValue = Generators.input(groupToggle);
+
+  (async () => {
+    for await (const isChecked of groupValue) {
+      // Quando il gruppo cambia, aggiorna i layer figli
+      layerNames.forEach(layerName => {
+        const layerToggle = layerCheckboxes[layerName];
+        const input = layerToggle.querySelector("input[type=checkbox]");
+        if (input) {
+          input.checked = isChecked;
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+      });
+    }
+  })();
+});
+}});
+
+define({id: "c6df9337", inputs: ["groups","layerCheckboxes","Generators","groupCheckboxes"], body: (groups,layerCheckboxes,Generators,groupCheckboxes) => {
+// Sincronizzazione inversa: layer figli controllano il gruppo
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  layerNames.forEach(layerName => {
+    const layerToggle = layerCheckboxes[layerName];
+    const layerValue = Generators.input(layerToggle);
+
+    (async () => {
+      for await (const isChecked of layerValue) {
+        // Quando un layer cambia, aggiorna lo stato del gruppo
+        const groupToggle = groupCheckboxes[groupName];
+        const groupInput = groupToggle.querySelector("input[type=checkbox]");
+
+        if (groupInput) {
+          // Se tutti i layer sono attivi, attiva il gruppo
+          // Se almeno uno è disattivo, disattiva il gruppo
+          const allChecked = layerNames.every(ln => {
+            const toggle = layerCheckboxes[ln];
+            const input = toggle.querySelector("input[type=checkbox]");
+            return input && input.checked;
+          });
+
+          groupInput.checked = allChecked;
+        }
+      }
+    })();
+  });
+});
+}});
+
+define({id: "e36ced2f", inputs: ["Plot","width","anncsu_stats","d3","display"], body: async (Plot,width,anncsu_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: "Andamento civici geolocalizzati su ANNCSU",
+  width,
+  marginLeft: 60,
+  marginBottom: 60,
+  marks: [
+    Plot.line(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: "total",
+      stroke: "steelblue",
+      strokeWidth: 3,
+      tip: true
+    }),
+    Plot.rectY(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: "new",
+      fill: "green",
+      interval: "2 days",
+      tip: true
+    }),
+    Plot.rectY(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: d => -d.missing,
+      fill: "red",
+      interval: "2 days",
+      tip: true
+    }),
+    Plot.ruleY([0])
+  ],
+  x: {
+    type: "time",
+    labelOffset: 40,
+    label: "Data"
+  },
+  y: {
+    grid: true,
+    label: "Valori",
+    tickFormat: d => d3.format(".1~s")(d).replace("G", "B")
+  },
+  color: {
+    legend: true,
+    domain: ["Totale", "Nuovi", "Rimossi"],
+    range: ["steelblue", "green", "red"]
+  }
+})
+
+))
+}});
+
+define({id: "510dd131", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.regioni.total.slice(0, 10), {
+  columns: ["regione", ...spatial_stats.date_columns],
+  header: {
+    regione: "Regione",
+    "2025-09-03": "09/03",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-09-03": d => d3.format(",")(d),
+    "2025-10-10": d => d3.format(",")(d),
+    "2025-11-04": d => d3.format(",")(d),
+    "2025-12-02": d => d3.format(",")(d)
+  }
+})
+))
+}});
+
+define({id: "0c95a19a", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.regioni.new.slice(0, 10), {
+  columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
+  header: {
+    regione: "Regione",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-10-10": d => d ? d3.format(",")(d) : "-",
+    "2025-11-04": d => d ? d3.format(",")(d) : "-",
+    "2025-12-02": d => d ? d3.format(",")(d) : "-"
+  }
+})
+))
+}});
+
+define({id: "a3652ff3", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.regioni.missing.slice(0, 10), {
+  columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
+  header: {
+    regione: "Regione",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-10-10": d => d ? d3.format(",")(d) : "-",
+    "2025-11-04": d => d ? d3.format(",")(d) : "-",
+    "2025-12-02": d => d ? d3.format(",")(d) : "-"
+  }
+})
+))
+}});
+
+define({id: "6797f3c9", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_region"], body: (view,Inputs,spatial_stats) => {
+const selected_region = view(Inputs.select(
+  spatial_stats.regioni.total.map(d => d.regione),
+  {label: "Seleziona regione", value: "Liguria"}
+));
+return {selected_region};
+}});
+
+define({id: "cde917a3", inputs: ["Plot","selected_region","width","spatial_stats","d3","display"], body: async (Plot,selected_region,width,spatial_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: `Variazioni ANNCSU in ${selected_region}`,
+  width,
+  marginLeft: 60,
+  marks: [
+    Plot.barY(
+      spatial_stats.date_columns
+        .filter(d => d !== "2025-09-03")
+        .flatMap(date => {
+          const new_count = spatial_stats.regioni.new.find(d => d.regione === selected_region)?.[date] || 0;
+          const missing_count = spatial_stats.regioni.missing.find(d => d.regione === selected_region)?.[date] || 0;
+          const moved_count = spatial_stats.regioni.moved.find(d => d.regione === selected_region)?.[date] || 0;
+
+          // Filtra solo i valori > 0 per evitare barre invisibili
+          const bars = [];
+          if (new_count > 0) bars.push({date, tipo: "Nuovi", count: new_count});
+          if (missing_count > 0) bars.push({date, tipo: "Rimossi", count: -missing_count});
+          if (moved_count > 0) bars.push({date, tipo: "Spostati", count: moved_count});
+          return bars;
+        }),
+      {
+        x: "date",
+        y: "count",
+        fill: "tipo",
+        tip: true,
+        dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+      }
+    ),
+    Plot.lineY(
+      spatial_stats.date_columns
+        .filter(d => d !== "2025-09-03")
+        .map(date => {
+          const region_data = spatial_stats.regioni.total.find(d => d.regione === selected_region);
+          return {date, total: region_data?.[date] || 0};
+        }),
+      {
+        x: "date",
+        y: "total",
+        stroke: "black",
+        strokeWidth: 2,
+        marker: "circle",
+        tip: true
+      }
+    ),
+    Plot.ruleY([0])
+  ],
+  x: {
+    label: "Data"
+  },
+  y: {
+    grid: true,
+    label: "Numero civici",
+    tickFormat: d => d3.format("~s")(d)
+  },
+  color: {
+    legend: true,
+    domain: ["Nuovi", "Rimossi", "Spostati"],
+    range: ["#0066ff", "#e60026", "#15a34a"]
+  }
+})
+))
+}});
+
+define({id: "f52ec21f", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.comuni.total.slice(0, 20), {
+  columns: ["comune", ...spatial_stats.date_columns],
+  header: {
+    comune: "Comune",
+    "2025-09-03": "09/03",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-09-03": d => d3.format(",")(d),
+    "2025-10-10": d => d3.format(",")(d),
+    "2025-11-04": d => d3.format(",")(d),
+    "2025-12-02": d => d3.format(",")(d)
+  }
+})
+))
+}});
+
+define({id: "119b87b9", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.comuni.new.slice(0, 20), {
+  columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
+  header: {
+    comune: "Comune",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-10-10": d => d ? d3.format(",")(d) : "-",
+    "2025-11-04": d => d ? d3.format(",")(d) : "-",
+    "2025-12-02": d => d ? d3.format(",")(d) : "-"
+  }
+})
+))
+}});
+
+define({id: "2afb3898", inputs: ["Inputs","spatial_stats","d3","display"], body: async (Inputs,spatial_stats,d3,display) => {
+display(await(
+Inputs.table(spatial_stats.comuni.missing.slice(0, 20), {
+  columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
+  header: {
+    comune: "Comune",
+    "2025-10-10": "10/10",
+    "2025-11-04": "11/04",
+    "2025-12-02": "12/02"
+  },
+  format: {
+    "2025-10-10": d => d ? d3.format(",")(d) : "-",
+    "2025-11-04": d => d ? d3.format(",")(d) : "-",
+    "2025-12-02": d => d ? d3.format(",")(d) : "-"
+  }
+})
+))
+}});
+
+define({id: "d6253c89", inputs: ["view","Inputs","spatial_stats"], outputs: ["filter_region"], body: (view,Inputs,spatial_stats) => {
+const filter_region = view(Inputs.select(
+  ["Tutte", ...spatial_stats.regioni.total.map(d => d.regione)],
+  {label: "Filtra per regione", value: "Tutte"}
+));
+return {filter_region};
+}});
+
+define({id: "de4d1041", inputs: ["filter_region","spatial_stats","view","Inputs"], outputs: ["filtered_comuni","selected_municipality"], body: (filter_region,spatial_stats,view,Inputs) => {
+// Per filtrare i comuni per regione, usiamo la proprietà regione presente nei dati
+const filtered_comuni = (filter_region === "Tutte"
+  ? spatial_stats.comuni.total.map(d => d.comune)
+  : spatial_stats.comuni.total.filter(d => d.regione === filter_region).map(d => d.comune))
+  .sort((a, b) => a.localeCompare(b, 'it'));
+
+const selected_municipality = view(Inputs.select(
+  filtered_comuni,
+  {label: "Seleziona comune", value: filtered_comuni[0]}
+));
+return {filtered_comuni,selected_municipality};
+}});
+
+define({id: "1b98b775", inputs: ["Plot","selected_municipality","width","spatial_stats","d3","display"], body: async (Plot,selected_municipality,width,spatial_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: `Variazioni ANNCSU a ${selected_municipality}`,
+  width,
+  marginLeft: 60,
+  marks: [
+    Plot.barY(
+      spatial_stats.date_columns
+        .filter(d => d !== "2025-09-03")
+        .flatMap(date => {
+          const new_count = spatial_stats.comuni.new.find(d => d.comune === selected_municipality)?.[date] || 0;
+          const missing_count = spatial_stats.comuni.missing.find(d => d.comune === selected_municipality)?.[date] || 0;
+          const moved_count = spatial_stats.comuni.moved.find(d => d.comune === selected_municipality)?.[date] || 0;
+
+          // Filtra solo i valori > 0 per evitare barre invisibili
+          const bars = [];
+          if (new_count > 0) bars.push({date, tipo: "Nuovi", count: new_count});
+          if (missing_count > 0) bars.push({date, tipo: "Rimossi", count: -missing_count});
+          if (moved_count > 0) bars.push({date, tipo: "Spostati", count: moved_count});
+          return bars;
+        }),
+      {
+        x: "date",
+        y: "count",
+        fill: "tipo",
+        tip: true,
+        dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+      }
+    ),
+    Plot.lineY(
+      spatial_stats.date_columns
+        .filter(d => d !== "2025-09-03")
+        .map(date => {
+          const municipality_data = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+          return {date, total: municipality_data?.[date] || 0};
+        }),
+      {
+        x: "date",
+        y: "total",
+        stroke: "black",
+        strokeWidth: 2,
+        marker: "circle",
+        tip: true
+      }
+    ),
+    Plot.ruleY([0])
+  ],
+  x: {
+    label: "Data"
+  },
+  y: {
+    grid: true,
+    label: "Numero civici",
+    tickFormat: d => d3.format("~s")(d)
+  },
+  color: {
+    legend: true,
+    domain: ["Nuovi", "Rimossi", "Spostati"],
+    range: ["#0066ff", "#e60026", "#15a34a"]
+  }
+})
+))
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#statistiche-regionali">Statistiche Regionali</a></li>
+<li class="observablehq-secondary-link"><a href="#statistiche-comunali">Statistiche Comunali</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
+<div class="observablehq observablehq--block"><!--:867f4daa:--></div>
+<div class="observablehq observablehq--block"><!--:d6b725af:--></div>
+<div class="observablehq observablehq--block"><!--:3d8586f2:--></div>
+<div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
+<div class="observablehq observablehq--block"><!--:5a73a660:--></div>
+<div class="observablehq observablehq--block"><!--:dc444dcf:--></div>
+<div class="observablehq observablehq--block"><!--:5835507e:--></div>
+<div class="observablehq observablehq--block"><!--:47a364ba:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d886fb8:--></div>
+<div class="observablehq observablehq--block"><!--:a0fa4f82:--></div>
+<div class="observablehq observablehq--block"><!--:8557e00e:--></div>
+<div class="observablehq observablehq--block"><!--:f4a3175c:--></div>
+<div class="observablehq observablehq--block"><!--:53892fa9:--></div>
+<div class="observablehq observablehq--block"><!--:c6df9337:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e36ced2f:--></div>
+<hr>
+<h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
+<h3 id="totale-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#totale-civici-per-regione">Totale Civici per Regione</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:510dd131:--></div>
+<h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0c95a19a:--></div>
+<h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a3652ff3:--></div>
+<h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
+<div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:cde917a3:--></div>
+<hr>
+<h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
+<h3 id="totale-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#totale-civici-per-comune">Totale Civici per Comune</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f52ec21f:--></div>
+<h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:119b87b9:--></div>
+<h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2afb3898:--></div>
+<h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
+<div class="observablehq observablehq--block"><!--:d6253c89:--></div>
+<div class="observablehq observablehq--block"><!--:de4d1041:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:1b98b775:--></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-09T13:23:25">Dec 9, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
