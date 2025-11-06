@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ANNCSU – Diff Tiles</title>
+
+<!-- PMTiles + MapLibre -->
+<link href="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.css" rel="stylesheet"/>
+<script src="https://unpkg.com/pmtiles@3/dist/pmtiles.js"></script>
+<script src="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.js"></script>
+
+<style>
+  html, body, #map { height: 100%; margin: 0; }
+  .control {
+    position: absolute; top: 10px; left: 10px; z-index: 10;
+    background: rgba(255,255,255,0.9); padding: 10px 12px; border-radius: 8px;
+    font: 14px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    max-width: 300px;
+  }
+  .control h3 { margin: 0 0 6px; font-size: 15px; }
+  .group { margin-top: 8px; padding-top: 6px; border-top: 1px solid #eee; }
+  .group label { display: block; margin: 4px 0; cursor: pointer; }
+  .legend {
+    position: absolute; bottom: 12px; left: 10px; z-index: 10;
+    background: rgba(255,255,255,0.9); padding: 8px 10px; border-radius: 8px;
+    font: 13px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .legend div { display: flex; align-items: center; margin: 2px 0; }
+  .swatch {
+    width: 12px; height: 12px; border-radius: 50%;
+    margin-right: 6px; border: 1px solid rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<!-- Pannello controlli -->
+<div class="control">
+  <h3>Layer ANNCSU</h3>
+
+  <label>
+    <input type="checkbox" id="chk-base" checked>
+    Base 2025-09-03 (nero)
+  </label>
+
+  <div class="group">
+    <label><strong>Diff 2025-09-03:2025-10-10</strong>
+      <input type="checkbox" id="grp-2025-10-10" checked style="float:right;">
+    </label>
+    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_missing" checked> Missing (rosso)</label>
+    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_moved"   checked> Moved (verde)</label>
+    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_new"     checked> New (blu)</label>
+  </div>
+
+  <div class="group">
+    <label><strong>Diff 2025-10-10:2025-11-04</strong>
+      <input type="checkbox" id="grp-2025-11-04" checked style="float:right;">
+    </label>
+    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_missing" checked> Missing (rosso)</label>
+    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_moved"   checked> Moved (verde)</label>
+    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_new"     checked> New (blu)</label>
+  </div>
+</div>
+
+<!-- Legenda rapida -->
+<div class="legend">
+  <div><span class="swatch" style="background:#000"></span>Base (2025-09-03)</div>
+  <div><span class="swatch" style="background:#e74c3c"></span>Missing</div>
+  <div><span class="swatch" style="background:#2ecc71"></span>Moved</div>
+  <div><span class="swatch" style="background:#3498db"></span>New</div>
+</div>
+
+<script>
+  // Abilita protocollo pmtiles:// per MapLibre
+  const protocol = new pmtiles.Protocol();
+  maplibregl.addProtocol("pmtiles", protocol.tile);
+
+  // URL dei PMTiles (stessa cartella dell'HTML)
+  const PM = {
+    base: "pmtiles://anncsu_2025-09-03.pmtiles",
+    m1010: "pmtiles://anncsu_2025-10-10_missing.pmtiles",
+    v1010: "pmtiles://anncsu_2025-10-10_moved.pmtiles",
+    n1010: "pmtiles://anncsu_2025-10-10_new.pmtiles",
+    m1104: "pmtiles://anncsu_2025-11-04_missing.pmtiles",
+    v1104: "pmtiles://anncsu_2025-11-04_moved.pmtiles",
+    n1104: "pmtiles://anncsu_2025-11-04_new.pmtiles"
+  };
+
+  // Crea mappa con sfondo Carto Positron (XYZ raster)
+  const map = new maplibregl.Map({
+    container: "map",
+    style: {
+      version: 8,
+      sources: {
+        "positron": {
+          type: "raster",
+          tiles: [
+            "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+            "https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+            "https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+            "https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          ],
+          tileSize: 256,
+          attribution:
+            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>. Data from ANNCSU'
+        }
+      },
+      layers: [
+        { id: "positron", type: "raster", source: "positron" }
+      ]
+    },
+    center: [12.5, 42.5],  // Italia
+    zoom: 6,
+    maxZoom: 22,
+    hash: true
+  });
+
+  // Aggiunge le sorgenti vettoriali PMTiles e i layer puntuali
+  map.on("load", () => {
+    // Sorgenti
+    map.addSource("src_base",   { type: "vector", url: PM.base   });
+    map.addSource("src_1010_m", { type: "vector", url: PM.m1010  });
+    map.addSource("src_1010_v", { type: "vector", url: PM.v1010  });
+    map.addSource("src_1010_n", { type: "vector", url: PM.n1010  });
+    map.addSource("src_1104_m", { type: "vector", url: PM.m1104  });
+    map.addSource("src_1104_v", { type: "vector", url: PM.v1104  });
+    map.addSource("src_1104_n", { type: "vector", url: PM.n1104  });
+
+    // Helper stile cerchi
+    const circlePaint = (color) => ({
+      "circle-color": color,
+      "circle-opacity": 0.75,
+      "circle-stroke-color": "white",
+      "circle-stroke-opacity": 0.6,
+      "circle-stroke-width": [
+        "interpolate", ["linear"], ["zoom"],
+        4, 0,
+        8, 0.25,
+        12, 0.5,
+        14, 0.75
+      ],
+      "circle-radius": [
+        "interpolate", ["linear"], ["zoom"],
+        4, 2.0,
+        8, 3.0,
+        12, 3.0,
+        14, 3.0
+      ]
+    });
+
+    // Layer (assumo source-layer "layer0" in tutti i PMTiles)
+    map.addLayer({ id: "l_base",         type: "circle", source: "src_base",   "source-layer": "layer0", paint: circlePaint("#000000") });
+    map.addLayer({ id: "l_1010_missing", type: "circle", source: "src_1010_m", "source-layer": "layer0", paint: circlePaint("#e74c3c") });
+    map.addLayer({ id: "l_1010_moved",   type: "circle", source: "src_1010_v", "source-layer": "layer0", paint: circlePaint("#2ecc71") });
+    map.addLayer({ id: "l_1010_new",     type: "circle", source: "src_1010_n", "source-layer": "layer0", paint: circlePaint("#3498db") });
+    map.addLayer({ id: "l_1104_missing", type: "circle", source: "src_1104_m", "source-layer": "layer0", paint: circlePaint("#e74c3c") });
+    map.addLayer({ id: "l_1104_moved",   type: "circle", source: "src_1104_v", "source-layer": "layer0", paint: circlePaint("#2ecc71") });
+    map.addLayer({ id: "l_1104_new",     type: "circle", source: "src_1104_n", "source-layer": "layer0", paint: circlePaint("#3498db") });
+
+    // Toggle: base
+    document.getElementById("chk-base").addEventListener("change", (e) => {
+      map.setLayoutProperty("l_base", "visibility", e.target.checked ? "visible" : "none");
+    });
+
+    // Toggle: gruppi (2025-10-10)
+    const grp1010 = document.getElementById("grp-2025-10-10");
+    const grp1010Members = ["l_1010_missing", "l_1010_moved", "l_1010_new"];
+    grp1010.addEventListener("change", (e) => {
+      const vis = e.target.checked ? "visible" : "none";
+      grp1010Members.forEach(id => map.setLayoutProperty(id, "visibility", vis));
+      document.querySelectorAll('.l-2025-10-10').forEach(cb => cb.checked = e.target.checked);
+    });
+    document.querySelectorAll('.l-2025-10-10').forEach(cb => {
+      cb.addEventListener("change", (e) => {
+        map.setLayoutProperty(e.target.dataset.layer, "visibility", e.target.checked ? "visible" : "none");
+        // aggiorna lo stato del gruppo (è checked se tutti i figli sono on)
+        const allOn = Array.from(document.querySelectorAll('.l-2025-10-10')).every(n => n.checked);
+        grp1010.checked = allOn;
+      });
+    });
+
+    // Toggle: gruppi (2025-11-04)
+    const grp1104 = document.getElementById("grp-2025-11-04");
+    const grp1104Members = ["l_1104_missing", "l_1104_moved", "l_1104_new"];
+    grp1104.addEventListener("change", (e) => {
+      const vis = e.target.checked ? "visible" : "none";
+      grp1104Members.forEach(id => map.setLayoutProperty(id, "visibility", vis));
+      document.querySelectorAll('.l-2025-11-04').forEach(cb => cb.checked = e.target.checked);
+    });
+    document.querySelectorAll('.l-2025-11-04').forEach(cb => {
+      cb.addEventListener("change", (e) => {
+        map.setLayoutProperty(e.target.dataset.layer, "visibility", e.target.checked ? "visible" : "none");
+        const allOn = Array.from(document.querySelectorAll('.l-2025-11-04')).every(n => n.checked);
+        grp1104.checked = allOn;
+      });
+    });
+
+    // Cursor a "pointer" sui punti
+    const allLayerIds = ["l_base","l_1010_missing","l_1010_moved","l_1010_new","l_1104_missing","l_1104_moved","l_1104_new"];
+    allLayerIds.forEach(id => {
+      map.on("mouseenter", id, () => map.getCanvas().style.cursor = "pointer");
+      map.on("mouseleave", id, () => map.getCanvas().style.cursor = "");
+    });
+
+    // Popup semplice su click (mostra attributi base)
+    allLayerIds.forEach(id => {
+      map.on("click", id, (e) => {
+        const f = e.features && e.features[0];
+        if (!f) return;
+        const props = f.properties || {};
+        const html = Object.keys(props).slice(0, 12).map(k =>
+          `<div><strong>${k}</strong>: ${String(props[k]).replace(/</g,'&lt;')}</div>`
+        ).join("");
+        new maplibregl.Popup({ maxWidth: "320px" })
+          .setLngLat(e.lngLat)
+          .setHTML(html || "<em>nessun attributo</em>")
+          .addTo(map);
+      });
+    });
+  });
+</script>
+</body>
+</html>
