@@ -1,227 +1,493 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ANNCSU – Diff Tiles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>ANNCSU Dashboard | ANNCSU Progress</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.2ebf0c42.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.12.0/40281f86.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.3.0/5b853975.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/fflate@0.8.2/e113a0e7.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
 
-<!-- PMTiles + MapLibre -->
-<script src="https://unpkg.com/pmtiles@3.0.5/dist/pmtiles.js"></script>
-<script src="https://unpkg.com/maplibre-gl@^5.11.0/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@^5.11.0/dist/maplibre-gl.css" rel="stylesheet" />
+import {define} from "./_observablehq/client.2ebf0c42.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
-<style>
-  html, body, #map { height: 100%; margin: 0; }
-  .control {
-    position: absolute; top: 10px; left: 10px; z-index: 10;
-    background: rgba(255,255,255,0.9); padding: 10px 12px; border-radius: 8px;
-    font: 14px/1.3 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    max-width: 300px;
+registerFile("./anncsu_stats.json", {"name":"./anncsu_stats.json","mimeType":"application/json","path":"./_file/anncsu_stats.572551a0.json","lastModified":1763468748509,"size":229});
+registerFile("./data/anncsu_2025-09-03.pmtiles", {"name":"./data/anncsu_2025-09-03.pmtiles","path":"./_file/data/anncsu_2025-09-03.4c7dadbd.pmtiles","lastModified":1764716567500,"size":68075864});
+registerFile("./data/anncsu_2025-10-10_missing.pmtiles", {"name":"./data/anncsu_2025-10-10_missing.pmtiles","path":"./_file/data/anncsu_2025-10-10_missing.ca50f918.pmtiles","lastModified":1764716567640,"size":80990});
+registerFile("./data/anncsu_2025-10-10_moved.pmtiles", {"name":"./data/anncsu_2025-10-10_moved.pmtiles","path":"./_file/data/anncsu_2025-10-10_moved.2aaaf20c.pmtiles","lastModified":1764716567869,"size":222626});
+registerFile("./data/anncsu_2025-10-10_new.pmtiles", {"name":"./data/anncsu_2025-10-10_new.pmtiles","path":"./_file/data/anncsu_2025-10-10_new.8b1d9f4d.pmtiles","lastModified":1764716569287,"size":2083929});
+registerFile("./data/anncsu_2025-11-04_missing.pmtiles", {"name":"./data/anncsu_2025-11-04_missing.pmtiles","path":"./_file/data/anncsu_2025-11-04_missing.9d4e4692.pmtiles","lastModified":1764716570866,"size":2933048});
+registerFile("./data/anncsu_2025-11-04_moved.pmtiles", {"name":"./data/anncsu_2025-11-04_moved.pmtiles","path":"./_file/data/anncsu_2025-11-04_moved.84d1a57c.pmtiles","lastModified":1764716571136,"size":313726});
+registerFile("./data/anncsu_2025-11-04_new.pmtiles", {"name":"./data/anncsu_2025-11-04_new.pmtiles","path":"./_file/data/anncsu_2025-11-04_new.6451b71f.pmtiles","lastModified":1764716575908,"size":6856583});
+registerFile("./data/anncsu_2025-12-02_missing.pmtiles", {"name":"./data/anncsu_2025-12-02_missing.pmtiles","path":"./_file/data/anncsu_2025-12-02_missing.b2c3facd.pmtiles","lastModified":1764716576051,"size":99979});
+registerFile("./data/anncsu_2025-12-02_moved.pmtiles", {"name":"./data/anncsu_2025-12-02_moved.pmtiles","path":"./_file/data/anncsu_2025-12-02_moved.3fbba4c2.pmtiles","lastModified":1764716578096,"size":3784868});
+registerFile("./data/anncsu_2025-12-02_new.pmtiles", {"name":"./data/anncsu_2025-12-02_new.pmtiles","path":"./_file/data/anncsu_2025-12-02_new.3ec93e4e.pmtiles","lastModified":1764716595525,"size":33868654});
+
+define({id: "867f4daa", outputs: ["maplibregl","pmtiles","Plot"], body: async () => {
+const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.12.0/40281f86.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
+
+return {maplibregl,pmtiles,Plot};
+}});
+
+define({id: "164b6213", inputs: ["FileAttachment"], outputs: ["tilesets","anncsu_stats"], body: (FileAttachment) => {
+// Configurazione tilesets
+const tilesets = {
+  "ANNCSU 2025-09-03": {
+    file: FileAttachment("./data/anncsu_2025-09-03.pmtiles"),
+    color: "#000000",
+    date: "2025-09-03",
+    type: "Base (2025-09-03)"
+  },
+  "ANNCSU 2025-10-10 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-10-10_missing.pmtiles"),
+    color: "#e60026",
+    date: "2025-10-10",
+    type: "Rimossi 2025-10-10"
+  },
+  "ANNCSU 2025-10-10 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-10-10_moved.pmtiles"),
+    color: "#15a34a",
+    date: "2025-10-10",
+    type: "Spostati 2025-10-10"
+  },
+  "ANNCSU 2025-10-10 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-10-10_new.pmtiles"),
+    color: "#0066ff",
+    date: "2025-10-10",
+    type: "Nuovi 2025-10-10"
+  },
+  "ANNCSU 2025-11-04 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-11-04_missing.pmtiles"),
+    color: "#e60026",
+    date: "2025-11-04",
+    type: "Rimossi 2025-11-04"
+  },
+  "ANNCSU 2025-11-04 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-11-04_moved.pmtiles"),
+    color: "#15a34a",
+    date: "2025-11-04",
+    type: "Spostati 2025-11-04"
+  },
+  "ANNCSU 2025-11-04 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-11-04_new.pmtiles"),
+    color: "#0066ff",
+    date: "2025-11-04",
+    type: "Nuovi 2025-11-04"
+  },
+  "ANNCSU 2025-12-02 Rimossi": {
+    file: FileAttachment("./data/anncsu_2025-12-02_missing.pmtiles"),
+    color: "#e60026",
+    date: "2025-12-02",
+    type: "Rimossi 2025-12-02"
+  },
+  "ANNCSU 2025-12-02 Spostati": {
+    file: FileAttachment("./data/anncsu_2025-12-02_moved.pmtiles"),
+    color: "#15a34a",
+    date: "2025-12-02",
+    type: "Spostati 2025-12-02"
+  },
+  "ANNCSU 2025-12-02 Nuovi": {
+    file: FileAttachment("./data/anncsu_2025-12-02_new.pmtiles"),
+    color: "#0066ff",
+    date: "2025-12-02",
+    type: "Nuovi 2025-12-02"
   }
-  .control h3 { margin: 0 0 6px; font-size: 15px; }
-  .group { margin-top: 8px; padding-top: 6px; border-top: 1px solid #eee; }
-  .group label { display: block; margin: 4px 0; cursor: pointer; }
-  .legend {
-    position: absolute; bottom: 12px; left: 10px; z-index: 10;
-    background: rgba(255,255,255,0.9); padding: 8px 10px; border-radius: 8px;
-    font: 13px system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+};
+
+const anncsu_stats=FileAttachment("./anncsu_stats.json").json();
+return {tilesets,anncsu_stats};
+}});
+
+define({id: "3d8586f2", outputs: ["idFromName","getLayerId","getSourceId"], body: () => {
+// Utilità
+const idFromName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const getLayerId = (name) => `pt-${idFromName(name)}`;
+const getSourceId = (name) => `src-${idFromName(name)}`;
+return {idFromName,getLayerId,getSourceId};
+}});
+
+define({id: "cd203d00", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
+// Inizializzazione mappa
+const protocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+const mapContainer = display(document.createElement("div"));
+mapContainer.style.cssText = "width: 100%; height: 800px; border-radius: 8px; overflow: hidden;";
+
+const map = new maplibregl.Map({
+  container: mapContainer,
+  zoom: 5,
+  center: [12.5, 42.5],
+  pitch: 0,
+  hash: true,
+  style: {
+    version: 8,
+    sources: {
+      osm: {
+        type: "raster",
+        tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "© OpenStreetMap contributors",
+        maxzoom: 19
+      }
+    },
+    layers: [{ id: "osm", type: "raster", source: "osm" }]
+  },
+  maxZoom: 18,
+  maxPitch: 85
+});
+
+map.addControl(new maplibregl.NavigationControl({
+  visualizePitch: true,
+  showZoom: true,
+  showCompass: true
+}));
+
+const mapLoaded = new Promise((resolve) => map.once("load", resolve));
+return {protocol,mapContainer,map,mapLoaded};
+}});
+
+define({id: "5a73a660", inputs: ["mapLoaded","getSourceId","getLayerId","map","tilesets"], outputs: ["addPointLayer"], body: async (mapLoaded,getSourceId,getLayerId,map,tilesets) => {
+// Caricamento layer
+async function addPointLayer(name, config) {
+  await mapLoaded;
+  
+  const sourceId = getSourceId(name);
+  const layerId = getLayerId(name);
+  const url = `pmtiles://${await config.file.url()}`;
+
+  if (!map.getSource(sourceId)) {
+    map.addSource(sourceId, { type: "vector", url });
   }
-  .legend div { display: flex; align-items: center; margin: 2px 0; }
-  .swatch {
-    width: 12px; height: 12px; border-radius: 50%;
-    margin-right: 6px; border: 1px solid rgba(0,0,0,0.2);
+
+  if (!map.getLayer(layerId)) {
+    map.addLayer({
+      id: layerId,
+      type: "circle",
+      source: sourceId,
+      "source-layer": "layer0",
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-color": config.color,
+        "circle-radius": 4,
+        "circle-stroke-width": 0,
+        "circle-opacity": 0.9
+      },
+      layout: { visibility: "none" }
+    });
   }
-</style>
+}
+
+await Promise.all(
+  Object.entries(tilesets).map(([name, config]) => addPointLayer(name, config))
+);
+return {addPointLayer};
+}});
+
+define({id: "dc444dcf", outputs: ["groups","singleLayers"], body: () => {
+// Definizione gruppi (escluso Base che è singolo)
+const groups = {
+  "Variazioni 2025-10-10": [
+    "ANNCSU 2025-10-10 Rimossi",
+    "ANNCSU 2025-10-10 Spostati",
+    "ANNCSU 2025-10-10 Nuovi"
+  ],
+  "Variazioni 2025-11-04": [
+    "ANNCSU 2025-11-04 Rimossi",
+    "ANNCSU 2025-11-04 Spostati",
+    "ANNCSU 2025-11-04 Nuovi"
+  ],
+  "Variazioni 2025-12-02": [
+    "ANNCSU 2025-12-02 Rimossi",
+    "ANNCSU 2025-12-02 Spostati",
+    "ANNCSU 2025-12-02 Nuovi"
+  ]
+};
+
+// Layer singoli senza gruppo
+const singleLayers = ["ANNCSU 2025-09-03"];
+return {groups,singleLayers};
+}});
+
+define({id: "5835507e", inputs: ["tilesets","Inputs"], outputs: ["layerCheckboxes"], body: (tilesets,Inputs) => {
+// Checkbox per ogni layer usando Inputs.toggle
+const layerCheckboxes = Object.fromEntries(
+  Object.entries(tilesets).map(([layerName, config]) => [
+    layerName,
+    Inputs.toggle({
+      label: `${config.type}`,
+      value: false
+    })
+  ])
+);
+return {layerCheckboxes};
+}});
+
+define({id: "47a364ba", inputs: ["groups","Inputs"], outputs: ["groupCheckboxes"], body: (groups,Inputs) => {
+// Checkbox singola per ogni gruppo (toggle)
+const groupCheckboxes = Object.fromEntries(
+  Object.entries(groups).map(([groupName, layerNames]) => [
+    groupName,
+    Inputs.toggle({label: groupName, value: false})
+  ])
+);
+return {groupCheckboxes};
+}});
+
+define({id: "6d886fb8", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<style>
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.layer-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--layer-color, #ccc);
+  flex-shrink: 0;
+}
+</style>`
+))
+}});
+
+define({id: "a0fa4f82", inputs: ["display","html","singleLayers","tilesets","layerCheckboxes"], body: (display,html,singleLayers,tilesets,layerCheckboxes) => {
+// Layer singolo Base
+display(html`<div class="grid grid-cols-1">
+  ${singleLayers.map(layerName => {
+    const config = tilesets[layerName];
+    return html`<div class="card">
+      <div class="layer-item" style="--layer-color: ${config.color}">
+        ${layerCheckboxes[layerName]}
+      </div>
+    </div>`;
+  })}
+</div>`);
+}});
+
+define({id: "8557e00e", inputs: ["groups","display","html","groupCheckboxes","tilesets","layerCheckboxes"], body: (groups,display,html,groupCheckboxes,tilesets,layerCheckboxes) => {
+// Gruppi con sottogruppi
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  display(html`<div class="card">
+    <h3>${groupCheckboxes[groupName]}</h3>
+    <div class="grid grid-cols-3">
+      ${layerNames.map(layerName => {
+        const config = tilesets[layerName];
+        return html`<div class="card">
+          <div class="layer-item" style="--layer-color: ${config.color}">
+            ${layerCheckboxes[layerName]}
+          </div>
+        </div>`;
+      })}
+    </div>
+  </div>`);
+});
+}});
+
+define({id: "f4a3175c", inputs: ["tilesets","layerCheckboxes","Generators","getLayerId","map"], body: (tilesets,layerCheckboxes,Generators,getLayerId,map) => {
+// Aggiorna la visibilità dei layer sulla mappa quando cambiano
+Object.entries(tilesets).forEach(([layerName, config]) => {
+  const layerToggle = layerCheckboxes[layerName];
+  const view = Generators.input(layerToggle);
+
+  (async () => {
+    for await (const isVisible of view) {
+      const layerId = getLayerId(layerName);
+      if (map.getLayer(layerId)) {
+        map.setLayoutProperty(layerId, "visibility", isVisible ? "visible" : "none");
+      }
+    }
+  })();
+});
+}});
+
+define({id: "53892fa9", inputs: ["groups","groupCheckboxes","Generators","layerCheckboxes","Event"], body: (groups,groupCheckboxes,Generators,layerCheckboxes,Event) => {
+// Sincronizzazione: gruppo controlla i layer figli
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  const groupToggle = groupCheckboxes[groupName];
+  const groupValue = Generators.input(groupToggle);
+
+  (async () => {
+    for await (const isChecked of groupValue) {
+      // Quando il gruppo cambia, aggiorna i layer figli
+      layerNames.forEach(layerName => {
+        const layerToggle = layerCheckboxes[layerName];
+        const input = layerToggle.querySelector("input[type=checkbox]");
+        if (input) {
+          input.checked = isChecked;
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+      });
+    }
+  })();
+});
+}});
+
+define({id: "c6df9337", inputs: ["groups","layerCheckboxes","Generators","groupCheckboxes"], body: (groups,layerCheckboxes,Generators,groupCheckboxes) => {
+// Sincronizzazione inversa: layer figli controllano il gruppo
+Object.entries(groups).forEach(([groupName, layerNames]) => {
+  layerNames.forEach(layerName => {
+    const layerToggle = layerCheckboxes[layerName];
+    const layerValue = Generators.input(layerToggle);
+
+    (async () => {
+      for await (const isChecked of layerValue) {
+        // Quando un layer cambia, aggiorna lo stato del gruppo
+        const groupToggle = groupCheckboxes[groupName];
+        const groupInput = groupToggle.querySelector("input[type=checkbox]");
+
+        if (groupInput) {
+          // Se tutti i layer sono attivi, attiva il gruppo
+          // Se almeno uno è disattivo, disattiva il gruppo
+          const allChecked = layerNames.every(ln => {
+            const toggle = layerCheckboxes[ln];
+            const input = toggle.querySelector("input[type=checkbox]");
+            return input && input.checked;
+          });
+
+          groupInput.checked = allChecked;
+        }
+      }
+    })();
+  });
+});
+}});
+
+define({id: "e5fb3735", inputs: ["Plot","anncsu_stats","d3","display"], body: async (Plot,anncsu_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: "Andamento civici geolocalizzati su ANNCSU",
+  marks: [
+    Plot.line(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: "total",
+      stroke: "steelblue",
+      strokeWidth: 3,
+      tip: true
+    }),
+    Plot.rectY(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: "new",
+      fill: "green",
+      interval: "2 days",
+      tip: true
+    }),
+    Plot.rectY(anncsu_stats, {
+      x: d => new Date(d.date),
+      y: d => -d.missing,
+      fill: "red",
+      interval: "2 days",
+      tip: true
+    }),
+    Plot.ruleY([0])
+  ],
+  x: {
+    type: "time",
+    labelOffset: 40,
+    label: "Data"
+  },
+  y: {
+    grid: true,
+    label: "Valori",
+    tickFormat: d => d3.format(".1~s")(d).replace("G", "B")
+  },
+  color: {
+    legend: true,
+    domain: ["Totale", "Nuovi", "Rimossi"],
+    range: ["steelblue", "green", "red"]
+  },
+  marginBottom: 60
+})
+
+))
+}});
+
+</script>
 </head>
 <body>
-<div id="map"></div>
-
-<!-- Pannello controlli -->
-<div class="control">
-  <h3>Layer ANNCSU</h3>
-
-  <label>
-    <input type="checkbox" id="chk-base" checked>
-    Base 2025-09-03 (nero)
-  </label>
-
-  <div class="group">
-    <label><strong>Diff 2025-09-03:2025-10-10</strong>
-      <input type="checkbox" id="grp-2025-10-10" checked style="float:right;">
-    </label>
-    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_missing" checked> Missing (rosso)</label>
-    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_moved"   checked> Moved (verde)</label>
-    <label><input type="checkbox" class="l-2025-10-10" data-layer="l_1010_new"     checked> New (blu)</label>
-  </div>
-
-  <div class="group">
-    <label><strong>Diff 2025-10-10:2025-11-04</strong>
-      <input type="checkbox" id="grp-2025-11-04" checked style="float:right;">
-    </label>
-    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_missing" checked> Missing (rosso)</label>
-    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_moved"   checked> Moved (verde)</label>
-    <label><input type="checkbox" class="l-2025-11-04" data-layer="l_1104_new"     checked> New (blu)</label>
-  </div>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
+<div class="observablehq observablehq--block"><!--:867f4daa:--></div>
+<div class="observablehq observablehq--block"><!--:164b6213:--></div>
+<div class="observablehq observablehq--block"><!--:3d8586f2:--></div>
+<div class="observablehq observablehq--block"><!--:cd203d00:--></div>
+<div class="observablehq observablehq--block"><!--:5a73a660:--></div>
+<div class="observablehq observablehq--block"><!--:dc444dcf:--></div>
+<div class="observablehq observablehq--block"><!--:5835507e:--></div>
+<div class="observablehq observablehq--block"><!--:47a364ba:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d886fb8:--></div>
+<div class="observablehq observablehq--block"><!--:a0fa4f82:--></div>
+<div class="observablehq observablehq--block"><!--:8557e00e:--></div>
+<div class="observablehq observablehq--block"><!--:f4a3175c:--></div>
+<div class="observablehq observablehq--block"><!--:53892fa9:--></div>
+<div class="observablehq observablehq--block"><!--:c6df9337:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e5fb3735:--></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-03T00:08:08">Dec 3, 2025</a>.</div>
+</footer>
 </div>
-
-<!-- Legenda rapida -->
-<div class="legend">
-  <div><span class="swatch" style="background:#000"></span>Base (2025-09-03)</div>
-  <div><span class="swatch" style="background:#e74c3c"></span>Missing</div>
-  <div><span class="swatch" style="background:#2ecc71"></span>Moved</div>
-  <div><span class="swatch" style="background:#3498db"></span>New</div>
-</div>
-
-<script>
-  // Abilita protocollo pmtiles:// per MapLibre
-  const protocol = new pmtiles.Protocol();
-  maplibregl.addProtocol("pmtiles", protocol.tile);
-
-  // URL dei PMTiles (stessa cartella dell'HTML)
-  const PM = {
-    base: "pmtiles://anncsu_2025-09-03.pmtiles",
-    m1010: "pmtiles://anncsu_2025-10-10_missing.pmtiles",
-    v1010: "pmtiles://anncsu_2025-10-10_moved.pmtiles",
-    n1010: "pmtiles://anncsu_2025-10-10_new.pmtiles",
-    m1104: "pmtiles://anncsu_2025-11-04_missing.pmtiles",
-    v1104: "pmtiles://anncsu_2025-11-04_moved.pmtiles",
-    n1104: "pmtiles://anncsu_2025-11-04_new.pmtiles"
-  };
-
-  // Crea mappa con sfondo Carto Positron (XYZ raster)
-  const map = new maplibregl.Map({
-    container: "map",
-    style: {
-      version: 8,
-      sources: {
-        "positron": {
-          type: "raster",
-          tiles: [
-            "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-            "https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-            "https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-            "https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          ],
-          tileSize: 256,
-          attribution:
-            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions">CARTO</a>. Data from ANNCSU'
-        }
-      },
-      layers: [
-        { id: "positron", type: "raster", source: "positron" }
-      ]
-    },
-    center: [12.5, 42.5],  // Italia
-    zoom: 6,
-    maxZoom: 22,
-    hash: true
-  });
-
-  // Aggiunge le sorgenti vettoriali PMTiles e i layer puntuali
-  map.on("load", () => {
-    // Sorgenti
-    map.addSource("src_base",   { type: "vector", url: PM.base   });
-    map.addSource("src_1010_m", { type: "vector", url: PM.m1010  });
-    map.addSource("src_1010_v", { type: "vector", url: PM.v1010  });
-    map.addSource("src_1010_n", { type: "vector", url: PM.n1010  });
-    map.addSource("src_1104_m", { type: "vector", url: PM.m1104  });
-    map.addSource("src_1104_v", { type: "vector", url: PM.v1104  });
-    map.addSource("src_1104_n", { type: "vector", url: PM.n1104  });
-
-    // Helper stile cerchi
-    const circlePaint = (color) => ({
-      "circle-color": color,
-      "circle-opacity": 0.75,
-      "circle-stroke-color": "white",
-      "circle-stroke-opacity": 0.6,
-      "circle-stroke-width": [
-        "interpolate", ["linear"], ["zoom"],
-        4, 0,
-        8, 0.25,
-        12, 0.5,
-        14, 0.75
-      ],
-      "circle-radius": [
-        "interpolate", ["linear"], ["zoom"],
-        4, 2.0,
-        8, 3.0,
-        12, 3.0,
-        14, 3.0
-      ]
-    });
-
-    // Layer (assumo source-layer "layer0" in tutti i PMTiles)
-    map.addLayer({ id: "l_base",         type: "circle", source: "src_base",   "source-layer": "layer0", paint: circlePaint("#000000") });
-    map.addLayer({ id: "l_1010_missing", type: "circle", source: "src_1010_m", "source-layer": "layer0", paint: circlePaint("#e74c3c") });
-    map.addLayer({ id: "l_1010_moved",   type: "circle", source: "src_1010_v", "source-layer": "layer0", paint: circlePaint("#2ecc71") });
-    map.addLayer({ id: "l_1010_new",     type: "circle", source: "src_1010_n", "source-layer": "layer0", paint: circlePaint("#3498db") });
-    map.addLayer({ id: "l_1104_missing", type: "circle", source: "src_1104_m", "source-layer": "layer0", paint: circlePaint("#e74c3c") });
-    map.addLayer({ id: "l_1104_moved",   type: "circle", source: "src_1104_v", "source-layer": "layer0", paint: circlePaint("#2ecc71") });
-    map.addLayer({ id: "l_1104_new",     type: "circle", source: "src_1104_n", "source-layer": "layer0", paint: circlePaint("#3498db") });
-
-    // Toggle: base
-    document.getElementById("chk-base").addEventListener("change", (e) => {
-      map.setLayoutProperty("l_base", "visibility", e.target.checked ? "visible" : "none");
-    });
-
-    // Toggle: gruppi (2025-10-10)
-    const grp1010 = document.getElementById("grp-2025-10-10");
-    const grp1010Members = ["l_1010_missing", "l_1010_moved", "l_1010_new"];
-    grp1010.addEventListener("change", (e) => {
-      const vis = e.target.checked ? "visible" : "none";
-      grp1010Members.forEach(id => map.setLayoutProperty(id, "visibility", vis));
-      document.querySelectorAll('.l-2025-10-10').forEach(cb => cb.checked = e.target.checked);
-    });
-    document.querySelectorAll('.l-2025-10-10').forEach(cb => {
-      cb.addEventListener("change", (e) => {
-        map.setLayoutProperty(e.target.dataset.layer, "visibility", e.target.checked ? "visible" : "none");
-        // aggiorna lo stato del gruppo (è checked se tutti i figli sono on)
-        const allOn = Array.from(document.querySelectorAll('.l-2025-10-10')).every(n => n.checked);
-        grp1010.checked = allOn;
-      });
-    });
-
-    // Toggle: gruppi (2025-11-04)
-    const grp1104 = document.getElementById("grp-2025-11-04");
-    const grp1104Members = ["l_1104_missing", "l_1104_moved", "l_1104_new"];
-    grp1104.addEventListener("change", (e) => {
-      const vis = e.target.checked ? "visible" : "none";
-      grp1104Members.forEach(id => map.setLayoutProperty(id, "visibility", vis));
-      document.querySelectorAll('.l-2025-11-04').forEach(cb => cb.checked = e.target.checked);
-    });
-    document.querySelectorAll('.l-2025-11-04').forEach(cb => {
-      cb.addEventListener("change", (e) => {
-        map.setLayoutProperty(e.target.dataset.layer, "visibility", e.target.checked ? "visible" : "none");
-        const allOn = Array.from(document.querySelectorAll('.l-2025-11-04')).every(n => n.checked);
-        grp1104.checked = allOn;
-      });
-    });
-
-    // Cursor a "pointer" sui punti
-    const allLayerIds = ["l_base","l_1010_missing","l_1010_moved","l_1010_new","l_1104_missing","l_1104_moved","l_1104_new"];
-    allLayerIds.forEach(id => {
-      map.on("mouseenter", id, () => map.getCanvas().style.cursor = "pointer");
-      map.on("mouseleave", id, () => map.getCanvas().style.cursor = "");
-    });
-
-    // Popup semplice su click (mostra attributi base)
-    allLayerIds.forEach(id => {
-      map.on("click", id, (e) => {
-        const f = e.features && e.features[0];
-        if (!f) return;
-        const props = f.properties || {};
-        const html = Object.keys(props).slice(0, 12).map(k =>
-          `<div><strong>${k}</strong>: ${String(props[k]).replace(/</g,'&lt;')}</div>`
-        ).join("");
-        new maplibregl.Popup({ maxWidth: "320px" })
-          .setLngLat(e.lngLat)
-          .setHTML(html || "<em>nessun attributo</em>")
-          .addTo(map);
-      });
-    });
-  });
-</script>
 </body>
 </html>
