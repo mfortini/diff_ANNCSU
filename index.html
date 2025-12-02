@@ -159,9 +159,11 @@ const getSourceId = (name) => `src-${idFromName(name)}`;
 return {idFromName,getLayerId,getSourceId};
 }});
 
-define({id: "cd203d00", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
+define({id: "cd7947f4", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
 // Inizializzazione mappa
-const protocol = new pmtiles.Protocol();
+const protocol = new pmtiles.Protocol({
+  metadata: true
+});
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
 const mapContainer = display(document.createElement("div"));
@@ -472,7 +474,7 @@ Plot.plot({
 <div class="observablehq observablehq--block"><!--:867f4daa:--></div>
 <div class="observablehq observablehq--block"><!--:a06ea24f:--></div>
 <div class="observablehq observablehq--block"><!--:3d8586f2:--></div>
-<div class="observablehq observablehq--block"><!--:cd203d00:--></div>
+<div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
 <div class="observablehq observablehq--block"><!--:5a73a660:--></div>
 <div class="observablehq observablehq--block"><!--:dc444dcf:--></div>
 <div class="observablehq observablehq--block"><!--:5835507e:--></div>
@@ -486,7 +488,7 @@ Plot.plot({
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e5fb3735:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-03T00:20:57">Dec 3, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-03T00:25:18">Dec 3, 2025</a>.</div>
 </footer>
 </div>
 </body>
