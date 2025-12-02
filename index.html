@@ -15,7 +15,7 @@
 <link rel="modulepreload" href="./_observablehq/client.2ebf0c42.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.12.0/40281f86.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.13.0/6a6517ff.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.3.0/5b853975.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
@@ -64,7 +64,6 @@
 import {define} from "./_observablehq/client.2ebf0c42.js";
 import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
-registerFile("./anncsu_stats.json", {"name":"./anncsu_stats.json","mimeType":"application/json","path":"./_file/anncsu_stats.572551a0.json","lastModified":1763468748509,"size":229});
 registerFile("./data/anncsu_2025-09-03.pmtiles", {"name":"./data/anncsu_2025-09-03.pmtiles","path":"./_file/data/anncsu_2025-09-03.4c7dadbd.pmtiles","lastModified":1764716567500,"size":68075864});
 registerFile("./data/anncsu_2025-10-10_missing.pmtiles", {"name":"./data/anncsu_2025-10-10_missing.pmtiles","path":"./_file/data/anncsu_2025-10-10_missing.ca50f918.pmtiles","lastModified":1764716567640,"size":80990});
 registerFile("./data/anncsu_2025-10-10_moved.pmtiles", {"name":"./data/anncsu_2025-10-10_moved.pmtiles","path":"./_file/data/anncsu_2025-10-10_moved.2aaaf20c.pmtiles","lastModified":1764716567869,"size":222626});
@@ -75,14 +74,15 @@ registerFile("./data/anncsu_2025-11-04_new.pmtiles", {"name":"./data/anncsu_2025
 registerFile("./data/anncsu_2025-12-02_missing.pmtiles", {"name":"./data/anncsu_2025-12-02_missing.pmtiles","path":"./_file/data/anncsu_2025-12-02_missing.b2c3facd.pmtiles","lastModified":1764716576051,"size":99979});
 registerFile("./data/anncsu_2025-12-02_moved.pmtiles", {"name":"./data/anncsu_2025-12-02_moved.pmtiles","path":"./_file/data/anncsu_2025-12-02_moved.3fbba4c2.pmtiles","lastModified":1764716578096,"size":3784868});
 registerFile("./data/anncsu_2025-12-02_new.pmtiles", {"name":"./data/anncsu_2025-12-02_new.pmtiles","path":"./_file/data/anncsu_2025-12-02_new.3ec93e4e.pmtiles","lastModified":1764716595525,"size":33868654});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.572551a0.json","lastModified":1764717588011,"size":229});
 
 define({id: "867f4daa", outputs: ["maplibregl","pmtiles","Plot"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.12.0/40281f86.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
+const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.13.0/6a6517ff.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
 
 return {maplibregl,pmtiles,Plot};
 }});
 
-define({id: "164b6213", inputs: ["FileAttachment"], outputs: ["tilesets","anncsu_stats"], body: (FileAttachment) => {
+define({id: "a06ea24f", inputs: ["FileAttachment"], outputs: ["tilesets","anncsu_stats"], body: (FileAttachment) => {
 // Configurazione tilesets
 const tilesets = {
   "ANNCSU 2025-09-03": {
@@ -147,7 +147,7 @@ const tilesets = {
   }
 };
 
-const anncsu_stats=FileAttachment("./anncsu_stats.json").json();
+const anncsu_stats=FileAttachment("./data/anncsu_stats.json").json();
 return {tilesets,anncsu_stats};
 }});
 
@@ -470,7 +470,7 @@ Plot.plot({
 <main id="observablehq-main" class="observablehq">
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
 <div class="observablehq observablehq--block"><!--:867f4daa:--></div>
-<div class="observablehq observablehq--block"><!--:164b6213:--></div>
+<div class="observablehq observablehq--block"><!--:a06ea24f:--></div>
 <div class="observablehq observablehq--block"><!--:3d8586f2:--></div>
 <div class="observablehq observablehq--block"><!--:cd203d00:--></div>
 <div class="observablehq observablehq--block"><!--:5a73a660:--></div>
@@ -486,7 +486,7 @@ Plot.plot({
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e5fb3735:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-03T00:08:08">Dec 3, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-03T00:20:57">Dec 3, 2025</a>.</div>
 </footer>
 </div>
 </body>
