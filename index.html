@@ -542,7 +542,7 @@ Plot.plot({
 ))
 }});
 
-define({id: "b97fda2b", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "035982fa", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -583,13 +583,19 @@ Inputs.table(
       "2025-12-02": d => displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`
+    },
+    sort: {
+      "2025-09-03": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "70b00b01", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "482aac5a", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -631,13 +637,18 @@ Inputs.table(
       "2025-12-02": d => d ? (displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
+    },
+    sort: {
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "f4225a89", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "3fbbe13c", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -679,6 +690,11 @@ Inputs.table(
       "2025-12-02": d => d ? (displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
+    },
+    sort: {
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
@@ -805,7 +821,7 @@ Plot.plot({
 ))
 }});
 
-define({id: "82dc3996", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "f449b4e0", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -846,13 +862,19 @@ Inputs.table(
       "2025-12-02": d => displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`
+    },
+    sort: {
+      "2025-09-03": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "d130b517", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "2c99cd3a", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -894,13 +916,18 @@ Inputs.table(
       "2025-12-02": d => d ? (displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
+    },
+    sort: {
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "3b992fe1", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "b968bf3f", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -942,6 +969,11 @@ Inputs.table(
       "2025-12-02": d => d ? (displayMode === "Percentuali"
         ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
         : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
+    },
+    sort: {
+      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
+      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
@@ -1119,29 +1151,29 @@ Plot.plot({
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
 <h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b97fda2b:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:035982fa:--></div>
 <h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:70b00b01:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:482aac5a:--></div>
 <h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f4225a89:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3fbbe13c:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
 <div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:348ec37c:--></div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
 <h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:82dc3996:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f449b4e0:--></div>
 <h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:d130b517:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2c99cd3a:--></div>
 <h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3b992fe1:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b968bf3f:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
 <div class="observablehq observablehq--block"><!--:d6253c89:--></div>
 <div class="observablehq observablehq--block"><!--:de4d1041:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b6e492fa:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-09T18:02:22">Dec 9, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-09T18:09:55">Dec 9, 2025</a>.</div>
 </footer>
 </div>
 </body>
