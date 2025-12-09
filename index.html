@@ -542,26 +542,25 @@ Plot.plot({
 ))
 }});
 
-define({id: "4cbc99b9", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "b97fda2b", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.regioni.total.map(row => {
-        const newRow = {regione: row.regione};
-        spatial_stats.date_columns.forEach(date => {
-          const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-          newRow[date] = {percent, absolute: row[date]};
-        });
-        return newRow;
-      }).sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN)
-    : spatial_stats.regioni.total.map(row => {
-        const newRow = {regione: row.regione};
-        spatial_stats.date_columns.forEach(date => {
-          const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-          newRow[date] = {absolute: row[date], percent};
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.regioni.total.map(row => {
+      const newRow = {regione: row.regione};
+      spatial_stats.date_columns.forEach(date => {
+        const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
+        newRow[date] = {absolute: row[date], percent};
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => b["2025-12-02"].absolute - a["2025-12-02"].absolute).slice(0, topN);
+    }
+  })(),
   {
     columns: ["regione", ...spatial_stats.date_columns],
     header: {
@@ -590,36 +589,30 @@ Inputs.table(
 ))
 }});
 
-define({id: "b849ad60", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "70b00b01", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.regioni.new.map(row => {
-        const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-        const newRow = {regione: row.regione};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (totalRow && totalRow.total_all && row[date]) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {percent, absolute: row[date]};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN)
-    : spatial_stats.regioni.new.map(row => {
-        const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-        const newRow = {regione: row.regione};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (row[date] && totalRow && totalRow.total_all) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {absolute: row[date], percent};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.regioni.new.map(row => {
+      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
+      const newRow = {regione: row.regione};
+      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
+        if (row[date] && totalRow && totalRow.total_all) {
+          const percent = (row[date] / totalRow.total_all) * 100;
+          newRow[date] = {absolute: row[date], percent};
+        } else {
+          newRow[date] = null;
+        }
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
+    }
+  })(),
   {
     columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
@@ -644,36 +637,30 @@ Inputs.table(
 ))
 }});
 
-define({id: "05293e9b", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "f4225a89", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.regioni.missing.map(row => {
-        const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-        const newRow = {regione: row.regione};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (totalRow && totalRow.total_all && row[date]) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {percent, absolute: row[date]};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN)
-    : spatial_stats.regioni.missing.map(row => {
-        const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-        const newRow = {regione: row.regione};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (row[date] && totalRow && totalRow.total_all) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {absolute: row[date], percent};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.regioni.missing.map(row => {
+      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
+      const newRow = {regione: row.regione};
+      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
+        if (row[date] && totalRow && totalRow.total_all) {
+          const percent = (row[date] / totalRow.total_all) * 100;
+          newRow[date] = {absolute: row[date], percent};
+        } else {
+          newRow[date] = null;
+        }
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
+    }
+  })(),
   {
     columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
@@ -818,26 +805,25 @@ Plot.plot({
 ))
 }});
 
-define({id: "744f4396", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "82dc3996", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.comuni.total.map(row => {
-        const newRow = {comune: row.comune};
-        spatial_stats.date_columns.forEach(date => {
-          const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-          newRow[date] = {percent, absolute: row[date]};
-        });
-        return newRow;
-      }).sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN)
-    : spatial_stats.comuni.total.map(row => {
-        const newRow = {comune: row.comune};
-        spatial_stats.date_columns.forEach(date => {
-          const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-          newRow[date] = {absolute: row[date], percent};
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.comuni.total.map(row => {
+      const newRow = {comune: row.comune};
+      spatial_stats.date_columns.forEach(date => {
+        const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
+        newRow[date] = {absolute: row[date], percent};
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => b["2025-12-02"].absolute - a["2025-12-02"].absolute).slice(0, topN);
+    }
+  })(),
   {
     columns: ["comune", ...spatial_stats.date_columns],
     header: {
@@ -866,36 +852,30 @@ Inputs.table(
 ))
 }});
 
-define({id: "ef3f7647", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "d130b517", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.comuni.new.map(row => {
-        const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-        const newRow = {comune: row.comune};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (totalRow && totalRow.total_all && row[date]) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {percent, absolute: row[date]};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN)
-    : spatial_stats.comuni.new.map(row => {
-        const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-        const newRow = {comune: row.comune};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (row[date] && totalRow && totalRow.total_all) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {absolute: row[date], percent};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.comuni.new.map(row => {
+      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
+      const newRow = {comune: row.comune};
+      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
+        if (row[date] && totalRow && totalRow.total_all) {
+          const percent = (row[date] / totalRow.total_all) * 100;
+          newRow[date] = {absolute: row[date], percent};
+        } else {
+          newRow[date] = null;
+        }
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
+    }
+  })(),
   {
     columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
@@ -920,36 +900,30 @@ Inputs.table(
 ))
 }});
 
-define({id: "f3c46986", inputs: ["Inputs","displayMode","spatial_stats","topN","d3","display"], body: async (Inputs,displayMode,spatial_stats,topN,d3,display) => {
+define({id: "3b992fe1", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
 display(await(
 Inputs.table(
-  displayMode === "Percentuali"
-    ? spatial_stats.comuni.missing.map(row => {
-        const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-        const newRow = {comune: row.comune};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (totalRow && totalRow.total_all && row[date]) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {percent, absolute: row[date]};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN)
-    : spatial_stats.comuni.missing.map(row => {
-        const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-        const newRow = {comune: row.comune};
-        ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-          if (row[date] && totalRow && totalRow.total_all) {
-            const percent = (row[date] / totalRow.total_all) * 100;
-            newRow[date] = {absolute: row[date], percent};
-          } else {
-            newRow[date] = null;
-          }
-        });
-        return newRow;
-      }).slice(0, topN),
+  (() => {
+    const rows = spatial_stats.comuni.missing.map(row => {
+      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
+      const newRow = {comune: row.comune};
+      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
+        if (row[date] && totalRow && totalRow.total_all) {
+          const percent = (row[date] / totalRow.total_all) * 100;
+          newRow[date] = {absolute: row[date], percent};
+        } else {
+          newRow[date] = null;
+        }
+      });
+      return newRow;
+    });
+
+    if (displayMode === "Percentuali") {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
+    } else {
+      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
+    }
+  })(),
   {
     columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
@@ -1145,29 +1119,29 @@ Plot.plot({
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
 <h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4cbc99b9:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b97fda2b:--></div>
 <h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b849ad60:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:70b00b01:--></div>
 <h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:05293e9b:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f4225a89:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
 <div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:348ec37c:--></div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
 <h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:744f4396:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:82dc3996:--></div>
 <h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ef3f7647:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:d130b517:--></div>
 <h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f3c46986:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3b992fe1:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
 <div class="observablehq observablehq--block"><!--:d6253c89:--></div>
 <div class="observablehq observablehq--block"><!--:de4d1041:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b6e492fa:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-09T17:32:17">Dec 9, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-09T18:02:22">Dec 9, 2025</a>.</div>
 </footer>
 </div>
 </body>
