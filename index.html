@@ -74,8 +74,8 @@ registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2
 registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.5cacc980.gz","lastModified":1765280888430,"size":100751});
 registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.07c7ee88.gz","lastModified":1765280888430,"size":3783784});
 registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.64dc85b3.gz","lastModified":1765280888430,"size":33887319});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.b5689194.json","lastModified":1765388473350,"size":531757});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765388471122,"size":477});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.f4f59db8.json","lastModified":1765453572007,"size":1859352});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765453569923,"size":477});
 
 define({id: "867f4daa", outputs: ["maplibregl","pmtiles","Plot"], body: async () => {
 const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.14.0/bf489a1e.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
@@ -83,7 +83,7 @@ const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm
 return {maplibregl,pmtiles,Plot};
 }});
 
-define({id: "d6b725af", inputs: ["FileAttachment"], outputs: ["tilesets","anncsu_stats","spatial_stats"], body: (FileAttachment) => {
+define({id: "a28d0326", inputs: ["FileAttachment","d3"], outputs: ["tilesets","anncsu_stats","spatial_stats","idFromName","getLayerId","getSourceId","SmartValue","calculatePercentageChange","formatValue"], body: async (FileAttachment,d3) => {
 // Configurazione tilesets
 const tilesets = {
   "ANNCSU 2025-09-03": {
@@ -148,16 +148,23 @@ const tilesets = {
   }
 };
 
-const anncsu_stats=FileAttachment("./data/anncsu_stats.json").json();
-const spatial_stats=FileAttachment("./data/anncsu_spatial_stats.json").json();
-return {tilesets,anncsu_stats,spatial_stats};
-}});
+const anncsu_stats = await FileAttachment("./data/anncsu_stats.json").json();
+const spatial_stats = await FileAttachment("./data/anncsu_spatial_stats.json").json();
 
-define({id: "5cea42e0", inputs: ["d3"], outputs: ["idFromName","getLayerId","getSourceId","calculatePercentageChange","formatValue"], body: (d3) => {
 // Utilità
 const idFromName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 const getLayerId = (name) => `pt-${idFromName(name)}`;
 const getSourceId = (name) => `src-${idFromName(name)}`;
+
+class SmartValue extends Number {
+  constructor(value, label) {
+    super(value);
+    this.label = label;
+  }
+  toString() { return this.label; }
+}
+
+
 
 // Funzioni per calcolare le percentuali
 function calculatePercentageChange(current, previous) {
@@ -172,7 +179,7 @@ function formatValue(value, mode, isPercentage = false) {
   }
   return d3.format(",")(value);
 }
-return {idFromName,getLayerId,getSourceId,calculatePercentageChange,formatValue};
+return {tilesets,anncsu_stats,spatial_stats,idFromName,getLayerId,getSourceId,SmartValue,calculatePercentageChange,formatValue};
 }});
 
 define({id: "cd7947f4", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
@@ -437,15 +444,6 @@ const displayMode = view(Inputs.radio(
 return {displayMode};
 }});
 
-define({id: "b470140f", inputs: ["view","Inputs"], outputs: ["topN"], body: (view,Inputs) => {
-// Selettore per numero di elementi nelle tabelle
-const topN = view(Inputs.radio(
-  [20, 50, 100],
-  {label: "Elementi da mostrare nelle tabelle", value: 20}
-));
-return {topN};
-}});
-
 define({id: "49c6d4df", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
 display(await(
 Plot.plot({
@@ -542,82 +540,88 @@ Plot.plot({
 ))
 }});
 
-define({id: "035982fa", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "517a02d8", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.regioni.total.map(row => {
-      const newRow = {regione: row.regione};
-      spatial_stats.date_columns.forEach(date => {
-        const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-        newRow[date] = {absolute: row[date], percent};
-      });
-      return newRow;
+      const absolute_0903 = row["2025-09-03"] || 0;
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_0903 = row.total_all ? (absolute_0903 / row.total_all) * 100 : 0;
+      const percent_1010 = row.total_all ? (absolute_1010 / row.total_all) * 100 : 0;
+      const percent_1104 = row.total_all ? (absolute_1104 / row.total_all) * 100 : 0;
+      const percent_1202 = row.total_all ? (absolute_1202 / row.total_all) * 100 : 0;
+
+      return {
+        regione: row.regione,
+        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
+          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
+        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
+        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
+        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`)
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => b["2025-12-02"].absolute - a["2025-12-02"].absolute).slice(0, topN);
-    }
+    return rows.sort((a, b) => b["2025-12-02"] - a["2025-12-02"]);
   })(),
   {
-    columns: ["regione", ...spatial_stats.date_columns],
+    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
       regione: "Regione",
       "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-09-03": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-10-10": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-11-04": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-12-02": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`
-    },
-    sort: {
-      "2025-09-03": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "482aac5a", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "5fdf4eb3", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.regioni.new.map(row => {
       const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-      const newRow = {regione: row.regione};
-      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-        if (row[date] && totalRow && totalRow.total_all) {
-          const percent = (row[date] / totalRow.total_all) * 100;
-          newRow[date] = {absolute: row[date], percent};
-        } else {
-          newRow[date] = null;
-        }
-      });
-      return newRow;
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_1010 = (absolute_1010 && totalRow?.total_all) ? (absolute_1010 / totalRow.total_all) * 100 : 0;
+      const percent_1104 = (absolute_1104 && totalRow?.total_all) ? (absolute_1104 / totalRow.total_all) * 100 : 0;
+      const percent_1202 = (absolute_1202 && totalRow?.total_all) ? (absolute_1202 / totalRow.total_all) * 100 : 0;
+
+      return {
+        regione: row.regione,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
-    }
+    return rows.sort((a, b) => {
+      const valA = a["2025-12-02"] === "-" ? 0 : a["2025-12-02"].valueOf();
+      const valB = b["2025-12-02"] === "-" ? 0 : b["2025-12-02"].valueOf();
+      return valB - valA;
+    });
   })(),
   {
     columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
@@ -626,51 +630,46 @@ Inputs.table(
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-10-10": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-11-04": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-12-02": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
-    },
-    sort: {
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "3fbbe13c", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "a6f53a14", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.regioni.missing.map(row => {
       const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-      const newRow = {regione: row.regione};
-      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-        if (row[date] && totalRow && totalRow.total_all) {
-          const percent = (row[date] / totalRow.total_all) * 100;
-          newRow[date] = {absolute: row[date], percent};
-        } else {
-          newRow[date] = null;
-        }
-      });
-      return newRow;
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_1010 = (absolute_1010 && totalRow?.total_all) ? (absolute_1010 / totalRow.total_all) * 100 : 0;
+      const percent_1104 = (absolute_1104 && totalRow?.total_all) ? (absolute_1104 / totalRow.total_all) * 100 : 0;
+      const percent_1202 = (absolute_1202 && totalRow?.total_all) ? (absolute_1202 / totalRow.total_all) * 100 : 0;
+
+      return {
+        regione: row.regione,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
-    }
+    return rows.sort((a, b) => {
+      const valA = a["2025-12-02"] === "-" ? 0 : a["2025-12-02"].valueOf();
+      const valB = b["2025-12-02"] === "-" ? 0 : b["2025-12-02"].valueOf();
+      return valB - valA;
+    });
   })(),
   {
     columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
@@ -679,22 +678,6 @@ Inputs.table(
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-10-10": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-11-04": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-12-02": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
-    },
-    sort: {
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
@@ -821,82 +804,88 @@ Plot.plot({
 ))
 }});
 
-define({id: "f449b4e0", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "c0e654f1", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.comuni.total.map(row => {
-      const newRow = {comune: row.comune};
-      spatial_stats.date_columns.forEach(date => {
-        const percent = row.total_all ? (row[date] / row.total_all) * 100 : 0;
-        newRow[date] = {absolute: row[date], percent};
-      });
-      return newRow;
+      const absolute_0903 = row["2025-09-03"] || 0;
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_0903 = row.total_all ? (absolute_0903 / row.total_all) * 100 : 0;
+      const percent_1010 = row.total_all ? (absolute_1010 / row.total_all) * 100 : 0;
+      const percent_1104 = row.total_all ? (absolute_1104 / row.total_all) * 100 : 0;
+      const percent_1202 = row.total_all ? (absolute_1202 / row.total_all) * 100 : 0;
+
+      return {
+        comune: row.comune,
+        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
+          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
+        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
+        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
+        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`)
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => b["2025-12-02"].percent - a["2025-12-02"].percent).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => b["2025-12-02"].absolute - a["2025-12-02"].absolute).slice(0, topN);
-    }
+    return rows.sort((a, b) => b["2025-12-02"] - a["2025-12-02"]);
   })(),
   {
-    columns: ["comune", ...spatial_stats.date_columns],
+    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02"],
     header: {
       comune: "Comune",
       "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-09-03": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-10-10": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-11-04": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`,
-      "2025-12-02": d => displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`
-    },
-    sort: {
-      "2025-09-03": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "2c99cd3a", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "9c3b472a", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.comuni.new.map(row => {
       const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-      const newRow = {comune: row.comune};
-      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-        if (row[date] && totalRow && totalRow.total_all) {
-          const percent = (row[date] / totalRow.total_all) * 100;
-          newRow[date] = {absolute: row[date], percent};
-        } else {
-          newRow[date] = null;
-        }
-      });
-      return newRow;
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_1010 = (absolute_1010 && totalRow?.total_all) ? (absolute_1010 / totalRow.total_all) * 100 : 0;
+      const percent_1104 = (absolute_1104 && totalRow?.total_all) ? (absolute_1104 / totalRow.total_all) * 100 : 0;
+      const percent_1202 = (absolute_1202 && totalRow?.total_all) ? (absolute_1202 / totalRow.total_all) * 100 : 0;
+
+      return {
+        comune: row.comune,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
-    }
+    return rows.sort((a, b) => {
+      const valA = a["2025-12-02"].valueOf();
+      const valB = b["2025-12-02"].valueOf();
+      return valB - valA;
+    });
   })(),
   {
     columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
@@ -905,51 +894,46 @@ Inputs.table(
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-10-10": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-11-04": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-12-02": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
-    },
-    sort: {
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "b968bf3f", inputs: ["Inputs","spatial_stats","displayMode","topN","d3","display"], body: async (Inputs,spatial_stats,displayMode,topN,d3,display) => {
+define({id: "5b69ee78", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
     const rows = spatial_stats.comuni.missing.map(row => {
       const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-      const newRow = {comune: row.comune};
-      ["2025-10-10", "2025-11-04", "2025-12-02"].forEach(date => {
-        if (row[date] && totalRow && totalRow.total_all) {
-          const percent = (row[date] / totalRow.total_all) * 100;
-          newRow[date] = {absolute: row[date], percent};
-        } else {
-          newRow[date] = null;
-        }
-      });
-      return newRow;
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+
+      const percent_1010 = (absolute_1010 && totalRow?.total_all) ? (absolute_1010 / totalRow.total_all) * 100 : 0;
+      const percent_1104 = (absolute_1104 && totalRow?.total_all) ? (absolute_1104 / totalRow.total_all) * 100 : 0;
+      const percent_1202 = (absolute_1202 && totalRow?.total_all) ? (absolute_1202 / totalRow.total_all) * 100 : 0;
+
+      return {
+        comune: row.comune,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+      };
     });
 
-    if (displayMode === "Percentuali") {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.percent) || 0) - ((a["2025-12-02"]?.percent) || 0)).slice(0, topN);
-    } else {
-      return rows.sort((a, b) => ((b["2025-12-02"]?.absolute) || 0) - ((a["2025-12-02"]?.absolute) || 0)).slice(0, topN);
-    }
+    return rows.sort((a, b) => {
+      const valA = a["2025-12-02"].valueOf();
+      const valB = b["2025-12-02"].valueOf();
+      return valB - valA;
+    });
   })(),
   {
     columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
@@ -958,41 +942,25 @@ Inputs.table(
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02"
-    },
-    format: {
-      "2025-10-10": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-11-04": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-",
-      "2025-12-02": d => d ? (displayMode === "Percentuali"
-        ? `${d3.format(".2f")(d.percent)}% (${d3.format(",")(d.absolute)})`
-        : `${d3.format(",")(d.absolute)} (${d3.format(".2f")(d.percent)}%)`) : "-"
-    },
-    sort: {
-      "2025-10-10": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-11-04": displayMode === "Percentuali" ? "percent" : "absolute",
-      "2025-12-02": displayMode === "Percentuali" ? "percent" : "absolute"
     }
   }
 )
 ))
 }});
 
-define({id: "d6253c89", inputs: ["view","Inputs","spatial_stats"], outputs: ["filter_region"], body: (view,Inputs,spatial_stats) => {
+define({id: "fa073e0d", inputs: ["view","Inputs","spatial_stats"], outputs: ["filter_region"], body: (view,Inputs,spatial_stats) => {
 const filter_region = view(Inputs.select(
-  ["Tutte", ...spatial_stats.regioni.total.map(d => d.regione)],
-  {label: "Filtra per regione", value: "Tutte"}
+  spatial_stats.regioni.total.map(d => d.regione),
+  {label: "Filtra per regione", value: "Liguria"}
 ));
 return {filter_region};
 }});
 
-define({id: "de4d1041", inputs: ["filter_region","spatial_stats","view","Inputs"], outputs: ["filtered_comuni","selected_municipality"], body: (filter_region,spatial_stats,view,Inputs) => {
+define({id: "2ef2300c", inputs: ["spatial_stats","filter_region","view","Inputs"], outputs: ["filtered_comuni","selected_municipality"], body: (spatial_stats,filter_region,view,Inputs) => {
 // Per filtrare i comuni per regione, usiamo la proprietà regione presente nei dati
-const filtered_comuni = (filter_region === "Tutte"
-  ? spatial_stats.comuni.total.map(d => d.comune)
-  : spatial_stats.comuni.total.filter(d => d.regione === filter_region).map(d => d.comune))
+const filtered_comuni = spatial_stats.comuni.total
+  .filter(d => d.regione === filter_region)
+  .map(d => d.comune)
   .sort((a, b) => a.localeCompare(b, 'it'));
 
 const selected_municipality = view(Inputs.select(
@@ -1132,8 +1100,7 @@ Plot.plot({
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
 <p>Analisi dell'evoluzione di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
 <div class="observablehq observablehq--block"><!--:867f4daa:--></div>
-<div class="observablehq observablehq--block"><!--:d6b725af:--></div>
-<div class="observablehq observablehq--block"><!--:5cea42e0:--></div>
+<div class="observablehq observablehq--block"><!--:a28d0326:--></div>
 <div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
 <div class="observablehq observablehq--block"><!--:5a73a660:--></div>
 <div class="observablehq observablehq--block"><!--:dc444dcf:--></div>
@@ -1147,34 +1114,33 @@ Plot.plot({
 <div class="observablehq observablehq--block"><!--:c6df9337:--></div>
 <h2 id="andamento-civici-geolocalizzati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-geolocalizzati">Andamento civici geolocalizzati</a></h2>
 <div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
-<div class="observablehq observablehq--block"><!--:b470140f:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:49c6d4df:--></div>
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
 <h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:035982fa:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:517a02d8:--></div>
 <h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:482aac5a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5fdf4eb3:--></div>
 <h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3fbbe13c:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a6f53a14:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
 <div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:348ec37c:--></div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
 <h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f449b4e0:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c0e654f1:--></div>
 <h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2c99cd3a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9c3b472a:--></div>
 <h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b968bf3f:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5b69ee78:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
-<div class="observablehq observablehq--block"><!--:d6253c89:--></div>
-<div class="observablehq observablehq--block"><!--:de4d1041:--></div>
+<div class="observablehq observablehq--block"><!--:fa073e0d:--></div>
+<div class="observablehq observablehq--block"><!--:2ef2300c:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b6e492fa:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-10T18:47:02">Dec 10, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-11T12:46:01">Dec 11, 2025</a>.</div>
 </footer>
 </div>
 </body>
