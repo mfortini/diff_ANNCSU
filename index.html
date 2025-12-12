@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.33da7c34.js">
+<link rel="modulepreload" href="./_observablehq/client.6d4b40e3.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
 <link rel="modulepreload" href="./_npm/maplibre-gl@5.14.0/bf489a1e.js">
@@ -61,7 +61,7 @@
 <link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
 <script type="module">
 
-import {define} from "./_observablehq/client.33da7c34.js";
+import {define} from "./_observablehq/client.6d4b40e3.js";
 import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
 registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.200f7e52.gz","lastModified":1765280888430,"size":69670945});
@@ -74,13 +74,194 @@ registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2
 registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.5cacc980.gz","lastModified":1765280888430,"size":100751});
 registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.07c7ee88.gz","lastModified":1765280888430,"size":3783784});
 registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.64dc85b3.gz","lastModified":1765280888430,"size":33887319});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.ff493e5e.json","lastModified":1765478055484,"size":2678727});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765478053070,"size":477});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.99c4a9d0.json","lastModified":1765531992387,"size":2678733});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765531989395,"size":477});
 
-define({id: "867f4daa", outputs: ["maplibregl","pmtiles","Plot"], body: async () => {
+define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />`
+))
+}});
+
+define({id: "4bcc7d2b", inputs: ["Event"], outputs: ["maplibregl","pmtiles","Plot","LayerControl"], body: async (Event) => {
 const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.14.0/bf489a1e.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
 
-return {maplibregl,pmtiles,Plot};
+// Classe per controllo layer personalizzato
+class LayerControl {
+  constructor(layerGroups) {
+    this._layerGroups = layerGroups;
+  }
+
+  onAdd(map) {
+    this._map = map;
+    this._container = document.createElement('div');
+    this._container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
+
+    const wrapper = document.createElement('div');
+    wrapper.style.backgroundColor = 'white';
+    wrapper.style.padding = '10px';
+    wrapper.style.maxHeight = '400px';
+    wrapper.style.overflowY = 'auto';
+    wrapper.style.minWidth = '200px';
+
+    // Aggiungi ogni gruppo di layer
+    this._layerGroups.forEach((group, idx) => {
+      if (idx > 0) {
+        const separator = document.createElement('hr');
+        separator.style.margin = '10px 0';
+        separator.style.border = 'none';
+        separator.style.borderTop = '1px solid #ddd';
+        wrapper.appendChild(separator);
+      }
+
+      if (group.title) {
+        // Crea checkbox per il gruppo (se ha più di un layer)
+        if (group.layers.length > 1) {
+          const groupToggle = this._createGroupToggle(group);
+          wrapper.appendChild(groupToggle);
+        } else {
+          // Se ha un solo layer, mostra solo il titolo
+          const title = document.createElement('div');
+          title.style.fontWeight = 'bold';
+          title.style.marginBottom = '5px';
+          title.style.fontSize = '13px';
+          title.textContent = group.title;
+          wrapper.appendChild(title);
+        }
+      }
+
+      // Container per i layer del gruppo
+      const layersContainer = document.createElement('div');
+      layersContainer.style.paddingLeft = group.layers.length > 1 ? '20px' : '0';
+
+      group.layers.forEach(({name, layerId, color, visible}) => {
+        const layerDiv = this._createLayerToggle(name, layerId, color, visible, group);
+        layersContainer.appendChild(layerDiv);
+      });
+
+      wrapper.appendChild(layersContainer);
+    });
+
+    this._container.appendChild(wrapper);
+    return this._container;
+  }
+
+  _createGroupToggle(group) {
+    const div = document.createElement('div');
+    div.style.display = 'flex';
+    div.style.alignItems = 'center';
+    div.style.gap = '8px';
+    div.style.padding = '4px 0';
+    div.style.cursor = 'pointer';
+    div.style.fontWeight = 'bold';
+    div.style.fontSize = '13px';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = false;
+    checkbox.id = `group-ctrl-${group.title.replace(/\s+/g, '-')}`;
+
+    const label = document.createElement('label');
+    label.htmlFor = checkbox.id;
+    label.textContent = group.title;
+    label.style.cursor = 'pointer';
+    label.style.flex = '1';
+
+    checkbox.addEventListener('click', () => {
+      // Se è indeterminate, il click lo rende checked
+      // Se è checked, il click lo rende unchecked
+      // Se è unchecked, il click lo rende checked
+      const newState = checkbox.indeterminate ? true : checkbox.checked;
+      checkbox.indeterminate = false;
+
+      group.layers.forEach(({layerId}) => {
+        const layerCheckbox = document.getElementById(`layer-ctrl-${layerId}`);
+        if (layerCheckbox) {
+          layerCheckbox.checked = newState;
+          layerCheckbox.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+
+    // Salva il riferimento al checkbox del gruppo
+    group._groupCheckbox = checkbox;
+
+    div.appendChild(checkbox);
+    div.appendChild(label);
+
+    return div;
+  }
+
+  _createLayerToggle(name, layerId, color, visible, group) {
+    const div = document.createElement('div');
+    div.style.display = 'flex';
+    div.style.alignItems = 'center';
+    div.style.gap = '8px';
+    div.style.padding = '4px 0';
+    div.style.cursor = 'pointer';
+    div.style.fontSize = '12px';
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = visible;
+    checkbox.id = `layer-ctrl-${layerId}`;
+
+    const colorCircle = document.createElement('span');
+    colorCircle.style.width = '10px';
+    colorCircle.style.height = '10px';
+    colorCircle.style.borderRadius = '50%';
+    colorCircle.style.backgroundColor = color;
+    colorCircle.style.display = 'inline-block';
+    colorCircle.style.flexShrink = '0';
+
+    const label = document.createElement('label');
+    label.htmlFor = checkbox.id;
+    label.textContent = name;
+    label.style.cursor = 'pointer';
+    label.style.flex = '1';
+
+    checkbox.addEventListener('change', () => {
+      const visibility = checkbox.checked ? 'visible' : 'none';
+      if (this._map.getLayer(layerId)) {
+        this._map.setLayoutProperty(layerId, 'visibility', visibility);
+      }
+
+      // Aggiorna lo stato del checkbox del gruppo (con tristate)
+      if (group && group._groupCheckbox && group.layers.length > 1) {
+        const checkedLayers = group.layers.filter(({layerId}) => {
+          const cb = document.getElementById(`layer-ctrl-${layerId}`);
+          return cb && cb.checked;
+        }).length;
+
+        if (checkedLayers === 0) {
+          // Nessun layer attivo
+          group._groupCheckbox.checked = false;
+          group._groupCheckbox.indeterminate = false;
+        } else if (checkedLayers === group.layers.length) {
+          // Tutti i layer attivi
+          group._groupCheckbox.checked = true;
+          group._groupCheckbox.indeterminate = false;
+        } else {
+          // Alcuni layer attivi (stato indeterminato)
+          group._groupCheckbox.checked = false;
+          group._groupCheckbox.indeterminate = true;
+        }
+      }
+    });
+
+    div.appendChild(checkbox);
+    div.appendChild(colorCircle);
+    div.appendChild(label);
+
+    return div;
+  }
+
+  onRemove() {
+    this._container.parentNode.removeChild(this._container);
+    this._map = undefined;
+  }
+}
+return {maplibregl,pmtiles,Plot,LayerControl};
 }});
 
 define({id: "a28d0326", inputs: ["FileAttachment","d3"], outputs: ["tilesets","anncsu_stats","spatial_stats","idFromName","getLayerId","getSourceId","SmartValue","calculatePercentageChange","formatValue"], body: async (FileAttachment,d3) => {
@@ -225,7 +406,7 @@ const mapLoaded = new Promise((resolve) => map.once("load", resolve));
 return {protocol,mapContainer,map,mapLoaded};
 }});
 
-define({id: "5a73a660", inputs: ["mapLoaded","getSourceId","getLayerId","map","tilesets"], outputs: ["addPointLayer"], body: async (mapLoaded,getSourceId,getLayerId,map,tilesets) => {
+define({id: "a28d2edd", inputs: ["mapLoaded","getSourceId","getLayerId","map","tilesets"], outputs: ["addPointLayer"], body: async (mapLoaded,getSourceId,getLayerId,map,tilesets) => {
 // Caricamento layer
 async function addPointLayer(name, config) {
   await mapLoaded;
@@ -239,6 +420,9 @@ async function addPointLayer(name, config) {
   }
 
   if (!map.getLayer(layerId)) {
+    // Abilita di default il layer base (ANNCSU 2025-09-03)
+    const isBaseLayer = name === "ANNCSU 2025-09-03";
+
     map.addLayer({
       id: layerId,
       type: "circle",
@@ -251,7 +435,7 @@ async function addPointLayer(name, config) {
         "circle-stroke-width": 0,
         "circle-opacity": 0.9
       },
-      layout: { visibility: "none" }
+      layout: { visibility: isBaseLayer ? "visible" : "none" }
     });
   }
 }
@@ -262,177 +446,96 @@ await Promise.all(
 return {addPointLayer};
 }});
 
-define({id: "dc444dcf", outputs: ["groups","singleLayers"], body: () => {
-// Definizione gruppi (escluso Base che è singolo)
-const groups = {
-  "Variazioni 2025-10-10": [
-    "ANNCSU 2025-10-10 Rimossi",
-    "ANNCSU 2025-10-10 Spostati",
-    "ANNCSU 2025-10-10 Nuovi"
-  ],
-  "Variazioni 2025-11-04": [
-    "ANNCSU 2025-11-04 Rimossi",
-    "ANNCSU 2025-11-04 Spostati",
-    "ANNCSU 2025-11-04 Nuovi"
-  ],
-  "Variazioni 2025-12-02": [
-    "ANNCSU 2025-12-02 Rimossi",
-    "ANNCSU 2025-12-02 Spostati",
-    "ANNCSU 2025-12-02 Nuovi"
-  ]
-};
+define({id: "3497237d", inputs: ["mapLoaded","getLayerId","tilesets","map","LayerControl"], body: async (mapLoaded,getLayerId,tilesets,map,LayerControl) => {
+// Aggiungi controllo layer alla mappa
+{
+  await mapLoaded;
 
-// Layer singoli senza gruppo
-const singleLayers = ["ANNCSU 2025-09-03"];
-return {groups,singleLayers};
-}});
-
-define({id: "5835507e", inputs: ["tilesets","Inputs"], outputs: ["layerCheckboxes"], body: (tilesets,Inputs) => {
-// Checkbox per ogni layer usando Inputs.toggle
-const layerCheckboxes = Object.fromEntries(
-  Object.entries(tilesets).map(([layerName, config]) => [
-    layerName,
-    Inputs.toggle({
-      label: `${config.type}`,
-      value: false
-    })
-  ])
-);
-return {layerCheckboxes};
-}});
-
-define({id: "47a364ba", inputs: ["groups","Inputs"], outputs: ["groupCheckboxes"], body: (groups,Inputs) => {
-// Checkbox singola per ogni gruppo (toggle)
-const groupCheckboxes = Object.fromEntries(
-  Object.entries(groups).map(([groupName, layerNames]) => [
-    groupName,
-    Inputs.toggle({label: groupName, value: false})
-  ])
-);
-return {groupCheckboxes};
-}});
-
-define({id: "6d886fb8", inputs: ["html","display"], body: async (html,display) => {
-display(await(
-html.fragment`<style>
-.layer-item {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.layer-item::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--layer-color, #ccc);
-  flex-shrink: 0;
-}
-</style>`
-))
-}});
-
-define({id: "a0fa4f82", inputs: ["display","html","singleLayers","tilesets","layerCheckboxes"], body: (display,html,singleLayers,tilesets,layerCheckboxes) => {
-// Layer singolo Base
-display(html`<div class="grid grid-cols-1">
-  ${singleLayers.map(layerName => {
-    const config = tilesets[layerName];
-    return html`<div class="card">
-      <div class="layer-item" style="--layer-color: ${config.color}">
-        ${layerCheckboxes[layerName]}
-      </div>
-    </div>`;
-  })}
-</div>`);
-}});
-
-define({id: "8557e00e", inputs: ["groups","display","html","groupCheckboxes","tilesets","layerCheckboxes"], body: (groups,display,html,groupCheckboxes,tilesets,layerCheckboxes) => {
-// Gruppi con sottogruppi
-Object.entries(groups).forEach(([groupName, layerNames]) => {
-  display(html`<div class="card">
-    <h3>${groupCheckboxes[groupName]}</h3>
-    <div class="grid grid-cols-3">
-      ${layerNames.map(layerName => {
-        const config = tilesets[layerName];
-        return html`<div class="card">
-          <div class="layer-item" style="--layer-color: ${config.color}">
-            ${layerCheckboxes[layerName]}
-          </div>
-        </div>`;
-      })}
-    </div>
-  </div>`);
-});
-}});
-
-define({id: "f4a3175c", inputs: ["tilesets","layerCheckboxes","Generators","getLayerId","map"], body: (tilesets,layerCheckboxes,Generators,getLayerId,map) => {
-// Aggiorna la visibilità dei layer sulla mappa quando cambiano
-Object.entries(tilesets).forEach(([layerName, config]) => {
-  const layerToggle = layerCheckboxes[layerName];
-  const view = Generators.input(layerToggle);
-
-  (async () => {
-    for await (const isVisible of view) {
-      const layerId = getLayerId(layerName);
-      if (map.getLayer(layerId)) {
-        map.setLayoutProperty(layerId, "visibility", isVisible ? "visible" : "none");
-      }
-    }
-  })();
-});
-}});
-
-define({id: "53892fa9", inputs: ["groups","groupCheckboxes","Generators","layerCheckboxes","Event"], body: (groups,groupCheckboxes,Generators,layerCheckboxes,Event) => {
-// Sincronizzazione: gruppo controlla i layer figli
-Object.entries(groups).forEach(([groupName, layerNames]) => {
-  const groupToggle = groupCheckboxes[groupName];
-  const groupValue = Generators.input(groupToggle);
-
-  (async () => {
-    for await (const isChecked of groupValue) {
-      // Quando il gruppo cambia, aggiorna i layer figli
-      layerNames.forEach(layerName => {
-        const layerToggle = layerCheckboxes[layerName];
-        const input = layerToggle.querySelector("input[type=checkbox]");
-        if (input) {
-          input.checked = isChecked;
-          input.dispatchEvent(new Event("input", { bubbles: true }));
+  const layerGroups = [
+    {
+      title: "Layer Base",
+      layers: [
+        {
+          name: "Base (2025-09-03)",
+          layerId: getLayerId("ANNCSU 2025-09-03"),
+          color: tilesets["ANNCSU 2025-09-03"].color,
+          visible: true
         }
-      });
-    }
-  })();
-});
-}});
-
-define({id: "c6df9337", inputs: ["groups","layerCheckboxes","Generators","groupCheckboxes"], body: (groups,layerCheckboxes,Generators,groupCheckboxes) => {
-// Sincronizzazione inversa: layer figli controllano il gruppo
-Object.entries(groups).forEach(([groupName, layerNames]) => {
-  layerNames.forEach(layerName => {
-    const layerToggle = layerCheckboxes[layerName];
-    const layerValue = Generators.input(layerToggle);
-
-    (async () => {
-      for await (const isChecked of layerValue) {
-        // Quando un layer cambia, aggiorna lo stato del gruppo
-        const groupToggle = groupCheckboxes[groupName];
-        const groupInput = groupToggle.querySelector("input[type=checkbox]");
-
-        if (groupInput) {
-          // Se tutti i layer sono attivi, attiva il gruppo
-          // Se almeno uno è disattivo, disattiva il gruppo
-          const allChecked = layerNames.every(ln => {
-            const toggle = layerCheckboxes[ln];
-            const input = toggle.querySelector("input[type=checkbox]");
-            return input && input.checked;
-          });
-
-          groupInput.checked = allChecked;
+      ]
+    },
+    {
+      title: "Variazioni 2025-10-10",
+      layers: [
+        {
+          name: "Rimossi",
+          layerId: getLayerId("ANNCSU 2025-10-10 Rimossi"),
+          color: tilesets["ANNCSU 2025-10-10 Rimossi"].color,
+          visible: false
+        },
+        {
+          name: "Spostati",
+          layerId: getLayerId("ANNCSU 2025-10-10 Spostati"),
+          color: tilesets["ANNCSU 2025-10-10 Spostati"].color,
+          visible: false
+        },
+        {
+          name: "Nuovi",
+          layerId: getLayerId("ANNCSU 2025-10-10 Nuovi"),
+          color: tilesets["ANNCSU 2025-10-10 Nuovi"].color,
+          visible: false
         }
-      }
-    })();
-  });
-});
+      ]
+    },
+    {
+      title: "Variazioni 2025-11-04",
+      layers: [
+        {
+          name: "Rimossi",
+          layerId: getLayerId("ANNCSU 2025-11-04 Rimossi"),
+          color: tilesets["ANNCSU 2025-11-04 Rimossi"].color,
+          visible: false
+        },
+        {
+          name: "Spostati",
+          layerId: getLayerId("ANNCSU 2025-11-04 Spostati"),
+          color: tilesets["ANNCSU 2025-11-04 Spostati"].color,
+          visible: false
+        },
+        {
+          name: "Nuovi",
+          layerId: getLayerId("ANNCSU 2025-11-04 Nuovi"),
+          color: tilesets["ANNCSU 2025-11-04 Nuovi"].color,
+          visible: false
+        }
+      ]
+    },
+    {
+      title: "Variazioni 2025-12-02",
+      layers: [
+        {
+          name: "Rimossi",
+          layerId: getLayerId("ANNCSU 2025-12-02 Rimossi"),
+          color: tilesets["ANNCSU 2025-12-02 Rimossi"].color,
+          visible: false
+        },
+        {
+          name: "Spostati",
+          layerId: getLayerId("ANNCSU 2025-12-02 Spostati"),
+          color: tilesets["ANNCSU 2025-12-02 Spostati"].color,
+          visible: false
+        },
+        {
+          name: "Nuovi",
+          layerId: getLayerId("ANNCSU 2025-12-02 Nuovi"),
+          color: tilesets["ANNCSU 2025-12-02 Nuovi"].color,
+          visible: false
+        }
+      ]
+    }
+  ];
+
+  map.addControl(new LayerControl(layerGroups), 'top-right');
+}
 }});
 
 define({id: "d3c01a2f", inputs: ["view","Inputs"], outputs: ["displayMode"], body: (view,Inputs) => {
@@ -1318,20 +1421,13 @@ Plot.plot({
 </aside>
 <main id="observablehq-main" class="observablehq">
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
-<p>Analisi dell'evoluzione di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
-<div class="observablehq observablehq--block"><!--:867f4daa:--></div>
+<p>Analisi dell'evoluzione della geolocalizzazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
+<div class="observablehq observablehq--block"><!--:4bcc7d2b:--></div>
 <div class="observablehq observablehq--block"><!--:a28d0326:--></div>
 <div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
-<div class="observablehq observablehq--block"><!--:5a73a660:--></div>
-<div class="observablehq observablehq--block"><!--:dc444dcf:--></div>
-<div class="observablehq observablehq--block"><!--:5835507e:--></div>
-<div class="observablehq observablehq--block"><!--:47a364ba:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d886fb8:--></div>
-<div class="observablehq observablehq--block"><!--:a0fa4f82:--></div>
-<div class="observablehq observablehq--block"><!--:8557e00e:--></div>
-<div class="observablehq observablehq--block"><!--:f4a3175c:--></div>
-<div class="observablehq observablehq--block"><!--:53892fa9:--></div>
-<div class="observablehq observablehq--block"><!--:c6df9337:--></div>
+<div class="observablehq observablehq--block"><!--:a28d2edd:--></div>
+<div class="observablehq observablehq--block"><!--:3497237d:--></div>
 <h2 id="andamento-civici-geolocalizzati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-geolocalizzati">Andamento civici geolocalizzati</a></h2>
 <div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6e74da5a:--></div>
@@ -1367,7 +1463,7 @@ Plot.plot({
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f156abe9:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-11T19:34:01">Dec 11, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-12T10:32:59">Dec 12, 2025</a>.</div>
 </footer>
 </div>
 </body>
