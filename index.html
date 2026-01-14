@@ -7,18 +7,18 @@
 <title>ANNCSU Dashboard | ANNCSU Progress</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/theme-air.aad62322.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.6d4b40e3.js">
+<link rel="modulepreload" href="./_observablehq/client.be619ba2.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.14.0/bf489a1e.js">
-<link rel="modulepreload" href="./_npm/pmtiles@4.3.0/5b853975.js">
-<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
-<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.16.0/353eea27.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.3.2/5cdcb41d.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/7c43807f.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
@@ -37,7 +37,7 @@
 <link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
 <link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
 <link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
-<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
 <link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
 <link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
 <link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
@@ -45,7 +45,7 @@
 <link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
 <link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
 <link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
-<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
 <link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
 <link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
 <link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
@@ -61,21 +61,24 @@
 <link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
 <script type="module">
 
-import {define} from "./_observablehq/client.6d4b40e3.js";
+import {define} from "./_observablehq/client.be619ba2.js";
 import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
-registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.200f7e52.gz","lastModified":1765280888430,"size":69670945});
-registerFile("./data/anncsu_2025-10-10_missing.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_missing.pmtiles.f4dea627.gz","lastModified":1765280888430,"size":81465});
-registerFile("./data/anncsu_2025-10-10_moved.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_moved.pmtiles.d30c102c.gz","lastModified":1765280888430,"size":222489});
-registerFile("./data/anncsu_2025-10-10_new.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_new.pmtiles.55ad868c.gz","lastModified":1765280888430,"size":2086334});
-registerFile("./data/anncsu_2025-11-04_missing.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_missing.pmtiles.e3c0c32d.gz","lastModified":1765280888430,"size":2939112});
-registerFile("./data/anncsu_2025-11-04_moved.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_moved.pmtiles.913f7c77.gz","lastModified":1765280888430,"size":313592});
-registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_new.pmtiles.5f5524e5.gz","lastModified":1765280888430,"size":6859193});
-registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.5cacc980.gz","lastModified":1765280888430,"size":100751});
-registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.07c7ee88.gz","lastModified":1765280888430,"size":3783784});
-registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.64dc85b3.gz","lastModified":1765280888430,"size":33887319});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.99c4a9d0.json","lastModified":1765531992387,"size":2678733});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.0db1b5d5.json","lastModified":1765531989395,"size":477});
+registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.ef092edf.gz","lastModified":1768417629268,"size":69747163});
+registerFile("./data/anncsu_2025-10-10_missing.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_missing.pmtiles.0656177b.gz","lastModified":1768417629268,"size":81460});
+registerFile("./data/anncsu_2025-10-10_moved.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_moved.pmtiles.4229045c.gz","lastModified":1768417629268,"size":222555});
+registerFile("./data/anncsu_2025-10-10_new.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_new.pmtiles.69b47d2a.gz","lastModified":1768417629268,"size":2086652});
+registerFile("./data/anncsu_2025-11-04_missing.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_missing.pmtiles.16a63723.gz","lastModified":1768417629268,"size":2939365});
+registerFile("./data/anncsu_2025-11-04_moved.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_moved.pmtiles.b673f0a1.gz","lastModified":1768417629268,"size":280160});
+registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_new.pmtiles.85d12b8e.gz","lastModified":1768417629268,"size":6860050});
+registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.c9597863.gz","lastModified":1768417629268,"size":80655});
+registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.bc2b5cb1.gz","lastModified":1768417629268,"size":3448129});
+registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.5a5c62f9.gz","lastModified":1768417629268,"size":31510997});
+registerFile("./data/anncsu_2026-01-14_missing.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_missing.pmtiles.aa4b790c.gz","lastModified":1768417629272,"size":330562});
+registerFile("./data/anncsu_2026-01-14_moved.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_moved.pmtiles.aedd5d60.gz","lastModified":1768417629272,"size":15036832});
+registerFile("./data/anncsu_2026-01-14_new.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_new.pmtiles.76cdc176.gz","lastModified":1768417629272,"size":88948564});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.87841522.json","lastModified":1768417672462,"size":3343782});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.7387a0e6.json","lastModified":1768417669020,"size":602});
 
 define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -84,7 +87,7 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/
 }});
 
 define({id: "4bcc7d2b", inputs: ["Event"], outputs: ["maplibregl","pmtiles","Plot","LayerControl"], body: async (Event) => {
-const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.14.0/bf489a1e.js"), import("./_npm/pmtiles@4.3.0/5b853975.js"), import("./_npm/@observablehq/plot@0.6.17/d761ef9b.js")]);
+const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.16.0/353eea27.js"), import("./_npm/pmtiles@4.3.2/5cdcb41d.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js")]);
 
 // Classe per controllo layer personalizzato
 class LayerControl {
@@ -264,7 +267,7 @@ class LayerControl {
 return {maplibregl,pmtiles,Plot,LayerControl};
 }});
 
-define({id: "a28d0326", inputs: ["FileAttachment","d3"], outputs: ["tilesets","anncsu_stats","spatial_stats","idFromName","getLayerId","getSourceId","SmartValue","calculatePercentageChange","formatValue"], body: async (FileAttachment,d3) => {
+define({id: "8591e4d1", inputs: ["FileAttachment","d3"], outputs: ["tilesets","anncsu_stats","spatial_stats","idFromName","getLayerId","getSourceId","SmartValue","calculatePercentageChange","formatValue"], body: async (FileAttachment,d3) => {
 // Configurazione tilesets
 const tilesets = {
   "ANNCSU 2025-09-03": {
@@ -326,6 +329,24 @@ const tilesets = {
     color: "#0066ff",
     date: "2025-12-02",
     type: "Nuovi 2025-12-02"
+  },
+  "ANNCSU 2026-01-14 Rimossi": {
+    file: FileAttachment("./data/anncsu_2026-01-14_missing.pmtiles.gz"),
+    color: "#e60026",
+    date: "2026-01-14",
+    type: "Rimossi 2026-01-14"
+  },
+  "ANNCSU 2026-01-14 Spostati": {
+    file: FileAttachment("./data/anncsu_2026-01-14_moved.pmtiles.gz"),
+    color: "#15a34a",
+    date: "2026-01-14",
+    type: "Spostati 2026-01-14"
+  },
+  "ANNCSU 2026-01-14 Nuovi": {
+    file: FileAttachment("./data/anncsu_2026-01-14_new.pmtiles.gz"),
+    color: "#0066ff",
+    date: "2026-01-14",
+    type: "Nuovi 2026-01-14"
   }
 };
 
@@ -446,7 +467,7 @@ await Promise.all(
 return {addPointLayer};
 }});
 
-define({id: "3497237d", inputs: ["mapLoaded","getLayerId","tilesets","map","LayerControl"], body: async (mapLoaded,getLayerId,tilesets,map,LayerControl) => {
+define({id: "ada62b99", inputs: ["mapLoaded","getLayerId","tilesets","map","LayerControl"], body: async (mapLoaded,getLayerId,tilesets,map,LayerControl) => {
 // Aggiungi controllo layer alla mappa
 {
   await mapLoaded;
@@ -531,6 +552,29 @@ define({id: "3497237d", inputs: ["mapLoaded","getLayerId","tilesets","map","Laye
           visible: false
         }
       ]
+    },
+    {
+      title: "Variazioni 2026-01-14",
+      layers: [
+        {
+          name: "Rimossi",
+          layerId: getLayerId("ANNCSU 2026-01-14 Rimossi"),
+          color: tilesets["ANNCSU 2026-01-14 Rimossi"].color,
+          visible: false
+        },
+        {
+          name: "Spostati",
+          layerId: getLayerId("ANNCSU 2026-01-14 Spostati"),
+          color: tilesets["ANNCSU 2026-01-14 Spostati"].color,
+          visible: false
+        },
+        {
+          name: "Nuovi",
+          layerId: getLayerId("ANNCSU 2026-01-14 Nuovi"),
+          color: tilesets["ANNCSU 2026-01-14 Nuovi"].color,
+          visible: false
+        }
+      ]
     }
   ];
 
@@ -547,7 +591,7 @@ const displayMode = view(Inputs.radio(
 return {displayMode};
 }});
 
-define({id: "3d20ca8b", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
+define({id: "af26ee36", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
 display(await(
 Plot.plot({
   title: "Andamento civici georeferenziati su ANNCSU",
@@ -647,11 +691,10 @@ Plot.plot({
     range: ["steelblue", "green", "red"]
   }
 })
-
 ))
 }});
 
-define({id: "79ef6f2a", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "ada4b0da", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -660,16 +703,19 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       const total_all_0903 = row["total_all_2025-09-03"] || 1;
       const total_all_1010 = row["total_all_2025-10-10"] || 1;
       const total_all_1104 = row["total_all_2025-11-04"] || 1;
       const total_all_1202 = row["total_all_2025-12-02"] || 1;
+      const total_all_0114 = row["total_all_2026-01-14"] || 1;
 
       const percent_0903 = (absolute_0903 / total_all_0903) * 100;
       const percent_1010 = (absolute_1010 / total_all_1010) * 100;
       const percent_1104 = (absolute_1104 / total_all_1104) * 100;
       const percent_1202 = (absolute_1202 / total_all_1202) * 100;
+      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
 
       return {
         regione: row.regione,
@@ -684,30 +730,34 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
         "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`)
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
+        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`)
       };
     });
 
-    return rows.sort((a, b) => b["2025-12-02"] - a["2025-12-02"]);
+    return rows.sort((a, b) => b["2026-01-14"] - a["2026-01-14"]);
   })(),
   {
-    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       regione: "Regione",
       "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
 ))
 }});
 
-define({id: "6116625d", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_region"], body: (view,Inputs,spatial_stats) => {
+define({id: "c6951b49", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_region"], body: (view,Inputs,spatial_stats) => {
 const selected_date_region = view(Inputs.select(
   spatial_stats.date_columns,
-  {label: "Seleziona data", value: "2025-12-02"}
+  {label: "Seleziona data", value: "2026-01-14"}
 ));
 return {selected_date_region};
 }});
@@ -761,7 +811,7 @@ Plot.plot({
 ))
 }});
 
-define({id: "ae02f306", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "bc9a5d4c", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -771,15 +821,18 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
       const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
       const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
       const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
 
       return {
         regione: row.regione,
@@ -791,30 +844,34 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
         "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2025-12-02"] === "-" ? 0 : a["2025-12-02"].valueOf();
-      const valB = b["2025-12-02"] === "-" ? 0 : b["2025-12-02"].valueOf();
+      const valA = a["2026-01-14"] === "-" ? 0 : a["2026-01-14"].valueOf();
+      const valB = b["2026-01-14"] === "-" ? 0 : b["2026-01-14"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       regione: "Regione",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
 ))
 }});
 
-define({id: "a8cbb7b0", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "a0e91f3f", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -824,15 +881,18 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
       const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
       const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
       const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
 
       return {
         regione: row.regione,
@@ -844,23 +904,27 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
         "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2025-12-02"] === "-" ? 0 : a["2025-12-02"].valueOf();
-      const valB = b["2025-12-02"] === "-" ? 0 : b["2025-12-02"].valueOf();
+      const valA = a["2026-01-14"] === "-" ? 0 : a["2026-01-14"].valueOf();
+      const valB = b["2026-01-14"] === "-" ? 0 : b["2026-01-14"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       regione: "Regione",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
@@ -992,7 +1056,7 @@ Plot.plot({
 ))
 }});
 
-define({id: "423b6aa6", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "0ecec100", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -1001,16 +1065,19 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       const total_all_0903 = row["total_all_2025-09-03"] || 1;
       const total_all_1010 = row["total_all_2025-10-10"] || 1;
       const total_all_1104 = row["total_all_2025-11-04"] || 1;
       const total_all_1202 = row["total_all_2025-12-02"] || 1;
+      const total_all_0114 = row["total_all_2026-01-14"] || 1;
 
       const percent_0903 = (absolute_0903 / total_all_0903) * 100;
       const percent_1010 = (absolute_1010 / total_all_1010) * 100;
       const percent_1104 = (absolute_1104 / total_all_1104) * 100;
       const percent_1202 = (absolute_1202 / total_all_1202) * 100;
+      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
 
       return {
         comune: row.comune,
@@ -1025,30 +1092,34 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
         "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`)
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
+        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`)
       };
     });
 
-    return rows.sort((a, b) => b["2025-12-02"] - a["2025-12-02"]);
+    return rows.sort((a, b) => b["2026-01-14"] - a["2026-01-14"]);
   })(),
   {
-    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       comune: "Comune",
       "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
 ))
 }});
 
-define({id: "ccb3ac95", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_comune"], body: (view,Inputs,spatial_stats) => {
+define({id: "6bd9e693", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_comune"], body: (view,Inputs,spatial_stats) => {
 const selected_date_comune = view(Inputs.select(
   spatial_stats.date_columns,
-  {label: "Seleziona data", value: "2025-12-02"}
+  {label: "Seleziona data", value: "2026-01-14"}
 ));
 return {selected_date_comune};
 }});
@@ -1160,7 +1231,7 @@ display(await(
 ))
 }});
 
-define({id: "ac11cc28", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "b0d6e1d8", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -1170,15 +1241,18 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
       const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
       const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
       const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
 
       return {
         comune: row.comune,
@@ -1190,30 +1264,34 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
         "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2025-12-02"].valueOf();
-      const valB = b["2025-12-02"].valueOf();
+      const valA = a["2026-01-14"].valueOf();
+      const valB = b["2026-01-14"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       comune: "Comune",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
 ))
 }});
 
-define({id: "c647ac42", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "f3b6e631", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -1223,15 +1301,18 @@ Inputs.table(
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
       const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
       const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
       const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
 
       return {
         comune: row.comune,
@@ -1243,23 +1324,27 @@ Inputs.table(
           : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
         "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2025-12-02"].valueOf();
-      const valB = b["2025-12-02"].valueOf();
+      const valA = a["2026-01-14"].valueOf();
+      const valB = b["2026-01-14"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02"],
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14"],
     header: {
       comune: "Comune",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
-      "2025-12-02": "12/02"
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14"
     }
   }
 )
@@ -1424,46 +1509,56 @@ Plot.plot({
 <p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
 <div class="observablehq observablehq--block"><!--:4bcc7d2b:--></div>
-<div class="observablehq observablehq--block"><!--:a28d0326:--></div>
+<div class="observablehq observablehq--block"><!--:8591e4d1:--></div>
 <div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
 <div class="observablehq observablehq--block"><!--:a28d2edd:--></div>
-<div class="observablehq observablehq--block"><!--:3497237d:--></div>
+<div class="observablehq observablehq--block"><!--:ada62b99:--></div>
 <h2 id="andamento-civici-georeferenziati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></h2>
 <div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3d20ca8b:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:af26ee36:--></div>
+</div>
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
 <h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:79ef6f2a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ada4b0da:--></div>
 <h3 id="distribuzione-completamento-regioni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-regioni">Distribuzione Completamento Regioni</a></h3>
-<div class="observablehq observablehq--block"><!--:6116625d:--></div>
+<div class="observablehq observablehq--block"><!--:c6951b49:--></div>
+<div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5433893c:--></div>
+</div>
 <h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ae02f306:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bc9a5d4c:--></div>
 <h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a8cbb7b0:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a0e91f3f:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
 <div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
+<div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:fbdc2618:--></div>
+</div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
 <h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:423b6aa6:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0ecec100:--></div>
 <h3 id="distribuzione-completamento-comuni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-comuni">Distribuzione Completamento Comuni</a></h3>
-<div class="observablehq observablehq--block"><!--:ccb3ac95:--></div>
+<div class="observablehq observablehq--block"><!--:6bd9e693:--></div>
 <div class="observablehq observablehq--block"><!--:a26800f2:--></div>
+<div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:854ba575:--></div>
+</div>
 <h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:ac11cc28:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b0d6e1d8:--></div>
 <h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c647ac42:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f3b6e631:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
 <div class="observablehq observablehq--block"><!--:fa073e0d:--></div>
 <div class="observablehq observablehq--block"><!--:2ef2300c:--></div>
+<div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f156abe9:--></div>
+</div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-12-12T10:51:36">Dec 12, 2025</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-01-14T20:07:34">Jan 14, 2026</a>.</div>
 </footer>
 </div>
 </body>
