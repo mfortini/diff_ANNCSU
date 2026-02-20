@@ -86,7 +86,7 @@ const comuni_inout = await FileAttachment("./data/anncsu_comuni_inout.json").jso
 return {maplibregl,pmtiles,cross_region_matrix,comuni_inout};
 }});
 
-define({id: "f09a482c", inputs: ["comuni_inout","view","Inputs"], outputs: ["quality_regions","quality_region_options","quality_region_selection"], body: (comuni_inout,view,Inputs) => {
+define({id: "448ec045", inputs: ["comuni_inout","view","Inputs"], outputs: ["quality_regions","quality_region_options","quality_region_selection"], body: (comuni_inout,view,Inputs) => {
 const quality_regions = [...new Map(
   comuni_inout.comuni
     .map(d => ({cod_reg: Number(d.cod_reg), regione: d.regione}))
@@ -102,7 +102,7 @@ const quality_region_selection = view(Inputs.select(
   quality_region_options,
   {
     label: "Filtra per regione",
-    value: quality_region_options.find(d => d.kind === "one" && d.regione === "Liguria") ?? quality_region_options[0],
+    value: quality_region_options[0],
     format: d => d.label
   }
 ));
@@ -652,7 +652,7 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 <h1 id="quality" tabindex="-1"><a class="observablehq-header-anchor" href="#quality">Quality</a></h1>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
 <div class="observablehq observablehq--block"><!--:027a00ef:--></div>
-<div class="observablehq observablehq--block"><!--:f09a482c:--></div>
+<div class="observablehq observablehq--block"><!--:448ec045:--></div>
 <div class="observablehq observablehq--block"><!--:31ea9afe:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bcc2d5c7:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:85784ed6:--></div>
@@ -670,7 +670,7 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="prev" href="./"><span>ANNCSU Progress</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:38:34">Feb 20, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:41:46">Feb 20, 2026</a>.</div>
 </footer>
 </div>
 </body>
