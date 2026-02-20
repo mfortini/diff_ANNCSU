@@ -72,9 +72,17 @@ registerFile("./data/anncsu_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_2026-
 registerFile("./data/anncsu_comuni_inout.json", {"name":"./data/anncsu_comuni_inout.json","mimeType":"application/json","path":"./_file/data/anncsu_comuni_inout.5a3d1ca7.json","lastModified":1771583354922,"size":1047959});
 registerFile("./data/anncsu_cross_region_matrix.json", {"name":"./data/anncsu_cross_region_matrix.json","mimeType":"application/json","path":"./_file/data/anncsu_cross_region_matrix.e6471ec8.json","lastModified":1771583333776,"size":9784});
 
-define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
+define({id: "5021b606", inputs: ["html","display"], body: async (html,display) => {
 display(await(
-html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />`
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />
+<style>
+table th {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.2;
+}
+</style>`
 ))
 }});
 
@@ -149,7 +157,7 @@ if (quality_region_selection?.kind === "one") {
 }
 }});
 
-define({id: "9ec4835d", inputs: ["Inputs","cross_region_matrix","quality_region_selection","d3","comuni_inout","cross_region_total","formatNumber","formatPercent","display"], body: async (Inputs,cross_region_matrix,quality_region_selection,d3,comuni_inout,cross_region_total,formatNumber,formatPercent,display) => {
+define({id: "3af7b924", inputs: ["Inputs","cross_region_matrix","quality_region_selection","d3","comuni_inout","cross_region_total","formatNumber","formatPercent","display"], body: async (Inputs,cross_region_matrix,quality_region_selection,d3,comuni_inout,cross_region_total,formatNumber,formatPercent,display) => {
 display(await(
 Inputs.table(
   (() => {
@@ -202,8 +210,8 @@ Inputs.table(
   })(),
   {
     columns: quality_region_selection?.kind === "one"
-      ? ["destinazione", "count", "pct_totale"]
-      : ["origine", ...[...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b)), "Fuori da tutte", "totale_riga", "pct_totale"],
+      ? ["destinazione", "pct_totale", "count"]
+      : ["origine", "pct_totale", ...[...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b)), "Fuori da tutte", "totale_riga"],
     header: {
       origine: "Origine",
       destinazione: "Destinazione",
@@ -247,14 +255,14 @@ html`<div><strong>Snapshot:</strong> ${comuni_inout.date}</div>`
 ))
 }});
 
-define({id: "46a77854", inputs: ["comuni_inout","quality_region_selection","view","Inputs"], outputs: ["quality_comuni","quality_comuni_sorted_table","quality_comuni_sorted_dropdown","quality_comuni_options","quality_comune_selection"], body: (comuni_inout,quality_region_selection,view,Inputs) => {
+define({id: "bbee1a57", inputs: ["comuni_inout","quality_region_selection","view","Inputs"], outputs: ["quality_comuni","quality_comuni_sorted_table","quality_comuni_sorted_dropdown","quality_comuni_options","quality_comune_selection"], body: (comuni_inout,quality_region_selection,view,Inputs) => {
 const quality_comuni = comuni_inout.comuni
   .filter(d => Number.isFinite(Number(d.pro_com)))
   .filter(d => quality_region_selection?.kind !== "one" || Number(d.cod_reg) === Number(quality_region_selection?.cod_reg))
 ;
 
 const quality_comuni_sorted_table = [...quality_comuni]
-  .sort((a, b) => (Number(b.fuori_buffer_500m) - Number(a.fuori_buffer_500m)) || (Number(b.pct_fuori_buffer_500m) - Number(a.pct_fuori_buffer_500m)) || (Number(b.fuori) - Number(a.fuori)) || a.comune.localeCompare(b.comune, "it"));
+  .sort((a, b) => (Number(b.pct_fuori_buffer_500m) - Number(a.pct_fuori_buffer_500m)) || (Number(b.pct_fuori) - Number(a.pct_fuori)) || (Number(b.fuori_buffer_500m) - Number(a.fuori_buffer_500m)) || a.comune.localeCompare(b.comune, "it"));
 
 const quality_comuni_sorted_dropdown = [...quality_comuni]
   .sort((a, b) => a.comune.localeCompare(b.comune, "it"));
@@ -330,7 +338,7 @@ Inputs.table(
 ))
 }});
 
-define({id: "489ef46d", inputs: ["Inputs","quality_comune_selection","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,quality_comune_selection,quality_comuni_filtered,formatNumber,formatPercent,display) => {
+define({id: "31a47414", inputs: ["Inputs","quality_comune_selection","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,quality_comune_selection,quality_comuni_filtered,formatNumber,formatPercent,display) => {
 display(await(
 Inputs.table(
   quality_comune_selection.kind === "one"
@@ -349,14 +357,14 @@ Inputs.table(
     : quality_comuni_filtered
       .map(d => ({
         comune: d.comune,
+        pct_fuori: d.pct_fuori,
+        pct_fuori_buffer_500m: d.pct_fuori_buffer_500m,
         dentro: d.dentro,
         fuori: d.fuori,
         totale: d.totale,
-        pct_fuori: d.pct_fuori,
         dentro_buffer_500m: d.dentro_buffer_500m,
         fuori_buffer_500m: d.fuori_buffer_500m,
-        totale_buffer_500m: d.totale_buffer_500m,
-        pct_fuori_buffer_500m: d.pct_fuori_buffer_500m
+        totale_buffer_500m: d.totale_buffer_500m
       })),
   quality_comune_selection.kind === "one"
     ? {
@@ -365,17 +373,17 @@ Inputs.table(
       align: {metrica: "left", valore: "right"}
     }
     : {
-    columns: ["comune", "dentro", "fuori", "totale", "pct_fuori", "dentro_buffer_500m", "fuori_buffer_500m", "totale_buffer_500m", "pct_fuori_buffer_500m"],
+    columns: ["comune", "pct_fuori", "pct_fuori_buffer_500m", "dentro", "fuori", "totale", "dentro_buffer_500m", "fuori_buffer_500m", "totale_buffer_500m"],
     header: {
       comune: "Comune",
+      pct_fuori: "% sul totale",
+      pct_fuori_buffer_500m: "% sul totale (500m)",
       dentro: "Dentro",
       fuori: "Fuori",
       totale: "Totale",
-      pct_fuori: "% Fuori",
       dentro_buffer_500m: "Dentro (buffer 500m)",
       fuori_buffer_500m: "Fuori (buffer 500m)",
-      totale_buffer_500m: "Totale (buffer 500m)",
-      pct_fuori_buffer_500m: "% Fuori (buffer 500m)"
+      totale_buffer_500m: "Totale (buffer 500m)"
     },
     format: {
       dentro: value => formatNumber(value),
@@ -398,7 +406,7 @@ Inputs.table(
       totale_buffer_500m: "right",
       pct_fuori_buffer_500m: "right"
     },
-    sort: "fuori_buffer_500m",
+    sort: "pct_fuori_buffer_500m",
     reverse: true
   }
 )
@@ -650,7 +658,7 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 </aside>
 <main id="observablehq-main" class="observablehq">
 <h1 id="quality" tabindex="-1"><a class="observablehq-header-anchor" href="#quality">Quality</a></h1>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5021b606:--></div>
 <div class="observablehq observablehq--block"><!--:027a00ef:--></div>
 <div class="observablehq observablehq--block"><!--:448ec045:--></div>
 <div class="observablehq observablehq--block"><!--:31ea9afe:--></div>
@@ -658,19 +666,19 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:85784ed6:--></div>
 <div class="observablehq observablehq--block"><!--:d374d495:--></div>
 <div class="observablehq observablehq--block"><!--:6253f6b5:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9ec4835d:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:3af7b924:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0e94a783:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:53e843fc:--></div>
-<div class="observablehq observablehq--block"><!--:46a77854:--></div>
+<div class="observablehq observablehq--block"><!--:bbee1a57:--></div>
 <div class="observablehq observablehq--block"><!--:ee8f5149:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b7c8cf92:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:489ef46d:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:31a47414:--></div>
 <h2 id="mappa-quality" tabindex="-1"><a class="observablehq-header-anchor" href="#mappa-quality">Mappa Quality</a></h2>
 <div class="observablehq observablehq--block"><!--:01289f2d:--></div>
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="prev" href="./"><span>ANNCSU Progress</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:41:46">Feb 20, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:53:16">Feb 20, 2026</a>.</div>
 </footer>
 </div>
 </body>
