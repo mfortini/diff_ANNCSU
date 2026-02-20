@@ -123,6 +123,12 @@ const formatPercent = (value) => {
 return {formatNumber,formatPercent};
 }});
 
+define({id: "bcc2d5c7", inputs: ["html","quality_region_selection","display"], body: async (html,quality_region_selection,display) => {
+display(await(
+html`<h2>Matrice Fuori Regione (${quality_region_selection?.kind === "one" ? `${quality_region_selection.regione} -> Destinazione` : "Origine -> Destinazione"})</h2>`
+))
+}});
+
 define({id: "85784ed6", inputs: ["html","cross_region_matrix","display"], body: async (html,cross_region_matrix,display) => {
 display(await(
 html`<div><strong>Snapshot:</strong> ${cross_region_matrix.date}</div>`
@@ -229,6 +235,12 @@ Inputs.table(
 ))
 }});
 
+define({id: "0e94a783", inputs: ["html","quality_region_selection","display"], body: async (html,quality_region_selection,display) => {
+display(await(
+html`<h2>Civici Dentro/Fuori Comune Atteso - ${quality_region_selection?.kind === "one" ? `Regione ${quality_region_selection.regione}` : "Tutte le Regioni"}</h2>`
+))
+}});
+
 define({id: "53e843fc", inputs: ["html","comuni_inout","display"], body: async (html,comuni_inout,display) => {
 display(await(
 html`<div><strong>Snapshot:</strong> ${comuni_inout.date}</div>`
@@ -262,7 +274,7 @@ const quality_comune_selection = view(Inputs.select(
 return {quality_comuni,quality_comuni_sorted_table,quality_comuni_sorted_dropdown,quality_comuni_options,quality_comune_selection};
 }});
 
-define({id: "dfb38707", inputs: ["quality_comuni_sorted_table","quality_comune_selection","quality_region_selection","quality_comuni","html"], outputs: ["quality_comuni_filtered","quality_region_label","quality_comune_label"], body: (quality_comuni_sorted_table,quality_comune_selection,quality_region_selection,quality_comuni,html) => {
+define({id: "ee8f5149", inputs: ["quality_comuni_sorted_table","quality_comune_selection","quality_region_selection","quality_comuni","html"], outputs: ["quality_comuni_filtered","quality_region_label","quality_comune_label"], body: (quality_comuni_sorted_table,quality_comune_selection,quality_region_selection,quality_comuni,html) => {
 const quality_comuni_filtered = quality_comuni_sorted_table
   .filter(d => quality_comune_selection.kind === "all" || Number(d.pro_com) === Number(quality_comune_selection.pro_com));
 
@@ -274,7 +286,7 @@ const quality_comune_label = quality_comune_selection?.kind === "one"
   ? (quality_comuni.find(d => Number(d.pro_com) === Number(quality_comune_selection.pro_com))?.comune ?? "Tutti")
   : "Tutti";
 
-html`<div><strong>Regione ${quality_region_label}</strong> · <strong>Comune ${quality_comune_label}</strong></div>`;
+html`<div><strong>Comune ${quality_comune_label}</strong></div>`;
 return {quality_comuni_filtered,quality_region_label,quality_comune_label};
 }});
 
@@ -632,8 +644,6 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 <nav>
 <div>Contents</div>
 <ol>
-<li class="observablehq-secondary-link"><a href="#matrice-fuori-regione-origine-destinazione">Matrice Fuori Regione (Origine -&gt; Destinazione)</a></li>
-<li class="observablehq-secondary-link"><a href="#civici-dentro-fuori-comune-atteso-filtro-attivo">Civici Dentro/Fuori Comune Atteso (Filtro attivo)</a></li>
 <li class="observablehq-secondary-link"><a href="#mappa-quality">Mappa Quality</a></li>
 </ol>
 </nav>
@@ -644,15 +654,15 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 <div class="observablehq observablehq--block"><!--:027a00ef:--></div>
 <div class="observablehq observablehq--block"><!--:f09a482c:--></div>
 <div class="observablehq observablehq--block"><!--:31ea9afe:--></div>
-<h2 id="matrice-fuori-regione-origine-destinazione" tabindex="-1"><a class="observablehq-header-anchor" href="#matrice-fuori-regione-origine-destinazione">Matrice Fuori Regione (Origine -&gt; Destinazione)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bcc2d5c7:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:85784ed6:--></div>
 <div class="observablehq observablehq--block"><!--:d374d495:--></div>
 <div class="observablehq observablehq--block"><!--:6253f6b5:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9ec4835d:--></div>
-<h2 id="civici-dentro-fuori-comune-atteso-filtro-attivo" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-dentro-fuori-comune-atteso-filtro-attivo">Civici Dentro/Fuori Comune Atteso (Filtro attivo)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0e94a783:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:53e843fc:--></div>
 <div class="observablehq observablehq--block"><!--:46a77854:--></div>
-<div class="observablehq observablehq--block"><!--:dfb38707:--></div>
+<div class="observablehq observablehq--block"><!--:ee8f5149:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b7c8cf92:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:489ef46d:--></div>
 <h2 id="mappa-quality" tabindex="-1"><a class="observablehq-header-anchor" href="#mappa-quality">Mappa Quality</a></h2>
@@ -660,7 +670,7 @@ return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTil
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="prev" href="./"><span>ANNCSU Progress</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:28:25">Feb 20, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:38:34">Feb 20, 2026</a>.</div>
 </footer>
 </div>
 </body>
