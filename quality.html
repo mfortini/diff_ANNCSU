@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Quality | ANNCSU Progress</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.0d9d15e7.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.18.0/587b46a2.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/fflate@0.8.2/e113a0e7.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.0d9d15e7.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/Com01012025_CRS84.pmtiles.gz", {"name":"./data/Com01012025_CRS84.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/Com01012025_CRS84.pmtiles.539c3bdf.gz","lastModified":1771581497601,"size":26193946});
+registerFile("./data/Reg01012025_CRS84.pmtiles.gz", {"name":"./data/Reg01012025_CRS84.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/Reg01012025_CRS84.pmtiles.b8ea39ff.gz","lastModified":1771581475077,"size":287763});
+registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.2c827527.gz","lastModified":1771580244434,"size":13033320});
+registerFile("./data/anncsu_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10.pmtiles.29f1ec6c.gz","lastModified":1771580244434,"size":13961184});
+registerFile("./data/anncsu_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04.pmtiles.f73c08d2.gz","lastModified":1771580244434,"size":15575646});
+registerFile("./data/anncsu_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02.pmtiles.49f82403.gz","lastModified":1771580244438,"size":26269448});
+registerFile("./data/anncsu_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14.pmtiles.f5081abb.gz","lastModified":1771580244438,"size":56238841});
+registerFile("./data/anncsu_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-02-06.pmtiles.d2660517.gz","lastModified":1771580244438,"size":73748257});
+registerFile("./data/anncsu_comuni_inout.json", {"name":"./data/anncsu_comuni_inout.json","mimeType":"application/json","path":"./_file/data/anncsu_comuni_inout.5a3d1ca7.json","lastModified":1771583354922,"size":1047959});
+registerFile("./data/anncsu_cross_region_matrix.json", {"name":"./data/anncsu_cross_region_matrix.json","mimeType":"application/json","path":"./_file/data/anncsu_cross_region_matrix.e6471ec8.json","lastModified":1771583333776,"size":9784});
+
+define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />`
+))
+}});
+
+define({id: "027a00ef", inputs: ["FileAttachment"], outputs: ["maplibregl","pmtiles","cross_region_matrix","comuni_inout"], body: async (FileAttachment) => {
+const [{default: maplibregl}, pmtiles] = await Promise.all([import("./_npm/maplibre-gl@5.18.0/587b46a2.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js")]);
+
+const cross_region_matrix = await FileAttachment("./data/anncsu_cross_region_matrix.json").json();
+const comuni_inout = await FileAttachment("./data/anncsu_comuni_inout.json").json();
+return {maplibregl,pmtiles,cross_region_matrix,comuni_inout};
+}});
+
+define({id: "f09a482c", inputs: ["comuni_inout","view","Inputs"], outputs: ["quality_regions","quality_region_options","quality_region_selection"], body: (comuni_inout,view,Inputs) => {
+const quality_regions = [...new Map(
+  comuni_inout.comuni
+    .map(d => ({cod_reg: Number(d.cod_reg), regione: d.regione}))
+    .filter(d => Number.isFinite(d.cod_reg) && typeof d.regione === "string" && d.regione.trim().length > 0)
+    .map(d => [d.cod_reg, d])
+).values()].sort((a, b) => a.regione.localeCompare(b.regione, "it"));
+
+const quality_region_options = [{kind: "all", label: "Tutte"}].concat(
+  quality_regions.map(d => ({kind: "one", cod_reg: d.cod_reg, regione: d.regione, label: d.regione}))
+);
+
+const quality_region_selection = view(Inputs.select(
+  quality_region_options,
+  {
+    label: "Filtra per regione",
+    value: quality_region_options.find(d => d.kind === "one" && d.regione === "Liguria") ?? quality_region_options[0],
+    format: d => d.label
+  }
+));
+return {quality_regions,quality_region_options,quality_region_selection};
+}});
+
+define({id: "31ea9afe", inputs: ["d3"], outputs: ["formatNumber","formatPercent"], body: (d3) => {
+const formatNumber = (value) => {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return value;
+  return Number.isInteger(n) ? d3.format(",")(n) : d3.format(",.2f")(n);
+};
+
+const formatPercent = (value) => {
+  const n = Number(value);
+  return `${d3.format(".2f")(Number.isFinite(n) ? n : 0)}%`;
+};
+return {formatNumber,formatPercent};
+}});
+
+define({id: "85784ed6", inputs: ["html","cross_region_matrix","display"], body: async (html,cross_region_matrix,display) => {
+display(await(
+html`<div><strong>Snapshot:</strong> ${cross_region_matrix.date}</div>`
+))
+}});
+
+define({id: "d374d495", inputs: ["d3","cross_region_matrix","html"], outputs: ["cross_region_total"], body: (d3,cross_region_matrix,html) => {
+const cross_region_total = d3.sum(cross_region_matrix.flows, d => d.count);
+html`<div><strong>Totale punti fuori regione:</strong> ${d3.format(",")(cross_region_total)}</div>`
+return {cross_region_total};
+}});
+
+define({id: "6253f6b5", inputs: ["quality_region_selection","display","html"], body: (quality_region_selection,display,html) => {
+if (quality_region_selection?.kind === "one") {
+  display(html`<div><strong>Regione:</strong> ${quality_region_selection.regione}</div>`);
+} else {
+  display(html`<div></div>`);
+}
+}});
+
+define({id: "9ec4835d", inputs: ["Inputs","cross_region_matrix","quality_region_selection","d3","comuni_inout","cross_region_total","formatNumber","formatPercent","display"], body: async (Inputs,cross_region_matrix,quality_region_selection,d3,comuni_inout,cross_region_total,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  (() => {
+    const orderedRegions = [...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b));
+    const selectedRegion = quality_region_selection?.kind === "one" ? quality_region_selection.regione : null;
+    const selectedCodReg = quality_region_selection?.kind === "one" ? Number(quality_region_selection.cod_reg) : null;
+    const regionTotalCivici = selectedRegion
+      ? d3.sum(
+          comuni_inout.comuni.filter(d => Number(d.cod_reg) === selectedCodReg),
+          d => Number(d.totale) || 0
+        )
+      : 0;
+    const origins = selectedRegion ? orderedRegions.filter(r => r === selectedRegion) : orderedRegions;
+    const destinations = [...orderedRegions, "Fuori da tutte"];
+    const flowMap = new Map(
+      cross_region_matrix.flows.map(d => [`${d.expected_regione}|||${d.actual_regione}`, d.count])
+    );
+
+    const matrixRows = origins.map(origine => {
+      const row = { origine };
+      let total = 0;
+
+      for (const destinazione of destinations) {
+        const value = flowMap.get(`${origine}|||${destinazione}`) || 0;
+        row[destinazione] = value;
+        total += value;
+      }
+
+      row.totale_riga = total;
+      row.pct_totale = cross_region_total > 0 ? (total / cross_region_total) * 100 : 0;
+      return row;
+    }).sort((a, b) => b.totale_riga - a.totale_riga);
+
+    if (selectedRegion) {
+      const row = matrixRows[0] ?? {origine: selectedRegion, totale_riga: 0};
+      return destinations
+        .map(destinazione => {
+          const count = Number(row[destinazione] ?? 0);
+          return {
+            origine: selectedRegion,
+            destinazione,
+            count,
+            pct_totale: regionTotalCivici > 0 ? (count * 100 / regionTotalCivici) : 0
+          };
+        })
+        .sort((a, b) => b.count - a.count);
+    }
+
+    return matrixRows;
+  })(),
+  {
+    columns: quality_region_selection?.kind === "one"
+      ? ["destinazione", "count", "pct_totale"]
+      : ["origine", ...[...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b)), "Fuori da tutte", "totale_riga", "pct_totale"],
+    header: {
+      origine: "Origine",
+      destinazione: "Destinazione",
+      count: "Conteggio",
+      totale_riga: "Totale riga",
+      pct_totale: quality_region_selection?.kind === "one" ? "% sul totale civici regione" : "% sul totale"
+    },
+    format: {
+      count: value => formatNumber(value),
+      ...Object.fromEntries(
+        [...cross_region_matrix.regions, "Fuori da tutte", "totale_riga"].map(
+          col => [col, value => formatNumber(value)]
+        )
+      ),
+      pct_totale: value => formatPercent(value)
+    },
+    align: {
+      origine: "left",
+      destinazione: "left",
+      count: "right",
+      ...Object.fromEntries(
+        [...cross_region_matrix.regions, "Fuori da tutte", "totale_riga", "pct_totale"].map(
+          col => [col, "right"]
+        )
+      )
+    }
+  }
+)
+))
+}});
+
+define({id: "53e843fc", inputs: ["html","comuni_inout","display"], body: async (html,comuni_inout,display) => {
+display(await(
+html`<div><strong>Snapshot:</strong> ${comuni_inout.date}</div>`
+))
+}});
+
+define({id: "46a77854", inputs: ["comuni_inout","quality_region_selection","view","Inputs"], outputs: ["quality_comuni","quality_comuni_sorted_table","quality_comuni_sorted_dropdown","quality_comuni_options","quality_comune_selection"], body: (comuni_inout,quality_region_selection,view,Inputs) => {
+const quality_comuni = comuni_inout.comuni
+  .filter(d => Number.isFinite(Number(d.pro_com)))
+  .filter(d => quality_region_selection?.kind !== "one" || Number(d.cod_reg) === Number(quality_region_selection?.cod_reg))
+;
+
+const quality_comuni_sorted_table = [...quality_comuni]
+  .sort((a, b) => (Number(b.fuori_buffer_500m) - Number(a.fuori_buffer_500m)) || (Number(b.pct_fuori_buffer_500m) - Number(a.pct_fuori_buffer_500m)) || (Number(b.fuori) - Number(a.fuori)) || a.comune.localeCompare(b.comune, "it"));
+
+const quality_comuni_sorted_dropdown = [...quality_comuni]
+  .sort((a, b) => a.comune.localeCompare(b.comune, "it"));
+
+const quality_comuni_options = [{kind: "all", label: "Tutti"}].concat(
+  quality_comuni_sorted_dropdown.map(d => ({kind: "one", pro_com: d.pro_com, label: `${d.comune} (${d.pro_com})`}))
+);
+
+const quality_comune_selection = view(Inputs.select(
+  quality_comuni_options,
+  {
+    label: "Comune",
+    value: quality_comuni_options[0],
+    format: d => d.label
+  }
+));
+return {quality_comuni,quality_comuni_sorted_table,quality_comuni_sorted_dropdown,quality_comuni_options,quality_comune_selection};
+}});
+
+define({id: "dfb38707", inputs: ["quality_comuni_sorted_table","quality_comune_selection","quality_region_selection","quality_comuni","html"], outputs: ["quality_comuni_filtered","quality_region_label","quality_comune_label"], body: (quality_comuni_sorted_table,quality_comune_selection,quality_region_selection,quality_comuni,html) => {
+const quality_comuni_filtered = quality_comuni_sorted_table
+  .filter(d => quality_comune_selection.kind === "all" || Number(d.pro_com) === Number(quality_comune_selection.pro_com));
+
+const quality_region_label = quality_region_selection?.kind === "one"
+  ? (quality_region_selection.regione ?? "Tutte")
+  : "Tutte";
+
+const quality_comune_label = quality_comune_selection?.kind === "one"
+  ? (quality_comuni.find(d => Number(d.pro_com) === Number(quality_comune_selection.pro_com))?.comune ?? "Tutti")
+  : "Tutti";
+
+html`<div><strong>Regione ${quality_region_label}</strong> · <strong>Comune ${quality_comune_label}</strong></div>`;
+return {quality_comuni_filtered,quality_region_label,quality_comune_label};
+}});
+
+define({id: "b7c8cf92", inputs: ["Inputs","d3","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,d3,quality_comuni_filtered,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  (() => {
+    const standard_dentro = d3.sum(quality_comuni_filtered, d => Number(d.dentro) || 0);
+    const standard_fuori = d3.sum(quality_comuni_filtered, d => Number(d.fuori) || 0);
+    const standard_totale = d3.sum(quality_comuni_filtered, d => Number(d.totale) || 0);
+    const buffer_dentro = d3.sum(quality_comuni_filtered, d => Number(d.dentro_buffer_500m) || 0);
+    const buffer_fuori = d3.sum(quality_comuni_filtered, d => Number(d.fuori_buffer_500m) || 0);
+    const buffer_totale = d3.sum(quality_comuni_filtered, d => Number(d.totale_buffer_500m) || 0);
+
+    return [{
+      metrica: "Standard",
+      dentro: standard_dentro,
+      fuori: standard_fuori,
+      totale: standard_totale,
+      pct_fuori: standard_totale > 0 ? (standard_fuori * 100 / standard_totale) : 0
+    }, {
+      metrica: "Buffer 500m",
+      dentro: buffer_dentro,
+      fuori: buffer_fuori,
+      totale: buffer_totale,
+      pct_fuori: buffer_totale > 0 ? (buffer_fuori * 100 / buffer_totale) : 0
+    }];
+  })(),
+  {
+    columns: ["metrica", "dentro", "fuori", "totale", "pct_fuori"],
+    header: {metrica: "Metrica", dentro: "Dentro", fuori: "Fuori", totale: "Totale", pct_fuori: "% Fuori"},
+    format: {
+      dentro: value => formatNumber(value),
+      fuori: value => formatNumber(value),
+      totale: value => formatNumber(value),
+      pct_fuori: value => formatPercent(value)
+    },
+    align: {metrica: "left", dentro: "right", fuori: "right", totale: "right", pct_fuori: "right"}
+  }
+)
+))
+}});
+
+define({id: "489ef46d", inputs: ["Inputs","quality_comune_selection","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,quality_comune_selection,quality_comuni_filtered,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  quality_comune_selection.kind === "one"
+    ? quality_comuni_filtered.flatMap(d => ([
+        {metrica: "Regione", valore: d.regione},
+        {metrica: "Comune", valore: d.comune},
+        {metrica: "Dentro", valore: formatNumber(Number(d.dentro) || 0)},
+        {metrica: "Fuori", valore: formatNumber(Number(d.fuori) || 0)},
+        {metrica: "Totale", valore: formatNumber(Number(d.totale) || 0)},
+        {metrica: "% Fuori", valore: formatPercent(Number(d.pct_fuori) || 0)},
+        {metrica: "Dentro (buffer 500m)", valore: formatNumber(Number(d.dentro_buffer_500m) || 0)},
+        {metrica: "Fuori (buffer 500m)", valore: formatNumber(Number(d.fuori_buffer_500m) || 0)},
+        {metrica: "Totale (buffer 500m)", valore: formatNumber(Number(d.totale_buffer_500m) || 0)},
+        {metrica: "% Fuori (buffer 500m)", valore: formatPercent(Number(d.pct_fuori_buffer_500m) || 0)}
+      ]))
+    : quality_comuni_filtered
+      .map(d => ({
+        comune: d.comune,
+        dentro: d.dentro,
+        fuori: d.fuori,
+        totale: d.totale,
+        pct_fuori: d.pct_fuori,
+        dentro_buffer_500m: d.dentro_buffer_500m,
+        fuori_buffer_500m: d.fuori_buffer_500m,
+        totale_buffer_500m: d.totale_buffer_500m,
+        pct_fuori_buffer_500m: d.pct_fuori_buffer_500m
+      })),
+  quality_comune_selection.kind === "one"
+    ? {
+      columns: ["metrica", "valore"],
+      header: {metrica: "Metrica", valore: "Valore"},
+      align: {metrica: "left", valore: "right"}
+    }
+    : {
+    columns: ["comune", "dentro", "fuori", "totale", "pct_fuori", "dentro_buffer_500m", "fuori_buffer_500m", "totale_buffer_500m", "pct_fuori_buffer_500m"],
+    header: {
+      comune: "Comune",
+      dentro: "Dentro",
+      fuori: "Fuori",
+      totale: "Totale",
+      pct_fuori: "% Fuori",
+      dentro_buffer_500m: "Dentro (buffer 500m)",
+      fuori_buffer_500m: "Fuori (buffer 500m)",
+      totale_buffer_500m: "Totale (buffer 500m)",
+      pct_fuori_buffer_500m: "% Fuori (buffer 500m)"
+    },
+    format: {
+      dentro: value => formatNumber(value),
+      fuori: value => formatNumber(value),
+      totale: value => formatNumber(value),
+      pct_fuori: value => formatPercent(value),
+      dentro_buffer_500m: value => formatNumber(value),
+      fuori_buffer_500m: value => formatNumber(value),
+      totale_buffer_500m: value => formatNumber(value),
+      pct_fuori_buffer_500m: value => formatPercent(value)
+    },
+    align: {
+      comune: "left",
+      dentro: "right",
+      fuori: "right",
+      totale: "right",
+      pct_fuori: "right",
+      dentro_buffer_500m: "right",
+      fuori_buffer_500m: "right",
+      totale_buffer_500m: "right",
+      pct_fuori_buffer_500m: "right"
+    },
+    sort: "fuori_buffer_500m",
+    reverse: true
+  }
+)
+))
+}});
+
+define({id: "01289f2d", inputs: ["quality_comuni","quality_comune_selection","quality_region_selection","FileAttachment","cross_region_matrix","html","pmtiles","maplibregl","display","invalidation"], outputs: ["selected_pro_com_list","selected_single_pro_com","selected_cod_reg","pointsTileUrl","regionsTileUrl","comuniTileUrl","mapError"], body: async (quality_comuni,quality_comune_selection,quality_region_selection,FileAttachment,cross_region_matrix,html,pmtiles,maplibregl,display,invalidation) => {
+const selected_pro_com_list = quality_comuni.map(d => Number(d.pro_com)).filter(Number.isFinite);
+const selected_single_pro_com = quality_comune_selection.kind === "one" ? Number(quality_comune_selection.pro_com) : null;
+const selected_cod_reg = quality_region_selection?.kind === "one" ? Number(quality_region_selection.cod_reg) : null;
+
+let pointsTileUrl = null;
+let regionsTileUrl = null;
+let comuniTileUrl = null;
+let mapError = null;
+
+try {
+  const pointsTileUrlsByDate = {
+    "2025-09-03": `pmtiles://${await FileAttachment("./data/anncsu_2025-09-03.pmtiles.gz").url()}`,
+    "2025-10-10": `pmtiles://${await FileAttachment("./data/anncsu_2025-10-10.pmtiles.gz").url()}`,
+    "2025-11-04": `pmtiles://${await FileAttachment("./data/anncsu_2025-11-04.pmtiles.gz").url()}`,
+    "2025-12-02": `pmtiles://${await FileAttachment("./data/anncsu_2025-12-02.pmtiles.gz").url()}`,
+    "2026-01-14": `pmtiles://${await FileAttachment("./data/anncsu_2026-01-14.pmtiles.gz").url()}`,
+    "2026-02-06": `pmtiles://${await FileAttachment("./data/anncsu_2026-02-06.pmtiles.gz").url()}`
+  };
+
+  pointsTileUrl = pointsTileUrlsByDate[cross_region_matrix.date] ?? null;
+  regionsTileUrl = `pmtiles://${await FileAttachment("./data/Reg01012025_CRS84.pmtiles.gz").url()}`;
+  comuniTileUrl = `pmtiles://${await FileAttachment("./data/Com01012025_CRS84.pmtiles.gz").url()}`;
+
+  if (!pointsTileUrl) {
+    mapError = `Nessun PMTiles punti configurato per snapshot ${cross_region_matrix.date}`;
+  }
+} catch (e) {
+  mapError = "PMTiles mancanti per mappa quality (punti/regione/comuni).";
+}
+
+if (mapError) {
+  html`<div>${mapError}</div>`;
+} else {
+  const protocol = new pmtiles.Protocol({metadata: true});
+  if (!maplibregl.getProtocol || !maplibregl.getProtocol("pmtiles")) {
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+  }
+
+  const wrapper = document.createElement("div");
+  const controls = document.createElement("div");
+  controls.style.cssText = "display: flex; gap: 8px; margin-bottom: 8px;";
+  const canZoomComune = quality_comune_selection.kind === "one" && selected_single_pro_com != null;
+  const zoomComuneBtn = document.createElement("button");
+  zoomComuneBtn.textContent = "Zoom comune";
+  zoomComuneBtn.disabled = !canZoomComune;
+  zoomComuneBtn.style.cssText = `padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: ${canZoomComune ? "pointer" : "not-allowed"}; opacity: ${canZoomComune ? "1" : "0.5"};`;
+  controls.appendChild(zoomComuneBtn);
+  const zoomCiviciComuneBtn = document.createElement("button");
+  zoomCiviciComuneBtn.textContent = "Zoom civici comune";
+  zoomCiviciComuneBtn.disabled = !canZoomComune;
+  zoomCiviciComuneBtn.style.cssText = `padding: 6px 10px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: ${canZoomComune ? "pointer" : "not-allowed"}; opacity: ${canZoomComune ? "1" : "0.5"};`;
+  controls.appendChild(zoomCiviciComuneBtn);
+  wrapper.appendChild(controls);
+
+  const mapContainer = document.createElement("div");
+  mapContainer.style.cssText = "width: 100%; height: 800px; border-radius: 8px; overflow: hidden;";
+  wrapper.appendChild(mapContainer);
+  display(wrapper);
+
+  const map = new maplibregl.Map({
+    container: mapContainer,
+    zoom: 5,
+    center: [12.5, 42.5],
+    pitch: 0,
+    hash: true,
+    style: {
+      version: 8,
+      sources: {
+        osm: {
+          type: "raster",
+          tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+          tileSize: 256,
+          attribution: "© OpenStreetMap contributors",
+          maxzoom: 19
+        },
+        points: {type: "vector", url: pointsTileUrl},
+        regions: {type: "vector", url: regionsTileUrl},
+        comuni: {type: "vector", url: comuniTileUrl}
+      },
+      layers: [{id: "osm", type: "raster", source: "osm"}]
+    },
+    maxZoom: 18,
+    minZoom: 5,
+    maxPitch: 85
+  });
+
+  invalidation.then(() => {
+    zoomComuneBtn.removeEventListener("click", zoomToComune);
+    zoomCiviciComuneBtn.removeEventListener("click", zoomToCiviciComune);
+    map.remove();
+  });
+
+  map.addControl(new maplibregl.NavigationControl({
+    visualizePitch: true,
+    showZoom: true,
+    showCompass: true
+  }));
+
+  await new Promise(resolve => map.once("load", resolve));
+
+  const pointsFilter = quality_comune_selection.kind === "one" && selected_single_pro_com != null
+    ? ["==", ["to-number", ["get", "CODICE_ISTAT"]], selected_single_pro_com]
+    : (quality_region_selection?.kind === "one"
+      ? ["in", ["to-number", ["get", "CODICE_ISTAT"]], ["literal", selected_pro_com_list]]
+      : ["has", "CODICE_ISTAT"]);
+
+  if (selected_cod_reg != null) {
+    map.addLayer({
+      id: "quality-region-fill",
+      type: "fill",
+      source: "regions",
+      "source-layer": "layer0",
+      filter: ["==", ["to-number", ["get", "COD_REG"]], selected_cod_reg],
+      paint: {"fill-color": "#ff7f0e", "fill-opacity": 0.12}
+    });
+
+    map.addLayer({
+      id: "quality-region-outline",
+      type: "line",
+      source: "regions",
+      "source-layer": "layer0",
+      filter: ["==", ["to-number", ["get", "COD_REG"]], selected_cod_reg],
+      paint: {"line-color": "#ff7f0e", "line-width": 2.5}
+    });
+  }
+
+  if (quality_comune_selection.kind === "one" && selected_single_pro_com != null) {
+    map.addLayer({
+      id: "quality-comune-fill",
+      type: "fill",
+      source: "comuni",
+      "source-layer": "layer0",
+      filter: ["==", ["to-number", ["get", "PRO_COM"]], selected_single_pro_com],
+      paint: {"fill-color": "#ff7f0e", "fill-opacity": 0.22}
+    });
+
+    map.addLayer({
+      id: "quality-comune-outline",
+      type: "line",
+      source: "comuni",
+      "source-layer": "layer0",
+      filter: ["==", ["to-number", ["get", "PRO_COM"]], selected_single_pro_com],
+      paint: {"line-color": "#cc5c00", "line-width": 2}
+    });
+  }
+
+  function computeBboxFromFeatures(features) {
+    if (!features.length) return null;
+    const bbox = [Infinity, Infinity, -Infinity, -Infinity];
+    const visitCoords = (coords) => {
+      if (!Array.isArray(coords)) return;
+      if (typeof coords[0] === "number" && typeof coords[1] === "number") {
+        const x = coords[0];
+        const y = coords[1];
+        if (x < bbox[0]) bbox[0] = x;
+        if (y < bbox[1]) bbox[1] = y;
+        if (x > bbox[2]) bbox[2] = x;
+        if (y > bbox[3]) bbox[3] = y;
+        return;
+      }
+      for (const child of coords) visitCoords(child);
+    };
+    for (const f of features) visitCoords(f.geometry?.coordinates);
+    if (!Number.isFinite(bbox[0]) || !Number.isFinite(bbox[1]) || !Number.isFinite(bbox[2]) || !Number.isFinite(bbox[3])) return null;
+    return bbox;
+  }
+
+  function fitToBbox(bbox, maxZoom = 14) {
+    if (!bbox) return;
+    map.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], {padding: 40, maxZoom, duration: 700});
+  }
+
+  function zoomToComune() {
+    if (!(quality_comune_selection.kind === "one" && selected_single_pro_com != null)) return;
+    const features = map.querySourceFeatures("comuni", {
+      sourceLayer: "layer0",
+      filter: ["==", ["to-number", ["get", "PRO_COM"]], selected_single_pro_com]
+    });
+    fitToBbox(computeBboxFromFeatures(features), 14);
+  }
+
+  function zoomToCiviciComune() {
+    if (!(quality_comune_selection.kind === "one" && selected_single_pro_com != null)) return;
+    const pointFeatures = map.querySourceFeatures("points", {
+      sourceLayer: "layer0",
+      filter: ["==", ["to-number", ["get", "CODICE_ISTAT"]], selected_single_pro_com]
+    });
+    const pointsBbox = computeBboxFromFeatures(pointFeatures);
+    if (pointsBbox) {
+      fitToBbox(pointsBbox, 16);
+      return;
+    }
+    const comuneFeatures = map.querySourceFeatures("comuni", {
+      sourceLayer: "layer0",
+      filter: ["==", ["to-number", ["get", "PRO_COM"]], selected_single_pro_com]
+    });
+    fitToBbox(computeBboxFromFeatures(comuneFeatures), 14);
+  }
+
+  zoomComuneBtn.addEventListener("click", zoomToComune);
+  zoomCiviciComuneBtn.addEventListener("click", zoomToCiviciComune);
+
+  map.addLayer({
+    id: "quality-points",
+    type: "circle",
+    source: "points",
+    "source-layer": "layer0",
+    filter: pointsFilter,
+    paint: {
+      "circle-color": "#0066ff",
+      "circle-radius": 3.5,
+      "circle-opacity": 0.85
+    }
+  });
+}
+return {selected_pro_com_list,selected_single_pro_com,selected_cod_reg,pointsTileUrl,regionsTileUrl,comuniTileUrl,mapError};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">ANNCSU Progress</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./quality">Quality</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#matrice-fuori-regione-origine-destinazione">Matrice Fuori Regione (Origine -&gt; Destinazione)</a></li>
+<li class="observablehq-secondary-link"><a href="#civici-dentro-fuori-comune-atteso-filtro-attivo">Civici Dentro/Fuori Comune Atteso (Filtro attivo)</a></li>
+<li class="observablehq-secondary-link"><a href="#mappa-quality">Mappa Quality</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="quality" tabindex="-1"><a class="observablehq-header-anchor" href="#quality">Quality</a></h1>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
+<div class="observablehq observablehq--block"><!--:027a00ef:--></div>
+<div class="observablehq observablehq--block"><!--:f09a482c:--></div>
+<div class="observablehq observablehq--block"><!--:31ea9afe:--></div>
+<h2 id="matrice-fuori-regione-origine-destinazione" tabindex="-1"><a class="observablehq-header-anchor" href="#matrice-fuori-regione-origine-destinazione">Matrice Fuori Regione (Origine -&gt; Destinazione)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:85784ed6:--></div>
+<div class="observablehq observablehq--block"><!--:d374d495:--></div>
+<div class="observablehq observablehq--block"><!--:6253f6b5:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9ec4835d:--></div>
+<h2 id="civici-dentro-fuori-comune-atteso-filtro-attivo" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-dentro-fuori-comune-atteso-filtro-attivo">Civici Dentro/Fuori Comune Atteso (Filtro attivo)</a></h2>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:53e843fc:--></div>
+<div class="observablehq observablehq--block"><!--:46a77854:--></div>
+<div class="observablehq observablehq--block"><!--:dfb38707:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b7c8cf92:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:489ef46d:--></div>
+<h2 id="mappa-quality" tabindex="-1"><a class="observablehq-header-anchor" href="#mappa-quality">Mappa Quality</a></h2>
+<div class="observablehq observablehq--block"><!--:01289f2d:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>ANNCSU Progress</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:28:25">Feb 20, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>

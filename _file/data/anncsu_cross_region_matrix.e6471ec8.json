@@ -1,0 +1,472 @@
+{
+  "date": "2026-02-06",
+  "regions": [
+    "Abruzzo",
+    "Basilicata",
+    "Calabria",
+    "Campania",
+    "Emilia-Romagna",
+    "Friuli-Venezia Giulia",
+    "Lazio",
+    "Liguria",
+    "Lombardia",
+    "Marche",
+    "Molise",
+    "Piemonte",
+    "Puglia",
+    "Sardegna",
+    "Sicilia",
+    "Toscana",
+    "Trentino-Alto Adige",
+    "Umbria",
+    "Valle d'Aosta",
+    "Veneto"
+  ],
+  "flows": [
+    {
+      "expected_regione": "Abruzzo",
+      "actual_regione": "Fuori da tutte",
+      "count": 1
+    },
+    {
+      "expected_regione": "Abruzzo",
+      "actual_regione": "Lazio",
+      "count": 14
+    },
+    {
+      "expected_regione": "Abruzzo",
+      "actual_regione": "Marche",
+      "count": 4
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Abruzzo",
+      "count": 13
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Basilicata",
+      "count": 11
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Campania",
+      "count": 32
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Fuori da tutte",
+      "count": 2
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Lazio",
+      "count": 5168
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Lombardia",
+      "count": 3
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Puglia",
+      "count": 3
+    },
+    {
+      "expected_regione": "Calabria",
+      "actual_regione": "Sicilia",
+      "count": 92
+    },
+    {
+      "expected_regione": "Campania",
+      "actual_regione": "Fuori da tutte",
+      "count": 100
+    },
+    {
+      "expected_regione": "Campania",
+      "actual_regione": "Lazio",
+      "count": 18
+    },
+    {
+      "expected_regione": "Campania",
+      "actual_regione": "Puglia",
+      "count": 1
+    },
+    {
+      "expected_regione": "Emilia-Romagna",
+      "actual_regione": "Fuori da tutte",
+      "count": 3
+    },
+    {
+      "expected_regione": "Emilia-Romagna",
+      "actual_regione": "Lombardia",
+      "count": 33
+    },
+    {
+      "expected_regione": "Emilia-Romagna",
+      "actual_regione": "Toscana",
+      "count": 10
+    },
+    {
+      "expected_regione": "Friuli-Venezia Giulia",
+      "actual_regione": "Veneto",
+      "count": 6
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Abruzzo",
+      "count": 77
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Basilicata",
+      "count": 2
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Calabria",
+      "count": 1
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Campania",
+      "count": 10
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Fuori da tutte",
+      "count": 111
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Lombardia",
+      "count": 40
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Marche",
+      "count": 16
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Molise",
+      "count": 1
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Piemonte",
+      "count": 1
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Puglia",
+      "count": 10
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Sicilia",
+      "count": 1
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Toscana",
+      "count": 3
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Umbria",
+      "count": 1
+    },
+    {
+      "expected_regione": "Lazio",
+      "actual_regione": "Veneto",
+      "count": 3
+    },
+    {
+      "expected_regione": "Liguria",
+      "actual_regione": "Emilia-Romagna",
+      "count": 9
+    },
+    {
+      "expected_regione": "Liguria",
+      "actual_regione": "Fuori da tutte",
+      "count": 72
+    },
+    {
+      "expected_regione": "Liguria",
+      "actual_regione": "Piemonte",
+      "count": 4
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Emilia-Romagna",
+      "count": 25
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Fuori da tutte",
+      "count": 43
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Liguria",
+      "count": 43
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Marche",
+      "count": 6
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Piemonte",
+      "count": 212
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Trentino-Alto Adige",
+      "count": 27
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Valle d'Aosta",
+      "count": 10
+    },
+    {
+      "expected_regione": "Lombardia",
+      "actual_regione": "Veneto",
+      "count": 10
+    },
+    {
+      "expected_regione": "Marche",
+      "actual_regione": "Abruzzo",
+      "count": 3
+    },
+    {
+      "expected_regione": "Marche",
+      "actual_regione": "Emilia-Romagna",
+      "count": 7
+    },
+    {
+      "expected_regione": "Marche",
+      "actual_regione": "Umbria",
+      "count": 2
+    },
+    {
+      "expected_regione": "Piemonte",
+      "actual_regione": "Emilia-Romagna",
+      "count": 9
+    },
+    {
+      "expected_regione": "Piemonte",
+      "actual_regione": "Fuori da tutte",
+      "count": 1
+    },
+    {
+      "expected_regione": "Piemonte",
+      "actual_regione": "Liguria",
+      "count": 29
+    },
+    {
+      "expected_regione": "Piemonte",
+      "actual_regione": "Lombardia",
+      "count": 40
+    },
+    {
+      "expected_regione": "Piemonte",
+      "actual_regione": "Toscana",
+      "count": 3
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Abruzzo",
+      "count": 1
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Calabria",
+      "count": 4
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Fuori da tutte",
+      "count": 14
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Lombardia",
+      "count": 3
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Marche",
+      "count": 1
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Sicilia",
+      "count": 6
+    },
+    {
+      "expected_regione": "Puglia",
+      "actual_regione": "Veneto",
+      "count": 1
+    },
+    {
+      "expected_regione": "Sardegna",
+      "actual_regione": "Fuori da tutte",
+      "count": 19
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Calabria",
+      "count": 218
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Campania",
+      "count": 1
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Emilia-Romagna",
+      "count": 1
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Fuori da tutte",
+      "count": 25
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Lazio",
+      "count": 17423
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Lombardia",
+      "count": 17
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Marche",
+      "count": 4
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Puglia",
+      "count": 1
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Toscana",
+      "count": 3
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Umbria",
+      "count": 121
+    },
+    {
+      "expected_regione": "Sicilia",
+      "actual_regione": "Veneto",
+      "count": 13
+    },
+    {
+      "expected_regione": "Toscana",
+      "actual_regione": "Basilicata",
+      "count": 1
+    },
+    {
+      "expected_regione": "Toscana",
+      "actual_regione": "Emilia-Romagna",
+      "count": 1
+    },
+    {
+      "expected_regione": "Toscana",
+      "actual_regione": "Fuori da tutte",
+      "count": 2
+    },
+    {
+      "expected_regione": "Toscana",
+      "actual_regione": "Veneto",
+      "count": 2
+    },
+    {
+      "expected_regione": "Trentino-Alto Adige",
+      "actual_regione": "Fuori da tutte",
+      "count": 1
+    },
+    {
+      "expected_regione": "Trentino-Alto Adige",
+      "actual_regione": "Veneto",
+      "count": 1
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Abruzzo",
+      "count": 577
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Emilia-Romagna",
+      "count": 6
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Fuori da tutte",
+      "count": 278
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Lazio",
+      "count": 568
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Marche",
+      "count": 625
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Molise",
+      "count": 1
+    },
+    {
+      "expected_regione": "Umbria",
+      "actual_regione": "Toscana",
+      "count": 20
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Emilia-Romagna",
+      "count": 16
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Friuli-Venezia Giulia",
+      "count": 7
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Fuori da tutte",
+      "count": 10
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Lombardia",
+      "count": 17
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Toscana",
+      "count": 2
+    },
+    {
+      "expected_regione": "Veneto",
+      "actual_regione": "Trentino-Alto Adige",
+      "count": 5
+    }
+  ]
+}
