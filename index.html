@@ -19,7 +19,7 @@
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/7c43807f.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
-<link rel="modulepreload" href="./_import/map-layers.61c2fd2a.js">
+<link rel="modulepreload" href="./_import/map-layers.44bbde42.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
@@ -200,10 +200,10 @@ registerFile("./data/anncsu_reg_20_2025-11-04.pmtiles.gz", {"name":"./data/anncs
 registerFile("./data/anncsu_reg_20_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-12-02.pmtiles.d01cf43e.gz","lastModified":1773141330986,"size":401791});
 registerFile("./data/anncsu_reg_20_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-02-06.pmtiles.17715ade.gz","lastModified":1773142370228,"size":2350229});
 registerFile("./data/anncsu_reg_20_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-03-06.pmtiles.b69ee1d1.gz","lastModified":1773143268886,"size":3449303});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.b9e576e5.json","lastModified":1773149610816,"size":5219610});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773149603168,"size":853});
-registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773149616720,"size":5411387});
-registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773149611504,"size":345011});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.c188368c.json","lastModified":1773156126385,"size":5219629});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773156118788,"size":853});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773156130416,"size":5411387});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773156126924,"size":345011});
 
 define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -212,7 +212,7 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/
 }});
 
 define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.19.0/f507b18a.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.61c2fd2a.js")]);
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.19.0/f507b18a.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.44bbde42.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
@@ -905,7 +905,7 @@ html`<h3>Mappa Regione — ${selected_region}</h3>`
 ))
 }});
 
-define({id: "b57e7ac6", inputs: ["display","maplibregl","regioni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","municipalitySelectInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["regionMapEl","regionMap","regionPopup"], body: async (display,maplibregl,regioni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,municipalitySelectInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+define({id: "28691fa9", inputs: ["display","maplibregl","regioni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["regionMapEl","regionMap","regionPopup"], body: async (display,maplibregl,regioni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
 const regionMapEl = display(document.createElement("div"));
 regionMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
 const regionMap = new maplibregl.Map({
@@ -953,8 +953,8 @@ regionMap.on("click", (e) => {
   regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
   if (filterRegionInput.value === cd.regione) {
     // Stessa regione: municipalitySelectInput è già aggiornato, imposta direttamente
-    municipalitySelectInput.value = cd.comune;
-    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+    window._municipalitySelectInput.value = cd.comune;
+    window._municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
   } else {
     // Cambio regione: imposta il pending prima di triggerare il filtro, così la cella
     // che ricrea municipalitySelectInput lo legge direttamente come valore iniziale
@@ -964,19 +964,34 @@ regionMap.on("click", (e) => {
   }
 });
 
-await initDateLayersForMap(regionMap, "r");
+await initDateLayersForMap(regionMap, "r", {
+  refreshFilters: () => {
+    const currentRegion = regionSelectInput.value;
+    const istatCodes = spatial_stats.comuni.total
+      .filter(d => d.regione === currentRegion)
+      .map(d => d.codice_istat)
+      .map(d => Number(d))
+      .filter(Number.isFinite);
+    const boundaryIds = new Set(["region-boundary-fill", "region-boundary-line"]);
+    const pointFilter = istatCodes.length ? ["in", ["to-number", ["get", "codice_istat"]], ["literal", istatCodes]] : null;
+    regionMap.getStyle().layers
+      .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+      .forEach(l => regionMap.setFilter(l.id, pointFilter));
+  }
+});
 regionMap.addControl(new LayerControl(buildLayerGroupsForMap("r")), "top-right");
 return {regionMapEl,regionMap,regionPopup};
 }});
 
-define({id: "acfaf848", inputs: ["spatial_stats","selected_region","regionMap"], body: (spatial_stats,selected_region,regionMap) => {
+define({id: "8bf56aba", inputs: ["spatial_stats","selected_region","regionMap"], body: (spatial_stats,selected_region,regionMap) => {
 {
   const istatCodes = spatial_stats.comuni.total
     .filter(d => d.regione === selected_region)
     .map(d => d.codice_istat)
-    .filter(Boolean);
+    .map(d => Number(d))
+    .filter(Number.isFinite);
   const boundaryIds = new Set(["region-boundary-fill", "region-boundary-line"]);
-  const pointFilter = istatCodes.length ? ["in", ["get", "codice_istat"], ["literal", istatCodes]] : null;
+  const pointFilter = istatCodes.length ? ["in", ["to-number", ["get", "codice_istat"]], ["literal", istatCodes]] : null;
   regionMap.getStyle().layers
     .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
     .forEach(l => regionMap.setFilter(l.id, pointFilter));
@@ -1366,6 +1381,13 @@ const selected_municipality = view(municipalitySelectInput);
 return {filtered_comuni,_initMunicipality,municipalitySelectInput,selected_municipality};
 }});
 
+define({id: "55173d85", inputs: ["municipalitySelectInput"], body: (municipalitySelectInput) => {
+// Aggiorna il riferimento globale ogni volta che municipalitySelectInput viene ricreato.
+// I click handler nelle celle mappa usano window._municipalitySelectInput invece della
+// variabile reattiva diretta, per evitare che Observable ricrei le mappe ad ogni cambio regione.
+window._municipalitySelectInput = municipalitySelectInput;
+}});
+
 define({id: "f156abe9", inputs: ["Plot","selected_municipality","width","displayMode","spatial_stats","d3","display"], body: async (Plot,selected_municipality,width,displayMode,spatial_stats,d3,display) => {
 display(await(
 Plot.plot({
@@ -1489,7 +1511,7 @@ html`<h3>Mappa Comune — ${selected_municipality}</h3>`
 ))
 }});
 
-define({id: "ff35cc81", inputs: ["display","maplibregl","comuni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","municipalitySelectInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["comuneMapEl","comuneMap","comunePopup"], body: async (display,maplibregl,comuni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,municipalitySelectInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+define({id: "fbac1260", inputs: ["display","maplibregl","comuni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["comuneMapEl","comuneMap","comunePopup"], body: async (display,maplibregl,comuni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
 const comuneMapEl = display(document.createElement("div"));
 comuneMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
 const comuneMap = new maplibregl.Map({
@@ -1537,8 +1559,8 @@ comuneMap.on("click", (e) => {
   regionSelectInput.value = cd.regione;
   regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
   if (filterRegionInput.value === cd.regione) {
-    municipalitySelectInput.value = cd.comune;
-    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+    window._municipalitySelectInput.value = cd.comune;
+    window._municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
   } else {
     window._pendingMunicipality = cd.comune;
     filterRegionInput.value = cd.regione;
@@ -1546,18 +1568,31 @@ comuneMap.on("click", (e) => {
   }
 });
 
-await initDateLayersForMap(comuneMap, "c");
+await initDateLayersForMap(comuneMap, "c", {
+  refreshFilters: () => {
+    const currentMunicipality = window._municipalitySelectInput?.value;
+    const comuneData = spatial_stats.comuni.total.find(d => d.comune === currentMunicipality);
+    const istat = comuneData?.codice_istat;
+    const normalizedIstat = Number(istat);
+    const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
+    const pointFilter = Number.isFinite(normalizedIstat) ? ["==", ["to-number", ["get", "codice_istat"]], normalizedIstat] : null;
+    comuneMap.getStyle().layers
+      .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+      .forEach(l => comuneMap.setFilter(l.id, pointFilter));
+  }
+});
 comuneMap.addControl(new LayerControl(buildLayerGroupsForMap("c")), "top-right");
 return {comuneMapEl,comuneMap,comunePopup};
 }});
 
-define({id: "a0ff1323", inputs: ["municipalitySelectInput","spatial_stats","selected_municipality","comuneMap"], body: (municipalitySelectInput,spatial_stats,selected_municipality,comuneMap) => {
+define({id: "66659e35", inputs: ["municipalitySelectInput","spatial_stats","selected_municipality","comuneMap"], body: (municipalitySelectInput,spatial_stats,selected_municipality,comuneMap) => {
 {
   void municipalitySelectInput; // dipendenza diretta: riesegui anche quando filter_region cambia e municipalitySelectInput viene ricreato
   const comuneData = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
   const istat = comuneData?.codice_istat;
   const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
-  const pointFilter = istat ? ["==", ["get", "codice_istat"], istat] : null;
+  const normalizedIstat = Number(istat);
+  const pointFilter = Number.isFinite(normalizedIstat) ? ["==", ["to-number", ["get", "codice_istat"]], normalizedIstat] : null;
   comuneMap.getStyle().layers
     .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
     .forEach(l => comuneMap.setFilter(l.id, pointFilter));
@@ -1770,8 +1805,8 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:fbdc2618:--></div>
 </div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4096d0ab:--></div>
-<div class="observablehq observablehq--block"><!--:b57e7ac6:--></div>
-<div class="observablehq observablehq--block"><!--:acfaf848:--></div>
+<div class="observablehq observablehq--block"><!--:28691fa9:--></div>
+<div class="observablehq observablehq--block"><!--:8bf56aba:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c09393bf:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c8aa09db:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5e516223:--></div>
@@ -1789,19 +1824,20 @@ scrollableTable(
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
 <div class="observablehq observablehq--block"><!--:30442236:--></div>
 <div class="observablehq observablehq--block"><!--:e838ea8f:--></div>
+<div class="observablehq observablehq--block"><!--:55173d85:--></div>
 <div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f156abe9:--></div>
 </div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d849e55:--></div>
-<div class="observablehq observablehq--block"><!--:ff35cc81:--></div>
-<div class="observablehq observablehq--block"><!--:a0ff1323:--></div>
+<div class="observablehq observablehq--block"><!--:fbac1260:--></div>
+<div class="observablehq observablehq--block"><!--:66659e35:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41aa4795:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:92c99d2a:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:42ff04db:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c93111fc:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T15:46:09">Mar 10, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T16:21:50">Mar 10, 2026</a>.</div>
 </footer>
 </div>
 </body>
