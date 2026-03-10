@@ -12,12 +12,14 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.0d9d15e7.js">
+<link rel="modulepreload" href="./_observablehq/client.323253bc.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.18.0/587b46a2.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.19.0/f507b18a.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/7c43807f.js">
+<link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
+<link rel="modulepreload" href="./_import/map-layers.61c2fd2a.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
@@ -61,27 +63,147 @@
 <link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
 <script type="module">
 
-import {define} from "./_observablehq/client.0d9d15e7.js";
+import {define} from "./_observablehq/client.323253bc.js";
 import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
-registerFile("./data/anncsu_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-09-03.pmtiles.2c827527.gz","lastModified":1771580244434,"size":13033320});
-registerFile("./data/anncsu_2025-10-10_missing.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_missing.pmtiles.9548dd4f.gz","lastModified":1771580244434,"size":57217});
-registerFile("./data/anncsu_2025-10-10_moved.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_moved.pmtiles.ae0df30a.gz","lastModified":1771580244434,"size":159329});
-registerFile("./data/anncsu_2025-10-10_new.pmtiles.gz", {"name":"./data/anncsu_2025-10-10_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-10-10_new.pmtiles.a749b649.gz","lastModified":1771580244434,"size":1464795});
-registerFile("./data/anncsu_2025-11-04_missing.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_missing.pmtiles.01577313.gz","lastModified":1771580244434,"size":2001318});
-registerFile("./data/anncsu_2025-11-04_moved.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_moved.pmtiles.90d84d35.gz","lastModified":1771580244434,"size":209943});
-registerFile("./data/anncsu_2025-11-04_new.pmtiles.gz", {"name":"./data/anncsu_2025-11-04_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-11-04_new.pmtiles.a3027a5c.gz","lastModified":1771580244434,"size":4856161});
-registerFile("./data/anncsu_2025-12-02_missing.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_missing.pmtiles.57b496d2.gz","lastModified":1771580244438,"size":59467});
-registerFile("./data/anncsu_2025-12-02_moved.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_moved.pmtiles.0490a5ed.gz","lastModified":1771580244438,"size":2565975});
-registerFile("./data/anncsu_2025-12-02_new.pmtiles.gz", {"name":"./data/anncsu_2025-12-02_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2025-12-02_new.pmtiles.2ce5d9f0.gz","lastModified":1771580244438,"size":21925034});
-registerFile("./data/anncsu_2026-01-14_missing.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_missing.pmtiles.9876efec.gz","lastModified":1771580244438,"size":229170});
-registerFile("./data/anncsu_2026-01-14_moved.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_moved.pmtiles.b3f42bb8.gz","lastModified":1771580244438,"size":11173391});
-registerFile("./data/anncsu_2026-01-14_new.pmtiles.gz", {"name":"./data/anncsu_2026-01-14_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-01-14_new.pmtiles.85dfd966.gz","lastModified":1771580244438,"size":63166777});
-registerFile("./data/anncsu_2026-02-06_missing.pmtiles.gz", {"name":"./data/anncsu_2026-02-06_missing.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-02-06_missing.pmtiles.8c8ca7ab.gz","lastModified":1771580244438,"size":235590});
-registerFile("./data/anncsu_2026-02-06_moved.pmtiles.gz", {"name":"./data/anncsu_2026-02-06_moved.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-02-06_moved.pmtiles.7038a551.gz","lastModified":1771580244438,"size":2455460});
-registerFile("./data/anncsu_2026-02-06_new.pmtiles.gz", {"name":"./data/anncsu_2026-02-06_new.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_2026-02-06_new.pmtiles.303e950c.gz","lastModified":1771580244438,"size":36692545});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.b533777e.json","lastModified":1771583322790,"size":3943752});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.5666e201.json","lastModified":1771583319221,"size":726});
+registerFile("./data/anncsu_it_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_it_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-09-03.pmtiles.7bbb3f63.gz","lastModified":1773140759116,"size":13856941});
+registerFile("./data/anncsu_it_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_it_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-10-10.pmtiles.58b7b916.gz","lastModified":1773140904165,"size":14594502});
+registerFile("./data/anncsu_it_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_it_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-11-04.pmtiles.016dea7f.gz","lastModified":1773141056373,"size":15954068});
+registerFile("./data/anncsu_it_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_it_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-12-02.pmtiles.bc94ec61.gz","lastModified":1773141295930,"size":26039902});
+registerFile("./data/anncsu_it_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_it_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-01-14.pmtiles.9caa9af8.gz","lastModified":1773141727710,"size":51253067});
+registerFile("./data/anncsu_it_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-02-06.pmtiles.1af55fc5.gz","lastModified":1773142276016,"size":66638414});
+registerFile("./data/anncsu_it_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-03-06.pmtiles.387677cd.gz","lastModified":1773143126606,"size":104827871});
+registerFile("./data/anncsu_reg_01_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-09-03.pmtiles.aa2e7a8f.gz","lastModified":1773140760804,"size":977317});
+registerFile("./data/anncsu_reg_01_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-10-10.pmtiles.a6f6ac03.gz","lastModified":1773140905657,"size":994661});
+registerFile("./data/anncsu_reg_01_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-11-04.pmtiles.aaf51b3b.gz","lastModified":1773141057805,"size":932689});
+registerFile("./data/anncsu_reg_01_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-12-02.pmtiles.b4fd21c5.gz","lastModified":1773141297954,"size":1429961});
+registerFile("./data/anncsu_reg_01_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-01-14.pmtiles.ebfaed0f.gz","lastModified":1773141732566,"size":3361870});
+registerFile("./data/anncsu_reg_01_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-02-06.pmtiles.00613635.gz","lastModified":1773142281088,"size":4323466});
+registerFile("./data/anncsu_reg_01_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-03-06.pmtiles.d607d657.gz","lastModified":1773143133606,"size":6087496});
+registerFile("./data/anncsu_reg_02_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-09-03.pmtiles.8886df8c.gz","lastModified":1773140761043,"size":34953});
+registerFile("./data/anncsu_reg_02_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-10-10.pmtiles.851ba6e2.gz","lastModified":1773140905895,"size":40538});
+registerFile("./data/anncsu_reg_02_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-11-04.pmtiles.8ff8ab2e.gz","lastModified":1773141058023,"size":39340});
+registerFile("./data/anncsu_reg_02_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-12-02.pmtiles.bc07a978.gz","lastModified":1773141298183,"size":39916});
+registerFile("./data/anncsu_reg_02_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-01-14.pmtiles.2682ce0b.gz","lastModified":1773141732866,"size":55562});
+registerFile("./data/anncsu_reg_02_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-02-06.pmtiles.5e3ffe3e.gz","lastModified":1773142281356,"size":56064});
+registerFile("./data/anncsu_reg_02_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-03-06.pmtiles.602b10e6.gz","lastModified":1773143133976,"size":229540});
+registerFile("./data/anncsu_reg_03_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-09-03.pmtiles.c08979bd.gz","lastModified":1773140763360,"size":1417874});
+registerFile("./data/anncsu_reg_03_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-10-10.pmtiles.b4f9f6d9.gz","lastModified":1773140907961,"size":1471109});
+registerFile("./data/anncsu_reg_03_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-11-04.pmtiles.dd0476a0.gz","lastModified":1773141060017,"size":1437454});
+registerFile("./data/anncsu_reg_03_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-12-02.pmtiles.be97aca9.gz","lastModified":1773141301674,"size":2650664});
+registerFile("./data/anncsu_reg_03_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-01-14.pmtiles.8f2930d3.gz","lastModified":1773141739970,"size":5172854});
+registerFile("./data/anncsu_reg_03_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-02-06.pmtiles.d1c683ec.gz","lastModified":1773142289264,"size":6600943});
+registerFile("./data/anncsu_reg_03_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-03-06.pmtiles.7a1f736c.gz","lastModified":1773143146964,"size":10477648});
+registerFile("./data/anncsu_reg_04_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-09-03.pmtiles.e566687a.gz","lastModified":1773140764059,"size":337396});
+registerFile("./data/anncsu_reg_04_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-10-10.pmtiles.dade3206.gz","lastModified":1773140908614,"size":337259});
+registerFile("./data/anncsu_reg_04_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-11-04.pmtiles.0e006cb4.gz","lastModified":1773141060637,"size":309218});
+registerFile("./data/anncsu_reg_04_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-12-02.pmtiles.3dd27bd5.gz","lastModified":1773141302474,"size":493384});
+registerFile("./data/anncsu_reg_04_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-01-14.pmtiles.2d65e68b.gz","lastModified":1773141741446,"size":965809});
+registerFile("./data/anncsu_reg_04_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-02-06.pmtiles.7719ea83.gz","lastModified":1773142291152,"size":1399227});
+registerFile("./data/anncsu_reg_04_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-03-06.pmtiles.51951e7b.gz","lastModified":1773143149190,"size":1860398});
+registerFile("./data/anncsu_reg_05_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-09-03.pmtiles.9e36dc6d.gz","lastModified":1773140765600,"size":880101});
+registerFile("./data/anncsu_reg_05_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-10-10.pmtiles.552cf7ba.gz","lastModified":1773140910085,"size":942472});
+registerFile("./data/anncsu_reg_05_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-11-04.pmtiles.df71f9df.gz","lastModified":1773141062465,"size":1190983});
+registerFile("./data/anncsu_reg_05_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-12-02.pmtiles.6e21c7b9.gz","lastModified":1773141305418,"size":2246041});
+registerFile("./data/anncsu_reg_05_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-01-14.pmtiles.bd2ce5f9.gz","lastModified":1773141747478,"size":4447349});
+registerFile("./data/anncsu_reg_05_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-02-06.pmtiles.e8090244.gz","lastModified":1773142297808,"size":5615618});
+registerFile("./data/anncsu_reg_05_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-03-06.pmtiles.e7663fbb.gz","lastModified":1773143160290,"size":9016944});
+registerFile("./data/anncsu_reg_06_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-09-03.pmtiles.b55f6b3a.gz","lastModified":1773140766039,"size":168439});
+registerFile("./data/anncsu_reg_06_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-10-10.pmtiles.2db918f1.gz","lastModified":1773140910557,"size":236862});
+registerFile("./data/anncsu_reg_06_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-11-04.pmtiles.8bc43b30.gz","lastModified":1773141062946,"size":254361});
+registerFile("./data/anncsu_reg_06_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-12-02.pmtiles.bd2815b4.gz","lastModified":1773141305934,"size":275928});
+registerFile("./data/anncsu_reg_06_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-01-14.pmtiles.8aaafe99.gz","lastModified":1773141748240,"size":395283});
+registerFile("./data/anncsu_reg_06_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-02-06.pmtiles.5951fea9.gz","lastModified":1773142298984,"size":700825});
+registerFile("./data/anncsu_reg_06_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-03-06.pmtiles.6722e5c1.gz","lastModified":1773143161828,"size":969642});
+registerFile("./data/anncsu_reg_07_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-09-03.pmtiles.a6e044aa.gz","lastModified":1773140767613,"size":1011345});
+registerFile("./data/anncsu_reg_07_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-10-10.pmtiles.73347e4f.gz","lastModified":1773140912143,"size":1011889});
+registerFile("./data/anncsu_reg_07_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-11-04.pmtiles.1adf2e35.gz","lastModified":1773141064525,"size":1016657});
+registerFile("./data/anncsu_reg_07_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-12-02.pmtiles.1d037d9c.gz","lastModified":1773141307822,"size":1105808});
+registerFile("./data/anncsu_reg_07_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-01-14.pmtiles.a8be49f0.gz","lastModified":1773141751258,"size":1901807});
+registerFile("./data/anncsu_reg_07_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-02-06.pmtiles.29331994.gz","lastModified":1773142301852,"size":2121368});
+registerFile("./data/anncsu_reg_07_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-03-06.pmtiles.256fbee7.gz","lastModified":1773143164918,"size":2985501});
+registerFile("./data/anncsu_reg_08_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-09-03.pmtiles.8083c08c.gz","lastModified":1773140771836,"size":3012479});
+registerFile("./data/anncsu_reg_08_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-10-10.pmtiles.b4e0fb51.gz","lastModified":1773140916065,"size":3033413});
+registerFile("./data/anncsu_reg_08_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-11-04.pmtiles.75b8aa01.gz","lastModified":1773141069073,"size":3607425});
+registerFile("./data/anncsu_reg_08_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-12-02.pmtiles.506405d7.gz","lastModified":1773141313666,"size":4885518});
+registerFile("./data/anncsu_reg_08_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-02-06.pmtiles.51179ac8.gz","lastModified":1773142310648,"size":8157349});
+registerFile("./data/anncsu_reg_08_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-03-06.pmtiles.7d493fae.gz","lastModified":1773143176826,"size":12182617});
+registerFile("./data/anncsu_reg_09_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-09-03.pmtiles.39e72e67.gz","lastModified":1773140774232,"size":1164476});
+registerFile("./data/anncsu_reg_09_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-10-10.pmtiles.2d18ed26.gz","lastModified":1773140918621,"size":1305156});
+registerFile("./data/anncsu_reg_09_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-11-04.pmtiles.357f3188.gz","lastModified":1773141071977,"size":1727860});
+registerFile("./data/anncsu_reg_09_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-12-02.pmtiles.8fcfa81b.gz","lastModified":1773141318278,"size":2289052});
+registerFile("./data/anncsu_reg_09_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-02-06.pmtiles.c7c833ba.gz","lastModified":1773142318104,"size":4635331});
+registerFile("./data/anncsu_reg_09_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-03-06.pmtiles.abe7cae7.gz","lastModified":1773143186790,"size":7071312});
+registerFile("./data/anncsu_reg_10_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-09-03.pmtiles.1820bf3b.gz","lastModified":1773140774569,"size":86486});
+registerFile("./data/anncsu_reg_10_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-10-10.pmtiles.35569556.gz","lastModified":1773140918906,"size":86975});
+registerFile("./data/anncsu_reg_10_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-11-04.pmtiles.bfe0df0d.gz","lastModified":1773141072262,"size":82643});
+registerFile("./data/anncsu_reg_10_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-12-02.pmtiles.b7267d32.gz","lastModified":1773141318670,"size":173293});
+registerFile("./data/anncsu_reg_10_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-02-06.pmtiles.801df5a9.gz","lastModified":1773142320116,"size":1500120});
+registerFile("./data/anncsu_reg_10_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-03-06.pmtiles.566032c2.gz","lastModified":1773143189226,"size":2157374});
+registerFile("./data/anncsu_reg_11_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-09-03.pmtiles.fb6599c9.gz","lastModified":1773140774994,"size":179793});
+registerFile("./data/anncsu_reg_11_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-10-10.pmtiles.b6b102f5.gz","lastModified":1773140919279,"size":180665});
+registerFile("./data/anncsu_reg_11_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-11-04.pmtiles.2a375deb.gz","lastModified":1773141072723,"size":228230});
+registerFile("./data/anncsu_reg_11_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-12-02.pmtiles.85ded01e.gz","lastModified":1773141319454,"size":539606});
+registerFile("./data/anncsu_reg_11_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-02-06.pmtiles.ce269a2c.gz","lastModified":1773142322560,"size":2138005});
+registerFile("./data/anncsu_reg_11_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-03-06.pmtiles.55ef9ea5.gz","lastModified":1773143192530,"size":3271364});
+registerFile("./data/anncsu_reg_12_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-09-03.pmtiles.dedbf465.gz","lastModified":1773140775332,"size":109574});
+registerFile("./data/anncsu_reg_12_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-10-10.pmtiles.90b4f201.gz","lastModified":1773140919586,"size":110964});
+registerFile("./data/anncsu_reg_12_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-11-04.pmtiles.f8ecbd53.gz","lastModified":1773141073031,"size":99631});
+registerFile("./data/anncsu_reg_12_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-12-02.pmtiles.488777ff.gz","lastModified":1773141319831,"size":193354});
+registerFile("./data/anncsu_reg_12_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-02-06.pmtiles.8c915258.gz","lastModified":1773142326508,"size":3562297});
+registerFile("./data/anncsu_reg_12_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-03-06.pmtiles.c0244f73.gz","lastModified":1773143205790,"size":14694495});
+registerFile("./data/anncsu_reg_13_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-09-03.pmtiles.ce3fe320.gz","lastModified":1773140776060,"size":427474});
+registerFile("./data/anncsu_reg_13_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-10-10.pmtiles.1855031d.gz","lastModified":1773140920281,"size":463357});
+registerFile("./data/anncsu_reg_13_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-11-04.pmtiles.516f01e9.gz","lastModified":1773141073717,"size":425499});
+registerFile("./data/anncsu_reg_13_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-12-02.pmtiles.e39445e6.gz","lastModified":1773141320830,"size":673629});
+registerFile("./data/anncsu_reg_13_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-02-06.pmtiles.b20ff39c.gz","lastModified":1773142328936,"size":3246732});
+registerFile("./data/anncsu_reg_13_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-03-06.pmtiles.5da89126.gz","lastModified":1773143209106,"size":4864081});
+registerFile("./data/anncsu_reg_14_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-09-03.pmtiles.2bb4d63a.gz","lastModified":1773140776360,"size":67865});
+registerFile("./data/anncsu_reg_14_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-10-10.pmtiles.b25630b4.gz","lastModified":1773140920541,"size":67950});
+registerFile("./data/anncsu_reg_14_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-11-04.pmtiles.001c777a.gz","lastModified":1773141073977,"size":47978});
+registerFile("./data/anncsu_reg_14_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-12-02.pmtiles.7ffda966.gz","lastModified":1773141321134,"size":133882});
+registerFile("./data/anncsu_reg_14_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-02-06.pmtiles.e2064444.gz","lastModified":1773142329636,"size":537282});
+registerFile("./data/anncsu_reg_14_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-03-06.pmtiles.c74031db.gz","lastModified":1773143211002,"size":2063479});
+registerFile("./data/anncsu_reg_15_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-09-03.pmtiles.82b3af53.gz","lastModified":1773140777011,"size":252959});
+registerFile("./data/anncsu_reg_15_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-10-10.pmtiles.2569b63f.gz","lastModified":1773140921212,"size":259422});
+registerFile("./data/anncsu_reg_15_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-11-04.pmtiles.da3cb8ed.gz","lastModified":1773141074614,"size":249334});
+registerFile("./data/anncsu_reg_15_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-12-02.pmtiles.164d91af.gz","lastModified":1773141322938,"size":1796368});
+registerFile("./data/anncsu_reg_15_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-02-06.pmtiles.21abb04a.gz","lastModified":1773142338068,"size":11346723});
+registerFile("./data/anncsu_reg_15_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-03-06.pmtiles.bdf8b872.gz","lastModified":1773143223182,"size":17192756});
+registerFile("./data/anncsu_reg_16_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-09-03.pmtiles.853cbec0.gz","lastModified":1773140777339,"size":81086});
+registerFile("./data/anncsu_reg_16_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-10-10.pmtiles.4538db1b.gz","lastModified":1773140921685,"size":183555});
+registerFile("./data/anncsu_reg_16_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-11-04.pmtiles.841e3406.gz","lastModified":1773141075225,"size":266111});
+registerFile("./data/anncsu_reg_16_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-12-02.pmtiles.cb2b6a3c.gz","lastModified":1773141324678,"size":974501});
+registerFile("./data/anncsu_reg_16_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-02-06.pmtiles.409ac4af.gz","lastModified":1773142346964,"size":9488735});
+registerFile("./data/anncsu_reg_16_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-03-06.pmtiles.5ccc2c96.gz","lastModified":1773143235550,"size":14497071});
+registerFile("./data/anncsu_reg_17_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-09-03.pmtiles.c1fa1b04.gz","lastModified":1773140777539,"size":14021});
+registerFile("./data/anncsu_reg_17_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-10-10.pmtiles.11320aff.gz","lastModified":1773140921883,"size":14161});
+registerFile("./data/anncsu_reg_17_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-11-04.pmtiles.958f0ab9.gz","lastModified":1773141075432,"size":13286});
+registerFile("./data/anncsu_reg_17_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-12-02.pmtiles.cba3948a.gz","lastModified":1773141325110,"size":193171});
+registerFile("./data/anncsu_reg_17_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-02-06.pmtiles.c89f66db.gz","lastModified":1773142348936,"size":1999786});
+registerFile("./data/anncsu_reg_17_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-03-06.pmtiles.a6fcf411.gz","lastModified":1773143238494,"size":4094026});
+registerFile("./data/anncsu_reg_18_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-09-03.pmtiles.008bd798.gz","lastModified":1773140777908,"size":161981});
+registerFile("./data/anncsu_reg_18_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-10-10.pmtiles.8e6ac0f7.gz","lastModified":1773140922257,"size":173230});
+registerFile("./data/anncsu_reg_18_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-11-04.pmtiles.df33fcbb.gz","lastModified":1773141075957,"size":253338});
+registerFile("./data/anncsu_reg_18_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-12-02.pmtiles.6e67b928.gz","lastModified":1773141326434,"size":1190317});
+registerFile("./data/anncsu_reg_18_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-02-06.pmtiles.97dd969a.gz","lastModified":1773142354524,"size":7502848});
+registerFile("./data/anncsu_reg_18_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-03-06.pmtiles.92aacc20.gz","lastModified":1773143246522,"size":11573340});
+registerFile("./data/anncsu_reg_19_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-09-03.pmtiles.8f56bd37.gz","lastModified":1773140778400,"size":275988});
+registerFile("./data/anncsu_reg_19_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-10-10.pmtiles.bf22c8b4.gz","lastModified":1773140922785,"size":288670});
+registerFile("./data/anncsu_reg_19_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-11-04.pmtiles.e6f47b92.gz","lastModified":1773141076681,"size":444645});
+registerFile("./data/anncsu_reg_19_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-12-02.pmtiles.4b3a80ed.gz","lastModified":1773141330202,"size":3631997});
+registerFile("./data/anncsu_reg_19_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-02-06.pmtiles.087f3136.gz","lastModified":1773142366512,"size":16772502});
+registerFile("./data/anncsu_reg_19_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-03-06.pmtiles.a3ff9820.gz","lastModified":1773143264058,"size":27644202});
+registerFile("./data/anncsu_reg_20_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-09-03.pmtiles.242ccae0.gz","lastModified":1773140779017,"size":301261});
+registerFile("./data/anncsu_reg_20_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-10-10.pmtiles.a6dcd07d.gz","lastModified":1773140923409,"size":301648});
+registerFile("./data/anncsu_reg_20_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-11-04.pmtiles.244796f4.gz","lastModified":1773141077353,"size":277105});
+registerFile("./data/anncsu_reg_20_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-12-02.pmtiles.d01cf43e.gz","lastModified":1773141330986,"size":401791});
+registerFile("./data/anncsu_reg_20_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-02-06.pmtiles.17715ade.gz","lastModified":1773142370228,"size":2350229});
+registerFile("./data/anncsu_reg_20_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-03-06.pmtiles.b69ee1d1.gz","lastModified":1773143268886,"size":3449303});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.b9e576e5.json","lastModified":1773149610816,"size":5219610});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773149603168,"size":853});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773149616720,"size":5411387});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773149611504,"size":345011});
 
 define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -89,295 +211,55 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/
 ))
 }});
 
-define({id: "4bcc7d2b", inputs: ["Event"], outputs: ["maplibregl","pmtiles","Plot","LayerControl"], body: async (Event) => {
-const [{default: maplibregl}, pmtiles, Plot] = await Promise.all([import("./_npm/maplibre-gl@5.18.0/587b46a2.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js")]);
+define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.19.0/f507b18a.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.61c2fd2a.js")]);
 
-// Classe per controllo layer personalizzato
-class LayerControl {
-  constructor(layerGroups) {
-    this._layerGroups = layerGroups;
-  }
-
-  onAdd(map) {
-    this._map = map;
-    this._container = document.createElement('div');
-    this._container.className = 'maplibregl-ctrl maplibregl-ctrl-group';
-
-    const wrapper = document.createElement('div');
-    wrapper.style.backgroundColor = 'white';
-    wrapper.style.padding = '10px';
-    wrapper.style.maxHeight = '400px';
-    wrapper.style.overflowY = 'auto';
-    wrapper.style.minWidth = '200px';
-
-    // Aggiungi ogni gruppo di layer
-    this._layerGroups.forEach((group, idx) => {
-      if (idx > 0) {
-        const separator = document.createElement('hr');
-        separator.style.margin = '10px 0';
-        separator.style.border = 'none';
-        separator.style.borderTop = '1px solid #ddd';
-        wrapper.appendChild(separator);
-      }
-
-      if (group.title) {
-        // Crea checkbox per il gruppo (se ha più di un layer)
-        if (group.layers.length > 1) {
-          const groupToggle = this._createGroupToggle(group);
-          wrapper.appendChild(groupToggle);
-        } else {
-          // Se ha un solo layer, mostra solo il titolo
-          const title = document.createElement('div');
-          title.style.fontWeight = 'bold';
-          title.style.marginBottom = '5px';
-          title.style.fontSize = '13px';
-          title.textContent = group.title;
-          wrapper.appendChild(title);
-        }
-      }
-
-      // Container per i layer del gruppo
-      const layersContainer = document.createElement('div');
-      layersContainer.style.paddingLeft = group.layers.length > 1 ? '20px' : '0';
-
-      group.layers.forEach(({name, layerId, color, visible}) => {
-        const layerDiv = this._createLayerToggle(name, layerId, color, visible, group);
-        layersContainer.appendChild(layerDiv);
-      });
-
-      wrapper.appendChild(layersContainer);
-    });
-
-    this._container.appendChild(wrapper);
-    return this._container;
-  }
-
-  _createGroupToggle(group) {
-    const div = document.createElement('div');
-    div.style.display = 'flex';
-    div.style.alignItems = 'center';
-    div.style.gap = '8px';
-    div.style.padding = '4px 0';
-    div.style.cursor = 'pointer';
-    div.style.fontWeight = 'bold';
-    div.style.fontSize = '13px';
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.checked = false;
-    checkbox.id = `group-ctrl-${group.title.replace(/\s+/g, '-')}`;
-
-    const label = document.createElement('label');
-    label.htmlFor = checkbox.id;
-    label.textContent = group.title;
-    label.style.cursor = 'pointer';
-    label.style.flex = '1';
-
-    checkbox.addEventListener('click', () => {
-      // Se è indeterminate, il click lo rende checked
-      // Se è checked, il click lo rende unchecked
-      // Se è unchecked, il click lo rende checked
-      const newState = checkbox.indeterminate ? true : checkbox.checked;
-      checkbox.indeterminate = false;
-
-      group.layers.forEach(({layerId}) => {
-        const layerCheckbox = document.getElementById(`layer-ctrl-${layerId}`);
-        if (layerCheckbox) {
-          layerCheckbox.checked = newState;
-          layerCheckbox.dispatchEvent(new Event('change'));
-        }
-      });
-    });
-
-    // Salva il riferimento al checkbox del gruppo
-    group._groupCheckbox = checkbox;
-
-    div.appendChild(checkbox);
-    div.appendChild(label);
-
-    return div;
-  }
-
-  _createLayerToggle(name, layerId, color, visible, group) {
-    const div = document.createElement('div');
-    div.style.display = 'flex';
-    div.style.alignItems = 'center';
-    div.style.gap = '8px';
-    div.style.padding = '4px 0';
-    div.style.cursor = 'pointer';
-    div.style.fontSize = '12px';
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.checked = visible;
-    checkbox.id = `layer-ctrl-${layerId}`;
-
-    const colorCircle = document.createElement('span');
-    colorCircle.style.width = '10px';
-    colorCircle.style.height = '10px';
-    colorCircle.style.borderRadius = '50%';
-    colorCircle.style.backgroundColor = color;
-    colorCircle.style.display = 'inline-block';
-    colorCircle.style.flexShrink = '0';
-
-    const label = document.createElement('label');
-    label.htmlFor = checkbox.id;
-    label.textContent = name;
-    label.style.cursor = 'pointer';
-    label.style.flex = '1';
-
-    checkbox.addEventListener('change', () => {
-      const visibility = checkbox.checked ? 'visible' : 'none';
-      if (this._map.getLayer(layerId)) {
-        this._map.setLayoutProperty(layerId, 'visibility', visibility);
-      }
-
-      // Aggiorna lo stato del checkbox del gruppo (con tristate)
-      if (group && group._groupCheckbox && group.layers.length > 1) {
-        const checkedLayers = group.layers.filter(({layerId}) => {
-          const cb = document.getElementById(`layer-ctrl-${layerId}`);
-          return cb && cb.checked;
-        }).length;
-
-        if (checkedLayers === 0) {
-          // Nessun layer attivo
-          group._groupCheckbox.checked = false;
-          group._groupCheckbox.indeterminate = false;
-        } else if (checkedLayers === group.layers.length) {
-          // Tutti i layer attivi
-          group._groupCheckbox.checked = true;
-          group._groupCheckbox.indeterminate = false;
-        } else {
-          // Alcuni layer attivi (stato indeterminato)
-          group._groupCheckbox.checked = false;
-          group._groupCheckbox.indeterminate = true;
-        }
-      }
-    });
-
-    div.appendChild(checkbox);
-    div.appendChild(colorCircle);
-    div.appendChild(label);
-
-    return div;
-  }
-
-  onRemove() {
-    this._container.parentNode.removeChild(this._container);
-    this._map = undefined;
-  }
-}
-return {maplibregl,pmtiles,Plot,LayerControl};
+return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
 
-define({id: "b676a795", inputs: ["FileAttachment","d3"], outputs: ["tilesets","anncsu_stats","spatial_stats","idFromName","getLayerId","getSourceId","SmartValue","calculatePercentageChange","formatValue"], body: async (FileAttachment,d3) => {
-// Configurazione tilesets
-const tilesets = {
-  "ANNCSU 2025-09-03": {
-    file: FileAttachment("./data/anncsu_2025-09-03.pmtiles.gz"),
-    color: "#000000",
-    date: "2025-09-03",
-    type: "Base (2025-09-03)"
-  },
-  "ANNCSU 2025-10-10 Rimossi": {
-    file: FileAttachment("./data/anncsu_2025-10-10_missing.pmtiles.gz"),
-    color: "#e60026",
-    date: "2025-10-10",
-    type: "Rimossi 2025-10-10"
-  },
-  "ANNCSU 2025-10-10 Spostati": {
-    file: FileAttachment("./data/anncsu_2025-10-10_moved.pmtiles.gz"),
-    color: "#15a34a",
-    date: "2025-10-10",
-    type: "Spostati 2025-10-10"
-  },
-  "ANNCSU 2025-10-10 Nuovi": {
-    file: FileAttachment("./data/anncsu_2025-10-10_new.pmtiles.gz"),
-    color: "#0066ff",
-    date: "2025-10-10",
-    type: "Nuovi 2025-10-10"
-  },
-  "ANNCSU 2025-11-04 Rimossi": {
-    file: FileAttachment("./data/anncsu_2025-11-04_missing.pmtiles.gz"),
-    color: "#e60026",
-    date: "2025-11-04",
-    type: "Rimossi 2025-11-04"
-  },
-  "ANNCSU 2025-11-04 Spostati": {
-    file: FileAttachment("./data/anncsu_2025-11-04_moved.pmtiles.gz"),
-    color: "#15a34a",
-    date: "2025-11-04",
-    type: "Spostati 2025-11-04"
-  },
-  "ANNCSU 2025-11-04 Nuovi": {
-    file: FileAttachment("./data/anncsu_2025-11-04_new.pmtiles.gz"),
-    color: "#0066ff",
-    date: "2025-11-04",
-    type: "Nuovi 2025-11-04"
-  },
-  "ANNCSU 2025-12-02 Rimossi": {
-    file: FileAttachment("./data/anncsu_2025-12-02_missing.pmtiles.gz"),
-    color: "#e60026",
-    date: "2025-12-02",
-    type: "Rimossi 2025-12-02"
-  },
-  "ANNCSU 2025-12-02 Spostati": {
-    file: FileAttachment("./data/anncsu_2025-12-02_moved.pmtiles.gz"),
-    color: "#15a34a",
-    date: "2025-12-02",
-    type: "Spostati 2025-12-02"
-  },
-  "ANNCSU 2025-12-02 Nuovi": {
-    file: FileAttachment("./data/anncsu_2025-12-02_new.pmtiles.gz"),
-    color: "#0066ff",
-    date: "2025-12-02",
-    type: "Nuovi 2025-12-02"
-  },
-  "ANNCSU 2026-01-14 Rimossi": {
-    file: FileAttachment("./data/anncsu_2026-01-14_missing.pmtiles.gz"),
-    color: "#e60026",
-    date: "2026-01-14",
-    type: "Rimossi 2026-01-14"
-  },
-  "ANNCSU 2026-01-14 Spostati": {
-    file: FileAttachment("./data/anncsu_2026-01-14_moved.pmtiles.gz"),
-    color: "#15a34a",
-    date: "2026-01-14",
-    type: "Spostati 2026-01-14"
-  },
-  "ANNCSU 2026-01-14 Nuovi": {
-    file: FileAttachment("./data/anncsu_2026-01-14_new.pmtiles.gz"),
-    color: "#0066ff",
-    date: "2026-01-14",
-    type: "Nuovi 2026-01-14"
-  },
-  "ANNCSU 2026-02-06 Rimossi": {
-    file: FileAttachment("./data/anncsu_2026-02-06_missing.pmtiles.gz"),
-    color: "#e60026",
-    date: "2026-02-06",
-    type: "Rimossi 2026-02-06"
-  },
-  "ANNCSU 2026-02-06 Spostati": {
-    file: FileAttachment("./data/anncsu_2026-02-06_moved.pmtiles.gz"),
-    color: "#15a34a",
-    date: "2026-02-06",
-    type: "Spostati 2026-02-06"
-  },
-  "ANNCSU 2026-02-06 Nuovi": {
-    file: FileAttachment("./data/anncsu_2026-02-06_new.pmtiles.gz"),
-    color: "#0066ff",
-    date: "2026-02-06",
-    type: "Nuovi 2026-02-06"
-  }
-};
+define({id: "4367281a", inputs: ["FileAttachment","Inputs","d3","createLayerManager"], outputs: ["REGIONS","anncsu_stats","spatial_stats","regioni_boundaries","comuni_boundaries","DATES","MOST_RECENT_DATE","DATE_PALETTE","DATE_COLORS","SmartValue","scrollableTable","calculatePercentageChange","formatValue","_pmtilesRaw","_pmtilesUrls","resolveUrl","initDateLayersForMap","buildLayerGroupsForMap"], body: async (FileAttachment,Inputs,d3,createLayerManager) => {
+// Configurazione:
+// - un file coarse Italia per ogni data
+// - un file punti per ogni coppia (regione, data)
+// Di default è visibile solo la data più recente.
+
+const REGIONS = [
+  { code: "01", name: "Piemonte" },
+  { code: "02", name: "Valle d'Aosta" },
+  { code: "03", name: "Lombardia" },
+  { code: "04", name: "Trentino-Alto Adige" },
+  { code: "05", name: "Veneto" },
+  { code: "06", name: "Friuli-Venezia Giulia" },
+  { code: "07", name: "Liguria" },
+  { code: "08", name: "Emilia-Romagna" },
+  { code: "09", name: "Toscana" },
+  { code: "10", name: "Umbria" },
+  { code: "11", name: "Marche" },
+  { code: "12", name: "Lazio" },
+  { code: "13", name: "Abruzzo" },
+  { code: "14", name: "Molise" },
+  { code: "15", name: "Campania" },
+  { code: "16", name: "Puglia" },
+  { code: "17", name: "Basilicata" },
+  { code: "18", name: "Calabria" },
+  { code: "19", name: "Sicilia" },
+  { code: "20", name: "Sardegna" }
+];
 
 const anncsu_stats = await FileAttachment("./data/anncsu_stats.json").json();
 const spatial_stats = await FileAttachment("./data/anncsu_spatial_stats.json").json();
+const regioni_boundaries = await FileAttachment("./data/regioni_boundaries.geojson").json();
+const comuni_boundaries = await FileAttachment("./data/comuni_boundaries.geojson").json();
 
-// Utilità
-const idFromName = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-const getLayerId = (name) => `pt-${idFromName(name)}`;
-const getSourceId = (name) => `src-${idFromName(name)}`;
+const DATES = [...(
+  spatial_stats?.date_columns?.length
+    ? spatial_stats.date_columns
+    : (anncsu_stats ?? []).map((d) => d.date)
+)].sort();
+const MOST_RECENT_DATE = DATES.at(-1) ?? null;
+
+const DATE_PALETTE = ["#6c757d", "#3182bd", "#e6550d", "#31a354", "#756bb1", "#fd8d3c", "#de2d26", "#17becf"];
+const DATE_COLORS = Object.fromEntries(DATES.map((date, i) => [date, DATE_PALETTE[i % DATE_PALETTE.length]]));
 
 class SmartValue extends Number {
   constructor(value, label) {
@@ -385,6 +267,12 @@ class SmartValue extends Number {
     this.label = label;
   }
   toString() { return this.label; }
+}
+
+function scrollableTable(data, options) {
+  const t = Inputs.table(data, {...options, select: false});
+  t.style.overflowX = "auto";
+  return t;
 }
 
 
@@ -402,10 +290,181 @@ function formatValue(value, mode, isPercentage = false) {
   }
   return d3.format(",")(value);
 }
-return {tilesets,anncsu_stats,spatial_stats,idFromName,getLayerId,getSourceId,SmartValue,calculatePercentageChange,formatValue};
+
+// FileAttachment statici per i PMTiles (aggiornare ad ogni nuova data generata)
+const _pmtilesRaw = {
+  // Italia coarse
+  "anncsu_it_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_it_2025-09-03.pmtiles.gz"),
+  "anncsu_it_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_it_2025-10-10.pmtiles.gz"),
+  "anncsu_it_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_it_2025-11-04.pmtiles.gz"),
+  "anncsu_it_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_it_2025-12-02.pmtiles.gz"),
+  "anncsu_it_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-01-14.pmtiles.gz"),
+  "anncsu_it_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-02-06.pmtiles.gz"),
+  "anncsu_it_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-03-06.pmtiles.gz"),
+
+  // Regione 01 Piemonte
+  "anncsu_reg_01_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_01_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_01_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_01_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_01_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_01_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_01_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-03-06.pmtiles.gz"),
+
+  // Regione 02 Valle d'Aosta
+  "anncsu_reg_02_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_02_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_02_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_02_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_02_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_02_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_02_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-03-06.pmtiles.gz"),
+
+  // Regione 03 Lombardia
+  "anncsu_reg_03_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_03_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_03_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_03_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_03_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_03_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_03_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-03-06.pmtiles.gz"),
+
+  // Regione 04 Trentino-Alto Adige
+  "anncsu_reg_04_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_04_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_04_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_04_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_04_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_04_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_04_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-03-06.pmtiles.gz"),
+  // Regione 05 Veneto
+  "anncsu_reg_05_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_05_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_05_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_05_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_05_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_05_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_05_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-03-06.pmtiles.gz"),
+  // Regione 06 Friuli-Venezia Giulia
+  "anncsu_reg_06_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_06_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_06_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_06_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_06_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_06_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_06_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-03-06.pmtiles.gz"),
+  // Regione 07 Liguria
+  "anncsu_reg_07_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_07_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_07_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_07_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_07_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-01-14.pmtiles.gz"),
+  "anncsu_reg_07_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_07_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-03-06.pmtiles.gz"),
+  // Regione 08 Emilia-Romagna
+  "anncsu_reg_08_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_08_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_08_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_08_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_08_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_08_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2026-03-06.pmtiles.gz"),
+  // Regione 09 Toscana
+  "anncsu_reg_09_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_09_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_09_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_09_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_09_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_09_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2026-03-06.pmtiles.gz"),
+  // Regione 10 Umbria
+  "anncsu_reg_10_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_10_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_10_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_10_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_10_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_10_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2026-03-06.pmtiles.gz"),
+  // Regione 11 Marche
+  "anncsu_reg_11_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_11_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_11_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_11_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_11_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_11_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2026-03-06.pmtiles.gz"),
+  // Regione 12 Lazio
+  "anncsu_reg_12_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_12_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_12_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_12_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_12_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_12_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2026-03-06.pmtiles.gz"),
+  // Regione 13 Abruzzo
+  "anncsu_reg_13_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_13_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_13_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_13_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_13_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_13_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2026-03-06.pmtiles.gz"),
+  // Regione 14 Molise
+  "anncsu_reg_14_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_14_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_14_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_14_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_14_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_14_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2026-03-06.pmtiles.gz"),
+  // Regione 15 Campania
+  "anncsu_reg_15_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_15_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_15_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_15_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_15_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_15_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2026-03-06.pmtiles.gz"),
+  // Regione 16 Puglia
+  "anncsu_reg_16_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_16_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_16_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_16_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_16_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_16_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2026-03-06.pmtiles.gz"),
+  // Regione 17 Basilicata
+  "anncsu_reg_17_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_17_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_17_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_17_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_17_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_17_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2026-03-06.pmtiles.gz"),
+  // Regione 18 Calabria
+  "anncsu_reg_18_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_18_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_18_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_18_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_18_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_18_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2026-03-06.pmtiles.gz"),
+  // Regione 19 Sicilia
+  "anncsu_reg_19_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_19_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_19_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_19_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_19_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_19_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2026-03-06.pmtiles.gz"),
+  // Regione 20 Sardegna
+  "anncsu_reg_20_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-09-03.pmtiles.gz"),
+  "anncsu_reg_20_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-10-10.pmtiles.gz"),
+  "anncsu_reg_20_2025-11-04.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-11-04.pmtiles.gz"),
+  "anncsu_reg_20_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-12-02.pmtiles.gz"),
+  "anncsu_reg_20_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2026-02-06.pmtiles.gz"),
+  "anncsu_reg_20_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2026-03-06.pmtiles.gz"),
+};
+const _pmtilesUrls = Object.fromEntries(
+  await Promise.all(Object.entries(_pmtilesRaw).map(async ([k, fa]) => [k, await fa.url()]))
+);
+const resolveUrl = (f) => Promise.resolve(_pmtilesUrls[f] ?? null);
+
+const { initDateLayersForMap, buildLayerGroupsForMap } = createLayerManager({
+  DATES, MOST_RECENT_DATE, REGIONS, DATE_COLORS, resolveUrl
+});
+return {REGIONS,anncsu_stats,spatial_stats,regioni_boundaries,comuni_boundaries,DATES,MOST_RECENT_DATE,DATE_PALETTE,DATE_COLORS,SmartValue,scrollableTable,calculatePercentageChange,formatValue,_pmtilesRaw,_pmtilesUrls,resolveUrl,initDateLayersForMap,buildLayerGroupsForMap};
 }});
 
-define({id: "cd7947f4", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
+define({id: "5710fc97", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
 // Inizializzazione mappa
 const protocol = new pmtiles.Protocol({
   metadata: true
@@ -434,6 +493,7 @@ const map = new maplibregl.Map({
     },
     layers: [{ id: "osm", type: "raster", source: "osm" }]
   },
+  minZoom: 5,
   maxZoom: 18,
   maxPitch: 85
 });
@@ -448,181 +508,12 @@ const mapLoaded = new Promise((resolve) => map.once("load", resolve));
 return {protocol,mapContainer,map,mapLoaded};
 }});
 
-define({id: "a28d2edd", inputs: ["mapLoaded","getSourceId","getLayerId","map","tilesets"], outputs: ["addPointLayer"], body: async (mapLoaded,getSourceId,getLayerId,map,tilesets) => {
-// Caricamento layer
-async function addPointLayer(name, config) {
-  await mapLoaded;
-  
-  const sourceId = getSourceId(name);
-  const layerId = getLayerId(name);
-  const url = `pmtiles://${await config.file.url()}`;
-
-  if (!map.getSource(sourceId)) {
-    map.addSource(sourceId, { type: "vector", url });
-  }
-
-  if (!map.getLayer(layerId)) {
-    // Abilita di default il layer base (ANNCSU 2025-09-03)
-    const isBaseLayer = name === "ANNCSU 2025-09-03";
-
-    map.addLayer({
-      id: layerId,
-      type: "circle",
-      source: sourceId,
-      "source-layer": "layer0",
-      filter: ["==", ["geometry-type"], "Point"],
-      paint: {
-        "circle-color": config.color,
-        "circle-radius": 4,
-        "circle-stroke-width": 0,
-        "circle-opacity": 0.9
-      },
-      layout: { visibility: isBaseLayer ? "visible" : "none" }
-    });
-  }
-}
-
-await Promise.all(
-  Object.entries(tilesets).map(([name, config]) => addPointLayer(name, config))
-);
-return {addPointLayer};
-}});
-
-define({id: "acf79016", inputs: ["mapLoaded","getLayerId","tilesets","map","LayerControl"], body: async (mapLoaded,getLayerId,tilesets,map,LayerControl) => {
+define({id: "ccfea334", inputs: ["mapLoaded","initDateLayersForMap","map","LayerControl","buildLayerGroupsForMap"], body: async (mapLoaded,initDateLayersForMap,map,LayerControl,buildLayerGroupsForMap) => {
 // Aggiungi controllo layer alla mappa
 {
   await mapLoaded;
-
-  const layerGroups = [
-    {
-      title: "Layer Base",
-      layers: [
-        {
-          name: "Base (2025-09-03)",
-          layerId: getLayerId("ANNCSU 2025-09-03"),
-          color: tilesets["ANNCSU 2025-09-03"].color,
-          visible: true
-        }
-      ]
-    },
-    {
-      title: "Variazioni 2025-10-10",
-      layers: [
-        {
-          name: "Rimossi",
-          layerId: getLayerId("ANNCSU 2025-10-10 Rimossi"),
-          color: tilesets["ANNCSU 2025-10-10 Rimossi"].color,
-          visible: false
-        },
-        {
-          name: "Spostati",
-          layerId: getLayerId("ANNCSU 2025-10-10 Spostati"),
-          color: tilesets["ANNCSU 2025-10-10 Spostati"].color,
-          visible: false
-        },
-        {
-          name: "Nuovi",
-          layerId: getLayerId("ANNCSU 2025-10-10 Nuovi"),
-          color: tilesets["ANNCSU 2025-10-10 Nuovi"].color,
-          visible: false
-        }
-      ]
-    },
-    {
-      title: "Variazioni 2025-11-04",
-      layers: [
-        {
-          name: "Rimossi",
-          layerId: getLayerId("ANNCSU 2025-11-04 Rimossi"),
-          color: tilesets["ANNCSU 2025-11-04 Rimossi"].color,
-          visible: false
-        },
-        {
-          name: "Spostati",
-          layerId: getLayerId("ANNCSU 2025-11-04 Spostati"),
-          color: tilesets["ANNCSU 2025-11-04 Spostati"].color,
-          visible: false
-        },
-        {
-          name: "Nuovi",
-          layerId: getLayerId("ANNCSU 2025-11-04 Nuovi"),
-          color: tilesets["ANNCSU 2025-11-04 Nuovi"].color,
-          visible: false
-        }
-      ]
-    },
-    {
-      title: "Variazioni 2025-12-02",
-      layers: [
-        {
-          name: "Rimossi",
-          layerId: getLayerId("ANNCSU 2025-12-02 Rimossi"),
-          color: tilesets["ANNCSU 2025-12-02 Rimossi"].color,
-          visible: false
-        },
-        {
-          name: "Spostati",
-          layerId: getLayerId("ANNCSU 2025-12-02 Spostati"),
-          color: tilesets["ANNCSU 2025-12-02 Spostati"].color,
-          visible: false
-        },
-        {
-          name: "Nuovi",
-          layerId: getLayerId("ANNCSU 2025-12-02 Nuovi"),
-          color: tilesets["ANNCSU 2025-12-02 Nuovi"].color,
-          visible: false
-        }
-      ]
-    },
-    {
-      title: "Variazioni 2026-01-14",
-      layers: [
-        {
-          name: "Rimossi",
-          layerId: getLayerId("ANNCSU 2026-01-14 Rimossi"),
-          color: tilesets["ANNCSU 2026-01-14 Rimossi"].color,
-          visible: false
-        },
-        {
-          name: "Spostati",
-          layerId: getLayerId("ANNCSU 2026-01-14 Spostati"),
-          color: tilesets["ANNCSU 2026-01-14 Spostati"].color,
-          visible: false
-        },
-        {
-          name: "Nuovi",
-          layerId: getLayerId("ANNCSU 2026-01-14 Nuovi"),
-          color: tilesets["ANNCSU 2026-01-14 Nuovi"].color,
-          visible: false
-        }
-      ]
-    },
-    {
-      title: "Variazioni 2026-02-06",
-      layers: [
-        {
-          name: "Rimossi",
-          layerId: getLayerId("ANNCSU 2026-02-06 Rimossi"),
-          color: tilesets["ANNCSU 2026-02-06 Rimossi"].color,
-          visible: false
-        },
-        {
-          name: "Spostati",
-          layerId: getLayerId("ANNCSU 2026-02-06 Spostati"),
-          color: tilesets["ANNCSU 2026-02-06 Spostati"].color,
-          visible: false
-        },
-        {
-          name: "Nuovi",
-          layerId: getLayerId("ANNCSU 2026-02-06 Nuovi"),
-          color: tilesets["ANNCSU 2026-02-06 Nuovi"].color,
-          visible: false
-        }
-      ]
-    }
-  ];
-
-  map.addControl(new LayerControl(layerGroups), 'top-right');
+  await initDateLayersForMap(map, "main");
+  map.addControl(new LayerControl(buildLayerGroupsForMap("main")), 'top-right');
 }
 }});
 
@@ -635,7 +526,7 @@ const displayMode = view(Inputs.radio(
 return {displayMode};
 }});
 
-define({id: "af26ee36", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
+define({id: "cacef663", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
 display(await(
 Plot.plot({
   title: "Andamento civici georeferenziati su ANNCSU",
@@ -661,16 +552,18 @@ Plot.plot({
           anncsu_stats.map((d, i) => {
             // Per le variazioni, usa il total_all della data precedente
             const prev_total_all = i > 0 ? anncsu_stats[i - 1].total_all : d.total_all;
+            const t = new Date(d.date).getTime();
             return {
-              date: d.date,
+              x1: new Date(t - 10 * 86400000),
+              x2: new Date(t + 10 * 86400000),
               percent: prev_total_all ? (d.new / prev_total_all) * 100 : 0
             };
           }),
           {
-            x: d => new Date(d.date),
+            x1: "x1",
+            x2: "x2",
             y: "percent",
             fill: "green",
-            interval: "2 days",
             tip: true
           }
         ),
@@ -678,16 +571,18 @@ Plot.plot({
           anncsu_stats.map((d, i) => {
             // Per le variazioni, usa il total_all della data precedente
             const prev_total_all = i > 0 ? anncsu_stats[i - 1].total_all : d.total_all;
+            const t = new Date(d.date).getTime();
             return {
-              date: d.date,
+              x1: new Date(t - 10 * 86400000),
+              x2: new Date(t + 10 * 86400000),
               percent: prev_total_all ? -(d.missing / prev_total_all) * 100 : 0
             };
           }),
           {
-            x: d => new Date(d.date),
+            x1: "x1",
+            x2: "x2",
             y: "percent",
             fill: "red",
-            interval: "2 days",
             tip: true
           }
         ),
@@ -702,17 +597,17 @@ Plot.plot({
           tip: true
         }),
         Plot.rectY(anncsu_stats, {
-          x: d => new Date(d.date),
+          x1: d => new Date(new Date(d.date).getTime() - 10 * 86400000),
+          x2: d => new Date(new Date(d.date).getTime() + 10 * 86400000),
           y: "new",
           fill: "green",
-          interval: "2 days",
           tip: true
         }),
         Plot.rectY(anncsu_stats, {
-          x: d => new Date(d.date),
+          x1: d => new Date(new Date(d.date).getTime() - 10 * 86400000),
+          x2: d => new Date(new Date(d.date).getTime() + 10 * 86400000),
           y: d => -d.missing,
           fill: "red",
-          interval: "2 days",
           tip: true
         }),
         Plot.ruleY([0])
@@ -738,81 +633,15 @@ Plot.plot({
 ))
 }});
 
-define({id: "8cd3ede6", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
-display(await(
-Inputs.table(
-  (() => {
-    const rows = spatial_stats.regioni.total.map(row => {
-      const absolute_0903 = row["2025-09-03"] || 0;
-      const absolute_1010 = row["2025-10-10"] || 0;
-      const absolute_1104 = row["2025-11-04"] || 0;
-      const absolute_1202 = row["2025-12-02"] || 0;
-      const absolute_0114 = row["2026-01-14"] || 0;
-      const absolute_0206 = row["2026-02-06"] || 0;
-
-      const total_all_0903 = row["total_all_2025-09-03"] || 1;
-      const total_all_1010 = row["total_all_2025-10-10"] || 1;
-      const total_all_1104 = row["total_all_2025-11-04"] || 1;
-      const total_all_1202 = row["total_all_2025-12-02"] || 1;
-      const total_all_0114 = row["total_all_2026-01-14"] || 1;
-      const total_all_0206 = row["total_all_2026-02-06"] || 1;
-
-      const percent_0903 = (absolute_0903 / total_all_0903) * 100;
-      const percent_1010 = (absolute_1010 / total_all_1010) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1104) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1202) * 100;
-      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0206) * 100;
-
-      return {
-        regione: row.regione,
-        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
-          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
-        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
-        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
-        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
-        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`),
-        "2026-02-06": new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`)
-      };
-    });
-
-    return rows.sort((a, b) => b["2026-02-06"] - a["2026-02-06"]);
-  })(),
-  {
-    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
-    header: {
-      regione: "Regione",
-      "2025-09-03": "09/03",
-      "2025-10-10": "10/10",
-      "2025-11-04": "11/04",
-      "2025-12-02": "12/02",
-      "2026-01-14": "01/14"
-    }
-  }
-)
-))
-}});
-
-define({id: "9731d8db", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_region"], body: (view,Inputs,spatial_stats) => {
+define({id: "183c5c69", inputs: ["view","Inputs","spatial_stats","MOST_RECENT_DATE"], outputs: ["selected_date_region"], body: (view,Inputs,spatial_stats,MOST_RECENT_DATE) => {
 const selected_date_region = view(Inputs.select(
   spatial_stats.date_columns,
-  {label: "Seleziona data", value: "2026-02-06"}
+  {label: "Seleziona data", value: MOST_RECENT_DATE}
 ));
 return {selected_date_region};
 }});
 
-define({id: "5433893c", inputs: ["Plot","selected_date_region","width","spatial_stats","display"], body: async (Plot,selected_date_region,width,spatial_stats,display) => {
+define({id: "c63cad70", inputs: ["Plot","selected_date_region","width","spatial_stats","d3","display"], body: async (Plot,selected_date_region,width,spatial_stats,d3,display) => {
 display(await(
 Plot.plot({
   title: `Distribuzione completamento per regione (${selected_date_region})`,
@@ -839,7 +668,16 @@ Plot.plot({
         y: "regione",
         x: "percent",
         fill: d => d.percent >= 99.9999 ? "#15a34a" : d.percent > 50 ? "#fbbf24" : "#ef4444",
-        tip: true
+        channels: {
+          "Georef.": d => d3.format(",")(d.georef),
+          "Totale": d => d3.format(",")(d.total_all)
+        },
+        tip: {
+          format: {
+            x: d => `${d3.format(".2f")(d)}%`,
+            fill: false
+          }
+        }
       }
     ),
     Plot.ruleX([100], {stroke: "green", strokeDasharray: "4,4"})
@@ -861,151 +699,87 @@ Plot.plot({
 ))
 }});
 
-define({id: "c44d1ddc", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "245703a8", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
-Inputs.table(
+scrollableTable(
   (() => {
-    const rows = spatial_stats.regioni.new.map(row => {
-      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-
+    const rows = spatial_stats.regioni.total.map(row => {
+      const absolute_0903 = row["2025-09-03"] || 0;
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
 
-      // Per le variazioni, usiamo il total_all della data precedente
-      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
-      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
-      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
-      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
-      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
-      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0903 = row["total_all_2025-09-03"] || 1;
+      const total_all_1010 = row["total_all_2025-10-10"] || 1;
+      const total_all_1104 = row["total_all_2025-11-04"] || 1;
+      const total_all_1202 = row["total_all_2025-12-02"] || 1;
+      const total_all_0114 = row["total_all_2026-01-14"] || 1;
+      const total_all_0206 = row["total_all_2026-02-06"] || 1;
+      const total_all_0306 = row["total_all_2026-03-06"] || 1;
 
-      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
-      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0903 = (absolute_0903 / total_all_0903) * 100;
+      const percent_1010 = (absolute_1010 / total_all_1010) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1104) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1202) * 100;
+      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0206) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0306) * 100;
 
       return {
         regione: row.regione,
-        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
+          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
+        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
-        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
+        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
-        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
+        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
-        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
+        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
-        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`),
+        "2026-02-06": new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
-        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`),
+        "2026-03-06": new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`)
       };
     });
 
-    return rows.sort((a, b) => {
-      const valA = a["2026-02-06"] === "-" ? 0 : a["2026-02-06"].valueOf();
-      const valB = b["2026-02-06"] === "-" ? 0 : b["2026-02-06"].valueOf();
-      return valB - valA;
-    });
+    return rows.sort((a, b) => b["2026-03-06"] - a["2026-03-06"]);
   })(),
   {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
+    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
     header: {
       regione: "Regione",
+      "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
-      "2026-02-06": "02/06"
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
     }
   }
 )
 ))
 }});
 
-define({id: "23b05b74", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
-display(await(
-Inputs.table(
-  (() => {
-    const rows = spatial_stats.regioni.missing.map(row => {
-      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
-
-      const absolute_1010 = row["2025-10-10"] || 0;
-      const absolute_1104 = row["2025-11-04"] || 0;
-      const absolute_1202 = row["2025-12-02"] || 0;
-      const absolute_0114 = row["2026-01-14"] || 0;
-      const absolute_0206 = row["2026-02-06"] || 0;
-
-      // Per le variazioni, usiamo il total_all della data precedente
-      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
-      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
-      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
-      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
-      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
-      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
-
-      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
-      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
-
-      return {
-        regione: row.regione,
-        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
-        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
-        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
-        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
-        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0")
-      };
-    });
-
-    return rows.sort((a, b) => {
-      const valA = a["2026-02-06"] === "-" ? 0 : a["2026-02-06"].valueOf();
-      const valB = b["2026-02-06"] === "-" ? 0 : b["2026-02-06"].valueOf();
-      return valB - valA;
-    });
-  })(),
-  {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
-    header: {
-      regione: "Regione",
-      "2025-10-10": "10/10",
-      "2025-11-04": "11/04",
-      "2025-12-02": "12/02",
-      "2026-01-14": "01/14",
-      "2026-02-06": "02/06"
-    }
-  }
-)
-))
-}});
-
-define({id: "6797f3c9", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_region"], body: (view,Inputs,spatial_stats) => {
-const selected_region = view(Inputs.select(
+define({id: "dfbc629f", inputs: ["Inputs","spatial_stats","view"], outputs: ["regionSelectInput","selected_region"], body: (Inputs,spatial_stats,view) => {
+const regionSelectInput = Inputs.select(
   spatial_stats.regioni.total.map(d => d.regione),
   {label: "Seleziona regione", value: "Liguria"}
-));
-return {selected_region};
+);
+const selected_region = view(regionSelectInput);
+return {regionSelectInput,selected_region};
 }});
 
 define({id: "fbdc2618", inputs: ["Plot","selected_region","width","displayMode","spatial_stats","d3","display"], body: async (Plot,selected_region,width,displayMode,spatial_stats,d3,display) => {
@@ -1125,77 +899,270 @@ Plot.plot({
 ))
 }});
 
-define({id: "d68811e0", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "4096d0ab", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
 display(await(
-Inputs.table(
+html`<h3>Mappa Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "a6b539c6", inputs: ["display","maplibregl","regioni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","municipalitySelectInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["regionMapEl","regionMap","regionPopup"], body: async (display,maplibregl,regioni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,municipalitySelectInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+const regionMapEl = display(document.createElement("div"));
+regionMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
+const regionMap = new maplibregl.Map({
+  container: regionMapEl, zoom: 6, center: [12.5, 42.5],
+  style: { version: 8,
+    sources: { osm: { type:"raster", tiles:["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize:256, attribution:"© OpenStreetMap contributors", maxzoom:19 } },
+    layers: [{ id:"osm", type:"raster", source:"osm" }] },
+  maxZoom: 18
+});
+await new Promise(r => regionMap.once("load", r));
+
+// Layer confine regione
+regionMap.addSource("region-boundary", { type: "geojson", data: regioni_boundaries });
+regionMap.addLayer({ id: "region-boundary-fill", type: "fill", source: "region-boundary",
+  paint: { "fill-color": "#3388ff", "fill-opacity": 0.08 }, filter: ["literal", false] });
+regionMap.addLayer({ id: "region-boundary-line", type: "line", source: "region-boundary",
+  paint: { "line-color": "#1a66cc", "line-width": 2.5 }, filter: ["literal", false] });
+
+// Tooltip hover
+const regionPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+regionMap.on("mousemove", (e) => {
+  const features = regionMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (f) {
+    regionMap.getCanvas().style.cursor = "pointer";
+    const cd = spatial_stats.comuni.total.find(d => d.codice_istat === f.properties.codice_istat);
+    if (cd) regionPopup.setLngLat(e.lngLat).setHTML(`<b>${cd.comune}</b><br><small>${cd.regione}</small>`).addTo(regionMap);
+  } else {
+    regionMap.getCanvas().style.cursor = "";
+    regionPopup.remove();
+  }
+});
+regionMap.on("mouseleave", () => { regionMap.getCanvas().style.cursor = ""; regionPopup.remove(); });
+
+// Click: aggiorna dropdown regione e comune
+regionMap.on("click", (e) => {
+  const features = regionMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (!f) return;
+  // Normalizza a 6 cifre con zero padding (il parquet può avere 5 cifre senza leading zero)
+  const featIstat = String(f.properties.codice_istat).padStart(6, "0");
+  const cd = spatial_stats.comuni.total.find(d => d.codice_istat === featIstat);
+  if (!cd) return;
+  regionSelectInput.value = cd.regione;
+  regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  if (filterRegionInput.value === cd.regione) {
+    // Stessa regione: municipalitySelectInput è già aggiornato, imposta direttamente
+    municipalitySelectInput.value = cd.comune;
+    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  } else {
+    // Cambio regione: salva il comune nel dataset, la cella reattiva lo raccoglierà
+    regionMapEl.dataset.pendingComune = cd.comune;
+    filterRegionInput.value = cd.regione;
+    filterRegionInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+});
+
+await initDateLayersForMap(regionMap, "r");
+regionMap.addControl(new LayerControl(buildLayerGroupsForMap("r")), "top-right");
+return {regionMapEl,regionMap,regionPopup};
+}});
+
+define({id: "acfaf848", inputs: ["spatial_stats","selected_region","regionMap"], body: (spatial_stats,selected_region,regionMap) => {
+{
+  const istatCodes = spatial_stats.comuni.total
+    .filter(d => d.regione === selected_region)
+    .map(d => d.codice_istat)
+    .filter(Boolean);
+  const boundaryIds = new Set(["region-boundary-fill", "region-boundary-line"]);
+  const pointFilter = istatCodes.length ? ["in", ["get", "codice_istat"], ["literal", istatCodes]] : null;
+  regionMap.getStyle().layers
+    .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+    .forEach(l => regionMap.setFilter(l.id, pointFilter));
+  const regionFilter = ["==", ["get", "den_reg"], selected_region];
+  regionMap.setFilter("region-boundary-fill", regionFilter);
+  regionMap.setFilter("region-boundary-line", regionFilter);
+  const bbox = spatial_stats.regioni.total.find(d => d.regione === selected_region)?.bbox;
+  if (bbox?.every(v => v !== null)) regionMap.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], { padding: 30, maxZoom: 14 });
+}
+}});
+
+define({id: "21a18f66", inputs: ["regionMapEl","municipalitySelectInput","Event"], body: (regionMapEl,municipalitySelectInput,Event) => {
+// Cella reattiva: raccoglie il comune pendente quando municipalitySelectInput è ricreato
+{
+  const pendingComune = regionMapEl.dataset.pendingComune;
+  if (pendingComune) {
+    delete regionMapEl.dataset.pendingComune;
+    municipalitySelectInput.value = pendingComune;
+    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+}
+}});
+
+define({id: "c09393bf", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
+display(await(
+html`<h3>Nuovi Civici per Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "c8aa09db", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
+display(await(
+scrollableTable(
   (() => {
-    const rows = spatial_stats.comuni.total.map(row => {
-      const absolute_0903 = row["2025-09-03"] || 0;
+    const rows = spatial_stats.regioni.new.filter(row => row.regione === selected_region).map(row => {
+      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
+
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
 
-      const total_all_0903 = row["total_all_2025-09-03"] || 1;
-      const total_all_1010 = row["total_all_2025-10-10"] || 1;
-      const total_all_1104 = row["total_all_2025-11-04"] || 1;
-      const total_all_1202 = row["total_all_2025-12-02"] || 1;
-      const total_all_0114 = row["total_all_2026-01-14"] || 1;
-      const total_all_0206 = row["total_all_2026-02-06"] || 1;
+      // Per le variazioni, usiamo il total_all della data precedente
+      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
+      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
+      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
+      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
+      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
 
-      const percent_0903 = (absolute_0903 / total_all_0903) * 100;
-      const percent_1010 = (absolute_1010 / total_all_1010) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1104) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1202) * 100;
-      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0206) * 100;
+      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0206) * 100;
 
       return {
-        comune: row.comune,
-        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
-          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
-        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+        regione: row.regione,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
-        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
-        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
-        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`),
-        "2026-02-06": new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
+        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`)
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
+        "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
       };
     });
 
-    return rows.sort((a, b) => b["2026-02-06"] - a["2026-02-06"]);
+    return rows.sort((a, b) => {
+      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
+      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      return valB - valA;
+    });
   })(),
   {
-    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
     header: {
-      comune: "Comune",
-      "2025-09-03": "09/03",
+      regione: "Regione",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
-      "2026-02-06": "02/06"
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
     }
   }
 )
 ))
 }});
 
-define({id: "1945ae48", inputs: ["view","Inputs","spatial_stats"], outputs: ["selected_date_comune"], body: (view,Inputs,spatial_stats) => {
+define({id: "5e516223", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
+display(await(
+html`<h3>Civici Rimossi per Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "7f8b52b0", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = spatial_stats.regioni.missing.filter(row => row.regione === selected_region).map(row => {
+      const totalRow = spatial_stats.regioni.total.find(r => r.regione === row.regione);
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
+      const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
+
+      // Per le variazioni, usiamo il total_all della data precedente
+      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
+      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
+      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
+      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
+      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+
+      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+
+      return {
+        regione: row.regione,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
+        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
+        "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+      };
+    });
+
+    return rows.sort((a, b) => {
+      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
+      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      return valB - valA;
+    });
+  })(),
+  {
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    header: {
+      regione: "Regione",
+      "2025-10-10": "10/10",
+      "2025-11-04": "11/04",
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14",
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
+    }
+  }
+)
+))
+}});
+
+define({id: "bf9451f7", inputs: ["view","Inputs","spatial_stats","MOST_RECENT_DATE"], outputs: ["selected_date_comune"], body: (view,Inputs,spatial_stats,MOST_RECENT_DATE) => {
 const selected_date_comune = view(Inputs.select(
   spatial_stats.date_columns,
-  {label: "Seleziona data", value: "2026-02-06"}
+  {label: "Seleziona data", value: MOST_RECENT_DATE}
 ));
 return {selected_date_comune};
 }});
@@ -1307,162 +1274,102 @@ display(await(
 ))
 }});
 
-define({id: "622cab97", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "0b1f1caa", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
-Inputs.table(
+scrollableTable(
   (() => {
-    const rows = spatial_stats.comuni.new.map(row => {
-      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-
+    const rows = spatial_stats.comuni.total.map(row => {
+      const absolute_0903 = row["2025-09-03"] || 0;
       const absolute_1010 = row["2025-10-10"] || 0;
       const absolute_1104 = row["2025-11-04"] || 0;
       const absolute_1202 = row["2025-12-02"] || 0;
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
 
-      // Per le variazioni, usiamo il total_all della data precedente
-      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
-      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
-      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
-      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
-      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
-      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0903 = row["total_all_2025-09-03"] || 1;
+      const total_all_1010 = row["total_all_2025-10-10"] || 1;
+      const total_all_1104 = row["total_all_2025-11-04"] || 1;
+      const total_all_1202 = row["total_all_2025-12-02"] || 1;
+      const total_all_0114 = row["total_all_2026-01-14"] || 1;
+      const total_all_0206 = row["total_all_2026-02-06"] || 1;
+      const total_all_0306 = row["total_all_2026-03-06"] || 1;
 
-      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
-      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0903 = (absolute_0903 / total_all_0903) * 100;
+      const percent_1010 = (absolute_1010 / total_all_1010) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1104) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1202) * 100;
+      const percent_0114 = (absolute_0114 / total_all_0114) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0206) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0306) * 100;
 
       return {
         comune: row.comune,
-        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+        "2025-09-03": new SmartValue(displayMode === "Percentuali" ? percent_0903 : absolute_0903, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0903)}% (${d3.format(",")(absolute_0903)})`
+          : `${d3.format(",")(absolute_0903)} (${d3.format(".2f")(percent_0903)}%)`),
+        "2025-10-10": new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
-        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`),
+        "2025-11-04": new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
-        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`),
+        "2025-12-02": new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
-        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`),
+        "2026-01-14": new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
-        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`),
+        "2026-02-06": new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`),
+        "2026-03-06": new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`)
       };
     });
 
-    return rows.sort((a, b) => {
-      const valA = a["2026-02-06"] === "-" ? 0 : a["2026-02-06"].valueOf();
-      const valB = b["2026-02-06"] === "-" ? 0 : b["2026-02-06"].valueOf();
-      return valB - valA;
-    });
+    return rows.sort((a, b) => b["2026-03-06"] - a["2026-03-06"]);
   })(),
   {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
+    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
     header: {
       comune: "Comune",
+      "2025-09-03": "09/03",
       "2025-10-10": "10/10",
       "2025-11-04": "11/04",
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
-      "2026-02-06": "02/06"
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
     }
   }
 )
 ))
 }});
 
-define({id: "b2d34bcd", inputs: ["Inputs","spatial_stats","SmartValue","displayMode","d3","display"], body: async (Inputs,spatial_stats,SmartValue,displayMode,d3,display) => {
-display(await(
-Inputs.table(
-  (() => {
-    const rows = spatial_stats.comuni.missing.map(row => {
-      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
-
-      const absolute_1010 = row["2025-10-10"] || 0;
-      const absolute_1104 = row["2025-11-04"] || 0;
-      const absolute_1202 = row["2025-12-02"] || 0;
-      const absolute_0114 = row["2026-01-14"] || 0;
-      const absolute_0206 = row["2026-02-06"] || 0;
-
-      // Per le variazioni, usiamo il total_all della data precedente
-      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
-      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
-      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
-      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
-      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
-      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
-
-      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
-      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
-      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
-      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
-      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
-
-      return {
-        comune: row.comune,
-        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
-          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
-        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
-          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
-        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
-          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
-        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
-          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
-        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
-          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
-          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0")
-      };
-    });
-
-    return rows.sort((a, b) => {
-      const valA = a["2026-02-06"] === "-" ? 0 : a["2026-02-06"].valueOf();
-      const valB = b["2026-02-06"] === "-" ? 0 : b["2026-02-06"].valueOf();
-      return valB - valA;
-    });
-  })(),
-  {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06"],
-    header: {
-      comune: "Comune",
-      "2025-10-10": "10/10",
-      "2025-11-04": "11/04",
-      "2025-12-02": "12/02",
-      "2026-01-14": "01/14",
-      "2026-02-06": "02/06"
-    }
-  }
-)
-))
-}});
-
-define({id: "fa073e0d", inputs: ["view","Inputs","spatial_stats"], outputs: ["filter_region"], body: (view,Inputs,spatial_stats) => {
-const filter_region = view(Inputs.select(
+define({id: "30442236", inputs: ["Inputs","spatial_stats","view"], outputs: ["filterRegionInput","filter_region"], body: (Inputs,spatial_stats,view) => {
+const filterRegionInput = Inputs.select(
   spatial_stats.regioni.total.map(d => d.regione),
   {label: "Filtra per regione", value: "Liguria"}
-));
-return {filter_region};
+);
+const filter_region = view(filterRegionInput);
+return {filterRegionInput,filter_region};
 }});
 
-define({id: "2ef2300c", inputs: ["spatial_stats","filter_region","view","Inputs"], outputs: ["filtered_comuni","selected_municipality"], body: (spatial_stats,filter_region,view,Inputs) => {
+define({id: "f15bea0e", inputs: ["spatial_stats","filter_region","Inputs","view"], outputs: ["filtered_comuni","municipalitySelectInput","selected_municipality"], body: (spatial_stats,filter_region,Inputs,view) => {
 // Per filtrare i comuni per regione, usiamo la proprietà regione presente nei dati
 const filtered_comuni = spatial_stats.comuni.total
   .filter(d => d.regione === filter_region)
   .map(d => d.comune)
   .sort((a, b) => a.localeCompare(b, 'it'));
 
-const selected_municipality = view(Inputs.select(
+const municipalitySelectInput = Inputs.select(
   filtered_comuni,
   {label: "Seleziona comune", value: filtered_comuni[0]}
-));
-return {filtered_comuni,selected_municipality};
+);
+const selected_municipality = view(municipalitySelectInput);
+return {filtered_comuni,municipalitySelectInput,selected_municipality};
 }});
 
 define({id: "f156abe9", inputs: ["Plot","selected_municipality","width","displayMode","spatial_stats","d3","display"], body: async (Plot,selected_municipality,width,displayMode,spatial_stats,d3,display) => {
@@ -1582,21 +1489,265 @@ Plot.plot({
 ))
 }});
 
+define({id: "6d849e55", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Mappa Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "8c4398c1", inputs: ["display","maplibregl","comuni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","municipalitySelectInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["comuneMapEl","comuneMap","comunePopup"], body: async (display,maplibregl,comuni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,municipalitySelectInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+const comuneMapEl = display(document.createElement("div"));
+comuneMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
+const comuneMap = new maplibregl.Map({
+  container: comuneMapEl, zoom: 10, center: [12.5, 42.5],
+  style: { version: 8,
+    sources: { osm: { type:"raster", tiles:["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize:256, attribution:"© OpenStreetMap contributors", maxzoom:19 } },
+    layers: [{ id:"osm", type:"raster", source:"osm" }] },
+  maxZoom: 18
+});
+await new Promise(r => comuneMap.once("load", r));
+
+// Layer confine comune
+comuneMap.addSource("comune-boundary", { type: "geojson", data: comuni_boundaries });
+comuneMap.addLayer({ id: "comune-boundary-fill", type: "fill", source: "comune-boundary",
+  paint: { "fill-color": "#3388ff", "fill-opacity": 0.08 }, filter: ["literal", false] });
+comuneMap.addLayer({ id: "comune-boundary-line", type: "line", source: "comune-boundary",
+  paint: { "line-color": "#1a66cc", "line-width": 2.5 }, filter: ["literal", false] });
+
+// Tooltip hover
+const comunePopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+comuneMap.on("mousemove", (e) => {
+  const features = comuneMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (f) {
+    comuneMap.getCanvas().style.cursor = "pointer";
+    const cd = spatial_stats.comuni.total.find(d => d.codice_istat === f.properties.codice_istat);
+    if (cd) comunePopup.setLngLat(e.lngLat).setHTML(`<b>${cd.comune}</b><br><small>${cd.regione}</small>`).addTo(comuneMap);
+  } else {
+    comuneMap.getCanvas().style.cursor = "";
+    comunePopup.remove();
+  }
+});
+comuneMap.on("mouseleave", () => { comuneMap.getCanvas().style.cursor = ""; comunePopup.remove(); });
+
+// Click: aggiorna dropdown comune
+comuneMap.on("click", (e) => {
+  const features = comuneMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (!f) return;
+  const featIstat = String(f.properties.codice_istat).padStart(6, "0");
+  const cd = spatial_stats.comuni.total.find(d => d.codice_istat === featIstat);
+  if (!cd) return;
+  // Imposta sempre regione prima del comune per evitare che il cambio di regione
+  // ricrei municipalitySelectInput e perda il valore appena impostato
+  regionSelectInput.value = cd.regione;
+  regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  if (filterRegionInput.value === cd.regione) {
+    municipalitySelectInput.value = cd.comune;
+    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  } else {
+    comuneMapEl.dataset.pendingComune = cd.comune;
+    filterRegionInput.value = cd.regione;
+    filterRegionInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+});
+
+await initDateLayersForMap(comuneMap, "c");
+comuneMap.addControl(new LayerControl(buildLayerGroupsForMap("c")), "top-right");
+return {comuneMapEl,comuneMap,comunePopup};
+}});
+
+define({id: "bd1f2e23", inputs: ["spatial_stats","selected_municipality","comuneMap"], body: (spatial_stats,selected_municipality,comuneMap) => {
+{
+  const comuneData = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+  const istat = comuneData?.codice_istat;
+  const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
+  const pointFilter = istat ? ["==", ["get", "codice_istat"], istat] : null;
+  comuneMap.getStyle().layers
+    .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+    .forEach(l => comuneMap.setFilter(l.id, pointFilter));
+  comuneMap.setFilter("comune-boundary-fill", istat ? ["==", ["get", "codice_istat"], istat] : ["literal", false]);
+  comuneMap.setFilter("comune-boundary-line", istat ? ["==", ["get", "codice_istat"], istat] : ["literal", false]);
+  const bbox = comuneData?.bbox;
+  if (bbox?.every(v => v !== null)) comuneMap.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], { padding: 30, maxZoom: 16 });
+}
+}});
+
+define({id: "f9cd6e3b", inputs: ["comuneMapEl","municipalitySelectInput","Event"], body: (comuneMapEl,municipalitySelectInput,Event) => {
+// Cella reattiva: raccoglie il comune pendente quando municipalitySelectInput è ricreato
+{
+  const pendingComune = comuneMapEl.dataset.pendingComune;
+  if (pendingComune) {
+    delete comuneMapEl.dataset.pendingComune;
+    municipalitySelectInput.value = pendingComune;
+    municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+}
+}});
+
+define({id: "41aa4795", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Nuovi Civici per Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "92c99d2a", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = spatial_stats.comuni.new.filter(row => row.comune === selected_municipality).map(row => {
+      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
+      const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
+
+      // Per le variazioni, usiamo il total_all della data precedente
+      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
+      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
+      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
+      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
+      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+
+      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+
+      return {
+        comune: row.comune,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
+        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
+        "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+      };
+    });
+
+    return rows.sort((a, b) => {
+      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
+      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      return valB - valA;
+    });
+  })(),
+  {
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    header: {
+      comune: "Comune",
+      "2025-10-10": "10/10",
+      "2025-11-04": "11/04",
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14",
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
+    }
+  }
+)
+))
+}});
+
+define({id: "42ff04db", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Civici Rimossi per Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "c93111fc", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = spatial_stats.comuni.missing.filter(row => row.comune === selected_municipality).map(row => {
+      const totalRow = spatial_stats.comuni.total.find(r => r.comune === row.comune);
+
+      const absolute_1010 = row["2025-10-10"] || 0;
+      const absolute_1104 = row["2025-11-04"] || 0;
+      const absolute_1202 = row["2025-12-02"] || 0;
+      const absolute_0114 = row["2026-01-14"] || 0;
+      const absolute_0206 = row["2026-02-06"] || 0;
+      const absolute_0306 = row["2026-03-06"] || 0;
+
+      // Per le variazioni, usiamo il total_all della data precedente
+      const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
+      const total_all_1010 = totalRow?.["total_all_2025-10-10"] || 1;
+      const total_all_1104 = totalRow?.["total_all_2025-11-04"] || 1;
+      const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
+      const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
+      const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+
+      const percent_1010 = (absolute_1010 / total_all_0903) * 100;
+      const percent_1104 = (absolute_1104 / total_all_1010) * 100;
+      const percent_1202 = (absolute_1202 / total_all_1104) * 100;
+      const percent_0114 = (absolute_0114 / total_all_1202) * 100;
+      const percent_0206 = (absolute_0206 / total_all_0114) * 100;
+      const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+
+      return {
+        comune: row.comune,
+        "2025-10-10": absolute_1010 ? new SmartValue(displayMode === "Percentuali" ? percent_1010 : absolute_1010, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1010)}% (${d3.format(",")(absolute_1010)})`
+          : `${d3.format(",")(absolute_1010)} (${d3.format(".2f")(percent_1010)}%)`) : new SmartValue(0, "0"),
+        "2025-11-04": absolute_1104 ? new SmartValue(displayMode === "Percentuali" ? percent_1104 : absolute_1104, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1104)}% (${d3.format(",")(absolute_1104)})`
+          : `${d3.format(",")(absolute_1104)} (${d3.format(".2f")(percent_1104)}%)`) : new SmartValue(0, "0"),
+        "2025-12-02": absolute_1202 ? new SmartValue(displayMode === "Percentuali" ? percent_1202 : absolute_1202, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_1202)}% (${d3.format(",")(absolute_1202)})`
+          : `${d3.format(",")(absolute_1202)} (${d3.format(".2f")(percent_1202)}%)`) : new SmartValue(0, "0"),
+        "2026-01-14": absolute_0114 ? new SmartValue(displayMode === "Percentuali" ? percent_0114 : absolute_0114, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0114)}% (${d3.format(",")(absolute_0114)})`
+          : `${d3.format(",")(absolute_0114)} (${d3.format(".2f")(percent_0114)}%)`) : new SmartValue(0, "0"),
+        "2026-02-06": absolute_0206 ? new SmartValue(displayMode === "Percentuali" ? percent_0206 : absolute_0206, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0206)}% (${d3.format(",")(absolute_0206)})`
+          : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
+        "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+      };
+    });
+
+    return rows.sort((a, b) => {
+      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
+      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      return valB - valA;
+    });
+  })(),
+  {
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    header: {
+      comune: "Comune",
+      "2025-10-10": "10/10",
+      "2025-11-04": "11/04",
+      "2025-12-02": "12/02",
+      "2026-01-14": "01/14",
+      "2026-02-06": "02/06",
+      "2026-03-06": "03/06"
+    }
+  }
+)
+))
+}});
+
 </script>
 </head>
 <body>
-<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
-<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
-<nav id="observablehq-sidebar">
-  <ol>
-    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
-    <li class="observablehq-link observablehq-link-active"><a href="./">ANNCSU Progress</a></li>
-  </ol>
-  <ol>
-    <li class="observablehq-link"><a href="./quality">Quality</a></li>
-  </ol>
-</nav>
-<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <div id="observablehq-center">
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
 <nav>
@@ -1612,58 +1763,64 @@ Plot.plot({
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
 <p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
-<div class="observablehq observablehq--block"><!--:4bcc7d2b:--></div>
-<div class="observablehq observablehq--block"><!--:b676a795:--></div>
-<div class="observablehq observablehq--block"><!--:cd7947f4:--></div>
-<div class="observablehq observablehq--block"><!--:a28d2edd:--></div>
-<div class="observablehq observablehq--block"><!--:acf79016:--></div>
+<div class="observablehq observablehq--block"><!--:1b68d1c2:--></div>
+<div class="observablehq observablehq--block"><!--:4367281a:--></div>
+<div class="observablehq observablehq--block"><!--:5710fc97:--></div>
+<div class="observablehq observablehq--block"><!--:ccfea334:--></div>
 <h2 id="andamento-civici-georeferenziati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></h2>
 <div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
 <div class="card">
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:af26ee36:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:cacef663:--></div>
 </div>
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
-<h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:8cd3ede6:--></div>
 <h3 id="distribuzione-completamento-regioni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-regioni">Distribuzione Completamento Regioni</a></h3>
-<div class="observablehq observablehq--block"><!--:9731d8db:--></div>
+<div class="observablehq observablehq--block"><!--:183c5c69:--></div>
 <div class="card">
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5433893c:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c63cad70:--></div>
 </div>
-<h3 id="nuovi-civici-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-regione">Nuovi Civici per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c44d1ddc:--></div>
-<h3 id="civici-rimossi-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-regione">Civici Rimossi per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:23b05b74:--></div>
+<h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:245703a8:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
-<div class="observablehq observablehq--block"><!--:6797f3c9:--></div>
+<div class="observablehq observablehq--block"><!--:dfbc629f:--></div>
 <div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:fbdc2618:--></div>
 </div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4096d0ab:--></div>
+<div class="observablehq observablehq--block"><!--:a6b539c6:--></div>
+<div class="observablehq observablehq--block"><!--:acfaf848:--></div>
+<div class="observablehq observablehq--block"><!--:21a18f66:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c09393bf:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c8aa09db:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5e516223:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:7f8b52b0:--></div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
-<h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:d68811e0:--></div>
 <h3 id="distribuzione-completamento-comuni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-comuni">Distribuzione Completamento Comuni</a></h3>
-<div class="observablehq observablehq--block"><!--:1945ae48:--></div>
+<div class="observablehq observablehq--block"><!--:bf9451f7:--></div>
 <div class="observablehq observablehq--block"><!--:a26800f2:--></div>
 <div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:854ba575:--></div>
 </div>
-<h3 id="nuovi-civici-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#nuovi-civici-per-comune">Nuovi Civici per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:622cab97:--></div>
-<h3 id="civici-rimossi-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-rimossi-per-comune">Civici Rimossi per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b2d34bcd:--></div>
+<h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0b1f1caa:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
-<div class="observablehq observablehq--block"><!--:fa073e0d:--></div>
-<div class="observablehq observablehq--block"><!--:2ef2300c:--></div>
+<div class="observablehq observablehq--block"><!--:30442236:--></div>
+<div class="observablehq observablehq--block"><!--:f15bea0e:--></div>
 <div class="card">
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f156abe9:--></div>
 </div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d849e55:--></div>
+<div class="observablehq observablehq--block"><!--:8c4398c1:--></div>
+<div class="observablehq observablehq--block"><!--:bd1f2e23:--></div>
+<div class="observablehq observablehq--block"><!--:f9cd6e3b:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41aa4795:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:92c99d2a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:42ff04db:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c93111fc:--></div>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="next" href="./quality"><span>Quality</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-02-20T11:53:16">Feb 20, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T14:33:10">Mar 10, 2026</a>.</div>
 </footer>
 </div>
 </body>
