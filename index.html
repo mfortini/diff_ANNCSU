@@ -1551,8 +1551,9 @@ comuneMap.addControl(new LayerControl(buildLayerGroupsForMap("c")), "top-right")
 return {comuneMapEl,comuneMap,comunePopup};
 }});
 
-define({id: "bd1f2e23", inputs: ["spatial_stats","selected_municipality","comuneMap"], body: (spatial_stats,selected_municipality,comuneMap) => {
+define({id: "a0ff1323", inputs: ["municipalitySelectInput","spatial_stats","selected_municipality","comuneMap"], body: (municipalitySelectInput,spatial_stats,selected_municipality,comuneMap) => {
 {
+  void municipalitySelectInput; // dipendenza diretta: riesegui anche quando filter_region cambia e municipalitySelectInput viene ricreato
   const comuneData = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
   const istat = comuneData?.codice_istat;
   const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
@@ -1793,14 +1794,14 @@ scrollableTable(
 </div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d849e55:--></div>
 <div class="observablehq observablehq--block"><!--:ff35cc81:--></div>
-<div class="observablehq observablehq--block"><!--:bd1f2e23:--></div>
+<div class="observablehq observablehq--block"><!--:a0ff1323:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41aa4795:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:92c99d2a:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:42ff04db:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c93111fc:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T15:09:29">Mar 10, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T15:46:09">Mar 10, 2026</a>.</div>
 </footer>
 </div>
 </body>
