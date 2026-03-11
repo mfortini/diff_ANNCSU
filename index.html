@@ -15,7 +15,7 @@
 <link rel="modulepreload" href="./_observablehq/client.323253bc.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.19.0/f507b18a.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.20.0/313394e5.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/7c43807f.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
@@ -60,7 +60,22 @@
 <link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
 <link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
 <link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
-<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32"><!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.innvt.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
 <script type="module">
 
 import {define} from "./_observablehq/client.323253bc.js";
@@ -200,10 +215,10 @@ registerFile("./data/anncsu_reg_20_2025-11-04.pmtiles.gz", {"name":"./data/anncs
 registerFile("./data/anncsu_reg_20_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-12-02.pmtiles.d01cf43e.gz","lastModified":1773141330986,"size":401791});
 registerFile("./data/anncsu_reg_20_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-02-06.pmtiles.17715ade.gz","lastModified":1773142370228,"size":2350229});
 registerFile("./data/anncsu_reg_20_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-03-06.pmtiles.b69ee1d1.gz","lastModified":1773143268886,"size":3449303});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.c188368c.json","lastModified":1773156126385,"size":5219629});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773156118788,"size":853});
-registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773156130416,"size":5411387});
-registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773156126924,"size":345011});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.51267a77.json","lastModified":1773241410359,"size":5219631});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773241400703,"size":853});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773241415527,"size":5411387});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773241411131,"size":345011});
 
 define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -212,7 +227,7 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/
 }});
 
 define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.19.0/f507b18a.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.44bbde42.js")]);
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.20.0/313394e5.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.44bbde42.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
@@ -1839,7 +1854,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c93111fc:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-10T17:43:06">Mar 10, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-11T16:14:26">Mar 11, 2026</a>.</div>
 </footer>
 </div>
 </body>
