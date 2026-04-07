@@ -12,15 +12,15 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.323253bc.js">
+<link rel="modulepreload" href="./_observablehq/client.57080432.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.20.0/313394e5.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.22.0/05183b21.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
-<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/7c43807f.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/a96a6bbb.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
 <link rel="modulepreload" href="./_import/map-layers.44bbde42.js">
-<link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/66d82917.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
@@ -32,7 +32,7 @@
 <link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
 <link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
 <link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
-<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/87adea64.js">
 <link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
 <link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
@@ -58,8 +58,8 @@
 <link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
 <link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
 <link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
-<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
-<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.1.0/d4ec0aa1.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.3/42820bfa.js">
 <link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32"> <!-- Matomo -->
     <script>
       var _paq = window._paq = window._paq || [];
@@ -79,147 +79,168 @@
     
 <script type="module">
 
-import {define} from "./_observablehq/client.323253bc.js";
+import {define} from "./_observablehq/client.57080432.js";
 import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
 
-registerFile("./data/anncsu_it_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_it_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-09-03.pmtiles.7bbb3f63.gz","lastModified":1773140759116,"size":13856941});
-registerFile("./data/anncsu_it_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_it_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-10-10.pmtiles.58b7b916.gz","lastModified":1773140904165,"size":14594502});
-registerFile("./data/anncsu_it_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_it_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-11-04.pmtiles.016dea7f.gz","lastModified":1773141056373,"size":15954068});
-registerFile("./data/anncsu_it_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_it_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-12-02.pmtiles.bc94ec61.gz","lastModified":1773141295930,"size":26039902});
-registerFile("./data/anncsu_it_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_it_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-01-14.pmtiles.9caa9af8.gz","lastModified":1773141727710,"size":51253067});
-registerFile("./data/anncsu_it_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-02-06.pmtiles.1af55fc5.gz","lastModified":1773142276016,"size":66638414});
-registerFile("./data/anncsu_it_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-03-06.pmtiles.387677cd.gz","lastModified":1773143126606,"size":104827871});
-registerFile("./data/anncsu_reg_01_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-09-03.pmtiles.aa2e7a8f.gz","lastModified":1773140760804,"size":977317});
-registerFile("./data/anncsu_reg_01_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-10-10.pmtiles.a6f6ac03.gz","lastModified":1773140905657,"size":994661});
-registerFile("./data/anncsu_reg_01_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-11-04.pmtiles.aaf51b3b.gz","lastModified":1773141057805,"size":932689});
-registerFile("./data/anncsu_reg_01_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-12-02.pmtiles.b4fd21c5.gz","lastModified":1773141297954,"size":1429961});
-registerFile("./data/anncsu_reg_01_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-01-14.pmtiles.ebfaed0f.gz","lastModified":1773141732566,"size":3361870});
-registerFile("./data/anncsu_reg_01_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-02-06.pmtiles.00613635.gz","lastModified":1773142281088,"size":4323466});
-registerFile("./data/anncsu_reg_01_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-03-06.pmtiles.d607d657.gz","lastModified":1773143133606,"size":6087496});
-registerFile("./data/anncsu_reg_02_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-09-03.pmtiles.8886df8c.gz","lastModified":1773140761043,"size":34953});
-registerFile("./data/anncsu_reg_02_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-10-10.pmtiles.851ba6e2.gz","lastModified":1773140905895,"size":40538});
-registerFile("./data/anncsu_reg_02_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-11-04.pmtiles.8ff8ab2e.gz","lastModified":1773141058023,"size":39340});
-registerFile("./data/anncsu_reg_02_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-12-02.pmtiles.bc07a978.gz","lastModified":1773141298183,"size":39916});
-registerFile("./data/anncsu_reg_02_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-01-14.pmtiles.2682ce0b.gz","lastModified":1773141732866,"size":55562});
-registerFile("./data/anncsu_reg_02_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-02-06.pmtiles.5e3ffe3e.gz","lastModified":1773142281356,"size":56064});
-registerFile("./data/anncsu_reg_02_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-03-06.pmtiles.602b10e6.gz","lastModified":1773143133976,"size":229540});
-registerFile("./data/anncsu_reg_03_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-09-03.pmtiles.c08979bd.gz","lastModified":1773140763360,"size":1417874});
-registerFile("./data/anncsu_reg_03_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-10-10.pmtiles.b4f9f6d9.gz","lastModified":1773140907961,"size":1471109});
-registerFile("./data/anncsu_reg_03_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-11-04.pmtiles.dd0476a0.gz","lastModified":1773141060017,"size":1437454});
-registerFile("./data/anncsu_reg_03_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-12-02.pmtiles.be97aca9.gz","lastModified":1773141301674,"size":2650664});
-registerFile("./data/anncsu_reg_03_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-01-14.pmtiles.8f2930d3.gz","lastModified":1773141739970,"size":5172854});
-registerFile("./data/anncsu_reg_03_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-02-06.pmtiles.d1c683ec.gz","lastModified":1773142289264,"size":6600943});
-registerFile("./data/anncsu_reg_03_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-03-06.pmtiles.7a1f736c.gz","lastModified":1773143146964,"size":10477648});
-registerFile("./data/anncsu_reg_04_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-09-03.pmtiles.e566687a.gz","lastModified":1773140764059,"size":337396});
-registerFile("./data/anncsu_reg_04_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-10-10.pmtiles.dade3206.gz","lastModified":1773140908614,"size":337259});
-registerFile("./data/anncsu_reg_04_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-11-04.pmtiles.0e006cb4.gz","lastModified":1773141060637,"size":309218});
-registerFile("./data/anncsu_reg_04_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-12-02.pmtiles.3dd27bd5.gz","lastModified":1773141302474,"size":493384});
-registerFile("./data/anncsu_reg_04_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-01-14.pmtiles.2d65e68b.gz","lastModified":1773141741446,"size":965809});
-registerFile("./data/anncsu_reg_04_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-02-06.pmtiles.7719ea83.gz","lastModified":1773142291152,"size":1399227});
-registerFile("./data/anncsu_reg_04_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-03-06.pmtiles.51951e7b.gz","lastModified":1773143149190,"size":1860398});
-registerFile("./data/anncsu_reg_05_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-09-03.pmtiles.9e36dc6d.gz","lastModified":1773140765600,"size":880101});
-registerFile("./data/anncsu_reg_05_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-10-10.pmtiles.552cf7ba.gz","lastModified":1773140910085,"size":942472});
-registerFile("./data/anncsu_reg_05_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-11-04.pmtiles.df71f9df.gz","lastModified":1773141062465,"size":1190983});
-registerFile("./data/anncsu_reg_05_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-12-02.pmtiles.6e21c7b9.gz","lastModified":1773141305418,"size":2246041});
-registerFile("./data/anncsu_reg_05_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-01-14.pmtiles.bd2ce5f9.gz","lastModified":1773141747478,"size":4447349});
-registerFile("./data/anncsu_reg_05_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-02-06.pmtiles.e8090244.gz","lastModified":1773142297808,"size":5615618});
-registerFile("./data/anncsu_reg_05_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-03-06.pmtiles.e7663fbb.gz","lastModified":1773143160290,"size":9016944});
-registerFile("./data/anncsu_reg_06_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-09-03.pmtiles.b55f6b3a.gz","lastModified":1773140766039,"size":168439});
-registerFile("./data/anncsu_reg_06_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-10-10.pmtiles.2db918f1.gz","lastModified":1773140910557,"size":236862});
-registerFile("./data/anncsu_reg_06_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-11-04.pmtiles.8bc43b30.gz","lastModified":1773141062946,"size":254361});
-registerFile("./data/anncsu_reg_06_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-12-02.pmtiles.bd2815b4.gz","lastModified":1773141305934,"size":275928});
-registerFile("./data/anncsu_reg_06_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-01-14.pmtiles.8aaafe99.gz","lastModified":1773141748240,"size":395283});
-registerFile("./data/anncsu_reg_06_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-02-06.pmtiles.5951fea9.gz","lastModified":1773142298984,"size":700825});
-registerFile("./data/anncsu_reg_06_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-03-06.pmtiles.6722e5c1.gz","lastModified":1773143161828,"size":969642});
-registerFile("./data/anncsu_reg_07_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-09-03.pmtiles.a6e044aa.gz","lastModified":1773140767613,"size":1011345});
-registerFile("./data/anncsu_reg_07_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-10-10.pmtiles.73347e4f.gz","lastModified":1773140912143,"size":1011889});
-registerFile("./data/anncsu_reg_07_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-11-04.pmtiles.1adf2e35.gz","lastModified":1773141064525,"size":1016657});
-registerFile("./data/anncsu_reg_07_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-12-02.pmtiles.1d037d9c.gz","lastModified":1773141307822,"size":1105808});
-registerFile("./data/anncsu_reg_07_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-01-14.pmtiles.a8be49f0.gz","lastModified":1773141751258,"size":1901807});
-registerFile("./data/anncsu_reg_07_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-02-06.pmtiles.29331994.gz","lastModified":1773142301852,"size":2121368});
-registerFile("./data/anncsu_reg_07_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-03-06.pmtiles.256fbee7.gz","lastModified":1773143164918,"size":2985501});
-registerFile("./data/anncsu_reg_08_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-09-03.pmtiles.8083c08c.gz","lastModified":1773140771836,"size":3012479});
-registerFile("./data/anncsu_reg_08_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-10-10.pmtiles.b4e0fb51.gz","lastModified":1773140916065,"size":3033413});
-registerFile("./data/anncsu_reg_08_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-11-04.pmtiles.75b8aa01.gz","lastModified":1773141069073,"size":3607425});
-registerFile("./data/anncsu_reg_08_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-12-02.pmtiles.506405d7.gz","lastModified":1773141313666,"size":4885518});
-registerFile("./data/anncsu_reg_08_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-02-06.pmtiles.51179ac8.gz","lastModified":1773142310648,"size":8157349});
-registerFile("./data/anncsu_reg_08_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-03-06.pmtiles.7d493fae.gz","lastModified":1773143176826,"size":12182617});
-registerFile("./data/anncsu_reg_09_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-09-03.pmtiles.39e72e67.gz","lastModified":1773140774232,"size":1164476});
-registerFile("./data/anncsu_reg_09_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-10-10.pmtiles.2d18ed26.gz","lastModified":1773140918621,"size":1305156});
-registerFile("./data/anncsu_reg_09_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-11-04.pmtiles.357f3188.gz","lastModified":1773141071977,"size":1727860});
-registerFile("./data/anncsu_reg_09_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-12-02.pmtiles.8fcfa81b.gz","lastModified":1773141318278,"size":2289052});
-registerFile("./data/anncsu_reg_09_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-02-06.pmtiles.c7c833ba.gz","lastModified":1773142318104,"size":4635331});
-registerFile("./data/anncsu_reg_09_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-03-06.pmtiles.abe7cae7.gz","lastModified":1773143186790,"size":7071312});
-registerFile("./data/anncsu_reg_10_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-09-03.pmtiles.1820bf3b.gz","lastModified":1773140774569,"size":86486});
-registerFile("./data/anncsu_reg_10_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-10-10.pmtiles.35569556.gz","lastModified":1773140918906,"size":86975});
-registerFile("./data/anncsu_reg_10_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-11-04.pmtiles.bfe0df0d.gz","lastModified":1773141072262,"size":82643});
-registerFile("./data/anncsu_reg_10_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-12-02.pmtiles.b7267d32.gz","lastModified":1773141318670,"size":173293});
-registerFile("./data/anncsu_reg_10_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-02-06.pmtiles.801df5a9.gz","lastModified":1773142320116,"size":1500120});
-registerFile("./data/anncsu_reg_10_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-03-06.pmtiles.566032c2.gz","lastModified":1773143189226,"size":2157374});
-registerFile("./data/anncsu_reg_11_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-09-03.pmtiles.fb6599c9.gz","lastModified":1773140774994,"size":179793});
-registerFile("./data/anncsu_reg_11_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-10-10.pmtiles.b6b102f5.gz","lastModified":1773140919279,"size":180665});
-registerFile("./data/anncsu_reg_11_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-11-04.pmtiles.2a375deb.gz","lastModified":1773141072723,"size":228230});
-registerFile("./data/anncsu_reg_11_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-12-02.pmtiles.85ded01e.gz","lastModified":1773141319454,"size":539606});
-registerFile("./data/anncsu_reg_11_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-02-06.pmtiles.ce269a2c.gz","lastModified":1773142322560,"size":2138005});
-registerFile("./data/anncsu_reg_11_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-03-06.pmtiles.55ef9ea5.gz","lastModified":1773143192530,"size":3271364});
-registerFile("./data/anncsu_reg_12_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-09-03.pmtiles.dedbf465.gz","lastModified":1773140775332,"size":109574});
-registerFile("./data/anncsu_reg_12_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-10-10.pmtiles.90b4f201.gz","lastModified":1773140919586,"size":110964});
-registerFile("./data/anncsu_reg_12_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-11-04.pmtiles.f8ecbd53.gz","lastModified":1773141073031,"size":99631});
-registerFile("./data/anncsu_reg_12_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-12-02.pmtiles.488777ff.gz","lastModified":1773141319831,"size":193354});
-registerFile("./data/anncsu_reg_12_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-02-06.pmtiles.8c915258.gz","lastModified":1773142326508,"size":3562297});
-registerFile("./data/anncsu_reg_12_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-03-06.pmtiles.c0244f73.gz","lastModified":1773143205790,"size":14694495});
-registerFile("./data/anncsu_reg_13_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-09-03.pmtiles.ce3fe320.gz","lastModified":1773140776060,"size":427474});
-registerFile("./data/anncsu_reg_13_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-10-10.pmtiles.1855031d.gz","lastModified":1773140920281,"size":463357});
-registerFile("./data/anncsu_reg_13_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-11-04.pmtiles.516f01e9.gz","lastModified":1773141073717,"size":425499});
-registerFile("./data/anncsu_reg_13_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-12-02.pmtiles.e39445e6.gz","lastModified":1773141320830,"size":673629});
-registerFile("./data/anncsu_reg_13_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-02-06.pmtiles.b20ff39c.gz","lastModified":1773142328936,"size":3246732});
-registerFile("./data/anncsu_reg_13_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-03-06.pmtiles.5da89126.gz","lastModified":1773143209106,"size":4864081});
-registerFile("./data/anncsu_reg_14_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-09-03.pmtiles.2bb4d63a.gz","lastModified":1773140776360,"size":67865});
-registerFile("./data/anncsu_reg_14_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-10-10.pmtiles.b25630b4.gz","lastModified":1773140920541,"size":67950});
-registerFile("./data/anncsu_reg_14_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-11-04.pmtiles.001c777a.gz","lastModified":1773141073977,"size":47978});
-registerFile("./data/anncsu_reg_14_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-12-02.pmtiles.7ffda966.gz","lastModified":1773141321134,"size":133882});
-registerFile("./data/anncsu_reg_14_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-02-06.pmtiles.e2064444.gz","lastModified":1773142329636,"size":537282});
-registerFile("./data/anncsu_reg_14_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-03-06.pmtiles.c74031db.gz","lastModified":1773143211002,"size":2063479});
-registerFile("./data/anncsu_reg_15_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-09-03.pmtiles.82b3af53.gz","lastModified":1773140777011,"size":252959});
-registerFile("./data/anncsu_reg_15_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-10-10.pmtiles.2569b63f.gz","lastModified":1773140921212,"size":259422});
-registerFile("./data/anncsu_reg_15_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-11-04.pmtiles.da3cb8ed.gz","lastModified":1773141074614,"size":249334});
-registerFile("./data/anncsu_reg_15_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-12-02.pmtiles.164d91af.gz","lastModified":1773141322938,"size":1796368});
-registerFile("./data/anncsu_reg_15_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-02-06.pmtiles.21abb04a.gz","lastModified":1773142338068,"size":11346723});
-registerFile("./data/anncsu_reg_15_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-03-06.pmtiles.bdf8b872.gz","lastModified":1773143223182,"size":17192756});
-registerFile("./data/anncsu_reg_16_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-09-03.pmtiles.853cbec0.gz","lastModified":1773140777339,"size":81086});
-registerFile("./data/anncsu_reg_16_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-10-10.pmtiles.4538db1b.gz","lastModified":1773140921685,"size":183555});
-registerFile("./data/anncsu_reg_16_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-11-04.pmtiles.841e3406.gz","lastModified":1773141075225,"size":266111});
-registerFile("./data/anncsu_reg_16_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-12-02.pmtiles.cb2b6a3c.gz","lastModified":1773141324678,"size":974501});
-registerFile("./data/anncsu_reg_16_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-02-06.pmtiles.409ac4af.gz","lastModified":1773142346964,"size":9488735});
-registerFile("./data/anncsu_reg_16_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-03-06.pmtiles.5ccc2c96.gz","lastModified":1773143235550,"size":14497071});
-registerFile("./data/anncsu_reg_17_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-09-03.pmtiles.c1fa1b04.gz","lastModified":1773140777539,"size":14021});
-registerFile("./data/anncsu_reg_17_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-10-10.pmtiles.11320aff.gz","lastModified":1773140921883,"size":14161});
-registerFile("./data/anncsu_reg_17_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-11-04.pmtiles.958f0ab9.gz","lastModified":1773141075432,"size":13286});
-registerFile("./data/anncsu_reg_17_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-12-02.pmtiles.cba3948a.gz","lastModified":1773141325110,"size":193171});
-registerFile("./data/anncsu_reg_17_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-02-06.pmtiles.c89f66db.gz","lastModified":1773142348936,"size":1999786});
-registerFile("./data/anncsu_reg_17_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-03-06.pmtiles.a6fcf411.gz","lastModified":1773143238494,"size":4094026});
-registerFile("./data/anncsu_reg_18_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-09-03.pmtiles.008bd798.gz","lastModified":1773140777908,"size":161981});
-registerFile("./data/anncsu_reg_18_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-10-10.pmtiles.8e6ac0f7.gz","lastModified":1773140922257,"size":173230});
-registerFile("./data/anncsu_reg_18_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-11-04.pmtiles.df33fcbb.gz","lastModified":1773141075957,"size":253338});
-registerFile("./data/anncsu_reg_18_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-12-02.pmtiles.6e67b928.gz","lastModified":1773141326434,"size":1190317});
-registerFile("./data/anncsu_reg_18_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-02-06.pmtiles.97dd969a.gz","lastModified":1773142354524,"size":7502848});
-registerFile("./data/anncsu_reg_18_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-03-06.pmtiles.92aacc20.gz","lastModified":1773143246522,"size":11573340});
-registerFile("./data/anncsu_reg_19_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-09-03.pmtiles.8f56bd37.gz","lastModified":1773140778400,"size":275988});
-registerFile("./data/anncsu_reg_19_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-10-10.pmtiles.bf22c8b4.gz","lastModified":1773140922785,"size":288670});
-registerFile("./data/anncsu_reg_19_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-11-04.pmtiles.e6f47b92.gz","lastModified":1773141076681,"size":444645});
-registerFile("./data/anncsu_reg_19_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-12-02.pmtiles.4b3a80ed.gz","lastModified":1773141330202,"size":3631997});
-registerFile("./data/anncsu_reg_19_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-02-06.pmtiles.087f3136.gz","lastModified":1773142366512,"size":16772502});
-registerFile("./data/anncsu_reg_19_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-03-06.pmtiles.a3ff9820.gz","lastModified":1773143264058,"size":27644202});
-registerFile("./data/anncsu_reg_20_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-09-03.pmtiles.242ccae0.gz","lastModified":1773140779017,"size":301261});
-registerFile("./data/anncsu_reg_20_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-10-10.pmtiles.a6dcd07d.gz","lastModified":1773140923409,"size":301648});
-registerFile("./data/anncsu_reg_20_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-11-04.pmtiles.244796f4.gz","lastModified":1773141077353,"size":277105});
-registerFile("./data/anncsu_reg_20_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-12-02.pmtiles.d01cf43e.gz","lastModified":1773141330986,"size":401791});
-registerFile("./data/anncsu_reg_20_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-02-06.pmtiles.17715ade.gz","lastModified":1773142370228,"size":2350229});
-registerFile("./data/anncsu_reg_20_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-03-06.pmtiles.b69ee1d1.gz","lastModified":1773143268886,"size":3449303});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.51267a77.json","lastModified":1773241410359,"size":5219631});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.b3579cde.json","lastModified":1773241400703,"size":853});
-registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1773241415527,"size":5411387});
-registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1773241411131,"size":345011});
+registerFile("./data/anncsu_it_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_it_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-09-03.pmtiles.7fcdd0d9.gz","lastModified":1775572115224,"size":13856520});
+registerFile("./data/anncsu_it_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_it_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-10-10.pmtiles.6b052727.gz","lastModified":1775572670381,"size":14594295});
+registerFile("./data/anncsu_it_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_it_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-11-04.pmtiles.c8f5b8cb.gz","lastModified":1775573277803,"size":15953952});
+registerFile("./data/anncsu_it_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_it_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2025-12-02.pmtiles.00d0beca.gz","lastModified":1775574068308,"size":26040037});
+registerFile("./data/anncsu_it_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_it_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-01-14.pmtiles.340ce942.gz","lastModified":1775575840435,"size":51253647});
+registerFile("./data/anncsu_it_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-02-06.pmtiles.f2b145fc.gz","lastModified":1775579079682,"size":66638202});
+registerFile("./data/anncsu_it_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-03-06.pmtiles.0a4e4bad.gz","lastModified":1775590860377,"size":34897371});
+registerFile("./data/anncsu_it_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_it_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_it_2026-04-06.pmtiles.8728ab6f.gz","lastModified":1775594495786,"size":44170365});
+registerFile("./data/anncsu_reg_01_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-09-03.pmtiles.9ecaf67c.gz","lastModified":1775572116950,"size":977317});
+registerFile("./data/anncsu_reg_01_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-10-10.pmtiles.8f1abae7.gz","lastModified":1775572672133,"size":994673});
+registerFile("./data/anncsu_reg_01_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-11-04.pmtiles.d5d371e1.gz","lastModified":1775573279490,"size":932706});
+registerFile("./data/anncsu_reg_01_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_01_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2025-12-02.pmtiles.5e516193.gz","lastModified":1775574070124,"size":1429963});
+registerFile("./data/anncsu_reg_01_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-01-14.pmtiles.66e53b5e.gz","lastModified":1775575845418,"size":3361872});
+registerFile("./data/anncsu_reg_01_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-02-06.pmtiles.b025faac.gz","lastModified":1775579086655,"size":4323479});
+registerFile("./data/anncsu_reg_01_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-03-06.pmtiles.2a2e01d3.gz","lastModified":1775590866433,"size":6087495});
+registerFile("./data/anncsu_reg_01_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_01_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_01_2026-04-06.pmtiles.55726cbc.gz","lastModified":1775594505270,"size":7977537});
+registerFile("./data/anncsu_reg_02_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-09-03.pmtiles.8ba77fbc.gz","lastModified":1775572117188,"size":34952});
+registerFile("./data/anncsu_reg_02_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-10-10.pmtiles.21803739.gz","lastModified":1775572672390,"size":40538});
+registerFile("./data/anncsu_reg_02_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-11-04.pmtiles.9ebe2f83.gz","lastModified":1775573279744,"size":39340});
+registerFile("./data/anncsu_reg_02_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_02_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2025-12-02.pmtiles.620e4045.gz","lastModified":1775574070350,"size":39916});
+registerFile("./data/anncsu_reg_02_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-01-14.pmtiles.10a718ba.gz","lastModified":1775575845812,"size":55563});
+registerFile("./data/anncsu_reg_02_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-02-06.pmtiles.db197d8f.gz","lastModified":1775579087073,"size":56066});
+registerFile("./data/anncsu_reg_02_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-03-06.pmtiles.26e5a6ec.gz","lastModified":1775590866811,"size":229546});
+registerFile("./data/anncsu_reg_02_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_02_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_02_2026-04-06.pmtiles.a77f3129.gz","lastModified":1775594505665,"size":144813});
+registerFile("./data/anncsu_reg_03_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-09-03.pmtiles.773ee054.gz","lastModified":1775572119717,"size":1417879});
+registerFile("./data/anncsu_reg_03_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-10-10.pmtiles.dad1619a.gz","lastModified":1775572674939,"size":1471104});
+registerFile("./data/anncsu_reg_03_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-11-04.pmtiles.753cc272.gz","lastModified":1775573282147,"size":1437471});
+registerFile("./data/anncsu_reg_03_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_03_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2025-12-02.pmtiles.6637f05d.gz","lastModified":1775574073600,"size":2650666});
+registerFile("./data/anncsu_reg_03_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-01-14.pmtiles.15642649.gz","lastModified":1775575854634,"size":5172806});
+registerFile("./data/anncsu_reg_03_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-02-06.pmtiles.8018fd59.gz","lastModified":1775579097987,"size":6600967});
+registerFile("./data/anncsu_reg_03_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-03-06.pmtiles.aab230bf.gz","lastModified":1775590878973,"size":10477735});
+registerFile("./data/anncsu_reg_03_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_03_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_03_2026-04-06.pmtiles.3cbd587e.gz","lastModified":1775594520498,"size":13786385});
+registerFile("./data/anncsu_reg_04_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-09-03.pmtiles.808a8fb1.gz","lastModified":1775572120499,"size":337398});
+registerFile("./data/anncsu_reg_04_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-10-10.pmtiles.fb827ec3.gz","lastModified":1775572675703,"size":337258});
+registerFile("./data/anncsu_reg_04_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-11-04.pmtiles.712aaabf.gz","lastModified":1775573282910,"size":309219});
+registerFile("./data/anncsu_reg_04_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_04_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2025-12-02.pmtiles.8aa8f0ab.gz","lastModified":1775574074353,"size":493383});
+registerFile("./data/anncsu_reg_04_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-01-14.pmtiles.bdfe0d19.gz","lastModified":1775575856514,"size":965820});
+registerFile("./data/anncsu_reg_04_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-02-06.pmtiles.9a492630.gz","lastModified":1775579100499,"size":1399240});
+registerFile("./data/anncsu_reg_04_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-03-06.pmtiles.725442d2.gz","lastModified":1775590881073,"size":1860397});
+registerFile("./data/anncsu_reg_04_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_04_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_04_2026-04-06.pmtiles.9bb218ae.gz","lastModified":1775594522938,"size":2084773});
+registerFile("./data/anncsu_reg_05_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-09-03.pmtiles.435d9d6e.gz","lastModified":1775572122140,"size":880104});
+registerFile("./data/anncsu_reg_05_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-10-10.pmtiles.f9c87dc3.gz","lastModified":1775572677415,"size":942462});
+registerFile("./data/anncsu_reg_05_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-11-04.pmtiles.5ddf0d1b.gz","lastModified":1775573285068,"size":1190989});
+registerFile("./data/anncsu_reg_05_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_05_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2025-12-02.pmtiles.8159736e.gz","lastModified":1775574077204,"size":2246045});
+registerFile("./data/anncsu_reg_05_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-01-14.pmtiles.9e0334f4.gz","lastModified":1775575864137,"size":4447300});
+registerFile("./data/anncsu_reg_05_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-02-06.pmtiles.37b36538.gz","lastModified":1775579109891,"size":5615589});
+registerFile("./data/anncsu_reg_05_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-03-06.pmtiles.064c897a.gz","lastModified":1775590891753,"size":9017129});
+registerFile("./data/anncsu_reg_05_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_05_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_05_2026-04-06.pmtiles.1528c9ab.gz","lastModified":1775594536566,"size":11104507});
+registerFile("./data/anncsu_reg_06_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-09-03.pmtiles.1a6436c0.gz","lastModified":1775572122573,"size":168440});
+registerFile("./data/anncsu_reg_06_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-10-10.pmtiles.4fa486ef.gz","lastModified":1775572677910,"size":236862});
+registerFile("./data/anncsu_reg_06_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-11-04.pmtiles.f8a2ad07.gz","lastModified":1775573285603,"size":254361});
+registerFile("./data/anncsu_reg_06_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_06_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2025-12-02.pmtiles.64c11846.gz","lastModified":1775574077772,"size":275928});
+registerFile("./data/anncsu_reg_06_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-01-14.pmtiles.407f9fdf.gz","lastModified":1775575865115,"size":395281});
+registerFile("./data/anncsu_reg_06_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-02-06.pmtiles.a5038ada.gz","lastModified":1775579111607,"size":700826});
+registerFile("./data/anncsu_reg_06_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-03-06.pmtiles.884192fe.gz","lastModified":1775590893152,"size":969654});
+registerFile("./data/anncsu_reg_06_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_06_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_06_2026-04-06.pmtiles.c44aadde.gz","lastModified":1775594538506,"size":1520395});
+registerFile("./data/anncsu_reg_07_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-09-03.pmtiles.a74edf1c.gz","lastModified":1775572124402,"size":1011329});
+registerFile("./data/anncsu_reg_07_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-10-10.pmtiles.3496ba3b.gz","lastModified":1775572679705,"size":1011881});
+registerFile("./data/anncsu_reg_07_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-11-04.pmtiles.c2942ae3.gz","lastModified":1775573287387,"size":1016662});
+registerFile("./data/anncsu_reg_07_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_07_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2025-12-02.pmtiles.c7614213.gz","lastModified":1775574079416,"size":1105810});
+registerFile("./data/anncsu_reg_07_2026-01-14.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-01-14.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-01-14.pmtiles.074781db.gz","lastModified":1775575868565,"size":1902014});
+registerFile("./data/anncsu_reg_07_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-02-06.pmtiles.1d254a47.gz","lastModified":1775579115612,"size":2120913});
+registerFile("./data/anncsu_reg_07_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-03-06.pmtiles.3074ffc2.gz","lastModified":1775590896149,"size":2985549});
+registerFile("./data/anncsu_reg_07_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_07_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_07_2026-04-06.pmtiles.d0a707f9.gz","lastModified":1775594542066,"size":3507566});
+registerFile("./data/anncsu_reg_08_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-09-03.pmtiles.d18a7d62.gz","lastModified":1775572129144,"size":3012498});
+registerFile("./data/anncsu_reg_08_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-10-10.pmtiles.55373034.gz","lastModified":1775572684212,"size":3033423});
+registerFile("./data/anncsu_reg_08_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-11-04.pmtiles.d4bc2ad4.gz","lastModified":1775573292893,"size":3607391});
+registerFile("./data/anncsu_reg_08_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_08_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2025-12-02.pmtiles.7dbc7753.gz","lastModified":1775574084860,"size":4885522});
+registerFile("./data/anncsu_reg_08_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-02-06.pmtiles.76dcca99.gz","lastModified":1775579127924,"size":8157319});
+registerFile("./data/anncsu_reg_08_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-03-06.pmtiles.2fc1effa.gz","lastModified":1775590907465,"size":12182724});
+registerFile("./data/anncsu_reg_08_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_08_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_08_2026-04-06.pmtiles.19122e82.gz","lastModified":1775594555010,"size":13371087});
+registerFile("./data/anncsu_reg_09_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-09-03.pmtiles.1350c3a5.gz","lastModified":1775572131974,"size":1164441});
+registerFile("./data/anncsu_reg_09_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-10-10.pmtiles.2b6b6759.gz","lastModified":1775572687015,"size":1305168});
+registerFile("./data/anncsu_reg_09_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-11-04.pmtiles.8759ea6b.gz","lastModified":1775573296270,"size":1727809});
+registerFile("./data/anncsu_reg_09_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_09_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2025-12-02.pmtiles.5326b71f.gz","lastModified":1775574089108,"size":2289053});
+registerFile("./data/anncsu_reg_09_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-02-06.pmtiles.ff82d13b.gz","lastModified":1775579138656,"size":4635368});
+registerFile("./data/anncsu_reg_09_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-03-06.pmtiles.f9fd3d90.gz","lastModified":1775590917069,"size":7071139});
+registerFile("./data/anncsu_reg_09_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_09_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_09_2026-04-06.pmtiles.0c96b5f7.gz","lastModified":1775594567870,"size":10270081});
+registerFile("./data/anncsu_reg_10_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-09-03.pmtiles.d12156b4.gz","lastModified":1775572132305,"size":86482});
+registerFile("./data/anncsu_reg_10_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-10-10.pmtiles.23c3277f.gz","lastModified":1775572687310,"size":86980});
+registerFile("./data/anncsu_reg_10_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-11-04.pmtiles.2217a972.gz","lastModified":1775573296593,"size":82642});
+registerFile("./data/anncsu_reg_10_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_10_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2025-12-02.pmtiles.962a7106.gz","lastModified":1775574089517,"size":173288});
+registerFile("./data/anncsu_reg_10_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-02-06.pmtiles.8440c3e5.gz","lastModified":1775579141532,"size":1500139});
+registerFile("./data/anncsu_reg_10_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-03-06.pmtiles.18648743.gz","lastModified":1775590919353,"size":2157375});
+registerFile("./data/anncsu_reg_10_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_10_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_10_2026-04-06.pmtiles.cf16cb70.gz","lastModified":1775594570514,"size":2496428});
+registerFile("./data/anncsu_reg_11_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-09-03.pmtiles.593c78a9.gz","lastModified":1775572132764,"size":179794});
+registerFile("./data/anncsu_reg_11_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-10-10.pmtiles.22fce368.gz","lastModified":1775572687736,"size":180660});
+registerFile("./data/anncsu_reg_11_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-11-04.pmtiles.6839155e.gz","lastModified":1775573297135,"size":228230});
+registerFile("./data/anncsu_reg_11_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_11_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2025-12-02.pmtiles.af87c88c.gz","lastModified":1775574090344,"size":539608});
+registerFile("./data/anncsu_reg_11_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-02-06.pmtiles.b262b559.gz","lastModified":1775579145028,"size":2138022});
+registerFile("./data/anncsu_reg_11_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-03-06.pmtiles.31ea6e6e.gz","lastModified":1775590922593,"size":3271364});
+registerFile("./data/anncsu_reg_11_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_11_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_11_2026-04-06.pmtiles.783decb4.gz","lastModified":1775594574778,"size":3998007});
+registerFile("./data/anncsu_reg_12_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-09-03.pmtiles.e9072083.gz","lastModified":1775572133113,"size":109568});
+registerFile("./data/anncsu_reg_12_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-10-10.pmtiles.657fc299.gz","lastModified":1775572688092,"size":110968});
+registerFile("./data/anncsu_reg_12_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-11-04.pmtiles.fe6af360.gz","lastModified":1775573297506,"size":99637});
+registerFile("./data/anncsu_reg_12_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_12_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2025-12-02.pmtiles.d6519165.gz","lastModified":1775574090766,"size":193353});
+registerFile("./data/anncsu_reg_12_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-02-06.pmtiles.16d47302.gz","lastModified":1775579149961,"size":3562363});
+registerFile("./data/anncsu_reg_12_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-03-06.pmtiles.f36bae59.gz","lastModified":1775590935445,"size":14694460});
+registerFile("./data/anncsu_reg_12_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_12_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_12_2026-04-06.pmtiles.36dc5854.gz","lastModified":1775594591970,"size":18638337});
+registerFile("./data/anncsu_reg_13_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-09-03.pmtiles.60066432.gz","lastModified":1775572133928,"size":427476});
+registerFile("./data/anncsu_reg_13_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-10-10.pmtiles.ad46733d.gz","lastModified":1775572688889,"size":463362});
+registerFile("./data/anncsu_reg_13_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-11-04.pmtiles.3f514eac.gz","lastModified":1775573298244,"size":425496});
+registerFile("./data/anncsu_reg_13_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_13_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2025-12-02.pmtiles.4b8d2210.gz","lastModified":1775574091688,"size":673615});
+registerFile("./data/anncsu_reg_13_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-02-06.pmtiles.5e3cf342.gz","lastModified":1775579153137,"size":3246793});
+registerFile("./data/anncsu_reg_13_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-03-06.pmtiles.25e79219.gz","lastModified":1775590938473,"size":4864209});
+registerFile("./data/anncsu_reg_13_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_13_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_13_2026-04-06.pmtiles.8c1a2700.gz","lastModified":1775594596730,"size":6863991});
+registerFile("./data/anncsu_reg_14_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-09-03.pmtiles.f091e9b1.gz","lastModified":1775572134269,"size":67864});
+registerFile("./data/anncsu_reg_14_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-10-10.pmtiles.e06e0bb3.gz","lastModified":1775572689210,"size":67950});
+registerFile("./data/anncsu_reg_14_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-11-04.pmtiles.e0fdaf46.gz","lastModified":1775573298527,"size":47979});
+registerFile("./data/anncsu_reg_14_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_14_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2025-12-02.pmtiles.df175e56.gz","lastModified":1775574091970,"size":133896});
+registerFile("./data/anncsu_reg_14_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-02-06.pmtiles.ff08b7ef.gz","lastModified":1775579154229,"size":537295});
+registerFile("./data/anncsu_reg_14_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-03-06.pmtiles.d719e91a.gz","lastModified":1775590940349,"size":2063504});
+registerFile("./data/anncsu_reg_14_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_14_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_14_2026-04-06.pmtiles.a681e972.gz","lastModified":1775594599970,"size":3683213});
+registerFile("./data/anncsu_reg_15_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-09-03.pmtiles.6cee6534.gz","lastModified":1775572134982,"size":252961});
+registerFile("./data/anncsu_reg_15_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-10-10.pmtiles.de19722a.gz","lastModified":1775572689927,"size":259424});
+registerFile("./data/anncsu_reg_15_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-11-04.pmtiles.e7fbf9e4.gz","lastModified":1775573299285,"size":249328});
+registerFile("./data/anncsu_reg_15_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_15_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2025-12-02.pmtiles.9cc076b1.gz","lastModified":1775574093836,"size":1796270});
+registerFile("./data/anncsu_reg_15_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-02-06.pmtiles.7f825f51.gz","lastModified":1775579166861,"size":11346278});
+registerFile("./data/anncsu_reg_15_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-03-06.pmtiles.8788d9df.gz","lastModified":1775590952349,"size":17193639});
+registerFile("./data/anncsu_reg_15_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_15_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_15_2026-04-06.pmtiles.478a918a.gz","lastModified":1775594616746,"size":23247938});
+registerFile("./data/anncsu_reg_16_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-09-03.pmtiles.b03bee4d.gz","lastModified":1775572135363,"size":81085});
+registerFile("./data/anncsu_reg_16_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-10-10.pmtiles.882b2985.gz","lastModified":1775572690434,"size":183559});
+registerFile("./data/anncsu_reg_16_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-11-04.pmtiles.fc11efad.gz","lastModified":1775573300047,"size":266120});
+registerFile("./data/anncsu_reg_16_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_16_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2025-12-02.pmtiles.8bb77b3d.gz","lastModified":1775574095492,"size":974492});
+registerFile("./data/anncsu_reg_16_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-02-06.pmtiles.12ef7fe8.gz","lastModified":1775579179489,"size":9489042});
+registerFile("./data/anncsu_reg_16_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-03-06.pmtiles.4250e6da.gz","lastModified":1775590964281,"size":14497165});
+registerFile("./data/anncsu_reg_16_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_16_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_16_2026-04-06.pmtiles.6e0f7a21.gz","lastModified":1775594632978,"size":18455830});
+registerFile("./data/anncsu_reg_17_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-09-03.pmtiles.b6d2b25e.gz","lastModified":1775572135586,"size":14021});
+registerFile("./data/anncsu_reg_17_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-10-10.pmtiles.7a75e455.gz","lastModified":1775572690648,"size":14161});
+registerFile("./data/anncsu_reg_17_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-11-04.pmtiles.958f0ab9.gz","lastModified":1775573300279,"size":13286});
+registerFile("./data/anncsu_reg_17_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_17_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2025-12-02.pmtiles.f57072b2.gz","lastModified":1775574095900,"size":193182});
+registerFile("./data/anncsu_reg_17_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-02-06.pmtiles.85612596.gz","lastModified":1775579182346,"size":1999770});
+registerFile("./data/anncsu_reg_17_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-03-06.pmtiles.2b232855.gz","lastModified":1775590967217,"size":4094116});
+registerFile("./data/anncsu_reg_17_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_17_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_17_2026-04-06.pmtiles.97ba57c9.gz","lastModified":1775594637510,"size":5888164});
+registerFile("./data/anncsu_reg_18_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-09-03.pmtiles.a5283fb5.gz","lastModified":1775572136038,"size":161979});
+registerFile("./data/anncsu_reg_18_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-10-10.pmtiles.334ea6f0.gz","lastModified":1775572691084,"size":173226});
+registerFile("./data/anncsu_reg_18_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-11-04.pmtiles.62524983.gz","lastModified":1775573300887,"size":253344});
+registerFile("./data/anncsu_reg_18_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_18_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2025-12-02.pmtiles.02393407.gz","lastModified":1775574097076,"size":1190354});
+registerFile("./data/anncsu_reg_18_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-02-06.pmtiles.dee5414f.gz","lastModified":1775579189850,"size":7502812});
+registerFile("./data/anncsu_reg_18_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-03-06.pmtiles.ef9eae7f.gz","lastModified":1775590974961,"size":11573152});
+registerFile("./data/anncsu_reg_18_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_18_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_18_2026-04-06.pmtiles.aa67a3ef.gz","lastModified":1775594649286,"size":16290877});
+registerFile("./data/anncsu_reg_19_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-09-03.pmtiles.396c1e3c.gz","lastModified":1775572136662,"size":275980});
+registerFile("./data/anncsu_reg_19_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-10-10.pmtiles.d8bb1258.gz","lastModified":1775572691663,"size":288670});
+registerFile("./data/anncsu_reg_19_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-11-04.pmtiles.6a5aa24d.gz","lastModified":1775573301722,"size":444648});
+registerFile("./data/anncsu_reg_19_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_19_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2025-12-02.pmtiles.7a05971c.gz","lastModified":1775574100332,"size":3632098});
+registerFile("./data/anncsu_reg_19_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-02-06.pmtiles.c25baa55.gz","lastModified":1775579207326,"size":16772220});
+registerFile("./data/anncsu_reg_19_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-03-06.pmtiles.d854ec19.gz","lastModified":1775590991901,"size":27643805});
+registerFile("./data/anncsu_reg_19_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_19_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_19_2026-04-06.pmtiles.61fa74a3.gz","lastModified":1775594671566,"size":34823256});
+registerFile("./data/anncsu_reg_20_2025-09-03.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-09-03.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-09-03.pmtiles.a10cad16.gz","lastModified":1775572137407,"size":301260});
+registerFile("./data/anncsu_reg_20_2025-10-10.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-10-10.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-10-10.pmtiles.b743aa9f.gz","lastModified":1775572692345,"size":301647});
+registerFile("./data/anncsu_reg_20_2025-11-04.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-11-04.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-11-04.pmtiles.e72f357b.gz","lastModified":1775573302424,"size":277109});
+registerFile("./data/anncsu_reg_20_2025-12-02.pmtiles.gz", {"name":"./data/anncsu_reg_20_2025-12-02.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2025-12-02.pmtiles.9af4f09c.gz","lastModified":1775574101092,"size":401794});
+registerFile("./data/anncsu_reg_20_2026-02-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-02-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-02-06.pmtiles.a63aab85.gz","lastModified":1775579212774,"size":2350231});
+registerFile("./data/anncsu_reg_20_2026-03-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-03-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-03-06.pmtiles.fb754ec2.gz","lastModified":1775590996593,"size":3449335});
+registerFile("./data/anncsu_reg_20_2026-04-06.pmtiles.gz", {"name":"./data/anncsu_reg_20_2026-04-06.pmtiles.gz","mimeType":"application/gzip","path":"./_file/data/anncsu_reg_20_2026-04-06.pmtiles.2f87eecd.gz","lastModified":1775594678734,"size":7923569});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.41356856.json","lastModified":1775596306473,"size":5870935});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.45a9bc9c.json","lastModified":1775596296353,"size":980});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.9f11c989.geojson","lastModified":1775596310633,"size":5411387});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.1c5962a0.geojson","lastModified":1775596307065,"size":345011});
 
 define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -228,12 +249,12 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/
 }});
 
 define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.20.0/313394e5.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/7c43807f.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.44bbde42.js")]);
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.22.0/05183b21.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js"), import("./_npm/@observablehq/plot@0.6.17/a96a6bbb.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.44bbde42.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
 
-define({id: "4367281a", inputs: ["FileAttachment","Inputs","d3","createLayerManager"], outputs: ["REGIONS","anncsu_stats","spatial_stats","regioni_boundaries","comuni_boundaries","DATES","MOST_RECENT_DATE","DATE_PALETTE","DATE_COLORS","SmartValue","scrollableTable","calculatePercentageChange","formatValue","_pmtilesRaw","_pmtilesUrls","resolveUrl","initDateLayersForMap","buildLayerGroupsForMap"], body: async (FileAttachment,Inputs,d3,createLayerManager) => {
+define({id: "a95de204", inputs: ["FileAttachment","Inputs","d3","createLayerManager"], outputs: ["REGIONS","anncsu_stats","spatial_stats","regioni_boundaries","comuni_boundaries","DATES","MOST_RECENT_DATE","DATE_PALETTE","DATE_COLORS","SmartValue","scrollableTable","calculatePercentageChange","formatValue","_pmtilesRaw","_pmtilesUrls","resolveUrl","initDateLayersForMap","buildLayerGroupsForMap"], body: async (FileAttachment,Inputs,d3,createLayerManager) => {
 // Configurazione:
 // - un file coarse Italia per ogni data
 // - un file punti per ogni coppia (regione, data)
@@ -317,6 +338,7 @@ const _pmtilesRaw = {
   "anncsu_it_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-01-14.pmtiles.gz"),
   "anncsu_it_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-02-06.pmtiles.gz"),
   "anncsu_it_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-03-06.pmtiles.gz"),
+  "anncsu_it_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_it_2026-04-06.pmtiles.gz"),
 
   // Regione 01 Piemonte
   "anncsu_reg_01_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2025-09-03.pmtiles.gz"),
@@ -326,6 +348,7 @@ const _pmtilesRaw = {
   "anncsu_reg_01_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-01-14.pmtiles.gz"),
   "anncsu_reg_01_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-02-06.pmtiles.gz"),
   "anncsu_reg_01_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_01_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_01_2026-04-06.pmtiles.gz"),
 
   // Regione 02 Valle d'Aosta
   "anncsu_reg_02_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2025-09-03.pmtiles.gz"),
@@ -335,6 +358,7 @@ const _pmtilesRaw = {
   "anncsu_reg_02_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-01-14.pmtiles.gz"),
   "anncsu_reg_02_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-02-06.pmtiles.gz"),
   "anncsu_reg_02_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_02_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_02_2026-04-06.pmtiles.gz"),
 
   // Regione 03 Lombardia
   "anncsu_reg_03_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2025-09-03.pmtiles.gz"),
@@ -344,6 +368,7 @@ const _pmtilesRaw = {
   "anncsu_reg_03_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-01-14.pmtiles.gz"),
   "anncsu_reg_03_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-02-06.pmtiles.gz"),
   "anncsu_reg_03_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_03_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_03_2026-04-06.pmtiles.gz"),
 
   // Regione 04 Trentino-Alto Adige
   "anncsu_reg_04_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2025-09-03.pmtiles.gz"),
@@ -353,6 +378,7 @@ const _pmtilesRaw = {
   "anncsu_reg_04_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-01-14.pmtiles.gz"),
   "anncsu_reg_04_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-02-06.pmtiles.gz"),
   "anncsu_reg_04_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_04_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_04_2026-04-06.pmtiles.gz"),
   // Regione 05 Veneto
   "anncsu_reg_05_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-09-03.pmtiles.gz"),
   "anncsu_reg_05_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2025-10-10.pmtiles.gz"),
@@ -361,6 +387,7 @@ const _pmtilesRaw = {
   "anncsu_reg_05_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-01-14.pmtiles.gz"),
   "anncsu_reg_05_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-02-06.pmtiles.gz"),
   "anncsu_reg_05_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_05_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_05_2026-04-06.pmtiles.gz"),
   // Regione 06 Friuli-Venezia Giulia
   "anncsu_reg_06_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-09-03.pmtiles.gz"),
   "anncsu_reg_06_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2025-10-10.pmtiles.gz"),
@@ -369,6 +396,7 @@ const _pmtilesRaw = {
   "anncsu_reg_06_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-01-14.pmtiles.gz"),
   "anncsu_reg_06_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-02-06.pmtiles.gz"),
   "anncsu_reg_06_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_06_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_06_2026-04-06.pmtiles.gz"),
   // Regione 07 Liguria
   "anncsu_reg_07_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-09-03.pmtiles.gz"),
   "anncsu_reg_07_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2025-10-10.pmtiles.gz"),
@@ -377,6 +405,7 @@ const _pmtilesRaw = {
   "anncsu_reg_07_2026-01-14.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-01-14.pmtiles.gz"),
   "anncsu_reg_07_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-02-06.pmtiles.gz"),
   "anncsu_reg_07_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_07_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_07_2026-04-06.pmtiles.gz"),
   // Regione 08 Emilia-Romagna
   "anncsu_reg_08_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-09-03.pmtiles.gz"),
   "anncsu_reg_08_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-10-10.pmtiles.gz"),
@@ -384,6 +413,7 @@ const _pmtilesRaw = {
   "anncsu_reg_08_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2025-12-02.pmtiles.gz"),
   "anncsu_reg_08_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2026-02-06.pmtiles.gz"),
   "anncsu_reg_08_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_08_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_08_2026-04-06.pmtiles.gz"),
   // Regione 09 Toscana
   "anncsu_reg_09_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-09-03.pmtiles.gz"),
   "anncsu_reg_09_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-10-10.pmtiles.gz"),
@@ -391,6 +421,7 @@ const _pmtilesRaw = {
   "anncsu_reg_09_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2025-12-02.pmtiles.gz"),
   "anncsu_reg_09_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2026-02-06.pmtiles.gz"),
   "anncsu_reg_09_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_09_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_09_2026-04-06.pmtiles.gz"),
   // Regione 10 Umbria
   "anncsu_reg_10_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-09-03.pmtiles.gz"),
   "anncsu_reg_10_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-10-10.pmtiles.gz"),
@@ -398,6 +429,7 @@ const _pmtilesRaw = {
   "anncsu_reg_10_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2025-12-02.pmtiles.gz"),
   "anncsu_reg_10_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2026-02-06.pmtiles.gz"),
   "anncsu_reg_10_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_10_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_10_2026-04-06.pmtiles.gz"),
   // Regione 11 Marche
   "anncsu_reg_11_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-09-03.pmtiles.gz"),
   "anncsu_reg_11_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-10-10.pmtiles.gz"),
@@ -405,6 +437,7 @@ const _pmtilesRaw = {
   "anncsu_reg_11_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2025-12-02.pmtiles.gz"),
   "anncsu_reg_11_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2026-02-06.pmtiles.gz"),
   "anncsu_reg_11_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_11_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_11_2026-04-06.pmtiles.gz"),
   // Regione 12 Lazio
   "anncsu_reg_12_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-09-03.pmtiles.gz"),
   "anncsu_reg_12_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-10-10.pmtiles.gz"),
@@ -412,6 +445,7 @@ const _pmtilesRaw = {
   "anncsu_reg_12_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2025-12-02.pmtiles.gz"),
   "anncsu_reg_12_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2026-02-06.pmtiles.gz"),
   "anncsu_reg_12_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_12_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_12_2026-04-06.pmtiles.gz"),
   // Regione 13 Abruzzo
   "anncsu_reg_13_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-09-03.pmtiles.gz"),
   "anncsu_reg_13_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-10-10.pmtiles.gz"),
@@ -419,6 +453,7 @@ const _pmtilesRaw = {
   "anncsu_reg_13_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2025-12-02.pmtiles.gz"),
   "anncsu_reg_13_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2026-02-06.pmtiles.gz"),
   "anncsu_reg_13_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_13_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_13_2026-04-06.pmtiles.gz"),
   // Regione 14 Molise
   "anncsu_reg_14_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-09-03.pmtiles.gz"),
   "anncsu_reg_14_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-10-10.pmtiles.gz"),
@@ -426,6 +461,7 @@ const _pmtilesRaw = {
   "anncsu_reg_14_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2025-12-02.pmtiles.gz"),
   "anncsu_reg_14_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2026-02-06.pmtiles.gz"),
   "anncsu_reg_14_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_14_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_14_2026-04-06.pmtiles.gz"),
   // Regione 15 Campania
   "anncsu_reg_15_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-09-03.pmtiles.gz"),
   "anncsu_reg_15_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-10-10.pmtiles.gz"),
@@ -433,6 +469,7 @@ const _pmtilesRaw = {
   "anncsu_reg_15_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2025-12-02.pmtiles.gz"),
   "anncsu_reg_15_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2026-02-06.pmtiles.gz"),
   "anncsu_reg_15_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_15_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_15_2026-04-06.pmtiles.gz"),
   // Regione 16 Puglia
   "anncsu_reg_16_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-09-03.pmtiles.gz"),
   "anncsu_reg_16_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-10-10.pmtiles.gz"),
@@ -440,6 +477,7 @@ const _pmtilesRaw = {
   "anncsu_reg_16_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2025-12-02.pmtiles.gz"),
   "anncsu_reg_16_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2026-02-06.pmtiles.gz"),
   "anncsu_reg_16_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_16_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_16_2026-04-06.pmtiles.gz"),
   // Regione 17 Basilicata
   "anncsu_reg_17_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-09-03.pmtiles.gz"),
   "anncsu_reg_17_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-10-10.pmtiles.gz"),
@@ -447,6 +485,7 @@ const _pmtilesRaw = {
   "anncsu_reg_17_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2025-12-02.pmtiles.gz"),
   "anncsu_reg_17_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2026-02-06.pmtiles.gz"),
   "anncsu_reg_17_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_17_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_17_2026-04-06.pmtiles.gz"),
   // Regione 18 Calabria
   "anncsu_reg_18_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-09-03.pmtiles.gz"),
   "anncsu_reg_18_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-10-10.pmtiles.gz"),
@@ -454,6 +493,7 @@ const _pmtilesRaw = {
   "anncsu_reg_18_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2025-12-02.pmtiles.gz"),
   "anncsu_reg_18_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2026-02-06.pmtiles.gz"),
   "anncsu_reg_18_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_18_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_18_2026-04-06.pmtiles.gz"),
   // Regione 19 Sicilia
   "anncsu_reg_19_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-09-03.pmtiles.gz"),
   "anncsu_reg_19_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-10-10.pmtiles.gz"),
@@ -461,6 +501,7 @@ const _pmtilesRaw = {
   "anncsu_reg_19_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2025-12-02.pmtiles.gz"),
   "anncsu_reg_19_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2026-02-06.pmtiles.gz"),
   "anncsu_reg_19_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_19_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_19_2026-04-06.pmtiles.gz"),
   // Regione 20 Sardegna
   "anncsu_reg_20_2025-09-03.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-09-03.pmtiles.gz"),
   "anncsu_reg_20_2025-10-10.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-10-10.pmtiles.gz"),
@@ -468,6 +509,7 @@ const _pmtilesRaw = {
   "anncsu_reg_20_2025-12-02.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2025-12-02.pmtiles.gz"),
   "anncsu_reg_20_2026-02-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2026-02-06.pmtiles.gz"),
   "anncsu_reg_20_2026-03-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2026-03-06.pmtiles.gz"),
+  "anncsu_reg_20_2026-04-06.pmtiles.gz": FileAttachment("./data/anncsu_reg_20_2026-04-06.pmtiles.gz"),
 };
 const _pmtilesUrls = Object.fromEntries(
   await Promise.all(Object.entries(_pmtilesRaw).map(async ([k, fa]) => [k, await fa.url()]))
@@ -715,7 +757,7 @@ Plot.plot({
 ))
 }});
 
-define({id: "245703a8", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "4f68f7af", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -727,6 +769,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       const total_all_0903 = row["total_all_2025-09-03"] || 1;
       const total_all_1010 = row["total_all_2025-10-10"] || 1;
@@ -735,6 +778,7 @@ scrollableTable(
       const total_all_0114 = row["total_all_2026-01-14"] || 1;
       const total_all_0206 = row["total_all_2026-02-06"] || 1;
       const total_all_0306 = row["total_all_2026-03-06"] || 1;
+      const total_all_0406 = row["total_all_2026-04-06"] || 1;
 
       const percent_0903 = (absolute_0903 / total_all_0903) * 100;
       const percent_1010 = (absolute_1010 / total_all_1010) * 100;
@@ -743,6 +787,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_0114) * 100;
       const percent_0206 = (absolute_0206 / total_all_0206) * 100;
       const percent_0306 = (absolute_0306 / total_all_0306) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0406) * 100;
 
       return {
         regione: row.regione,
@@ -766,14 +811,17 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`),
         "2026-03-06": new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`)
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`),
+        "2026-04-06": new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`)
       };
     });
 
-    return rows.sort((a, b) => b["2026-03-06"] - a["2026-03-06"]);
+    return rows.sort((a, b) => b["2026-04-06"] - a["2026-04-06"]);
   })(),
   {
-    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["regione", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       regione: "Regione",
       "2025-09-03": "09/03",
@@ -782,7 +830,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1026,7 +1075,7 @@ html`<h3>Nuovi Civici per Regione — ${selected_region}</h3>`
 ))
 }});
 
-define({id: "c8aa09db", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
+define({id: "a08c1d53", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -1039,6 +1088,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
@@ -1047,6 +1097,7 @@ scrollableTable(
       const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
       const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
       const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0306 = totalRow?.["total_all_2026-03-06"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
@@ -1054,6 +1105,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_1202) * 100;
       const percent_0206 = (absolute_0206 / total_all_0114) * 100;
       const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0306) * 100;
 
       return {
         regione: row.regione,
@@ -1074,18 +1126,21 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
         "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0"),
+        "2026-04-06": absolute_0406 ? new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
-      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      const valA = a["2026-04-06"] === "-" ? 0 : a["2026-04-06"].valueOf();
+      const valB = b["2026-04-06"] === "-" ? 0 : b["2026-04-06"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       regione: "Regione",
       "2025-10-10": "10/10",
@@ -1093,7 +1148,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1106,7 +1162,7 @@ html`<h3>Civici Rimossi per Regione — ${selected_region}</h3>`
 ))
 }});
 
-define({id: "7f8b52b0", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
+define({id: "f1a3ccf6", inputs: ["scrollableTable","spatial_stats","selected_region","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_region,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -1119,6 +1175,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
@@ -1127,6 +1184,7 @@ scrollableTable(
       const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
       const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
       const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0306 = totalRow?.["total_all_2026-03-06"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
@@ -1134,6 +1192,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_1202) * 100;
       const percent_0206 = (absolute_0206 / total_all_0114) * 100;
       const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0306) * 100;
 
       return {
         regione: row.regione,
@@ -1154,18 +1213,21 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
         "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0"),
+        "2026-04-06": absolute_0406 ? new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
-      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      const valA = a["2026-04-06"] === "-" ? 0 : a["2026-04-06"].valueOf();
+      const valB = b["2026-04-06"] === "-" ? 0 : b["2026-04-06"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["regione", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       regione: "Regione",
       "2025-10-10": "10/10",
@@ -1173,7 +1235,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1295,7 +1358,7 @@ display(await(
 ))
 }});
 
-define({id: "0b1f1caa", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
+define({id: "cd3cb460", inputs: ["scrollableTable","spatial_stats","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -1307,6 +1370,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       const total_all_0903 = row["total_all_2025-09-03"] || 1;
       const total_all_1010 = row["total_all_2025-10-10"] || 1;
@@ -1315,6 +1379,7 @@ scrollableTable(
       const total_all_0114 = row["total_all_2026-01-14"] || 1;
       const total_all_0206 = row["total_all_2026-02-06"] || 1;
       const total_all_0306 = row["total_all_2026-03-06"] || 1;
+      const total_all_0406 = row["total_all_2026-04-06"] || 1;
 
       const percent_0903 = (absolute_0903 / total_all_0903) * 100;
       const percent_1010 = (absolute_1010 / total_all_1010) * 100;
@@ -1323,6 +1388,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_0114) * 100;
       const percent_0206 = (absolute_0206 / total_all_0206) * 100;
       const percent_0306 = (absolute_0306 / total_all_0306) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0406) * 100;
 
       return {
         comune: row.comune,
@@ -1346,14 +1412,17 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`),
         "2026-03-06": new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`)
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`),
+        "2026-04-06": new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`)
       };
     });
 
-    return rows.sort((a, b) => b["2026-03-06"] - a["2026-03-06"]);
+    return rows.sort((a, b) => b["2026-04-06"] - a["2026-04-06"]);
   })(),
   {
-    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["comune", "2025-09-03", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       comune: "Comune",
       "2025-09-03": "09/03",
@@ -1362,7 +1431,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1627,7 +1697,7 @@ html`<h3>Nuovi Civici per Comune — ${selected_municipality}</h3>`
 ))
 }});
 
-define({id: "92c99d2a", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
+define({id: "845b30f2", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -1640,6 +1710,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
@@ -1648,6 +1719,7 @@ scrollableTable(
       const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
       const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
       const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0306 = totalRow?.["total_all_2026-03-06"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
@@ -1655,6 +1727,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_1202) * 100;
       const percent_0206 = (absolute_0206 / total_all_0114) * 100;
       const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0306) * 100;
 
       return {
         comune: row.comune,
@@ -1675,18 +1748,21 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
         "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0"),
+        "2026-04-06": absolute_0406 ? new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
-      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      const valA = a["2026-04-06"] === "-" ? 0 : a["2026-04-06"].valueOf();
+      const valB = b["2026-04-06"] === "-" ? 0 : b["2026-04-06"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       comune: "Comune",
       "2025-10-10": "10/10",
@@ -1694,7 +1770,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1707,7 +1784,7 @@ html`<h3>Civici Rimossi per Comune — ${selected_municipality}</h3>`
 ))
 }});
 
-define({id: "c93111fc", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
+define({id: "c3dab0cd", inputs: ["scrollableTable","spatial_stats","selected_municipality","SmartValue","displayMode","d3","display"], body: async (scrollableTable,spatial_stats,selected_municipality,SmartValue,displayMode,d3,display) => {
 display(await(
 scrollableTable(
   (() => {
@@ -1720,6 +1797,7 @@ scrollableTable(
       const absolute_0114 = row["2026-01-14"] || 0;
       const absolute_0206 = row["2026-02-06"] || 0;
       const absolute_0306 = row["2026-03-06"] || 0;
+      const absolute_0406 = row["2026-04-06"] || 0;
 
       // Per le variazioni, usiamo il total_all della data precedente
       const total_all_0903 = totalRow?.["total_all_2025-09-03"] || 1;
@@ -1728,6 +1806,7 @@ scrollableTable(
       const total_all_1202 = totalRow?.["total_all_2025-12-02"] || 1;
       const total_all_0114 = totalRow?.["total_all_2026-01-14"] || 1;
       const total_all_0206 = totalRow?.["total_all_2026-02-06"] || 1;
+      const total_all_0306 = totalRow?.["total_all_2026-03-06"] || 1;
 
       const percent_1010 = (absolute_1010 / total_all_0903) * 100;
       const percent_1104 = (absolute_1104 / total_all_1010) * 100;
@@ -1735,6 +1814,7 @@ scrollableTable(
       const percent_0114 = (absolute_0114 / total_all_1202) * 100;
       const percent_0206 = (absolute_0206 / total_all_0114) * 100;
       const percent_0306 = (absolute_0306 / total_all_0206) * 100;
+      const percent_0406 = (absolute_0406 / total_all_0306) * 100;
 
       return {
         comune: row.comune,
@@ -1755,18 +1835,21 @@ scrollableTable(
           : `${d3.format(",")(absolute_0206)} (${d3.format(".2f")(percent_0206)}%)`) : new SmartValue(0, "0"),
         "2026-03-06": absolute_0306 ? new SmartValue(displayMode === "Percentuali" ? percent_0306 : absolute_0306, displayMode === "Percentuali"
           ? `${d3.format(".2f")(percent_0306)}% (${d3.format(",")(absolute_0306)})`
-          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0")
+          : `${d3.format(",")(absolute_0306)} (${d3.format(".2f")(percent_0306)}%)`) : new SmartValue(0, "0"),
+        "2026-04-06": absolute_0406 ? new SmartValue(displayMode === "Percentuali" ? percent_0406 : absolute_0406, displayMode === "Percentuali"
+          ? `${d3.format(".2f")(percent_0406)}% (${d3.format(",")(absolute_0406)})`
+          : `${d3.format(",")(absolute_0406)} (${d3.format(".2f")(percent_0406)}%)`) : new SmartValue(0, "0")
       };
     });
 
     return rows.sort((a, b) => {
-      const valA = a["2026-03-06"] === "-" ? 0 : a["2026-03-06"].valueOf();
-      const valB = b["2026-03-06"] === "-" ? 0 : b["2026-03-06"].valueOf();
+      const valA = a["2026-04-06"] === "-" ? 0 : a["2026-04-06"].valueOf();
+      const valB = b["2026-04-06"] === "-" ? 0 : b["2026-04-06"].valueOf();
       return valB - valA;
     });
   })(),
   {
-    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06"],
+    columns: ["comune", "2025-10-10", "2025-11-04", "2025-12-02", "2026-01-14", "2026-02-06", "2026-03-06", "2026-04-06"],
     header: {
       comune: "Comune",
       "2025-10-10": "10/10",
@@ -1774,7 +1857,8 @@ scrollableTable(
       "2025-12-02": "12/02",
       "2026-01-14": "01/14",
       "2026-02-06": "02/06",
-      "2026-03-06": "03/06"
+      "2026-03-06": "03/06",
+      "2026-04-06": "04/06"
     }
   }
 )
@@ -1800,7 +1884,7 @@ scrollableTable(
 <p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
 <div class="observablehq observablehq--block"><!--:1b68d1c2:--></div>
-<div class="observablehq observablehq--block"><!--:4367281a:--></div>
+<div class="observablehq observablehq--block"><!--:a95de204:--></div>
 <div class="observablehq observablehq--block"><!--:5710fc97:--></div>
 <div class="observablehq observablehq--block"><!--:ccfea334:--></div>
 <h2 id="andamento-civici-georeferenziati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></h2>
@@ -1816,7 +1900,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c63cad70:--></div>
 </div>
 <h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:245703a8:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4f68f7af:--></div>
 <h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
 <div class="observablehq observablehq--block"><!--:dfbc629f:--></div>
 <div class="card">
@@ -1826,9 +1910,9 @@ scrollableTable(
 <div class="observablehq observablehq--block"><!--:18cb43b3:--></div>
 <div class="observablehq observablehq--block"><!--:8bf56aba:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c09393bf:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c8aa09db:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:a08c1d53:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5e516223:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:7f8b52b0:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:f1a3ccf6:--></div>
 <hr>
 <h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
 <h3 id="distribuzione-completamento-comuni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-comuni">Distribuzione Completamento Comuni</a></h3>
@@ -1838,7 +1922,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:854ba575:--></div>
 </div>
 <h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0b1f1caa:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:cd3cb460:--></div>
 <h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
 <div class="observablehq observablehq--block"><!--:30442236:--></div>
 <div class="observablehq observablehq--block"><!--:e838ea8f:--></div>
@@ -1850,12 +1934,12 @@ scrollableTable(
 <div class="observablehq observablehq--block"><!--:adae6cad:--></div>
 <div class="observablehq observablehq--block"><!--:66659e35:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41aa4795:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:92c99d2a:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:845b30f2:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:42ff04db:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c93111fc:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c3dab0cd:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-03-11T16:54:07">Mar 11, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-07T23:12:31">Apr 7, 2026</a>.</div>
 </footer>
 </div>
 </body>

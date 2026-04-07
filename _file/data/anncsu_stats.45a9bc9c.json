@@ -1,0 +1,10 @@
+[
+  {"date":"2025-09-03","total_all":27950169,"total":1446709,"percentage":5.18,"new":0,"missing":0,"moved":0},
+  {"date":"2025-10-10","total_all":27949296,"total":1518356,"percentage":5.43,"new":72315,"missing":668,"moved":3679},
+  {"date":"2025-11-04","total_all":27956679,"total":1725744,"percentage":6.17,"new":279509,"missing":72121,"moved":3876},
+  {"date":"2025-12-02","total_all":27964607,"total":3007964,"percentage":10.76,"new":1282669,"missing":449,"moved":79734},
+  {"date":"2026-01-14","total_all":27862795,"total":6730845,"percentage":24.16,"new":3727741,"missing":4860,"moved":394896},
+  {"date":"2026-02-06","total_all":27843626,"total":8838961,"percentage":31.75,"new":2114707,"missing":6591,"moved":63446},
+  {"date":"2026-03-06","total_all":27569011,"total":14452811,"percentage":52.42,"new":5668718,"missing":54868,"moved":111365},
+  {"date":"2026-04-06","total_all":27458420,"total":18718178,"percentage":68.17,"new":4303707,"missing":38340,"moved":248699}
+]
