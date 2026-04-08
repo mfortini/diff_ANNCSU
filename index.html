@@ -584,7 +584,7 @@ const displayMode = view(Inputs.radio(
 return {displayMode};
 }});
 
-define({id: "cacef663", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
+define({id: "11a7d23a", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
 display(await(
 Plot.plot({
   title: "Andamento civici georeferenziati su ANNCSU",
@@ -680,7 +680,7 @@ Plot.plot({
     label: displayMode === "Percentuali" ? "% sul totale" : "Valori",
     tickFormat: displayMode === "Percentuali"
       ? d => `${d3.format(".1f")(d)}%`
-      : d => d3.format(".1~s")(d).replace("G", "B")
+      : d => d3.format(".2~s")(d).replace("G", "B")
   },
   color: {
     legend: true,
@@ -1890,7 +1890,7 @@ scrollableTable(
 <h2 id="andamento-civici-georeferenziati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></h2>
 <div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
 <div class="card">
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:cacef663:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:11a7d23a:--></div>
 </div>
 <hr>
 <h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
@@ -1939,7 +1939,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c3dab0cd:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-07T23:12:31">Apr 7, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-08T08:07:17">Apr 8, 2026</a>.</div>
 </footer>
 </div>
 </body>
