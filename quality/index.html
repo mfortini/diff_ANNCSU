@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Quality | ANNCSU Quality</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.dc6f9060.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.dc6f9060.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/anncsu_comuni_inout.json", {"name":"./data/anncsu_comuni_inout.json","mimeType":"application/json","path":"./_file/data/anncsu_comuni_inout.82a0d7df.json","lastModified":1775628305729,"size":1517425});
+registerFile("./data/anncsu_cross_region_matrix.json", {"name":"./data/anncsu_cross_region_matrix.json","mimeType":"application/json","path":"./_file/data/anncsu_cross_region_matrix.ba6dafcf.json","lastModified":1775628240285,"size":9086});
+
+define({id: "02c51088", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<style>
+table th {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.2;
+}
+</style>`
+))
+}});
+
+define({id: "c8141cb1", inputs: ["FileAttachment"], outputs: ["cross_region_matrix","comuni_inout"], body: async (FileAttachment) => {
+const cross_region_matrix = await FileAttachment("./data/anncsu_cross_region_matrix.json").json();
+const comuni_inout = await FileAttachment("./data/anncsu_comuni_inout.json").json();
+return {cross_region_matrix,comuni_inout};
+}});
+
+define({id: "448ec045", inputs: ["comuni_inout","view","Inputs"], outputs: ["quality_regions","quality_region_options","quality_region_selection"], body: (comuni_inout,view,Inputs) => {
+const quality_regions = [...new Map(
+  comuni_inout.comuni
+    .map(d => ({cod_reg: Number(d.cod_reg), regione: d.regione}))
+    .filter(d => Number.isFinite(d.cod_reg) && typeof d.regione === "string" && d.regione.trim().length > 0)
+    .map(d => [d.cod_reg, d])
+).values()].sort((a, b) => a.regione.localeCompare(b.regione, "it"));
+
+const quality_region_options = [{kind: "all", label: "Tutte"}].concat(
+  quality_regions.map(d => ({kind: "one", cod_reg: d.cod_reg, regione: d.regione, label: d.regione}))
+);
+
+const quality_region_selection = view(Inputs.select(
+  quality_region_options,
+  {
+    label: "Filtra per regione",
+    value: quality_region_options[0],
+    format: d => d.label
+  }
+));
+return {quality_regions,quality_region_options,quality_region_selection};
+}});
+
+define({id: "2d8b3dc8", inputs: ["d3"], outputs: ["formatNumber","formatPercent","downloadCSV"], body: (d3) => {
+const formatNumber = (value) => {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return value;
+  return Number.isInteger(n) ? d3.format(",")(n) : d3.format(",.2f")(n);
+};
+
+const formatPercent = (value) => {
+  const n = Number(value);
+  return `${d3.format(".2f")(Number.isFinite(n) ? n : 0)}%`;
+};
+
+function downloadCSV(rows, filename) {
+  if (!rows || rows.length === 0) return;
+  const cols = Object.keys(rows[0]);
+  const escape = v => {
+    const s = v == null ? "" : String(v);
+    return s.includes(",") || s.includes('"') || s.includes("\n")
+      ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  const csv = [cols.join(","), ...rows.map(r => cols.map(c => escape(r[c])).join(","))].join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], {type: "text/csv"}));
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+return {formatNumber,formatPercent,downloadCSV};
+}});
+
+define({id: "bcc2d5c7", inputs: ["html","quality_region_selection","display"], body: async (html,quality_region_selection,display) => {
+display(await(
+html`<h2>Matrice Fuori Regione (${quality_region_selection?.kind === "one" ? `${quality_region_selection.regione} -> Destinazione` : "Origine -> Destinazione"})</h2>`
+))
+}});
+
+define({id: "85784ed6", inputs: ["html","cross_region_matrix","display"], body: async (html,cross_region_matrix,display) => {
+display(await(
+html`<div><strong>Snapshot:</strong> ${cross_region_matrix.date}</div>`
+))
+}});
+
+define({id: "d374d495", inputs: ["d3","cross_region_matrix","html"], outputs: ["cross_region_total"], body: (d3,cross_region_matrix,html) => {
+const cross_region_total = d3.sum(cross_region_matrix.flows, d => d.count);
+html`<div><strong>Totale punti fuori regione:</strong> ${d3.format(",")(cross_region_total)}</div>`
+return {cross_region_total};
+}});
+
+define({id: "9d752c86", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html`<p style="margin:6px 0 12px 0;color:#525252;font-size:0.92em">
+  Nel riepilogo la percentuale e' calcolata sui civici della regione attesa; nella matrice, quando sono selezionate tutte le regioni, la percentuale indica la quota sul totale nazionale dei punti fuori regione.
+</p>`
+))
+}});
+
+define({id: "6253f6b5", inputs: ["quality_region_selection","display","html"], body: (quality_region_selection,display,html) => {
+if (quality_region_selection?.kind === "one") {
+  display(html`<div><strong>Regione:</strong> ${quality_region_selection.regione}</div>`);
+} else {
+  display(html`<div></div>`);
+}
+}});
+
+define({id: "f8a0afdf", inputs: ["d3","cross_region_matrix","quality_regions","comuni_inout","quality_region_selection"], outputs: ["cross_region_summary_data"], body: (d3,cross_region_matrix,quality_regions,comuni_inout,quality_region_selection) => {
+const cross_region_summary_data = (() => {
+  const expectedOutsideMap = d3.rollup(
+    cross_region_matrix.flows,
+    values => d3.sum(values, d => Number(d.count) || 0),
+    d => d.expected_regione
+  );
+
+  const regionRows = quality_regions.map(({cod_reg, regione}) => {
+    const totale = d3.sum(
+      comuni_inout.comuni.filter(d => Number(d.cod_reg) === Number(cod_reg)),
+      d => Number(d.totale) || 0
+    );
+    const fuori = Number(expectedOutsideMap.get(regione) || 0);
+    const dentro = Math.max(0, totale - fuori);
+    return {
+      cod_reg,
+      regione,
+      dentro,
+      fuori,
+      totale,
+      pct_fuori: totale > 0 ? (fuori * 100 / totale) : 0
+    };
+  }).sort((a, b) => b.fuori - a.fuori || a.regione.localeCompare(b.regione, "it"));
+
+  if (quality_region_selection?.kind === "one") {
+    return regionRows.filter(d => Number(d.cod_reg) === Number(quality_region_selection.cod_reg));
+  }
+
+  return regionRows;
+})();
+return {cross_region_summary_data};
+}});
+
+define({id: "8f04e009", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html`<h3>Riepilogo Dentro/Fuori Regione Attesa</h3>`
+))
+}});
+
+define({id: "d879512f", inputs: ["Inputs","cross_region_summary_data","formatNumber","formatPercent","display"], body: async (Inputs,cross_region_summary_data,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  cross_region_summary_data,
+  {
+    columns: ["regione", "dentro", "fuori", "totale", "pct_fuori"],
+    header: {
+      regione: "Regione",
+      dentro: "Dentro",
+      fuori: "Fuori",
+      totale: "Totale",
+      pct_fuori: "% Fuori"
+    },
+    format: {
+      dentro: value => formatNumber(value),
+      fuori: value => formatNumber(value),
+      totale: value => formatNumber(value),
+      pct_fuori: value => formatPercent(value)
+    },
+    align: {
+      regione: "left",
+      dentro: "right",
+      fuori: "right",
+      totale: "right",
+      pct_fuori: "right"
+    }
+  }
+)
+))
+}});
+
+define({id: "f0a93e2d", inputs: ["quality_region_selection","cross_region_matrix","downloadCSV","cross_region_summary_data","display"], body: (quality_region_selection,cross_region_matrix,downloadCSV,cross_region_summary_data,display) => {
+{
+  const _label = quality_region_selection?.kind === "one"
+    ? `dentro_fuori_regione_${quality_region_selection.regione.replace(/\s+/g, "_")}_${cross_region_matrix.date}.csv`
+    : `dentro_fuori_regione_${cross_region_matrix.date}.csv`;
+  const btn = document.createElement("button");
+  btn.textContent = "⬇ Scarica CSV";
+  btn.style.cssText = "margin-top:6px;padding:4px 10px;cursor:pointer;border:1px solid #ccc;border-radius:4px;background:#fff;font-size:0.88em;";
+  btn.onclick = () => downloadCSV(cross_region_summary_data, _label);
+  display(btn);
+}
+}});
+
+define({id: "8a6a4d3e", inputs: ["cross_region_matrix","quality_region_selection","d3","comuni_inout","cross_region_total"], outputs: ["cross_region_table_data"], body: (cross_region_matrix,quality_region_selection,d3,comuni_inout,cross_region_total) => {
+const cross_region_table_data = (() => {
+  const orderedRegions = [...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b));
+  const selectedRegion = quality_region_selection?.kind === "one" ? quality_region_selection.regione : null;
+  const selectedCodReg = quality_region_selection?.kind === "one" ? Number(quality_region_selection.cod_reg) : null;
+  const regionTotalCivici = selectedRegion
+    ? d3.sum(
+        comuni_inout.comuni.filter(d => Number(d.cod_reg) === selectedCodReg),
+        d => Number(d.totale) || 0
+      )
+    : 0;
+  const origins = selectedRegion ? orderedRegions.filter(r => r === selectedRegion) : orderedRegions;
+  const destinations = [...orderedRegions, "Fuori da tutte"];
+  const flowMap = new Map(
+    cross_region_matrix.flows.map(d => [`${d.expected_regione}|||${d.actual_regione}`, d.count])
+  );
+
+  const matrixRows = origins.map(origine => {
+    const row = { origine };
+    let total = 0;
+
+    for (const destinazione of destinations) {
+      const value = flowMap.get(`${origine}|||${destinazione}`) || 0;
+      row[destinazione] = value;
+      total += value;
+    }
+
+    row.totale_riga = total;
+    row.pct_totale = cross_region_total > 0 ? (total / cross_region_total) * 100 : 0;
+    return row;
+  }).sort((a, b) => b.totale_riga - a.totale_riga);
+
+  if (selectedRegion) {
+    const row = matrixRows[0] ?? {origine: selectedRegion, totale_riga: 0};
+    return destinations
+      .map(destinazione => {
+        const count = Number(row[destinazione] ?? 0);
+        return {
+          origine: selectedRegion,
+          destinazione,
+          count,
+          pct_totale: regionTotalCivici > 0 ? (count * 100 / regionTotalCivici) : 0
+        };
+      })
+      .sort((a, b) => b.count - a.count);
+  }
+
+  return matrixRows;
+})();
+return {cross_region_table_data};
+}});
+
+define({id: "b1ebc9e7", inputs: ["Inputs","cross_region_table_data","quality_region_selection","cross_region_matrix","formatNumber","formatPercent","display"], body: async (Inputs,cross_region_table_data,quality_region_selection,cross_region_matrix,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  cross_region_table_data,
+  {
+    columns: quality_region_selection?.kind === "one"
+      ? ["destinazione", "pct_totale", "count"]
+      : ["origine", "pct_totale", ...[...cross_region_matrix.regions].sort((a, b) => a.localeCompare(b)), "Fuori da tutte", "totale_riga"],
+    header: {
+      origine: "Origine",
+      destinazione: "Destinazione",
+      count: "Conteggio",
+      totale_riga: "Totale riga",
+      pct_totale: quality_region_selection?.kind === "one" ? "% sul totale civici regione" : "% dei fuori regione"
+    },
+    format: {
+      count: value => formatNumber(value),
+      ...Object.fromEntries(
+        [...cross_region_matrix.regions, "Fuori da tutte", "totale_riga"].map(
+          col => [col, value => formatNumber(value)]
+        )
+      ),
+      pct_totale: value => formatPercent(value)
+    },
+    align: {
+      origine: "left",
+      destinazione: "left",
+      count: "right",
+      ...Object.fromEntries(
+        [...cross_region_matrix.regions, "Fuori da tutte", "totale_riga", "pct_totale"].map(
+          col => [col, "right"]
+        )
+      )
+    }
+  }
+)
+))
+}});
+
+define({id: "66c44297", inputs: ["quality_region_selection","cross_region_matrix","downloadCSV","cross_region_table_data","display"], body: (quality_region_selection,cross_region_matrix,downloadCSV,cross_region_table_data,display) => {
+{
+  const _label = quality_region_selection?.kind === "one"
+    ? `fuori_regione_${quality_region_selection.regione.replace(/\s+/g, "_")}_${cross_region_matrix.date}.csv`
+    : `fuori_regione_${cross_region_matrix.date}.csv`;
+  const btn = document.createElement("button");
+  btn.textContent = "⬇ Scarica CSV";
+  btn.style.cssText = "margin-top:6px;padding:4px 10px;cursor:pointer;border:1px solid #ccc;border-radius:4px;background:#fff;font-size:0.88em;";
+  btn.onclick = () => downloadCSV(cross_region_table_data, _label);
+  display(btn);
+}
+}});
+
+define({id: "0e94a783", inputs: ["html","quality_region_selection","display"], body: async (html,quality_region_selection,display) => {
+display(await(
+html`<h2>Civici Dentro/Fuori Comune Atteso - ${quality_region_selection?.kind === "one" ? `Regione ${quality_region_selection.regione}` : "Tutte le Regioni"}</h2>`
+))
+}});
+
+define({id: "53e843fc", inputs: ["html","comuni_inout","display"], body: async (html,comuni_inout,display) => {
+display(await(
+html`<div><strong>Snapshot:</strong> ${comuni_inout.date}</div>`
+))
+}});
+
+define({id: "8fa1a2ef", inputs: ["comuni_inout","quality_region_selection","Inputs","URLSearchParams","location","view"], outputs: ["quality_comuni","quality_comuni_sorted_table","quality_comuni_sorted_dropdown","quality_comuni_options","comuneInput","quality_comune_selection"], body: (comuni_inout,quality_region_selection,Inputs,URLSearchParams,location,view) => {
+const quality_comuni = comuni_inout.comuni
+  .filter(d => Number.isFinite(Number(d.pro_com)))
+  .filter(d => quality_region_selection?.kind !== "one" || Number(d.cod_reg) === Number(quality_region_selection?.cod_reg))
+;
+
+const quality_comuni_sorted_table = [...quality_comuni]
+  .sort((a, b) => (Number(b.pct_fuori_buffer_500m) - Number(a.pct_fuori_buffer_500m)) || (Number(b.pct_fuori) - Number(a.pct_fuori)) || (Number(b.fuori_buffer_500m) - Number(a.fuori_buffer_500m)) || a.comune.localeCompare(b.comune, "it"));
+
+const quality_comuni_sorted_dropdown = [...quality_comuni]
+  .sort((a, b) => a.comune.localeCompare(b.comune, "it"));
+
+const quality_comuni_options = [{kind: "all", label: "Tutti"}].concat(
+  quality_comuni_sorted_dropdown.map(d => ({kind: "one", pro_com: d.pro_com, label: `${d.comune} (${d.pro_com})`}))
+);
+
+const comuneInput = Inputs.select(
+  quality_comuni_options,
+  {
+    label: "Comune",
+    value: quality_comuni_options[0],
+    format: d => d.label
+  }
+);
+{
+  const _pc = new URLSearchParams(location.search).get("comune");
+  if (_pc) {
+    const _opt = quality_comuni_options.find(o => o.kind === "one" && String(o.pro_com) === _pc);
+    if (_opt) comuneInput.value = _opt;
+  }
+}
+const quality_comune_selection = view(comuneInput);
+return {quality_comuni,quality_comuni_sorted_table,quality_comuni_sorted_dropdown,quality_comuni_options,comuneInput,quality_comune_selection};
+}});
+
+define({id: "42215dee", inputs: ["URLSearchParams","location","quality_comune_selection","history"], body: (URLSearchParams,location,quality_comune_selection,history) => {
+{
+  const params = new URLSearchParams(location.search);
+  if (quality_comune_selection.kind === "one") {
+    params.set("comune", String(quality_comune_selection.pro_com));
+  } else {
+    params.delete("comune");
+  }
+  const qs = params.toString();
+  history.replaceState(null, "", qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
+}
+}});
+
+define({id: "ee8f5149", inputs: ["quality_comuni_sorted_table","quality_comune_selection","quality_region_selection","quality_comuni","html"], outputs: ["quality_comuni_filtered","quality_region_label","quality_comune_label"], body: (quality_comuni_sorted_table,quality_comune_selection,quality_region_selection,quality_comuni,html) => {
+const quality_comuni_filtered = quality_comuni_sorted_table
+  .filter(d => quality_comune_selection.kind === "all" || Number(d.pro_com) === Number(quality_comune_selection.pro_com));
+
+const quality_region_label = quality_region_selection?.kind === "one"
+  ? (quality_region_selection.regione ?? "Tutte")
+  : "Tutte";
+
+const quality_comune_label = quality_comune_selection?.kind === "one"
+  ? (quality_comuni.find(d => Number(d.pro_com) === Number(quality_comune_selection.pro_com))?.comune ?? "Tutti")
+  : "Tutti";
+
+html`<div><strong>Comune ${quality_comune_label}</strong></div>`;
+return {quality_comuni_filtered,quality_region_label,quality_comune_label};
+}});
+
+define({id: "b7c8cf92", inputs: ["Inputs","d3","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,d3,quality_comuni_filtered,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  (() => {
+    const standard_dentro = d3.sum(quality_comuni_filtered, d => Number(d.dentro) || 0);
+    const standard_fuori = d3.sum(quality_comuni_filtered, d => Number(d.fuori) || 0);
+    const standard_totale = d3.sum(quality_comuni_filtered, d => Number(d.totale) || 0);
+    const buffer_dentro = d3.sum(quality_comuni_filtered, d => Number(d.dentro_buffer_500m) || 0);
+    const buffer_fuori = d3.sum(quality_comuni_filtered, d => Number(d.fuori_buffer_500m) || 0);
+    const buffer_totale = d3.sum(quality_comuni_filtered, d => Number(d.totale_buffer_500m) || 0);
+
+    return [{
+      metrica: "Standard",
+      dentro: standard_dentro,
+      fuori: standard_fuori,
+      totale: standard_totale,
+      pct_fuori: standard_totale > 0 ? (standard_fuori * 100 / standard_totale) : 0
+    }, {
+      metrica: "Buffer 500m",
+      dentro: buffer_dentro,
+      fuori: buffer_fuori,
+      totale: buffer_totale,
+      pct_fuori: buffer_totale > 0 ? (buffer_fuori * 100 / buffer_totale) : 0
+    }];
+  })(),
+  {
+    columns: ["metrica", "dentro", "fuori", "totale", "pct_fuori"],
+    header: {metrica: "Metrica", dentro: "Dentro", fuori: "Fuori", totale: "Totale", pct_fuori: "% Fuori"},
+    format: {
+      dentro: value => formatNumber(value),
+      fuori: value => formatNumber(value),
+      totale: value => formatNumber(value),
+      pct_fuori: value => formatPercent(value)
+    },
+    align: {metrica: "left", dentro: "right", fuori: "right", totale: "right", pct_fuori: "right"}
+  }
+)
+))
+}});
+
+define({id: "7f1519a6", inputs: ["Inputs","quality_comune_selection","quality_comuni_filtered","formatNumber","formatPercent","display"], body: async (Inputs,quality_comune_selection,quality_comuni_filtered,formatNumber,formatPercent,display) => {
+display(await(
+Inputs.table(
+  quality_comune_selection.kind === "one"
+    ? quality_comuni_filtered.flatMap(d => ([
+        {metrica: "Regione", valore: d.regione},
+        {metrica: "Comune", valore: d.comune},
+        {metrica: "Codice IPA", valore: d.codice_ipa ?? ""},
+        {metrica: "Dentro", valore: formatNumber(Number(d.dentro) || 0)},
+        {metrica: "Fuori", valore: formatNumber(Number(d.fuori) || 0)},
+        {metrica: "Totale", valore: formatNumber(Number(d.totale) || 0)},
+        {metrica: "% Fuori", valore: formatPercent(Number(d.pct_fuori) || 0)},
+        {metrica: "Dentro (buffer 500m)", valore: formatNumber(Number(d.dentro_buffer_500m) || 0)},
+        {metrica: "Fuori (buffer 500m)", valore: formatNumber(Number(d.fuori_buffer_500m) || 0)},
+        {metrica: "Totale (buffer 500m)", valore: formatNumber(Number(d.totale_buffer_500m) || 0)},
+        {metrica: "% Fuori (buffer 500m)", valore: formatPercent(Number(d.pct_fuori_buffer_500m) || 0)}
+      ]))
+    : quality_comuni_filtered
+      .map(d => ({
+        comune: d.comune,
+        codice_ipa: d.codice_ipa ?? "",
+        pct_fuori: d.pct_fuori,
+        pct_fuori_buffer_500m: d.pct_fuori_buffer_500m,
+        dentro: d.dentro,
+        fuori: d.fuori,
+        totale: d.totale,
+        dentro_buffer_500m: d.dentro_buffer_500m,
+        fuori_buffer_500m: d.fuori_buffer_500m,
+        totale_buffer_500m: d.totale_buffer_500m
+      })),
+  quality_comune_selection.kind === "one"
+    ? {
+      columns: ["metrica", "valore"],
+      header: {metrica: "Metrica", valore: "Valore"},
+      align: {metrica: "left", valore: "right"}
+    }
+    : {
+    columns: ["comune", "codice_ipa", "pct_fuori", "pct_fuori_buffer_500m", "dentro", "fuori", "totale", "dentro_buffer_500m", "fuori_buffer_500m", "totale_buffer_500m"],
+    header: {
+      comune: "Comune",
+      codice_ipa: "Codice IPA",
+      pct_fuori: "% sul totale",
+      pct_fuori_buffer_500m: "% sul totale (500m)",
+      dentro: "Dentro",
+      fuori: "Fuori",
+      totale: "Totale",
+      dentro_buffer_500m: "Dentro (buffer 500m)",
+      fuori_buffer_500m: "Fuori (buffer 500m)",
+      totale_buffer_500m: "Totale (buffer 500m)"
+    },
+    format: {
+      dentro: value => formatNumber(value),
+      fuori: value => formatNumber(value),
+      totale: value => formatNumber(value),
+      pct_fuori: value => formatPercent(value),
+      dentro_buffer_500m: value => formatNumber(value),
+      fuori_buffer_500m: value => formatNumber(value),
+      totale_buffer_500m: value => formatNumber(value),
+      pct_fuori_buffer_500m: value => formatPercent(value)
+    },
+    align: {
+      comune: "left",
+      codice_ipa: "left",
+      dentro: "right",
+      fuori: "right",
+      totale: "right",
+      pct_fuori: "right",
+      dentro_buffer_500m: "right",
+      fuori_buffer_500m: "right",
+      totale_buffer_500m: "right",
+      pct_fuori_buffer_500m: "right"
+    },
+    sort: "pct_fuori_buffer_500m",
+    reverse: true
+  }
+)
+))
+}});
+
+define({id: "75605d4a", inputs: ["quality_comuni_filtered","quality_comune_selection","quality_comune_label","comuni_inout","quality_region_selection","quality_region_label","downloadCSV","display"], body: (quality_comuni_filtered,quality_comune_selection,quality_comune_label,comuni_inout,quality_region_selection,quality_region_label,downloadCSV,display) => {
+{
+  const _csvData = quality_comuni_filtered.map(d => ({
+    comune: d.comune,
+    codice_ipa: d.codice_ipa ?? "",
+    pro_com: d.pro_com,
+    regione: d.regione ?? "",
+    cod_reg: d.cod_reg ?? "",
+    dentro: Number(d.dentro) || 0,
+    fuori: Number(d.fuori) || 0,
+    totale: Number(d.totale) || 0,
+    pct_fuori: Number(d.pct_fuori) || 0,
+    dentro_buffer_500m: Number(d.dentro_buffer_500m) || 0,
+    fuori_buffer_500m: Number(d.fuori_buffer_500m) || 0,
+    totale_buffer_500m: Number(d.totale_buffer_500m) || 0,
+    pct_fuori_buffer_500m: Number(d.pct_fuori_buffer_500m) || 0
+  }));
+  const _label = quality_comune_selection.kind === "one"
+    ? `fuori_comune_${quality_comune_label.replace(/\s+/g, "_")}_${comuni_inout.date}.csv`
+    : quality_region_selection?.kind === "one"
+      ? `fuori_comune_reg_${quality_region_label.replace(/\s+/g, "_")}_${comuni_inout.date}.csv`
+      : `fuori_comune_${comuni_inout.date}.csv`;
+  const btn = document.createElement("button");
+  btn.textContent = "⬇ Scarica CSV";
+  btn.style.cssText = "margin-top:6px;padding:4px 10px;cursor:pointer;border:1px solid #ccc;border-radius:4px;background:#fff;font-size:0.88em;";
+  btn.onclick = () => downloadCSV(_csvData, _label);
+  display(btn);
+}
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">ANNCSU Quality</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Punti dentro/fuori</a></li>
+    <li class="observablehq-link"><a href="./hotspots.html">Hotspots</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="quality" tabindex="-1"><a class="observablehq-header-anchor" href="#quality">Quality</a></h1>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:02c51088:--></div>
+<div class="observablehq observablehq--block"><!--:c8141cb1:--></div>
+<div class="observablehq observablehq--block"><!--:448ec045:--></div>
+<div class="observablehq observablehq--block"><!--:2d8b3dc8:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:bcc2d5c7:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:85784ed6:--></div>
+<div class="observablehq observablehq--block"><!--:d374d495:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9d752c86:--></div>
+<div class="observablehq observablehq--block"><!--:6253f6b5:--></div>
+<div class="observablehq observablehq--block"><!--:f8a0afdf:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:8f04e009:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:d879512f:--></div>
+<div class="observablehq observablehq--block"><!--:f0a93e2d:--></div>
+<div class="observablehq observablehq--block"><!--:8a6a4d3e:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b1ebc9e7:--></div>
+<div class="observablehq observablehq--block"><!--:66c44297:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:0e94a783:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:53e843fc:--></div>
+<div class="observablehq observablehq--block"><!--:8fa1a2ef:--></div>
+<div class="observablehq observablehq--block"><!--:42215dee:--></div>
+<div class="observablehq observablehq--block"><!--:ee8f5149:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b7c8cf92:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:7f1519a6:--></div>
+<div class="observablehq observablehq--block"><!--:75605d4a:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="next" href="./hotspots.html"><span>Hotspots</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-08T10:14:28">Apr 8, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>

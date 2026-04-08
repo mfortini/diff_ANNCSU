@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Hotspots | ANNCSU Quality</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.dc6f9060.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.19.0/f507b18a.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.4.0/fc4e0a03.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e324157d.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/fflate@0.8.2/e113a0e7.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/3785bf2d.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/720b7f0a.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.dc6f9060.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/anncsu_dbscan_hotspots.json", {"name":"./data/anncsu_dbscan_hotspots.json","mimeType":"application/json","path":"./_file/data/anncsu_dbscan_hotspots.66e41366.json","lastModified":1775636071839,"size":1330289});
+registerFile("./data/anncsu_grid_quality.json", {"name":"./data/anncsu_grid_quality.json","mimeType":"application/json","path":"./_file/data/anncsu_grid_quality.cf45ca0b.json","lastModified":1775628062813,"size":3204017});
+registerFile("./data/anncsu_hotspots_points.pmtiles", {"name":"./data/anncsu_hotspots_points.pmtiles","path":"./_file/data/anncsu_hotspots_points.a53796ae.pmtiles","lastModified":1775636596249,"size":99058100});
+
+define({id: "7e06cedd", outputs: ["maplibregl","Protocol"], body: async () => {
+const [{default: maplibregl}, {Protocol}] = await Promise.all([import("./_npm/maplibre-gl@5.19.0/f507b18a.js"), import("./_npm/pmtiles@4.4.0/fc4e0a03.js")]);
+
+return {maplibregl,Protocol};
+}});
+
+define({id: "5dce85ec", inputs: ["display","html"], body: (display,html) => {
+display(html`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.19.0/dist/maplibre-gl.css">`);
+}});
+
+define({id: "cbf5d108", inputs: ["Protocol","maplibregl"], body: (Protocol,maplibregl) => {
+if (!window.__anncsuPmtilesProtocol) {
+  window.__anncsuPmtilesProtocol = new Protocol();
+  maplibregl.addProtocol("pmtiles", window.__anncsuPmtilesProtocol.tile);
+}
+}});
+
+define({id: "8223b134", inputs: ["FileAttachment"], outputs: ["hotspotsPmtilesUrl","gridQuality","dbscan"], body: async (FileAttachment) => {
+const hotspotsPmtilesUrl = await FileAttachment("./data/anncsu_hotspots_points.pmtiles").url();
+const gridQuality = await FileAttachment("./data/anncsu_grid_quality.json").json();
+const dbscan = await FileAttachment("./data/anncsu_dbscan_hotspots.json").json();
+return {hotspotsPmtilesUrl,gridQuality,dbscan};
+}});
+
+define({id: "2f6cbc83", inputs: ["d3"], outputs: ["formatNumber","downloadCSV","distanceMeters"], body: (d3) => {
+const formatNumber = (value) => {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return value ?? "-";
+  return Number.isInteger(n) ? d3.format(",")(n) : d3.format(",.5f")(n);
+};
+
+function downloadCSV(rows, filename) {
+  if (!rows?.length) return;
+  const cols = Object.keys(rows[0]);
+  const escape = (value) => {
+    const s = value == null ? "" : String(value);
+    return s.includes(",") || s.includes('"') || s.includes("\n")
+      ? `"${s.replace(/"/g, '""')}"`
+      : s;
+  };
+  const csv = [cols.join(","), ...rows.map((row) => cols.map((col) => escape(row[col])).join(","))].join("\n");
+  const blob = new Blob([csv], {type: "text/csv"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+
+function distanceMeters(aLon, aLat, bLon, bLat) {
+  const toRad = (deg) => deg * Math.PI / 180;
+  const R = 6371000;
+  const dLat = toRad(bLat - aLat);
+  const dLon = toRad(bLon - aLon);
+  const lat1 = toRad(aLat);
+  const lat2 = toRad(bLat);
+  const sinLat = Math.sin(dLat / 2);
+  const sinLon = Math.sin(dLon / 2);
+  const h = sinLat * sinLat + Math.cos(lat1) * Math.cos(lat2) * sinLon * sinLon;
+  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+return {formatNumber,downloadCSV,distanceMeters};
+}});
+
+define({id: "ca0881bf", inputs: ["gridQuality","dbscan"], outputs: ["topCells10m","fallbackTopCells10m","gridRows","dbscanRows"], body: (gridQuality,dbscan) => {
+const topCells10m = Array.isArray(gridQuality.top_cells_10m) ? gridQuality.top_cells_10m : [];
+const fallbackTopCells10m = Array.isArray(gridQuality.top_cells)
+  ? gridQuality.top_cells.filter((d) => Number(d.grid_size_m) === 10)
+  : [];
+const gridRows = (topCells10m.length ? topCells10m : fallbackTopCells10m).map((d) => ({
+  source: "Grid 10m",
+  comune: d.comune,
+  codice_istat: String(d.codice_istat ?? "").padStart(6, "0"),
+  pro_com: d.pro_com,
+  regione: d.regione,
+  center_lon: Number(d.center_lon),
+  center_lat: Number(d.center_lat),
+  point_count: Number(d.point_count) || 0,
+  grid_cell_id: d.cell_id,
+  dbscan_cluster_id: null,
+  global_p99: d.global_p99,
+  absolute_min_points: d.absolute_min_points,
+  anomaly_rule: d.anomaly_rule
+}));
+
+const dbscanRows = (Array.isArray(dbscan.top_clusters) ? dbscan.top_clusters : []).map((d) => ({
+  source: "DBSCAN",
+  comune: d.comune,
+  codice_istat: String(d.codice_istat ?? "").padStart(6, "0"),
+  pro_com: d.pro_com,
+  regione: d.regione,
+  center_lon: Number(d.center_lon),
+  center_lat: Number(d.center_lat),
+  point_count: Number(d.point_count) || 0,
+  grid_cell_id: null,
+  dbscan_cluster_id: d.cluster_id,
+  min_lon: Number(d.min_lon),
+  min_lat: Number(d.min_lat),
+  max_lon: Number(d.max_lon),
+  max_lat: Number(d.max_lat),
+  global_p99: null,
+  absolute_min_points: null,
+  anomaly_rule: null
+}));
+return {topCells10m,fallbackTopCells10m,gridRows,dbscanRows};
+}});
+
+define({id: "9a716c30", inputs: ["gridRows","dbscanRows","distanceMeters"], outputs: ["mergedHotspots"], body: (gridRows,dbscanRows,distanceMeters) => {
+const mergedHotspots = (() => {
+  const DUPLICATE_DISTANCE_METERS = 25;
+  const candidates = [...gridRows, ...dbscanRows]
+    .filter((row) => Number.isFinite(row.center_lon) && Number.isFinite(row.center_lat))
+    .sort((a, b) => b.point_count - a.point_count);
+
+  const merged = [];
+
+  for (const row of candidates) {
+    const existing = merged.find((entry) =>
+      entry.codice_istat === row.codice_istat &&
+      distanceMeters(entry.center_lon, entry.center_lat, row.center_lon, row.center_lat) <= DUPLICATE_DISTANCE_METERS
+    );
+
+    if (!existing) {
+      merged.push({
+        ...row,
+        sources: new Set([row.source])
+      });
+      continue;
+    }
+
+    existing.sources.add(row.source);
+
+    if (row.point_count > existing.point_count) {
+      existing.source = row.source;
+      existing.comune = row.comune;
+      existing.pro_com = row.pro_com;
+      existing.regione = row.regione;
+      existing.center_lon = row.center_lon;
+      existing.center_lat = row.center_lat;
+      existing.point_count = row.point_count;
+      existing.global_p99 = row.global_p99;
+      existing.absolute_min_points = row.absolute_min_points;
+      existing.anomaly_rule = row.anomaly_rule;
+      existing.min_lon = row.min_lon;
+      existing.min_lat = row.min_lat;
+      existing.max_lon = row.max_lon;
+      existing.max_lat = row.max_lat;
+    }
+
+    if (!existing.grid_cell_id && row.grid_cell_id) existing.grid_cell_id = row.grid_cell_id;
+    if (!existing.dbscan_cluster_id && row.dbscan_cluster_id != null) existing.dbscan_cluster_id = row.dbscan_cluster_id;
+  }
+
+  return merged
+    .map((row, index) => ({
+      row_id: `${row.codice_istat}:${index}`,
+      fonte: Array.from(row.sources).sort().join(" + "),
+      fonte_label: row.sources.size === 2 ? "Entrambi" : Array.from(row.sources)[0],
+      comune: row.comune,
+      codice_istat: row.codice_istat,
+      regione: row.regione,
+      point_count: row.point_count,
+      grid_cell_id: row.grid_cell_id,
+      dbscan_cluster_id: row.dbscan_cluster_id,
+      global_p99: row.global_p99,
+      absolute_min_points: row.absolute_min_points,
+      anomaly_rule: row.anomaly_rule,
+      min_lon: row.min_lon,
+      min_lat: row.min_lat,
+      max_lon: row.max_lon,
+      max_lat: row.max_lat,
+      center_lon: row.center_lon,
+      center_lat: row.center_lat
+    }))
+    .sort((a, b) => b.point_count - a.point_count);
+})();
+return {mergedHotspots};
+}});
+
+define({id: "8a2fed8c", inputs: ["html","gridQuality","dbscan","d3","mergedHotspots","display"], body: async (html,gridQuality,dbscan,d3,mergedHotspots,display) => {
+display(await(
+html`<div style="display:flex;gap:24px;flex-wrap:wrap;margin:8px 0 16px 0">
+  <div><strong>Snapshot grid:</strong> ${gridQuality.date ?? "-"}</div>
+  <div><strong>Snapshot DBSCAN:</strong> ${dbscan.date ?? "-"}</div>
+  <div><strong>Hotspot unificati:</strong> ${d3.format(",")(mergedHotspots.length)}</div>
+  <div><strong>Deduplica:</strong> 25 m nello stesso comune ISTAT</div>
+</div>`
+))
+}});
+
+define({id: "516ef55b", inputs: ["html","downloadCSV","mergedHotspots","gridQuality","dbscan","hotspotsPmtilesUrl","display"], body: (html,downloadCSV,mergedHotspots,gridQuality,dbscan,hotspotsPmtilesUrl,display) => {
+{
+  const actions = html`<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 12px 0"></div>`;
+
+  const csvButton = document.createElement("button");
+  csvButton.textContent = "Scarica CSV Lista Unificata";
+  csvButton.onclick = () => downloadCSV(mergedHotspots, `hotspots_unificati_${gridQuality.date ?? dbscan.date ?? "snapshot"}.csv`);
+  actions.append(csvButton);
+
+  const pmtilesLink = document.createElement("a");
+  pmtilesLink.href = hotspotsPmtilesUrl;
+  pmtilesLink.download = `anncsu_hotspots_points_${gridQuality.date ?? dbscan.date ?? "snapshot"}.pmtiles`;
+  pmtilesLink.textContent = "Scarica PMTiles Hotspots";
+  actions.append(pmtilesLink);
+
+  display(actions);
+}
+}});
+
+define({id: "9f38b389", inputs: ["mergedHotspots","html","display","maplibregl","hotspotsPmtilesUrl","d3","invalidation"], body: async (mergedHotspots,html,display,maplibregl,hotspotsPmtilesUrl,d3,invalidation) => {
+if (mergedHotspots.length) {
+  const wrapper = html`<div style="position:relative;height:560px;border:1px solid #d4d4d8;border-radius:8px;overflow:hidden;background:#fff"></div>`;
+  const banner = html`<div style="position:absolute;left:12px;top:12px;z-index:2;max-width:min(520px,calc(100% - 24px));padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.94);box-shadow:0 8px 24px rgba(15,23,42,0.14);backdrop-filter:blur(6px);font:12px/1.4 sans-serif;color:#111827">
+    <strong>Nessun hotspot selezionato</strong><br>
+    <span style="color:#4b5563">Clicca un punto in mappa o una riga della tabella per vedere il dettaglio qui.</span>
+  </div>`;
+  const container = html`<div style="position:absolute;inset:0"></div>`;
+  wrapper.append(banner, container);
+  display(wrapper);
+  await new Promise(requestAnimationFrame);
+
+  const rows = mergedHotspots.filter((row) => Number.isFinite(row.center_lon) && Number.isFinite(row.center_lat));
+  const map = new maplibregl.Map({
+    container,
+    center: [12.5, 42.5],
+    zoom: 5,
+    minZoom: 4,
+    maxZoom: 20,
+    style: {
+      version: 8,
+      sources: {
+        osm: {
+          type: "raster",
+          tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+          tileSize: 256,
+          attribution: "&copy; OpenStreetMap contributors",
+          maxzoom: 19
+        },
+        hotspots: {
+          type: "vector",
+          url: `pmtiles://${hotspotsPmtilesUrl}`
+        },
+        hotspotCenters: {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: rows.map((row) => ({
+              type: "Feature",
+              geometry: {type: "Point", coordinates: [row.center_lon, row.center_lat]},
+              properties: row
+            }))
+          }
+        }
+      },
+      layers: [
+        {id: "osm", type: "raster", source: "osm"},
+        {
+          id: "hotspots-points",
+          type: "circle",
+          source: "hotspots",
+          "source-layer": "hotspots_points",
+          paint: {
+            "circle-color": [
+              "match",
+              ["get", "source_method"],
+              "DBSCAN", "#0f766e",
+              "Grid 10m", "#ea580c",
+              "#7c3aed"
+            ],
+            "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 1.2, 10, 1.8, 14, 2.4, 18, 3.2, 20, 4],
+            "circle-opacity": 0.5,
+            "circle-stroke-color": "#111827",
+            "circle-stroke-width": 0.4
+          }
+        },
+        {
+          id: "hotspot-centers",
+          type: "circle",
+          source: "hotspotCenters",
+          maxzoom: 16,
+          paint: {
+            "circle-color": [
+              "match",
+              ["get", "fonte_label"],
+              "DBSCAN", "#0f766e",
+              "Grid 10m", "#ea580c",
+              "#7c3aed"
+            ],
+            "circle-radius": ["interpolate", ["linear"], ["zoom"], 5, 4, 10, 5.5, 14, 7, 18, 8.5],
+            "circle-opacity": 0.9,
+            "circle-stroke-color": "#ffffff",
+            "circle-stroke-width": 1.2
+          }
+        }
+      ]
+    }
+  });
+  await new Promise((resolve) => map.once("load", resolve));
+
+  const hoverPopup = new maplibregl.Popup({closeButton: false, closeOnClick: false, offset: 10});
+  const renderBanner = (row) => {
+    banner.innerHTML = `
+      <strong>${row.comune}</strong><br>
+      Fonte: ${row.fonte}<br>
+      ISTAT: ${row.codice_istat}<br>
+      Punti: ${d3.format(",")(Number(row.point_count) || 0)}<br>
+      Lon/Lat: ${Number(row.center_lon).toFixed(6)}, ${Number(row.center_lat).toFixed(6)}
+    `;
+  };
+  const clusterFilter = (row) => {
+    const filters = [];
+    if (row.grid_cell_id) filters.push(["==", ["get", "grid_cell_id"], row.grid_cell_id]);
+    if (row.dbscan_cluster_id != null && row.dbscan_cluster_id !== "") filters.push(["==", ["get", "dbscan_cluster_id"], String(row.dbscan_cluster_id)]);
+    if (filters.length === 0) return null;
+    return filters.length === 1 ? filters[0] : ["any", ...filters];
+  };
+  const fitClusterBounds = (row) => {
+    const filter = clusterFilter(row);
+    if (!filter) return false;
+    const features = map.querySourceFeatures("hotspots", {
+      sourceLayer: "hotspots_points",
+      filter
+    });
+    const coords = features
+      .map((feature) => feature.geometry?.coordinates)
+      .filter((coords) => Array.isArray(coords) && Number.isFinite(coords[0]) && Number.isFinite(coords[1]));
+    if (!coords.length) return false;
+    const bounds = coords.reduce((acc, coords) => {
+      acc.extend(coords);
+      return acc;
+    }, new maplibregl.LngLatBounds(coords[0], coords[0]));
+    map.fitBounds(bounds, {padding: 36, maxZoom: 20, duration: 800});
+    return true;
+  };
+  const focusRow = (row) => {
+    renderBanner(row);
+    if (
+      Number.isFinite(row.min_lon) &&
+      Number.isFinite(row.min_lat) &&
+      Number.isFinite(row.max_lon) &&
+      Number.isFinite(row.max_lat) &&
+      row.max_lon > row.min_lon &&
+      row.max_lat > row.min_lat
+    ) {
+      map.fitBounds([[row.min_lon, row.min_lat], [row.max_lon, row.max_lat]], {padding: 36, maxZoom: 20, duration: 800});
+      return;
+    }
+    map.flyTo({center: [row.center_lon, row.center_lat], zoom: 20, duration: 0});
+    map.once("idle", () => {
+      if (!fitClusterBounds(row)) {
+        map.flyTo({center: [row.center_lon, row.center_lat], zoom: 20, duration: 800});
+      }
+    });
+  };
+
+  const bounds = rows.reduce((acc, row) => {
+    acc.extend([row.center_lon, row.center_lat]);
+    return acc;
+  }, new maplibregl.LngLatBounds([rows[0].center_lon, rows[0].center_lat], [rows[0].center_lon, rows[0].center_lat]));
+  map.fitBounds(bounds, {padding: 40, maxZoom: 13});
+
+  map.on("mouseenter", "hotspot-centers", () => {
+    map.getCanvas().style.cursor = "pointer";
+  });
+  map.on("mouseleave", "hotspot-centers", () => {
+    map.getCanvas().style.cursor = "";
+    hoverPopup.remove();
+  });
+  map.on("mousemove", "hotspot-centers", (event) => {
+    const properties = event.features?.[0]?.properties;
+    if (!properties) return;
+    hoverPopup
+      .setLngLat(event.lngLat)
+      .setHTML(`<strong>${properties.comune}</strong><br><small>${properties.fonte_label}, ${d3.format(",")(Number(properties.point_count) || 0)} punti</small>`)
+      .addTo(map);
+  });
+  map.on("click", "hotspot-centers", (event) => {
+    const properties = event.features?.[0]?.properties;
+    if (!properties) return;
+    focusRow({
+      ...properties,
+      point_count: Number(properties.point_count) || 0,
+      center_lon: Number(properties.center_lon),
+      center_lat: Number(properties.center_lat)
+    });
+  });
+
+  window.__anncsuUnifiedHotspotsFocus = focusRow;
+
+  invalidation.then(() => {
+    hoverPopup.remove();
+    if (window.__anncsuUnifiedHotspotsFocus === focusRow) window.__anncsuUnifiedHotspotsFocus = null;
+    map.remove();
+  });
+}
+}});
+
+define({id: "72e86d7f", inputs: ["html","display","Inputs","mergedHotspots","formatNumber","MutationObserver","invalidation"], body: async (html,display,Inputs,mergedHotspots,formatNumber,MutationObserver,invalidation) => {
+{
+  const style = html`<style>
+    .hotspots-unified-table th:nth-child(1),
+    .hotspots-unified-table td:nth-child(1) {
+      width: 88px;
+      min-width: 88px;
+      max-width: 88px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>`;
+  display(style);
+
+  const table = Inputs.table(mergedHotspots, {
+    select: false,
+    rows: 20,
+    sort: "point_count",
+    reverse: true,
+    columns: [
+      "fonte_label",
+      "point_count",
+      "comune",
+      "codice_istat",
+      "regione",
+      "center_lon",
+      "center_lat"
+    ],
+    header: {
+      fonte_label: "Fonte",
+      point_count: "Punti",
+      comune: "Comune",
+      codice_istat: "Codice ISTAT",
+      regione: "Regione",
+      center_lon: "Lon",
+      center_lat: "Lat"
+    },
+    format: {
+      point_count: formatNumber,
+      center_lon: formatNumber,
+      center_lat: formatNumber
+    },
+    align: {
+      fonte_label: "left",
+      point_count: "right",
+      comune: "left",
+      codice_istat: "left",
+      regione: "left",
+      center_lon: "right",
+      center_lat: "right"
+    }
+  });
+  const wrapper = html`<div class="hotspots-unified-table"></div>`;
+  wrapper.append(table);
+  display(wrapper);
+  await new Promise(requestAnimationFrame);
+
+  let activeRow = null;
+  const tbody = table.querySelector("tbody");
+  if (tbody) {
+    const sortedRows = [...mergedHotspots].sort((a, b) => b.point_count - a.point_count);
+    const tagAllTrs = () => {
+      Array.from(tbody.querySelectorAll("tr")).forEach((tr, i) => {
+        if (sortedRows[i]) tr._hotspotRow = sortedRows[i];
+      });
+    };
+    tagAllTrs();
+    const observer = new MutationObserver(tagAllTrs);
+    observer.observe(tbody, {childList: true, subtree: false});
+    invalidation.then(() => observer.disconnect());
+    tbody.addEventListener("click", (event) => {
+      const tr = event.target?.closest?.("tr");
+      if (!tr || !tr._hotspotRow) return;
+      const row = tr._hotspotRow;
+      if (activeRow) activeRow.style.background = "";
+      activeRow = tr;
+      activeRow.style.background = "#fff7ed";
+      window.__anncsuUnifiedHotspotsFocus?.(row);
+    });
+  }
+}
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">ANNCSU Quality</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./">Punti dentro/fuori</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./hotspots.html">Hotspots</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#mappa">Mappa</a></li>
+<li class="observablehq-secondary-link"><a href="#lista-unificata">Lista Unificata</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="hotspots" tabindex="-1"><a class="observablehq-header-anchor" href="#hotspots">Hotspots</a></h1>
+<div class="observablehq observablehq--block"><!--:7e06cedd:--></div>
+<div class="observablehq observablehq--block"><!--:5dce85ec:--></div>
+<div class="observablehq observablehq--block"><!--:cbf5d108:--></div>
+<div class="observablehq observablehq--block"><!--:8223b134:--></div>
+<div class="observablehq observablehq--block"><!--:2f6cbc83:--></div>
+<div class="observablehq observablehq--block"><!--:ca0881bf:--></div>
+<div class="observablehq observablehq--block"><!--:9a716c30:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:8a2fed8c:--></div>
+<div class="observablehq observablehq--block"><!--:516ef55b:--></div>
+<h2 id="mappa" tabindex="-1"><a class="observablehq-header-anchor" href="#mappa">Mappa</a></h2>
+<div class="observablehq observablehq--block"><!--:9f38b389:--></div>
+<h2 id="lista-unificata" tabindex="-1"><a class="observablehq-header-anchor" href="#lista-unificata">Lista Unificata</a></h2>
+<div class="observablehq observablehq--block"><!--:72e86d7f:--></div>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>ANNCSU Quality</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-04-08T10:14:28">Apr 8, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>
