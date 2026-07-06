@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>ANNCSU Dashboard | ANNCSU Progress</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.aad62322.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.e03dedf1.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.26f6c2dc.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.24.0/ccbf29a5.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.4.1/87b6151c.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/93ce672e.js">
+<link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
+<link rel="modulepreload" href="./_import/map-layers.e6eef59b.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/080cf928.js">
+<link rel="modulepreload" href="./_npm/htl@1.0.0/11521f02.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.fe1c8faa.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/604cb63b.js">
+<link rel="modulepreload" href="./_npm/fflate@0.8.3/fe0307de.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/f53f17b2.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/b8e751b6.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/c662ea05.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/d162d8c6.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/5cedd0be.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/65d51007.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/c576a91a.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/8b43826d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/3fb06f14.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/20b76948.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/097745a2.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/8683b012.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/5c319046.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/33924f3e.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.2/8d67a1ae.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/8037bd0b.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/a9ba0229.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/e0a47f97.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/f9e9e0ab.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/2da8eb3b.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/09002e01.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/5108797c.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/c9f2571b.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/f3c78e0d.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/28717d05.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/7c6e2a50.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/3d1d57c6.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/643581a8.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/e99232db.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/bd07fd9a.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/d09f7cc9.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/5f640032.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/af036d7e.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.1.0/7b06abe7.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.3/b42f30a7.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32"> <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      _paq.push(["setDoNotTrack", true]);
+      _paq.push(["disableCookies"]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//matomo.innvt.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '2']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <!-- End Matomo Code -->
+    
+<script type="module">
+
+import {define} from "./_observablehq/client.e03dedf1.js";
+import {registerFile} from "./_observablehq/stdlib.26f6c2dc.js";
+
+registerFile("./data/anncsu_points_manifest.json", {"name":"./data/anncsu_points_manifest.json","mimeType":"application/json","path":"./_file/data/anncsu_points_manifest.a2ce1d05.json","lastModified":1783231302223,"size":1734});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.d9b7f186.json","lastModified":1783335899778,"size":7371169});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.d9e19083.json","lastModified":1783335886266,"size":1357});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1783335904590,"size":5411229});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1783335900414,"size":344893});
+
+define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
+display(await(
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />`
+))
+}});
+
+define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.24.0/ccbf29a5.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
+
+return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
+}});
+
+define({id: "e866a2fd", inputs: ["FileAttachment","displayMode","d3","Inputs","location","createLayerManager"], outputs: ["REGIONS","anncsu_stats","spatial_stats","regioni_boundaries","comuni_boundaries","DATES","MOST_RECENT_DATE","DATE_PALETTE","DATE_COLORS","SmartValue","DIFF_DATES","TABLE_DATES","TABLE_DIFF_DATES","dateShortLabel","latestDateValue","buildDateHeaders","makeSmartMetric","buildTotalTableRows","buildChangeTableRows","scrollableTable","calculatePercentageChange","formatValue","PMTILES_BASE_URL","resolveUrl","pointsManifest","initDateLayersForMap","buildLayerGroupsForMap"], body: async (FileAttachment,displayMode,d3,Inputs,location,createLayerManager) => {
+// Configurazione:
+// - un file coarse Italia per ogni data
+// - un file punti per ogni coppia (regione, data)
+// Di default è visibile solo la data più recente.
+
+const REGIONS = [
+  { code: "01", name: "Piemonte" },
+  { code: "02", name: "Valle d'Aosta" },
+  { code: "03", name: "Lombardia" },
+  { code: "04", name: "Trentino-Alto Adige" },
+  { code: "05", name: "Veneto" },
+  { code: "06", name: "Friuli-Venezia Giulia" },
+  { code: "07", name: "Liguria" },
+  { code: "08", name: "Emilia-Romagna" },
+  { code: "09", name: "Toscana" },
+  { code: "10", name: "Umbria" },
+  { code: "11", name: "Marche" },
+  { code: "12", name: "Lazio" },
+  { code: "13", name: "Abruzzo" },
+  { code: "14", name: "Molise" },
+  { code: "15", name: "Campania" },
+  { code: "16", name: "Puglia" },
+  { code: "17", name: "Basilicata" },
+  { code: "18", name: "Calabria" },
+  { code: "19", name: "Sicilia" },
+  { code: "20", name: "Sardegna" }
+];
+
+const anncsu_stats = await FileAttachment("./data/anncsu_stats.json").json();
+const spatial_stats = await FileAttachment("./data/anncsu_spatial_stats.json").json();
+const regioni_boundaries = await FileAttachment("./data/regioni_boundaries.geojson").json();
+const comuni_boundaries = await FileAttachment("./data/comuni_boundaries.geojson").json();
+
+const DATES = [...(
+  spatial_stats?.date_columns?.length
+    ? spatial_stats.date_columns
+    : (anncsu_stats ?? []).map((d) => d.date)
+)].sort();
+const MOST_RECENT_DATE = DATES.at(-1) ?? null;
+
+const DATE_PALETTE = ["#6c757d", "#3182bd", "#e6550d", "#31a354", "#756bb1", "#fd8d3c", "#de2d26", "#17becf"];
+const DATE_COLORS = Object.fromEntries(DATES.map((date, i) => [date, DATE_PALETTE[i % DATE_PALETTE.length]]));
+
+class SmartValue extends Number {
+  constructor(value, label) {
+    super(value);
+    this.label = label;
+  }
+  toString() { return this.label; }
+}
+
+const DIFF_DATES = DATES.slice(1);
+const TABLE_DATES = [...DATES].reverse();
+const TABLE_DIFF_DATES = [...DIFF_DATES].reverse();
+const dateShortLabel = (date) => {
+  const [, month, day] = date.split("-");
+  return `${month}/${day}`;
+};
+const latestDateValue = (row, key = MOST_RECENT_DATE) => {
+  const value = row?.[key];
+  return value instanceof SmartValue ? value.valueOf() : (value ?? 0);
+};
+const buildDateHeaders = (labelKey, dates) => ({
+  [labelKey]: labelKey === "regione" ? "Regione" : "Comune",
+  ...Object.fromEntries(dates.map((date) => [date, dateShortLabel(date)]))
+});
+const makeSmartMetric = (absolute, percent, {allowZero = true} = {}) => {
+  if (!allowZero && !absolute) return new SmartValue(0, "0");
+  return new SmartValue(
+    displayMode === "Percentuali" ? percent : absolute,
+    displayMode === "Percentuali"
+      ? `${d3.format(".2f")(percent)}% (${d3.format(",")(absolute)})`
+      : `${d3.format(",")(absolute)} (${d3.format(".2f")(percent)}%)`
+  );
+};
+function buildTotalTableRows(rows, labelKey) {
+  return rows.map((row) => {
+    const out = {[labelKey]: row[labelKey]};
+    for (const date of DATES) {
+      const absolute = row[date] || 0;
+      const totalAll = row[`total_all_${date}`] || 1;
+      const percent = (absolute / totalAll) * 100;
+      out[date] = makeSmartMetric(absolute, percent);
+    }
+    return out;
+  });
+}
+function buildChangeTableRows(rows, totals, labelKey) {
+  return rows.map((row) => {
+    const totalRow = totals.find((item) => item[labelKey] === row[labelKey]);
+    const out = {[labelKey]: row[labelKey]};
+    for (const [index, date] of DIFF_DATES.entries()) {
+      const absolute = row[date] || 0;
+      const prevDate = DATES[index];
+      const totalAllPrev = totalRow?.[`total_all_${prevDate}`] || 1;
+      const percent = (absolute / totalAllPrev) * 100;
+      out[date] = makeSmartMetric(absolute, percent, {allowZero: false});
+    }
+    return out;
+  });
+}
+
+function scrollableTable(data, options) {
+  const t = Inputs.table(data, {...options, select: false});
+  t.style.overflowX = "auto";
+  return t;
+}
+
+
+
+// Funzioni per calcolare le percentuali
+function calculatePercentageChange(current, previous) {
+  if (!previous || previous === 0) return null;
+  return ((current - previous) / previous) * 100;
+}
+
+function formatValue(value, mode, isPercentage = false) {
+  if (value === null || value === undefined) return "-";
+  if (mode === "Percentuali" && isPercentage) {
+    return value > 0 ? `+${d3.format(".2f")(value)}%` : `${d3.format(".2f")(value)}%`;
+  }
+  return d3.format(",")(value);
+}
+
+// In build/produzione i PMTiles sono in public/pmtiles → dist/pmtiles (./pmtiles/).
+// In preview (observable dev) public/ non è servito: i file restano in src/data
+// e sono raggiungibili solo via /_file/data/.
+const PMTILES_BASE_URL = (() => {
+  const { origin, hostname } = location;
+  if (hostname === "localhost" || hostname === "127.0.0.1") {
+    return new URL("/_file/data/", origin).href;
+  }
+  return new URL("./pmtiles/", document.baseURI).href;
+})();
+const resolveUrl = (filename) => Promise.resolve(new URL(filename, PMTILES_BASE_URL).href);
+
+const pointsManifest = await FileAttachment("./data/anncsu_points_manifest.json").json().catch(() => null);
+
+const { initDateLayersForMap, buildLayerGroupsForMap } = createLayerManager({
+  DATES, MOST_RECENT_DATE, REGIONS, DATE_COLORS, resolveUrl, pointsManifest
+});
+return {REGIONS,anncsu_stats,spatial_stats,regioni_boundaries,comuni_boundaries,DATES,MOST_RECENT_DATE,DATE_PALETTE,DATE_COLORS,SmartValue,DIFF_DATES,TABLE_DATES,TABLE_DIFF_DATES,dateShortLabel,latestDateValue,buildDateHeaders,makeSmartMetric,buildTotalTableRows,buildChangeTableRows,scrollableTable,calculatePercentageChange,formatValue,PMTILES_BASE_URL,resolveUrl,pointsManifest,initDateLayersForMap,buildLayerGroupsForMap};
+}});
+
+define({id: "5710fc97", inputs: ["pmtiles","maplibregl","display"], outputs: ["protocol","mapContainer","map","mapLoaded"], body: (pmtiles,maplibregl,display) => {
+// Inizializzazione mappa
+const protocol = new pmtiles.Protocol({
+  metadata: true
+});
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+const mapContainer = display(document.createElement("div"));
+mapContainer.style.cssText = "width: 100%; height: 800px; border-radius: 8px; overflow: hidden;";
+
+const map = new maplibregl.Map({
+  container: mapContainer,
+  zoom: 5,
+  center: [12.5, 42.5],
+  pitch: 0,
+  hash: true,
+  style: {
+    version: 8,
+    sources: {
+      osm: {
+        type: "raster",
+        tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "© OpenStreetMap contributors",
+        maxzoom: 19
+      }
+    },
+    layers: [{ id: "osm", type: "raster", source: "osm" }]
+  },
+  minZoom: 5,
+  maxZoom: 18,
+  maxPitch: 85
+});
+
+map.addControl(new maplibregl.NavigationControl({
+  visualizePitch: true,
+  showZoom: true,
+  showCompass: true
+}));
+
+const mapLoaded = new Promise((resolve) => map.once("load", resolve));
+return {protocol,mapContainer,map,mapLoaded};
+}});
+
+define({id: "b313f89c", inputs: ["mapLoaded","initDateLayersForMap","map","LayerControl","buildLayerGroupsForMap"], body: async (mapLoaded,initDateLayersForMap,map,LayerControl,buildLayerGroupsForMap) => {
+// Aggiungi controllo layer alla mappa
+{
+  await mapLoaded;
+  await initDateLayersForMap(map, "main");
+  if (map._anncsuLayerControl) map.removeControl(map._anncsuLayerControl);
+  map._anncsuLayerControl = new LayerControl(buildLayerGroupsForMap("main"));
+  map.addControl(map._anncsuLayerControl, 'top-right');
+}
+}});
+
+define({id: "d3c01a2f", inputs: ["view","Inputs"], outputs: ["displayMode"], body: (view,Inputs) => {
+// Selettore globale per valori assoluti/percentuali
+const displayMode = view(Inputs.radio(
+  ["Assoluti", "Percentuali"],
+  {label: "Modalità visualizzazione", value: "Assoluti"}
+));
+return {displayMode};
+}});
+
+define({id: "11a7d23a", inputs: ["Plot","width","displayMode","anncsu_stats","d3","display"], body: async (Plot,width,displayMode,anncsu_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: "Andamento civici georeferenziati su ANNCSU",
+  width,
+  marginLeft: 60,
+  marginBottom: 60,
+  marks: displayMode === "Percentuali"
+    ? [
+        Plot.line(
+          anncsu_stats.map(d => ({
+            date: d.date,
+            percent: d.total_all ? (d.total / d.total_all) * 100 : 0
+          })),
+          {
+            x: d => new Date(d.date),
+            y: "percent",
+            stroke: "steelblue",
+            strokeWidth: 3,
+            tip: true
+          }
+        ),
+        Plot.rectY(
+          anncsu_stats.map((d, i) => {
+            // Per le variazioni, usa il total_all della data precedente
+            const prev_total_all = i > 0 ? anncsu_stats[i - 1].total_all : d.total_all;
+            const t = new Date(d.date).getTime();
+            return {
+              x1: new Date(t - 10 * 86400000),
+              x2: new Date(t + 10 * 86400000),
+              percent: prev_total_all ? (d.new / prev_total_all) * 100 : 0
+            };
+          }),
+          {
+            x1: "x1",
+            x2: "x2",
+            y: "percent",
+            fill: "green",
+            tip: true
+          }
+        ),
+        Plot.rectY(
+          anncsu_stats.map((d, i) => {
+            // Per le variazioni, usa il total_all della data precedente
+            const prev_total_all = i > 0 ? anncsu_stats[i - 1].total_all : d.total_all;
+            const t = new Date(d.date).getTime();
+            return {
+              x1: new Date(t - 10 * 86400000),
+              x2: new Date(t + 10 * 86400000),
+              percent: prev_total_all ? -(d.missing / prev_total_all) * 100 : 0
+            };
+          }),
+          {
+            x1: "x1",
+            x2: "x2",
+            y: "percent",
+            fill: "red",
+            tip: true
+          }
+        ),
+        Plot.ruleY([0])
+      ]
+    : [
+        Plot.line(anncsu_stats, {
+          x: d => new Date(d.date),
+          y: "total",
+          stroke: "steelblue",
+          strokeWidth: 3,
+          tip: true
+        }),
+        Plot.rectY(anncsu_stats, {
+          x1: d => new Date(new Date(d.date).getTime() - 10 * 86400000),
+          x2: d => new Date(new Date(d.date).getTime() + 10 * 86400000),
+          y: "new",
+          fill: "green",
+          tip: true
+        }),
+        Plot.rectY(anncsu_stats, {
+          x1: d => new Date(new Date(d.date).getTime() - 10 * 86400000),
+          x2: d => new Date(new Date(d.date).getTime() + 10 * 86400000),
+          y: d => -d.missing,
+          fill: "red",
+          tip: true
+        }),
+        Plot.ruleY([0])
+      ],
+  x: {
+    type: "time",
+    labelOffset: 40,
+    label: "Data"
+  },
+  y: {
+    grid: true,
+    label: displayMode === "Percentuali" ? "% sul totale" : "Valori",
+    tickFormat: displayMode === "Percentuali"
+      ? d => `${d3.format(".1f")(d)}%`
+      : d => d3.format(".2~s")(d).replace("G", "B")
+  },
+  color: {
+    legend: true,
+    domain: ["Totale", "Nuovi", "Rimossi"],
+    range: ["steelblue", "green", "red"]
+  }
+})
+))
+}});
+
+define({id: "183c5c69", inputs: ["view","Inputs","spatial_stats","MOST_RECENT_DATE"], outputs: ["selected_date_region"], body: (view,Inputs,spatial_stats,MOST_RECENT_DATE) => {
+const selected_date_region = view(Inputs.select(
+  spatial_stats.date_columns,
+  {label: "Seleziona data", value: MOST_RECENT_DATE}
+));
+return {selected_date_region};
+}});
+
+define({id: "c63cad70", inputs: ["Plot","selected_date_region","width","spatial_stats","d3","display"], body: async (Plot,selected_date_region,width,spatial_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: `Distribuzione completamento per regione (${selected_date_region})`,
+  width,
+  height: 500,
+  marginLeft: 120,
+  marginBottom: 50,
+  marks: [
+    Plot.barX(
+      spatial_stats.regioni.total
+        .map(row => {
+          const georef = row[selected_date_region] || 0;
+          const total_all = row[`total_all_${selected_date_region}`] || 1;
+          const percent = (georef / total_all) * 100;
+          return {
+            regione: row.regione,
+            percent,
+            georef,
+            total_all
+          };
+        })
+        .sort((a, b) => b.percent - a.percent),
+      {
+        y: "regione",
+        x: "percent",
+        fill: d => d.percent >= 99.9999 ? "#15a34a" : d.percent > 50 ? "#fbbf24" : "#ef4444",
+        channels: {
+          "Georef.": d => d3.format(",")(d.georef),
+          "Totale": d => d3.format(",")(d.total_all)
+        },
+        tip: {
+          format: {
+            x: d => `${d3.format(".2f")(d)}%`,
+            fill: false
+          }
+        }
+      }
+    ),
+    Plot.ruleX([100], {stroke: "green", strokeDasharray: "4,4"})
+  ],
+  x: {
+    label: "Completamento (%)",
+    domain: [0, 100],
+    grid: true
+  },
+  y: {
+    label: null
+  },
+  color: {
+    legend: true,
+    domain: ["Completato (100%)", "In corso (>50%)", "Iniziale (≤50%)"],
+    range: ["#15a34a", "#fbbf24", "#ef4444"]
+  }
+})
+))
+}});
+
+define({id: "e50594d3", inputs: ["scrollableTable","buildTotalTableRows","spatial_stats","latestDateValue","TABLE_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildTotalTableRows,spatial_stats,latestDateValue,TABLE_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildTotalTableRows(spatial_stats.regioni.total, "regione");
+    return rows.sort((a, b) => latestDateValue(b) - latestDateValue(a));
+  })(),
+  {
+    columns: ["regione", ...TABLE_DATES],
+    header: buildDateHeaders("regione", TABLE_DATES)
+  }
+)
+))
+}});
+
+define({id: "dfbc629f", inputs: ["Inputs","spatial_stats","view"], outputs: ["regionSelectInput","selected_region"], body: (Inputs,spatial_stats,view) => {
+const regionSelectInput = Inputs.select(
+  spatial_stats.regioni.total.map(d => d.regione),
+  {label: "Seleziona regione", value: "Liguria"}
+);
+const selected_region = view(regionSelectInput);
+return {regionSelectInput,selected_region};
+}});
+
+define({id: "d744519e", inputs: ["Plot","selected_region","width","displayMode","DIFF_DATES","spatial_stats","d3","display"], body: async (Plot,selected_region,width,displayMode,DIFF_DATES,spatial_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: `Variazioni ANNCSU in ${selected_region}`,
+  width,
+  marginLeft: 60,
+  marginBottom: 50,
+  marks: displayMode === "Percentuali"
+    ? [
+        Plot.barY(
+          DIFF_DATES
+            .flatMap((date, idx) => {
+              const region_data = spatial_stats.regioni.total.find(d => d.regione === selected_region);
+              // Per le variazioni, usa il total_all della data precedente
+              const prev_date = spatial_stats.date_columns[idx];  // idx parte da 0 dopo il filter
+              const total_all_prev = region_data?.[`total_all_${prev_date}`] || 1;
+
+              const new_count = spatial_stats.regioni.new.find(d => d.regione === selected_region)?.[date] || 0;
+              const missing_count = spatial_stats.regioni.missing.find(d => d.regione === selected_region)?.[date] || 0;
+              const moved_count = spatial_stats.regioni.moved.find(d => d.regione === selected_region)?.[date] || 0;
+
+              const bars = [];
+              if (new_count > 0) bars.push({date: new Date(date), tipo: "Nuovi", percent: (new_count / total_all_prev) * 100});
+              if (missing_count > 0) bars.push({date: new Date(date), tipo: "Rimossi", percent: -(missing_count / total_all_prev) * 100});
+              if (moved_count > 0) bars.push({date: new Date(date), tipo: "Spostati", percent: (moved_count / total_all_prev) * 100});
+              return bars;
+            }),
+          {
+            x: "date",
+            y: "percent",
+            fill: "tipo",
+            tip: true,
+            dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+          }
+        ),
+        Plot.lineY(
+          DIFF_DATES
+            .map(date => {
+              const region_data = spatial_stats.regioni.total.find(d => d.regione === selected_region);
+              const total = region_data?.[date] || 0;
+              const total_all = region_data?.[`total_all_${date}`] || 1;
+              return {date: new Date(date), percent: (total / total_all) * 100};
+            }),
+          {
+            x: "date",
+            y: "percent",
+            stroke: "black",
+            strokeWidth: 2,
+            marker: "circle",
+            tip: true
+          }
+        ),
+        Plot.ruleY([0])
+      ]
+    : [
+        Plot.barY(
+          DIFF_DATES
+            .flatMap(date => {
+              const new_count = spatial_stats.regioni.new.find(d => d.regione === selected_region)?.[date] || 0;
+              const missing_count = spatial_stats.regioni.missing.find(d => d.regione === selected_region)?.[date] || 0;
+              const moved_count = spatial_stats.regioni.moved.find(d => d.regione === selected_region)?.[date] || 0;
+
+              const bars = [];
+              if (new_count > 0) bars.push({date: new Date(date), tipo: "Nuovi", count: new_count});
+              if (missing_count > 0) bars.push({date: new Date(date), tipo: "Rimossi", count: -missing_count});
+              if (moved_count > 0) bars.push({date: new Date(date), tipo: "Spostati", count: moved_count});
+              return bars;
+            }),
+          {
+            x: "date",
+            y: "count",
+            fill: "tipo",
+            tip: true,
+            dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+          }
+        ),
+        Plot.lineY(
+          DIFF_DATES
+            .map(date => {
+              const region_data = spatial_stats.regioni.total.find(d => d.regione === selected_region);
+              return {date: new Date(date), total: region_data?.[date] || 0};
+            }),
+          {
+            x: "date",
+            y: "total",
+            stroke: "black",
+            strokeWidth: 2,
+            marker: "circle",
+            tip: true
+          }
+        ),
+        Plot.ruleY([0])
+      ],
+  x: {
+    label: "Data",
+    labelOffset: 35
+  },
+  y: {
+    grid: true,
+    label: displayMode === "Percentuali" ? "% sul totale" : "Numero civici",
+    tickFormat: displayMode === "Percentuali"
+      ? d => `${d3.format(".1f")(d)}%`
+      : d => d3.format("~s")(d)
+  },
+  color: {
+    legend: true,
+    domain: ["Nuovi", "Rimossi", "Spostati"],
+    range: ["#0066ff", "#e60026", "#15a34a"]
+  }
+})
+))
+}});
+
+define({id: "4096d0ab", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
+display(await(
+html`<h3>Mappa Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "1a5dbecf", inputs: ["display","maplibregl","regioni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["regionMapEl","regionMap","regionPopup"], body: async (display,maplibregl,regioni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+const regionMapEl = display(document.createElement("div"));
+regionMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
+const regionMap = new maplibregl.Map({
+  container: regionMapEl, zoom: 6, center: [12.5, 42.5],
+  style: { version: 8,
+    sources: { osm: { type:"raster", tiles:["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize:256, attribution:"© OpenStreetMap contributors", maxzoom:19 } },
+    layers: [{ id:"osm", type:"raster", source:"osm" }] },
+      minZoom: 5,
+  maxZoom: 18
+});
+await new Promise(r => regionMap.once("load", r));
+
+// Layer confine regione
+regionMap.addSource("region-boundary", { type: "geojson", data: regioni_boundaries });
+regionMap.addLayer({ id: "region-boundary-fill", type: "fill", source: "region-boundary",
+  paint: { "fill-color": "#3388ff", "fill-opacity": 0.08 }, filter: ["literal", false] });
+regionMap.addLayer({ id: "region-boundary-line", type: "line", source: "region-boundary",
+  paint: { "line-color": "#1a66cc", "line-width": 2.5 }, filter: ["literal", false] });
+
+// Tooltip hover
+const regionPopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+regionMap.on("mousemove", (e) => {
+  const features = regionMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (f) {
+    regionMap.getCanvas().style.cursor = "pointer";
+    const cd = spatial_stats.comuni.total.find(d => d.codice_istat === f.properties.codice_istat);
+    if (cd) regionPopup.setLngLat(e.lngLat).setHTML(`<b>${cd.comune}</b><br><small>${cd.regione}</small>`).addTo(regionMap);
+  } else {
+    regionMap.getCanvas().style.cursor = "";
+    regionPopup.remove();
+  }
+});
+regionMap.on("mouseleave", () => { regionMap.getCanvas().style.cursor = ""; regionPopup.remove(); });
+
+// Click: aggiorna dropdown regione e comune
+regionMap.on("click", (e) => {
+  const features = regionMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (!f) return;
+  // Normalizza a 6 cifre con zero padding (il parquet può avere 5 cifre senza leading zero)
+  const featIstat = String(f.properties.codice_istat).padStart(6, "0");
+  const cd = spatial_stats.comuni.total.find(d => d.codice_istat === featIstat);
+  if (!cd) return;
+  regionSelectInput.value = cd.regione;
+  regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  if (filterRegionInput.value === cd.regione) {
+    // Stessa regione: municipalitySelectInput è già aggiornato, imposta direttamente
+    window._municipalitySelectInput.value = cd.comune;
+    window._municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  } else {
+    // Cambio regione: imposta il pending prima di triggerare il filtro, così la cella
+    // che ricrea municipalitySelectInput lo legge direttamente come valore iniziale
+    window._pendingMunicipality = cd.comune;
+    filterRegionInput.value = cd.regione;
+    filterRegionInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+});
+
+await initDateLayersForMap(regionMap, "r", {
+  refreshFilters: () => {
+    const currentRegion = regionSelectInput.value;
+    const istatCodes = spatial_stats.comuni.total
+      .filter(d => d.regione === currentRegion)
+      .map(d => d.codice_istat)
+      .map(d => Number(d))
+      .filter(Number.isFinite);
+    const boundaryIds = new Set(["region-boundary-fill", "region-boundary-line"]);
+    const pointFilter = istatCodes.length ? ["in", ["to-number", ["get", "codice_istat"]], ["literal", istatCodes]] : null;
+    regionMap.getStyle().layers
+      .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+      .forEach(l => regionMap.setFilter(l.id, pointFilter));
+  }
+});
+if (regionMap._anncsuLayerControl) regionMap.removeControl(regionMap._anncsuLayerControl);
+regionMap._anncsuLayerControl = new LayerControl(buildLayerGroupsForMap("r"));
+regionMap.addControl(regionMap._anncsuLayerControl, "top-right");
+return {regionMapEl,regionMap,regionPopup};
+}});
+
+define({id: "8bf56aba", inputs: ["spatial_stats","selected_region","regionMap"], body: (spatial_stats,selected_region,regionMap) => {
+{
+  const istatCodes = spatial_stats.comuni.total
+    .filter(d => d.regione === selected_region)
+    .map(d => d.codice_istat)
+    .map(d => Number(d))
+    .filter(Number.isFinite);
+  const boundaryIds = new Set(["region-boundary-fill", "region-boundary-line"]);
+  const pointFilter = istatCodes.length ? ["in", ["to-number", ["get", "codice_istat"]], ["literal", istatCodes]] : null;
+  regionMap.getStyle().layers
+    .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+    .forEach(l => regionMap.setFilter(l.id, pointFilter));
+  const regionFilter = ["==", ["get", "den_reg"], selected_region];
+  regionMap.setFilter("region-boundary-fill", regionFilter);
+  regionMap.setFilter("region-boundary-line", regionFilter);
+  const bbox = spatial_stats.regioni.total.find(d => d.regione === selected_region)?.bbox;
+  if (bbox?.every(v => v !== null)) regionMap.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], { padding: 30, maxZoom: 14 });
+}
+}});
+
+define({id: "c09393bf", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
+display(await(
+html`<h3>Nuovi Civici per Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "dfa88d87", inputs: ["scrollableTable","buildChangeTableRows","spatial_stats","selected_region","latestDateValue","MOST_RECENT_DATE","TABLE_DIFF_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildChangeTableRows,spatial_stats,selected_region,latestDateValue,MOST_RECENT_DATE,TABLE_DIFF_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildChangeTableRows(
+      spatial_stats.regioni.new.filter(row => row.regione === selected_region),
+      spatial_stats.regioni.total,
+      "regione"
+    );
+    return rows.sort((a, b) => latestDateValue(b, MOST_RECENT_DATE) - latestDateValue(a, MOST_RECENT_DATE));
+  })(),
+  {
+    columns: ["regione", ...TABLE_DIFF_DATES],
+    header: buildDateHeaders("regione", TABLE_DIFF_DATES)
+  }
+)
+))
+}});
+
+define({id: "5e516223", inputs: ["html","selected_region","display"], body: async (html,selected_region,display) => {
+display(await(
+html`<h3>Civici Rimossi per Regione — ${selected_region}</h3>`
+))
+}});
+
+define({id: "b6944b9e", inputs: ["scrollableTable","buildChangeTableRows","spatial_stats","selected_region","latestDateValue","MOST_RECENT_DATE","TABLE_DIFF_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildChangeTableRows,spatial_stats,selected_region,latestDateValue,MOST_RECENT_DATE,TABLE_DIFF_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildChangeTableRows(
+      spatial_stats.regioni.missing.filter(row => row.regione === selected_region),
+      spatial_stats.regioni.total,
+      "regione"
+    );
+    return rows.sort((a, b) => latestDateValue(b, MOST_RECENT_DATE) - latestDateValue(a, MOST_RECENT_DATE));
+  })(),
+  {
+    columns: ["regione", ...TABLE_DIFF_DATES],
+    header: buildDateHeaders("regione", TABLE_DIFF_DATES)
+  }
+)
+))
+}});
+
+define({id: "bf9451f7", inputs: ["view","Inputs","spatial_stats","MOST_RECENT_DATE"], outputs: ["selected_date_comune"], body: (view,Inputs,spatial_stats,MOST_RECENT_DATE) => {
+const selected_date_comune = view(Inputs.select(
+  spatial_stats.date_columns,
+  {label: "Seleziona data", value: MOST_RECENT_DATE}
+));
+return {selected_date_comune};
+}});
+
+define({id: "a26800f2", inputs: ["view","Inputs","spatial_stats"], outputs: ["filter_region_dist"], body: (view,Inputs,spatial_stats) => {
+const filter_region_dist = view(Inputs.select(
+  ["Tutte"].concat(spatial_stats.regioni.total.map(d => d.regione)),
+  {label: "Filtra per regione", value: "Tutte"}
+));
+return {filter_region_dist};
+}});
+
+define({id: "854ba575", inputs: ["spatial_stats","filter_region_dist","selected_date_comune","Plot","width","display"], body: async (spatial_stats,filter_region_dist,selected_date_comune,Plot,width,display) => {
+display(await(
+(() => {
+  // Prepara i dati pre-binnati
+  const comuni_data = spatial_stats.comuni.total
+    .filter(row => filter_region_dist === "Tutte" || row.regione === filter_region_dist)
+    .map(row => {
+      const georef = row[selected_date_comune] || 0;
+      const total_all = row[`total_all_${selected_date_comune}`] || 1;
+      const percent = (georef / total_all) * 100;
+      return percent;
+    });
+
+  // Crea i bin manualmente
+  const bins = [];
+  for (let i = 0; i < 95; i += 5) {
+    const count = comuni_data.filter(p => p >= i && p < i + 5).length;
+    if (count > 0) {
+      bins.push({
+        x: i + 2.5,  // centro del bin
+        x1: i,
+        x2: i + 5,
+        y: count,
+        categoria: i >= 50 ? "In corso (>50%)" : "Iniziale (≤50%)",
+        completamento: `${i}-${i + 5}%`
+      });
+    }
+  }
+
+  // Bin 95-99.9999 (giallo)
+  const count95 = comuni_data.filter(p => p >= 95 && p < 99.9999).length;
+  if (count95 > 0) {
+    bins.push({
+      x: 97.5,
+      x1: 95,
+      x2: 100,
+      y: count95,
+      categoria: "In corso (>50%)",
+      completamento: "95-100%"
+    });
+  }
+
+  // Bin 100% esatto (verde)
+  const count100 = comuni_data.filter(p => p >= 99.9999).length;
+  if (count100 > 0) {
+    bins.push({
+      x: 100,
+      x1: 100,
+      x2: 105,
+      y: count100,
+      categoria: "Completato (100%)",
+      completamento: "100%"
+    });
+  }
+
+  return Plot.plot({
+    title: `Distribuzione completamento comuni ${filter_region_dist !== "Tutte" ? `(${filter_region_dist})` : ""} - ${selected_date_comune}`,
+    width,
+    height: 400,
+    marginLeft: 60,
+    marginBottom: 60,
+    marks: [
+      Plot.rectY(bins, {
+        x1: "x1",
+        x2: "x2",
+        y: "y",
+        fill: d => d.categoria === "Completato (100%)" ? "#15a34a" :
+                   d.categoria === "In corso (>50%)" ? "#fbbf24" : "#ef4444",
+        channels: {completamento: "completamento"},
+        tip: {
+          format: {
+            x1: false,
+            x2: false,
+            completamento: true
+          }
+        }
+      }),
+      Plot.ruleX([100], {stroke: "green", strokeWidth: 2, strokeDasharray: "4,4"})
+    ],
+    x: {
+      label: "Completamento (%)",
+      labelOffset: 40,
+      domain: [0, 105],
+      grid: true
+    },
+    y: {
+      label: "Numero comuni",
+      grid: true
+    },
+    color: {
+      legend: true,
+      domain: ["Completato (100%)", "In corso (>50%)", "Iniziale (≤50%)"],
+      range: ["#15a34a", "#fbbf24", "#ef4444"]
+    }
+  });
+})()
+))
+}});
+
+define({id: "2668c2eb", inputs: ["scrollableTable","buildTotalTableRows","spatial_stats","latestDateValue","TABLE_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildTotalTableRows,spatial_stats,latestDateValue,TABLE_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildTotalTableRows(spatial_stats.comuni.total, "comune");
+    return rows.sort((a, b) => latestDateValue(b) - latestDateValue(a));
+  })(),
+  {
+    columns: ["comune", ...TABLE_DATES],
+    header: buildDateHeaders("comune", TABLE_DATES)
+  }
+)
+))
+}});
+
+define({id: "30442236", inputs: ["Inputs","spatial_stats","view"], outputs: ["filterRegionInput","filter_region"], body: (Inputs,spatial_stats,view) => {
+const filterRegionInput = Inputs.select(
+  spatial_stats.regioni.total.map(d => d.regione),
+  {label: "Filtra per regione", value: "Liguria"}
+);
+const filter_region = view(filterRegionInput);
+return {filterRegionInput,filter_region};
+}});
+
+define({id: "e838ea8f", inputs: ["spatial_stats","filter_region","Inputs","view"], outputs: ["filtered_comuni","_initMunicipality","municipalitySelectInput","selected_municipality"], body: (spatial_stats,filter_region,Inputs,view) => {
+// Per filtrare i comuni per regione, usiamo la proprietà regione presente nei dati
+const filtered_comuni = spatial_stats.comuni.total
+  .filter(d => d.regione === filter_region)
+  .map(d => d.comune)
+  .sort((a, b) => a.localeCompare(b, 'it'));
+
+const _initMunicipality = window._pendingMunicipality && filtered_comuni.includes(window._pendingMunicipality)
+  ? window._pendingMunicipality
+  : filtered_comuni[0];
+window._pendingMunicipality = null;
+
+const municipalitySelectInput = Inputs.select(
+  filtered_comuni,
+  {label: "Seleziona comune", value: _initMunicipality}
+);
+const selected_municipality = view(municipalitySelectInput);
+return {filtered_comuni,_initMunicipality,municipalitySelectInput,selected_municipality};
+}});
+
+define({id: "55173d85", inputs: ["municipalitySelectInput"], body: (municipalitySelectInput) => {
+// Aggiorna il riferimento globale ogni volta che municipalitySelectInput viene ricreato.
+// I click handler nelle celle mappa usano window._municipalitySelectInput invece della
+// variabile reattiva diretta, per evitare che Observable ricrei le mappe ad ogni cambio regione.
+window._municipalitySelectInput = municipalitySelectInput;
+}});
+
+define({id: "60742173", inputs: ["Plot","selected_municipality","width","displayMode","DIFF_DATES","spatial_stats","d3","display"], body: async (Plot,selected_municipality,width,displayMode,DIFF_DATES,spatial_stats,d3,display) => {
+display(await(
+Plot.plot({
+  title: `Variazioni ANNCSU a ${selected_municipality}`,
+  width,
+  marginLeft: 60,
+  marginBottom: 50,
+  marks: displayMode === "Percentuali"
+    ? [
+        Plot.barY(
+          DIFF_DATES
+            .flatMap((date, idx) => {
+              const municipality_data = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+              // Per le variazioni, usa il total_all della data precedente
+              const prev_date = spatial_stats.date_columns[idx];  // idx parte da 0 dopo il filter
+              const total_all_prev = municipality_data?.[`total_all_${prev_date}`] || 1;
+
+              const new_count = spatial_stats.comuni.new.find(d => d.comune === selected_municipality)?.[date] || 0;
+              const missing_count = spatial_stats.comuni.missing.find(d => d.comune === selected_municipality)?.[date] || 0;
+              const moved_count = spatial_stats.comuni.moved.find(d => d.comune === selected_municipality)?.[date] || 0;
+
+              const bars = [];
+              if (new_count > 0) bars.push({date: new Date(date), tipo: "Nuovi", percent: (new_count / total_all_prev) * 100});
+              if (missing_count > 0) bars.push({date: new Date(date), tipo: "Rimossi", percent: -(missing_count / total_all_prev) * 100});
+              if (moved_count > 0) bars.push({date: new Date(date), tipo: "Spostati", percent: (moved_count / total_all_prev) * 100});
+              return bars;
+            }),
+          {
+            x: "date",
+            y: "percent",
+            fill: "tipo",
+            tip: true,
+            dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+          }
+        ),
+        Plot.lineY(
+          DIFF_DATES
+            .map(date => {
+              const municipality_data = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+              const total = municipality_data?.[date] || 0;
+              const total_all = municipality_data?.[`total_all_${date}`] || 1;
+              return {date: new Date(date), percent: (total / total_all) * 100};
+            }),
+          {
+            x: "date",
+            y: "percent",
+            stroke: "black",
+            strokeWidth: 2,
+            marker: "circle",
+            tip: true
+          }
+        ),
+        Plot.ruleY([0])
+      ]
+    : [
+        Plot.barY(
+          DIFF_DATES
+            .flatMap(date => {
+              const new_count = spatial_stats.comuni.new.find(d => d.comune === selected_municipality)?.[date] || 0;
+              const missing_count = spatial_stats.comuni.missing.find(d => d.comune === selected_municipality)?.[date] || 0;
+              const moved_count = spatial_stats.comuni.moved.find(d => d.comune === selected_municipality)?.[date] || 0;
+
+              const bars = [];
+              if (new_count > 0) bars.push({date: new Date(date), tipo: "Nuovi", count: new_count});
+              if (missing_count > 0) bars.push({date: new Date(date), tipo: "Rimossi", count: -missing_count});
+              if (moved_count > 0) bars.push({date: new Date(date), tipo: "Spostati", count: moved_count});
+              return bars;
+            }),
+          {
+            x: "date",
+            y: "count",
+            fill: "tipo",
+            tip: true,
+            dx: d => d.tipo === "Nuovi" ? -8 : d.tipo === "Spostati" ? 8 : 0
+          }
+        ),
+        Plot.lineY(
+          DIFF_DATES
+            .map(date => {
+              const municipality_data = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+              return {date: new Date(date), total: municipality_data?.[date] || 0};
+            }),
+          {
+            x: "date",
+            y: "total",
+            stroke: "black",
+            strokeWidth: 2,
+            marker: "circle",
+            tip: true
+          }
+        ),
+        Plot.ruleY([0])
+      ],
+  x: {
+    label: "Data",
+    labelOffset: 35
+  },
+  y: {
+    grid: true,
+    label: displayMode === "Percentuali" ? "% sul totale" : "Numero civici",
+    tickFormat: displayMode === "Percentuali"
+      ? d => `${d3.format(".1f")(d)}%`
+      : d => d3.format("~s")(d)
+  },
+  color: {
+    legend: true,
+    domain: ["Nuovi", "Rimossi", "Spostati"],
+    range: ["#0066ff", "#e60026", "#15a34a"]
+  }
+})
+))
+}});
+
+define({id: "6d849e55", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Mappa Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "69164e5d", inputs: ["display","maplibregl","comuni_boundaries","spatial_stats","regionSelectInput","Event","filterRegionInput","initDateLayersForMap","LayerControl","buildLayerGroupsForMap"], outputs: ["comuneMapEl","comuneMap","comunePopup"], body: async (display,maplibregl,comuni_boundaries,spatial_stats,regionSelectInput,Event,filterRegionInput,initDateLayersForMap,LayerControl,buildLayerGroupsForMap) => {
+const comuneMapEl = display(document.createElement("div"));
+comuneMapEl.style.cssText = "width:100%;height:500px;border-radius:8px;overflow:hidden;";
+const comuneMap = new maplibregl.Map({
+  container: comuneMapEl, zoom: 10, center: [12.5, 42.5],
+  style: { version: 8,
+    sources: { osm: { type:"raster", tiles:["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"], tileSize:256, attribution:"© OpenStreetMap contributors", maxzoom:19 } },
+    layers: [{ id:"osm", type:"raster", source:"osm" }] },
+      minZoom: 5,
+  maxZoom: 18
+});
+await new Promise(r => comuneMap.once("load", r));
+
+// Layer confine comune
+comuneMap.addSource("comune-boundary", { type: "geojson", data: comuni_boundaries });
+comuneMap.addLayer({ id: "comune-boundary-fill", type: "fill", source: "comune-boundary",
+  paint: { "fill-color": "#3388ff", "fill-opacity": 0.08 }, filter: ["literal", false] });
+comuneMap.addLayer({ id: "comune-boundary-line", type: "line", source: "comune-boundary",
+  paint: { "line-color": "#1a66cc", "line-width": 2.5 }, filter: ["literal", false] });
+
+// Tooltip hover
+const comunePopup = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 10 });
+comuneMap.on("mousemove", (e) => {
+  const features = comuneMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (f) {
+    comuneMap.getCanvas().style.cursor = "pointer";
+    const cd = spatial_stats.comuni.total.find(d => d.codice_istat === f.properties.codice_istat);
+    if (cd) comunePopup.setLngLat(e.lngLat).setHTML(`<b>${cd.comune}</b><br><small>${cd.regione}</small>`).addTo(comuneMap);
+  } else {
+    comuneMap.getCanvas().style.cursor = "";
+    comunePopup.remove();
+  }
+});
+comuneMap.on("mouseleave", () => { comuneMap.getCanvas().style.cursor = ""; comunePopup.remove(); });
+
+// Click: aggiorna dropdown comune
+comuneMap.on("click", (e) => {
+  const features = comuneMap.queryRenderedFeatures(e.point);
+  const f = features.find(f => f.properties?.codice_istat);
+  if (!f) return;
+  const featIstat = String(f.properties.codice_istat).padStart(6, "0");
+  const cd = spatial_stats.comuni.total.find(d => d.codice_istat === featIstat);
+  if (!cd) return;
+  // Imposta sempre regione prima del comune per evitare che il cambio di regione
+  // ricrei municipalitySelectInput e perda il valore appena impostato
+  regionSelectInput.value = cd.regione;
+  regionSelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  if (filterRegionInput.value === cd.regione) {
+    window._municipalitySelectInput.value = cd.comune;
+    window._municipalitySelectInput.dispatchEvent(new Event("input", { bubbles: true }));
+  } else {
+    window._pendingMunicipality = cd.comune;
+    filterRegionInput.value = cd.regione;
+    filterRegionInput.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+});
+
+await initDateLayersForMap(comuneMap, "c", {
+  refreshFilters: () => {
+    const currentMunicipality = window._municipalitySelectInput?.value;
+    const comuneData = spatial_stats.comuni.total.find(d => d.comune === currentMunicipality);
+    const istat = comuneData?.codice_istat;
+    const normalizedIstat = Number(istat);
+    const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
+    const pointFilter = Number.isFinite(normalizedIstat) ? ["==", ["to-number", ["get", "codice_istat"]], normalizedIstat] : null;
+    comuneMap.getStyle().layers
+      .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+      .forEach(l => comuneMap.setFilter(l.id, pointFilter));
+  }
+});
+if (comuneMap._anncsuLayerControl) comuneMap.removeControl(comuneMap._anncsuLayerControl);
+comuneMap._anncsuLayerControl = new LayerControl(buildLayerGroupsForMap("c"));
+comuneMap.addControl(comuneMap._anncsuLayerControl, "top-right");
+return {comuneMapEl,comuneMap,comunePopup};
+}});
+
+define({id: "66659e35", inputs: ["municipalitySelectInput","spatial_stats","selected_municipality","comuneMap"], body: (municipalitySelectInput,spatial_stats,selected_municipality,comuneMap) => {
+{
+  void municipalitySelectInput; // dipendenza diretta: riesegui anche quando filter_region cambia e municipalitySelectInput viene ricreato
+  const comuneData = spatial_stats.comuni.total.find(d => d.comune === selected_municipality);
+  const istat = comuneData?.codice_istat;
+  const boundaryIds = new Set(["comune-boundary-fill", "comune-boundary-line"]);
+  const normalizedIstat = Number(istat);
+  const pointFilter = Number.isFinite(normalizedIstat) ? ["==", ["to-number", ["get", "codice_istat"]], normalizedIstat] : null;
+  comuneMap.getStyle().layers
+    .filter(l => l.id !== "osm" && !boundaryIds.has(l.id))
+    .forEach(l => comuneMap.setFilter(l.id, pointFilter));
+  comuneMap.setFilter("comune-boundary-fill", istat ? ["==", ["get", "codice_istat"], istat] : ["literal", false]);
+  comuneMap.setFilter("comune-boundary-line", istat ? ["==", ["get", "codice_istat"], istat] : ["literal", false]);
+  const bbox = comuneData?.bbox;
+  if (bbox?.every(v => v !== null)) comuneMap.fitBounds([[bbox[0], bbox[1]], [bbox[2], bbox[3]]], { padding: 30, maxZoom: 16 });
+}
+}});
+
+define({id: "41aa4795", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Nuovi Civici per Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "26860734", inputs: ["scrollableTable","buildChangeTableRows","spatial_stats","selected_municipality","latestDateValue","MOST_RECENT_DATE","TABLE_DIFF_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildChangeTableRows,spatial_stats,selected_municipality,latestDateValue,MOST_RECENT_DATE,TABLE_DIFF_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildChangeTableRows(
+      spatial_stats.comuni.new.filter(row => row.comune === selected_municipality),
+      spatial_stats.comuni.total,
+      "comune"
+    );
+    return rows.sort((a, b) => latestDateValue(b, MOST_RECENT_DATE) - latestDateValue(a, MOST_RECENT_DATE));
+  })(),
+  {
+    columns: ["comune", ...TABLE_DIFF_DATES],
+    header: buildDateHeaders("comune", TABLE_DIFF_DATES)
+  }
+)
+))
+}});
+
+define({id: "42ff04db", inputs: ["html","selected_municipality","display"], body: async (html,selected_municipality,display) => {
+display(await(
+html`<h3>Civici Rimossi per Comune — ${selected_municipality}</h3>`
+))
+}});
+
+define({id: "88acb6d4", inputs: ["scrollableTable","buildChangeTableRows","spatial_stats","selected_municipality","latestDateValue","MOST_RECENT_DATE","TABLE_DIFF_DATES","buildDateHeaders","display"], body: async (scrollableTable,buildChangeTableRows,spatial_stats,selected_municipality,latestDateValue,MOST_RECENT_DATE,TABLE_DIFF_DATES,buildDateHeaders,display) => {
+display(await(
+scrollableTable(
+  (() => {
+    const rows = buildChangeTableRows(
+      spatial_stats.comuni.missing.filter(row => row.comune === selected_municipality),
+      spatial_stats.comuni.total,
+      "comune"
+    );
+    return rows.sort((a, b) => latestDateValue(b, MOST_RECENT_DATE) - latestDateValue(a, MOST_RECENT_DATE));
+  })(),
+  {
+    columns: ["comune", ...TABLE_DIFF_DATES],
+    header: buildDateHeaders("comune", TABLE_DIFF_DATES)
+  }
+)
+))
+}});
+
+</script>
+</head>
+<body>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></li>
+<li class="observablehq-secondary-link"><a href="#statistiche-regionali">Statistiche Regionali</a></li>
+<li class="observablehq-secondary-link"><a href="#statistiche-comunali">Statistiche Comunali</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
+<p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
+<div class="observablehq observablehq--block"><!--:1b68d1c2:--></div>
+<div class="observablehq observablehq--block"><!--:e866a2fd:--></div>
+<div class="observablehq observablehq--block"><!--:5710fc97:--></div>
+<div class="observablehq observablehq--block"><!--:b313f89c:--></div>
+<h2 id="andamento-civici-georeferenziati" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-civici-georeferenziati">Andamento civici georeferenziati</a></h2>
+<div class="observablehq observablehq--block"><!--:d3c01a2f:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:11a7d23a:--></div>
+</div>
+<hr>
+<h2 id="statistiche-regionali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-regionali">Statistiche Regionali</a></h2>
+<h3 id="distribuzione-completamento-regioni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-regioni">Distribuzione Completamento Regioni</a></h3>
+<div class="observablehq observablehq--block"><!--:183c5c69:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c63cad70:--></div>
+</div>
+<h3 id="civici-georeferenziati-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-regione">Civici Georeferenziati per Regione</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e50594d3:--></div>
+<h3 id="grafico-variazioni-per-regione" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-regione">Grafico Variazioni per Regione</a></h3>
+<div class="observablehq observablehq--block"><!--:dfbc629f:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:d744519e:--></div>
+</div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:4096d0ab:--></div>
+<div class="observablehq observablehq--block"><!--:1a5dbecf:--></div>
+<div class="observablehq observablehq--block"><!--:8bf56aba:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c09393bf:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:dfa88d87:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:5e516223:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:b6944b9e:--></div>
+<hr>
+<h2 id="statistiche-comunali" tabindex="-1"><a class="observablehq-header-anchor" href="#statistiche-comunali">Statistiche Comunali</a></h2>
+<h3 id="distribuzione-completamento-comuni" tabindex="-1"><a class="observablehq-header-anchor" href="#distribuzione-completamento-comuni">Distribuzione Completamento Comuni</a></h3>
+<div class="observablehq observablehq--block"><!--:bf9451f7:--></div>
+<div class="observablehq observablehq--block"><!--:a26800f2:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:854ba575:--></div>
+</div>
+<h3 id="civici-georeferenziati-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#civici-georeferenziati-per-comune">Civici Georeferenziati per Comune</a></h3>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2668c2eb:--></div>
+<h3 id="grafico-variazioni-per-comune" tabindex="-1"><a class="observablehq-header-anchor" href="#grafico-variazioni-per-comune">Grafico Variazioni per Comune</a></h3>
+<div class="observablehq observablehq--block"><!--:30442236:--></div>
+<div class="observablehq observablehq--block"><!--:e838ea8f:--></div>
+<div class="observablehq observablehq--block"><!--:55173d85:--></div>
+<div class="card">
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:60742173:--></div>
+</div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:6d849e55:--></div>
+<div class="observablehq observablehq--block"><!--:69164e5d:--></div>
+<div class="observablehq observablehq--block"><!--:66659e35:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:41aa4795:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:26860734:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:42ff04db:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:88acb6d4:--></div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-07-06T13:04:37">Jul 6, 2026</a>.</div>
+</footer>
+</div>
+</body>
+</html>
