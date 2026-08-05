@@ -12,17 +12,17 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.e03dedf1.js">
+<link rel="modulepreload" href="./_observablehq/client.03b8d9d9.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
-<link rel="modulepreload" href="./_observablehq/stdlib.26f6c2dc.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@5.24.0/ccbf29a5.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.d2859d91.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@6.1.0/3e8b3e3e.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.1/87b6151c.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/93ce672e.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
 <link rel="modulepreload" href="./_import/map-layers.e6eef59b.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/080cf928.js">
 <link rel="modulepreload" href="./_npm/htl@1.0.0/11521f02.js">
-<link rel="modulepreload" href="./_observablehq/stdlib/inputs.fe1c8faa.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.61fbdeb2.js">
 <link rel="modulepreload" href="./_npm/isoformat@0.2.1/604cb63b.js">
 <link rel="modulepreload" href="./_npm/fflate@0.8.3/fe0307de.js">
 <link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/f53f17b2.js">
@@ -79,23 +79,23 @@
     
 <script type="module">
 
-import {define} from "./_observablehq/client.e03dedf1.js";
-import {registerFile} from "./_observablehq/stdlib.26f6c2dc.js";
+import {define} from "./_observablehq/client.03b8d9d9.js";
+import {registerFile} from "./_observablehq/stdlib.d2859d91.js";
 
-registerFile("./data/anncsu_points_manifest.json", {"name":"./data/anncsu_points_manifest.json","mimeType":"application/json","path":"./_file/data/anncsu_points_manifest.a2ce1d05.json","lastModified":1783231302223,"size":1734});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.d9b7f186.json","lastModified":1783335899778,"size":7371169});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.d9e19083.json","lastModified":1783335886266,"size":1357});
-registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1783335904590,"size":5411229});
-registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1783335900414,"size":344893});
+registerFile("./data/anncsu_points_manifest.json", {"name":"./data/anncsu_points_manifest.json","mimeType":"application/json","path":"./_file/data/anncsu_points_manifest.86c83ebe.json","lastModified":1785923698820,"size":1819});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.fd207e88.json","lastModified":1785946534489,"size":7846000});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.a2d383c7.json","lastModified":1785946523361,"size":1481});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1785946538549,"size":5411229});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1785946535025,"size":344893});
 
-define({id: "2293e18f", inputs: ["html","display"], body: async (html,display) => {
+define({id: "04e947a5", inputs: ["html","display"], body: async (html,display) => {
 display(await(
-html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4/dist/maplibre-gl.css" />`
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />`
 ))
 }});
 
-define({id: "1b68d1c2", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.24.0/ccbf29a5.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
+define({id: "dcdd6326", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
+const [maplibregl, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@6.1.0/3e8b3e3e.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
@@ -1223,8 +1223,8 @@ scrollableTable(
 <main id="observablehq-main" class="observablehq">
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
 <p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:2293e18f:--></div>
-<div class="observablehq observablehq--block"><!--:1b68d1c2:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:04e947a5:--></div>
+<div class="observablehq observablehq--block"><!--:dcdd6326:--></div>
 <div class="observablehq observablehq--block"><!--:e866a2fd:--></div>
 <div class="observablehq observablehq--block"><!--:5710fc97:--></div>
 <div class="observablehq observablehq--block"><!--:b313f89c:--></div>
@@ -1280,7 +1280,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:88acb6d4:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-07-06T13:04:37">Jul 6, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-08-05T18:26:33">Aug 5, 2026</a>.</div>
 </footer>
 </div>
 </body>
