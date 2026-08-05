@@ -15,7 +15,7 @@
 <link rel="modulepreload" href="./_observablehq/client.03b8d9d9.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.d2859d91.js">
-<link rel="modulepreload" href="./_npm/maplibre-gl@6.1.0/3e8b3e3e.js">
+<link rel="modulepreload" href="./_npm/maplibre-gl@5.24.0/ad5fb69e.js">
 <link rel="modulepreload" href="./_npm/pmtiles@4.4.1/87b6151c.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/93ce672e.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
@@ -88,14 +88,14 @@ registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mim
 registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1785950046279,"size":5411229});
 registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1785950042751,"size":344893});
 
-define({id: "04e947a5", inputs: ["html","display"], body: async (html,display) => {
+define({id: "86e93d55", inputs: ["html","display"], body: async (html,display) => {
 display(await(
-html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6/dist/maplibre-gl.css" />`
+html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" />`
 ))
 }});
 
-define({id: "dcdd6326", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [maplibregl, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@6.1.0/3e8b3e3e.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
+define({id: "dd9575f7", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.24.0/ad5fb69e.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
@@ -1223,8 +1223,8 @@ scrollableTable(
 <main id="observablehq-main" class="observablehq">
 <h1 id="andamento-anncsu" tabindex="-1"><a class="observablehq-header-anchor" href="#andamento-anncsu">Andamento ANNCSU</a></h1>
 <p>Analisi dell'evoluzione della georeferenziazione dei numeri civici di ANNCSU basata sui dati scaricabili da <a href="https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/" target="_blank" rel="noopener noreferrer">https://www.anncsu.gov.it/it/consultazione-dellarchivio/open-data/Accedi-ai-servizi-di-dowload-massivo-in-Open-data/</a></p>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:04e947a5:--></div>
-<div class="observablehq observablehq--block"><!--:dcdd6326:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:86e93d55:--></div>
+<div class="observablehq observablehq--block"><!--:dd9575f7:--></div>
 <div class="observablehq observablehq--block"><!--:e866a2fd:--></div>
 <div class="observablehq observablehq--block"><!--:5710fc97:--></div>
 <div class="observablehq observablehq--block"><!--:b313f89c:--></div>
@@ -1280,7 +1280,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:88acb6d4:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-08-05T19:13:28">Aug 5, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-08-05T19:20:43">Aug 5, 2026</a>.</div>
 </footer>
 </div>
 </body>
