@@ -12,11 +12,11 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.aad62322.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
-<link rel="modulepreload" href="./_observablehq/client.03b8d9d9.js">
+<link rel="modulepreload" href="./_observablehq/client.283314be.js">
 <link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.d2859d91.js">
 <link rel="modulepreload" href="./_npm/maplibre-gl@5.24.0/ad5fb69e.js">
-<link rel="modulepreload" href="./_npm/pmtiles@4.4.1/87b6151c.js">
+<link rel="modulepreload" href="./_npm/pmtiles@4.5.0/66c6e4ba.js">
 <link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/93ce672e.js">
 <link rel="modulepreload" href="./_import/layer-control.62ab765d.js">
 <link rel="modulepreload" href="./_import/map-layers.e6eef59b.js">
@@ -79,14 +79,14 @@
     
 <script type="module">
 
-import {define} from "./_observablehq/client.03b8d9d9.js";
+import {define} from "./_observablehq/client.283314be.js";
 import {registerFile} from "./_observablehq/stdlib.d2859d91.js";
 
-registerFile("./data/anncsu_points_manifest.json", {"name":"./data/anncsu_points_manifest.json","mimeType":"application/json","path":"./_file/data/anncsu_points_manifest.86c83ebe.json","lastModified":1785923698820,"size":1819});
-registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.a0c16129.json","lastModified":1785950578732,"size":7845965});
-registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.a2d383c7.json","lastModified":1785950567288,"size":1481});
-registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1785950582832,"size":5411229});
-registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1785950579276,"size":344893});
+registerFile("./data/anncsu_points_manifest.json", {"name":"./data/anncsu_points_manifest.json","mimeType":"application/json","path":"./_file/data/anncsu_points_manifest.86c83ebe.json","lastModified":1788878083553,"size":1819});
+registerFile("./data/anncsu_spatial_stats.json", {"name":"./data/anncsu_spatial_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_spatial_stats.db1ecaeb.json","lastModified":1788882617719,"size":8819361});
+registerFile("./data/anncsu_stats.json", {"name":"./data/anncsu_stats.json","mimeType":"application/json","path":"./_file/data/anncsu_stats.30698c16.json","lastModified":1788882579271,"size":1503});
+registerFile("./data/comuni_boundaries.geojson", {"name":"./data/comuni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/comuni_boundaries.abc4216c.geojson","lastModified":1788882622159,"size":5411229});
+registerFile("./data/regioni_boundaries.geojson", {"name":"./data/regioni_boundaries.geojson","mimeType":"application/geo+json","path":"./_file/data/regioni_boundaries.a53c8daf.geojson","lastModified":1788882618379,"size":344893});
 
 define({id: "86e93d55", inputs: ["html","display"], body: async (html,display) => {
 display(await(
@@ -95,7 +95,7 @@ html.fragment`<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/
 }});
 
 define({id: "dd9575f7", outputs: ["maplibregl","pmtiles","Plot","LayerControl","createLayerManager"], body: async () => {
-const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.24.0/ad5fb69e.js"), import("./_npm/pmtiles@4.4.1/87b6151c.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
+const [{default: maplibregl}, pmtiles, Plot, {LayerControl}, {createLayerManager}] = await Promise.all([import("./_npm/maplibre-gl@5.24.0/ad5fb69e.js"), import("./_npm/pmtiles@4.5.0/66c6e4ba.js"), import("./_npm/@observablehq/plot@0.6.17/93ce672e.js"), import("./_import/layer-control.62ab765d.js"), import("./_import/map-layers.e6eef59b.js")]);
 
 return {maplibregl,pmtiles,Plot,LayerControl,createLayerManager};
 }});
@@ -1280,7 +1280,7 @@ scrollableTable(
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:88acb6d4:--></div>
 </main>
 <footer id="observablehq-footer">
-<div>Built with <a href="https://observablehq.com/" target="_blank"  rel="noopener noreferrer">Observable</a> on <a title="2026-08-05T19:22:27">Aug 5, 2026</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2026-09-08T17:49:27">Sep 8, 2026</a>.</div>
 </footer>
 </div>
 </body>
